@@ -286,7 +286,7 @@ async function dismissCookieBanner(page: Page): Promise<void> {
         const buttons = document.querySelectorAll<HTMLButtonElement>(sel);
         for (const btn of buttons) {
           const text = (btn.textContent || "").toLowerCase();
-          if (text.includes("accept") || text.includes("allow") || text.includes("agree") || text.includes("ok")) {
+          if (text.includes("accept") || text.includes("allow") || text.includes("agree") || text.includes("consent") || text.includes("ok")) {
             btn.click();
             return true;
           }
@@ -295,7 +295,7 @@ async function dismissCookieBanner(page: Page): Promise<void> {
       // Fallback: find any button with accept-like text
       for (const btn of document.querySelectorAll<HTMLButtonElement>("button")) {
         const text = (btn.textContent || "").toLowerCase().trim();
-        if (text === "accept" || text === "accept all" || text === "allow cookies" || text === "allow all") {
+        if (text === "accept" || text === "accept all" || text === "allow cookies" || text === "allow all" || text.includes("i consent") || text.includes("yes, i consent")) {
           btn.click();
           return true;
         }
@@ -329,7 +329,7 @@ async function removeCookieElements(page: Page): Promise<void> {
   });
 }
 
-async function waitForPage(page: Page): Promise<void> {
+export async function waitForPage(page: Page): Promise<void> {
   try {
     await page.waitForLoadState("networkidle");
   } catch {

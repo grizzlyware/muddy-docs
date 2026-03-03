@@ -10,6 +10,7 @@ import {
   scrollPage,
   sleep,
   takeScreenshot,
+  waitForPage,
 } from "./browser.js";
 import {
   getKnowledgeSummary,
@@ -287,12 +288,7 @@ async function executeTool(
         const url = input.url as string;
         console.log(`  -> Navigating to: ${url}`);
         await page.goto(url);
-        try {
-          await page.waitForLoadState("networkidle");
-        } catch {
-          // timeout OK
-        }
-        await sleep(2000);
+        await waitForPage(page);
         const state = await getPageState(page);
         return `Navigated to ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 1000)}`;
       }
@@ -311,7 +307,7 @@ async function executeTool(
           // Fallback to direct act
           await stagehand.act(`Click ${desc}`);
         }
-        await sleep(1500);
+        await waitForPage(page);
         const state = await getPageState(page);
         return `Clicked "${desc}". Current URL: ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
       }
