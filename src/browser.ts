@@ -455,13 +455,10 @@ export async function waitForPage(page: Page): Promise<void> {
     // networkidle timeout is OK
   }
   await sleep(2000);
-  // Remove common overlays that block content
+  // Remove common marketing overlays that block content (but NOT app modals/dialogs)
   await page.evaluate(() => {
     const selectors = [
-      '[class*="popup"]',
-      '[class*="overlay"]',
       '[class*="newsletter"]',
-      '[role="dialog"]',
       '[class*="klaviyo"]',
     ];
     for (const sel of selectors) {
