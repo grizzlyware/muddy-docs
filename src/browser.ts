@@ -180,7 +180,8 @@ export async function highlightElement(
     return `Could not find element: "${description}"`;
   }
 
-  const selector = actions[0].selector;
+  // Strip the "xpath=" prefix that Stagehand adds
+  const selector = actions[0].selector.replace(/^xpath=/, "");
 
   const applied = await page.evaluate(
     ({ selector, label }) => {

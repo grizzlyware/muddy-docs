@@ -270,7 +270,8 @@ ${knowledgeSummary}
 - Keep screenshot labels short and descriptive
 - Save knowledge about app structure you discover for future runs
 - Be thorough — explore sub-pages and settings panels within the feature
-- When you encounter dropdowns or expandable sections, interact with them to document all options`;
+- When you encounter dropdowns or expandable sections, interact with them to document all options
+- Do NOT fill in or submit forms. You are documenting the app, not using it. Screenshot forms as they are and describe what each field does. Do not type into inputs, select dates, or click submit/save buttons — just observe, extract, and screenshot.`;
 }
 
 async function executeTool(
