@@ -257,7 +257,7 @@ ${knowledgeSummary}
 - Warn clearly before anything destructive or irreversible. If clicking something deletes data or can't be undone, flag it.
 - Do NOT use code formatting (backticks) for field names or values. Use **bold** instead.
 - One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
-- Reference screenshots with: ![description](../screenshots/FILENAME)
+- Reference screenshots with: ![description](https://raw.githubusercontent.com/grizzlyware/muddy-docs/main/screenshots/FILENAME)
 - ANNOTATE screenshots whenever a page has multiple fields or buttons to explain. Before taking a screenshot, use highlight_element to add numbered badges to the important elements, then reference those numbers in the text. For example: highlight "Base Price field" as "1", highlight "Save button" as "2", take screenshot, then write 'Enter your base price **(1)**, then click **Save** **(2)**'. Always call clear_highlights after taking the annotated screenshot.
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
@@ -344,7 +344,7 @@ async function executeTool(
       case "take_screenshot": {
         const label = input.label as string;
         const filename = await takeScreenshot(page, label);
-        return `Screenshot saved: ${filename}. Reference it in markdown as: ![${label}](../screenshots/${filename})`;
+        return `Screenshot saved: ${filename}. Reference it in markdown as: ![${label}](https://raw.githubusercontent.com/grizzlyware/muddy-docs/main/screenshots/${filename})`;
       }
 
       case "scroll_page": {
