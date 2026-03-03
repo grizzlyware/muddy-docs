@@ -35,6 +35,25 @@ function getExistingCategories(): string[] {
   return Array.from(categories).sort();
 }
 
+function getExistingTags(): string[] {
+  if (!fs.existsSync(DOCS_DIR)) return [];
+  const tags = new Set<string>();
+  for (const file of fs.readdirSync(DOCS_DIR).filter((f) => f.endsWith(".md"))) {
+    const content = fs.readFileSync(path.join(DOCS_DIR, file), "utf-8");
+    const frontmatter = content.match(/^---\s*\n([\s\S]*?)\n---/);
+    if (frontmatter) {
+      const tagMatches = frontmatter[1].match(/tags:\s*\n((?:\s+-\s+.+\n?)*)/);
+      if (tagMatches) {
+        for (const line of tagMatches[1].split("\n")) {
+          const tag = line.match(/^\s+-\s+(.+)/);
+          if (tag) tags.add(tag[1].trim());
+        }
+      }
+    }
+  }
+  return Array.from(tags).sort();
+}
+
 const tools: Anthropic.Tool[] = [
   {
     name: "navigate_to_url",
@@ -269,7 +288,7 @@ const tools: Anthropic.Tool[] = [
   },
 ];
 
-function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[]): string {
+function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[], existingTags: string[]): string {
   return `You are a documentation assistant for Muddy Booking (muddybooking.com), a booking management platform for dog walking businesses. You control a web browser that is already logged into the app.
 
 ## Your Task
@@ -305,7 +324,7 @@ description: Learn how to configure base pricing, walk-specific pricing, and dis
 - **title**: A clear, human-readable title for the article
 - **slug**: A URL-friendly version of the title (lowercase, hyphens, no special characters)
 - **category**: A broad grouping. ${existingCategories.length > 0 ? `REUSE an existing category if it fits: ${existingCategories.map((c) => `"${c}"`).join(", ")}. Only create a new category if none of these are suitable.` : `Examples: "Getting started", "Settings", "Bookings", "Customers", "Calendar".`}
-- **tags**: 2-5 relevant keywords for search and filtering
+- **tags**: 2-5 relevant keywords for search and filtering. ${existingTags.length > 0 ? `REUSE existing tags where they fit: ${existingTags.map((t) => `"${t}"`).join(", ")}. Only create a new tag if none of these are suitable.` : `Examples: "pricing", "walks", "settings", "bookings", "customers".`}
 - **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
 - **description**: A one-sentence summary of what the article covers
 
@@ -510,7 +529,11 @@ export async function runOrchestrator(
   if (existingCategories.length > 0) {
     console.log(`  Existing categories: ${existingCategories.join(", ")}`);
   }
-  const systemPrompt = buildSystemPrompt(task, knowledgeSummary, existingCategories);
+  const existingTags = getExistingTags();
+  if (existingTags.length > 0) {
+    console.log(`  Existing tags: ${existingTags.join(", ")}`);
+  }
+  const systemPrompt = buildSystemPrompt(task, knowledgeSummary, existingCategories, existingTags);
 
   const messages: Anthropic.MessageParam[] = [
     {
