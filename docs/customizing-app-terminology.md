@@ -12,7 +12,7 @@ description: Learn how to customize the language used throughout Muddy Booking t
 
 ## Why customize terminology?
 
-While Muddy Booking is designed for dog walking businesses, you might offer different services like dog training, grooming, or even equine activities. The terminology settings let you change the language throughout the entire app to match your business perfectly.
+While Muddy Booking was originally designed for dog walking businesses, you might offer different services like dog training, grooming, or even equine activities. The terminology settings let you change the language throughout the entire app to match your business perfectly.
 
 For example, instead of "walks" you might want to use "sessions", "appointments", or "arena hire". These changes appear everywhere - in your booking form, management area, customer communications, and invoices.
 
