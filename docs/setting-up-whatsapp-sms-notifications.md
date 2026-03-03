@@ -56,12 +56,7 @@ Simply toggle the switches for each notification type to enable or disable the d
 
 ![SMS credits page](../screenshots/sms-credits-page-1772548958925.png)
 
-Choose from these credit packages:
-- **50 SMS credits** — £5
-- **500 SMS credits** — £30  
-- **1,000 SMS credits** — £50
-
-Click **Top up** next to your preferred package to purchase credits.
+Choose from the available credit packages and click **Top up** to purchase.
 
 **Important notes:**
 - All prices exclude VAT
@@ -104,12 +99,7 @@ The usage history shows:
 
 ![WhatsApp credits page](../screenshots/whatsapp-credits-page-1772548994796.png)
 
-WhatsApp credit packages are more affordable than SMS:
-- **50 WhatsApp credits** — £5
-- **500 WhatsApp credits** — £20
-- **1,000 WhatsApp credits** — £30
-
-Click **Top up** next to your preferred package to purchase credits.
+WhatsApp credits are more affordable than SMS. Choose from the available credit packages and click **Top up** to purchase.
 
 **Important notes:**
 - All prices exclude VAT
@@ -142,9 +132,9 @@ The usage tracking provides the same detailed information as SMS, showing exactl
 - Choose larger credit packages for better value if you send many notifications
 
 ### Notification strategy
-- Start with email notifications only, then add SMS/WhatsApp based on customer preferences
+- We recommend enabling both WhatsApp and SMS and keeping a balance of credits for each. When both are enabled, messages will be sent via WhatsApp first — if the customer doesn't have WhatsApp, it will automatically fall back to SMS. WhatsApp is also cheaper, so this gives you the best coverage at the lowest cost.
 - Booking confirmations and reminders are typically the most valuable notifications to enable
-- Consider your customer demographics — some may prefer WhatsApp over SMS
+- Email notifications are always sent alongside SMS/WhatsApp at no extra cost
 
 ### Cost considerations
 - WhatsApp credits are more cost-effective than SMS
@@ -160,5 +150,5 @@ The usage tracking provides the same detailed information as SMS, showing exactl
 
 **High credit usage:**
 - Review which notification types are enabled
-- Check if you're sending unnecessary notifications (like invoice reminders for customers who pay immediately)
+- Check if you're sending unnecessary notifications (e.g. cancellation confirmations may not need to be sent via SMS/WhatsApp)
 - Consider whether all notification types need both SMS and WhatsApp enabled
