@@ -85,4 +85,4 @@ The **Fees include tax** setting determines whether the fixed fee amounts you en
 
 ## Saving your changes
 
-After configuring your cancellation policy, click **Save** **(7)** to apply your settings. Your cancellation policy will immediately apply to all new bookings.
+After configuring your cancellation policy, click **Save** **(7)** to apply your settings. Your cancellation policy will immediately apply to all bookings.
