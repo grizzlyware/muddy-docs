@@ -54,8 +54,8 @@ function pruneScreenshots() {
   if (fs.existsSync(docsDir)) {
     for (const file of fs.readdirSync(docsDir).filter((f) => f.endsWith(".md"))) {
       const content = fs.readFileSync(path.join(docsDir, file), "utf-8");
-      // Match screenshot filenames in any URL format
-      const matches = content.matchAll(/screenshots\/([^\s)]+\.png)/g);
+      // Match ![...](../screenshots/FILENAME) patterns
+      const matches = content.matchAll(/\.\.\/screenshots\/([^\s)]+)/g);
       for (const m of matches) {
         referenced.add(m[1]);
       }
