@@ -20,7 +20,7 @@ import {
 } from "./knowledge.js";
 
 const DOCS_DIR = path.resolve("docs");
-const MAX_TURNS = 60;
+const MAX_TURNS = 100;
 
 function getExistingCategories(): string[] {
   if (!fs.existsSync(DOCS_DIR)) return [];
