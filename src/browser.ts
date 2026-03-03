@@ -26,6 +26,7 @@ export async function initBrowser(): Promise<BrowserSession> {
   });
 
   await stagehand.init();
+  await stagehand.context.setExtraHTTPHeaders({ "Sec-GPC": "1" });
   const page = stagehand.context.pages()[0];
 
   return { stagehand, page };
