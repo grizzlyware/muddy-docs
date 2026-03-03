@@ -356,7 +356,8 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - Save knowledge about app structure you discover for future runs
 - Be thorough — explore sub-pages and settings panels within the feature
 - When you encounter dropdowns or expandable sections, interact with them to document all options
-- You may interact with forms, make bookings, and submit data if needed to fully document a feature. For example, you might need to create a booking to document the booking flow, or submit a form to show what happens next. Use the test account freely — it exists for this purpose.`;
+- You may interact with forms, make bookings, and submit data if needed to fully document a feature. For example, you might need to create a booking to document the booking flow, or submit a form to show what happens next. Use the test account freely — it exists for this purpose.
+- When you need to enter an email address (e.g. sending a voucher, creating a customer), use one of these safe test emails: blackhole+1@muddybooking.com, blackhole+2@muddybooking.com, blackhole+3@muddybooking.com, blackhole+4@muddybooking.com, blackhole+5@muddybooking.com, blackhole+6@muddybooking.com, blackhole+7@muddybooking.com, blackhole+8@muddybooking.com, blackhole+9@muddybooking.com, blackhole+10@muddybooking.com. These go nowhere and are safe to use.`;
 }
 
 async function executeTool(
