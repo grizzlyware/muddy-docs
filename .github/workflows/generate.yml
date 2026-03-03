@@ -7,6 +7,10 @@ on:
         description: 'Documentation task (e.g. "Document how to setup pricing")'
         required: true
         type: string
+      branch:
+        description: 'Existing branch to commit to (leave empty to create a new branch and PR)'
+        required: false
+        type: string
 
 jobs:
   generate:
@@ -20,11 +24,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
 
-      - name: Create branch
+      - name: Setup branch
         run: |
-          BRANCH="docs/$(echo "${{ github.event.inputs.task }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//' | cut -c1-50)-${{ github.run_id }}"
-          git checkout -b "$BRANCH"
+          if [ -n "${{ github.event.inputs.branch }}" ]; then
+            BRANCH="${{ github.event.inputs.branch }}"
+          else
+            BRANCH="docs/$(echo "${{ github.event.inputs.task }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//' | cut -c1-50)-${{ github.run_id }}"
+            git checkout -b "$BRANCH"
+          fi
           echo "BRANCH=$BRANCH" >> "$GITHUB_ENV"
 
       - name: Setup Node.js
@@ -48,7 +58,7 @@ jobs:
           MUDDY_EMAIL: ${{ secrets.MUDDY_EMAIL }}
           MUDDY_PASSWORD: ${{ secrets.MUDDY_PASSWORD }}
 
-      - name: Commit, push and open PR
+      - name: Commit and push
         env:
           GH_TOKEN: ${{ github.token }}
           TASK: ${{ github.event.inputs.task }}
@@ -61,6 +71,9 @@ jobs:
           else
             git commit -m "docs: ${TASK}"
             git push -u origin "$BRANCH"
-            BODY=$(printf "## Summary\nAuto-generated documentation for: **%s**\n\nPlease review the docs and screenshots before merging.\n\n## Checklist\n- [ ] Content is accurate\n- [ ] Screenshots look correct\n- [ ] No sensitive data visible" "$TASK")
-            gh pr create --title "docs: ${TASK}" --body "$BODY"
+            # Only create a PR if we created a new branch
+            if [ -z "${{ github.event.inputs.branch }}" ]; then
+              BODY=$(printf "## Summary\nAuto-generated documentation for: **%s**\n\nPlease review the docs and screenshots before merging.\n\n## Checklist\n- [ ] Content is accurate\n- [ ] Screenshots look correct\n- [ ] No sensitive data visible" "$TASK")
+              gh pr create --title "docs: ${TASK}" --body "$BODY"
+            fi
           fi
