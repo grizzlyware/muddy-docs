@@ -172,82 +172,200 @@ export async function highlightElement(
   description: string,
   label: string,
 ): Promise<string> {
-  const { stagehand, page } = session;
+  const { page } = session;
 
-  // Use Stagehand to find the element
-  const actions = await stagehand.observe(`Find: ${description}`);
-  if (actions.length === 0) {
+  // Parse description in Node.js to extract search name and element type
+  const desc = description.toLowerCase();
+  // Multi-word suffixes first, then single words — order matters (longest match first)
+  const typeWords = [
+    "input field", "text area", "text field", "menu item", "date field",
+    "time field", "select field", "search field",
+    "button", "link", "input", "field", "textarea", "section",
+    "heading", "label", "tab", "checkbox", "switch", "select",
+    "dropdown", "menu", "option", "icon", "image", "card", "panel",
+    "element", "area", "box", "container", "group", "region", "nav",
+  ];
+
+  let name = desc.replace(/^the\s+/, "").trim();
+  // Keep stripping type words from the end until none match
+  let stripped = true;
+  while (stripped) {
+    stripped = false;
+    for (const tw of typeWords) {
+      if (name.endsWith(` ${tw}`)) {
+        name = name.slice(0, -(tw.length + 1)).trim();
+        stripped = true;
+        break;
+      }
+    }
+  }
+  name = name.replace(/^["']|["']$/g, "").trim();
+
+  const isButton = /button/.test(desc);
+  const isLink = /link/.test(desc);
+  const isInput = /input|field/.test(desc) && !/text\s*area|textarea/.test(desc);
+  const isTextarea = /text\s*area|textarea/.test(desc);
+
+  // Step 1: Find the element's bounding box
+  const box = await page.evaluate(
+    (args: string[]) => {
+      var name = args[0], isButton = args[1] === "1", isLink = args[2] === "1", isInput = args[3] === "1", isTextarea = args[4] === "1";
+      var nameLower = name.toLowerCase();
+      var el = null;
+
+      if (isButton) {
+        var btns = document.querySelectorAll('button, a, [role="button"]');
+        // First pass: exact match
+        for (var i = 0; i < btns.length; i++) {
+          var t = (btns[i].textContent || "").trim().toLowerCase();
+          if (t === nameLower && btns[i].getBoundingClientRect().width > 0) { el = btns[i]; break; }
+        }
+        // Second pass: includes match
+        if (!el) {
+          for (var i = 0; i < btns.length; i++) {
+            var t = (btns[i].textContent || "").trim().toLowerCase();
+            if (t.includes(nameLower) && btns[i].getBoundingClientRect().width > 0) { el = btns[i]; break; }
+          }
+        }
+      }
+
+      if (isLink && !el) {
+        var as = document.querySelectorAll("a");
+        for (var i = 0; i < as.length; i++) {
+          var t = (as[i].textContent || "").trim().toLowerCase();
+          if (t === nameLower && as[i].getBoundingClientRect().width > 0) { el = as[i]; break; }
+        }
+        if (!el) {
+          for (var i = 0; i < as.length; i++) {
+            var t = (as[i].textContent || "").trim().toLowerCase();
+            if (t.includes(nameLower) && as[i].getBoundingClientRect().width > 0) { el = as[i]; break; }
+          }
+        }
+      }
+
+      if ((isInput || isTextarea) && !el) {
+        var lbls = document.querySelectorAll("label");
+        var targetTag = isTextarea ? "textarea" : "input, select";
+
+        // First pass: exact label text match
+        for (var i = 0; i < lbls.length && !el; i++) {
+          var lt = (lbls[i].textContent || "").trim().toLowerCase();
+          if (lt === nameLower) {
+            var fid = lbls[i].getAttribute("for");
+            if (fid) { var match = document.getElementById(fid); if (match && match.getBoundingClientRect().width > 0) { el = match; } }
+            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && match.getBoundingClientRect().width > 0) { el = match; } nd = nd.parentElement; } }
+          }
+        }
+        // Second pass: includes match
+        for (var i = 0; i < lbls.length && !el; i++) {
+          var lt = (lbls[i].textContent || "").trim().toLowerCase();
+          if (lt.includes(nameLower)) {
+            var fid = lbls[i].getAttribute("for");
+            if (fid) { var match = document.getElementById(fid); if (match && match.getBoundingClientRect().width > 0) { el = match; } }
+            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && match.getBoundingClientRect().width > 0) { el = match; } nd = nd.parentElement; } }
+          }
+        }
+        // Fallback: find by text content near input (e.g. span/div label + sibling input)
+        if (!el) {
+          var allText = document.querySelectorAll("span, div, p, h3, h4, h5, h6");
+          for (var i = 0; i < allText.length && !el; i++) {
+            var tt = (allText[i].textContent || "").trim().toLowerCase();
+            if (tt === nameLower) {
+              var nd = allText[i].parentElement;
+              for (var d = 0; d < 5 && nd && !el; d++) {
+                var match = nd.querySelector(targetTag) as HTMLElement | null;
+                if (match && match.getBoundingClientRect().width > 0) { el = match; }
+                nd = nd.parentElement;
+              }
+            }
+          }
+        }
+      }
+
+      if (!el) {
+        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        for (var i = 0; i < all.length; i++) {
+          var t = (all[i].textContent || "").trim().toLowerCase();
+          if (t === nameLower && all[i].getBoundingClientRect().width > 0) { el = all[i]; break; }
+        }
+      }
+
+      if (!el) {
+        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        for (var i = 0; i < all.length; i++) {
+          var t = (all[i].textContent || "").trim().toLowerCase();
+          if (t.includes(nameLower) && all[i].getBoundingClientRect().width > 0) { el = all[i]; break; }
+        }
+      }
+
+      if (!el) {
+        var aria = document.querySelectorAll("[aria-label], [title]");
+        for (var i = 0; i < aria.length; i++) {
+          var al = (aria[i].getAttribute("aria-label") || "").toLowerCase();
+          var ti = (aria[i].getAttribute("title") || "").toLowerCase();
+          if ((al.includes(nameLower) || ti.includes(nameLower)) && aria[i].getBoundingClientRect().width > 0) { el = aria[i]; break; }
+        }
+      }
+
+      if (!el) return null;
+      var r = el.getBoundingClientRect();
+      return [r.left, r.top, r.width, r.height];
+    },
+    [name, isButton ? "1" : "", isLink ? "1" : "", isInput ? "1" : "", isTextarea ? "1" : ""],
+  );
+
+  if (!box) {
     return `Could not find element: "${description}"`;
   }
 
-  // Strip the "xpath=" prefix that Stagehand adds
-  const selector = actions[0].selector.replace(/^xpath=/, "");
+  // Step 2: Inject the highlight overlay
+  await page.evaluate(
+    (args: string) => {
+      var p = JSON.parse(args);
+      var bx = p[0], by = p[1], bw = p[2], bh = p[3], label = p[4];
+      var sx = window.scrollX;
+      var sy = window.scrollY;
 
-  const applied = await page.evaluate(
-    ({ selector, label }) => {
-      const el = document.evaluate(
-        selector,
-        document,
-        null,
-        XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null,
-      ).singleNodeValue as HTMLElement | null;
-      if (!el) return false;
-
-      const rect = el.getBoundingClientRect();
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
-
-      // Highlight border
-      const border = document.createElement("div");
+      var border = document.createElement("div");
       border.className = "muddy-docs-highlight";
-      Object.assign(border.style, {
-        position: "absolute",
-        left: `${rect.left + scrollX - 3}px`,
-        top: `${rect.top + scrollY - 3}px`,
-        width: `${rect.width + 6}px`,
-        height: `${rect.height + 6}px`,
-        border: "3px solid #e11d48",
-        borderRadius: "6px",
-        pointerEvents: "none",
-        zIndex: "99999",
-        boxSizing: "border-box",
-      });
+      border.style.position = "absolute";
+      border.style.left = (bx + sx - 3) + "px";
+      border.style.top = (by + sy - 3) + "px";
+      border.style.width = (bw + 6) + "px";
+      border.style.height = (bh + 6) + "px";
+      border.style.border = "3px solid #e11d48";
+      border.style.borderRadius = "6px";
+      border.style.pointerEvents = "none";
+      border.style.zIndex = "99999";
+      border.style.boxSizing = "border-box";
 
-      // Numbered badge
-      const badge = document.createElement("div");
+      var badge = document.createElement("div");
       badge.className = "muddy-docs-highlight";
-      Object.assign(badge.style, {
-        position: "absolute",
-        left: `${rect.left + scrollX + rect.width - 4}px`,
-        top: `${rect.top + scrollY - 12}px`,
-        width: "24px",
-        height: "24px",
-        backgroundColor: "#e11d48",
-        color: "#fff",
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "13px",
-        fontWeight: "700",
-        fontFamily: "system-ui, sans-serif",
-        pointerEvents: "none",
-        zIndex: "100000",
-        lineHeight: "1",
-      });
+      badge.style.position = "absolute";
+      badge.style.left = (bx + sx + bw - 4) + "px";
+      badge.style.top = (by + sy - 12) + "px";
+      badge.style.width = "24px";
+      badge.style.height = "24px";
+      badge.style.backgroundColor = "#e11d48";
+      badge.style.color = "#fff";
+      badge.style.borderRadius = "50%";
+      badge.style.display = "flex";
+      badge.style.alignItems = "center";
+      badge.style.justifyContent = "center";
+      badge.style.fontSize = "13px";
+      badge.style.fontWeight = "700";
+      badge.style.fontFamily = "system-ui, sans-serif";
+      badge.style.pointerEvents = "none";
+      badge.style.zIndex = "100000";
+      badge.style.lineHeight = "1";
       badge.textContent = label;
 
       document.body.appendChild(border);
       document.body.appendChild(badge);
-      return true;
     },
-    { selector, label },
+    JSON.stringify([box[0], box[1], box[2], box[3], label]),
   );
 
-  if (!applied) {
-    return `Found element but could not highlight: "${description}"`;
-  }
   return `Highlighted "${description}" with label (${label})`;
 }
 
