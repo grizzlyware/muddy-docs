@@ -3,72 +3,86 @@ title: How to add a block out
 slug: adding-block-outs
 category: Bookings
 tags:
-  - block outs
-  - availability
+  - block-outs
   - scheduling
-order: 10
-description: Learn how to create block outs to prevent customers from booking walks at specific times.
+  - bookings
+  - availability
+order: 40
+description: Learn how to create block outs to prevent bookings during specific times when you're not available.
 ---
 
-## What is a block out?
+## What are block outs?
 
-A block out temporarily blocks off time slots so customers cannot book walks during those periods. This is perfect when you need to reserve time for other activities — like cutting the grass, taking a personal break, or handling maintenance tasks.
+Block outs are a way to prevent bookings during specific times when you're not available. For example, you might want to reserve time for maintenance activities like cutting grass, personal appointments, or holidays.
 
-## Finding block outs
+## How to access block outs
 
-You can access block outs in two ways:
+There are two ways to get to the block outs section:
 
-1. **From the main menu** - Click **Block outs** in the left-hand menu
-2. **From Settings** - Go to **Settings**, then look under the "Bookings" section and click **Block outs**
+**Option 1: From the main menu**
+1. Click **Block outs** in the left-hand menu
+
+**Option 2: Through Settings**
+1. Click **Settings** in the left-hand menu
+2. Under the **Bookings** section, click **Block outs** **(1)**
+
+![Settings block outs option](../screenshots/settings-block-outs-option-1772547747847.png)
 
 Both options will take you to the same block outs page.
-
-![Block outs main page](../screenshots/block-outs-main-page-1772540474545.png)
 
 ## Adding a new block out
 
 ### Step 1: Start creating a block out
 
-On the Block outs page, click the **Create** button **(1)** to add a new block out.
+From the main block outs page, click the **Create** button **(1)** to start adding a new block out.
 
-### Step 2: Fill in the block out details
+![Block outs create button](../screenshots/block-outs-create-button-1772547618896.png)
+
+### Step 2: Fill out the block out details
 
 You'll see a form with several fields to complete:
 
-![Create block out form](../screenshots/create-block-out-form-1772540539181.png)
+![Create block out form](../screenshots/create-block-out-form-annotated-1772547677887.png)
 
-**Name** - Give your block out a clear name that helps you identify it later. This is just for your internal use, so make it descriptive. For example: "Grass cutting" or "Personal appointment".
+**Name** **(1)** (Required)
+Enter a name to identify this block out in your system. This is just for your internal reference — customers won't see this name. For example: "Grass cutting", "Holiday", or "Equipment maintenance".
 
-**Description** - Add any extra notes that will help you remember what this block out is for. This field is optional and is just for your own records.
+**Description** **(2)** (Optional)
+Add any additional notes about this block out for your own records. This might include specific details about why you're blocking this time.
 
-**Starts at** - Choose when your block out begins. You'll select both the date and time. The @ symbol shows where you can pick the specific time. All times are shown in your business timezone.
+**Starts at** **(3)** (Required)
+Set when the block out begins. Click the field to select both the date and time. The system will use your business timezone.
 
-**Ends at** - Choose when your block out finishes. Again, you'll pick both the date and time. Make sure the end time is after the start time.
+**Ends at** **(4)** (Required)  
+Set when the block out ends. Click the field to select both the date and time. Make sure this is after your start time.
 
-**Walks** - Select which walks this block out applies to. You'll see a list of your available walks (like "Sample Walk" in the example). You can select multiple walks if the block out affects more than one service.
+**Walks** **(5)** (Required)
+Choose which walks this block out applies to. You can select specific walks or multiple walks. This determines which services won't be available during the blocked time.
 
 ### Step 3: Check for conflicts
 
-The system will automatically check if your block out conflicts with any existing bookings. You'll see a message telling you whether there are any conflicts. If there are conflicts, you may need to adjust your block out times or handle those existing bookings separately.
+The system will automatically check if your block out conflicts with any existing bookings. You'll see a message showing whether there are any conflicts.
+
+If there are conflicts, you'll need to either:
+- Change your block out times
+- Contact customers to reschedule their bookings
+- Cancel the conflicting bookings
 
 ### Step 4: Save your block out
 
-Once you've filled in all the details and checked for conflicts, click **Create block out** to save your new block out.
+Once you've filled in all the required information and resolved any conflicts, click **Create block out** **(6)** to save your new block out.
 
-## Tips for using block outs
+## What happens after creating a block out
 
-- **Be specific with names** - Use clear names like "Vet appointment" or "Equipment maintenance" so you can easily identify block outs later
-- **Plan ahead** - Create block outs as soon as you know you'll be unavailable to prevent customers from booking those times
-- **Check conflicts** - Always review any booking conflicts before creating your block out
-- **Use descriptions** - The description field is helpful for adding details like "Annual vet check for Rover" or "Monthly equipment servicing"
+- The blocked time will no longer be available for new bookings
+- Customers won't be able to select the blocked time slots when making bookings online
+- The block out will appear in your block outs list for future reference
+- You can edit or delete the block out later if needed
 
-## Managing existing block outs
+## Tips for using block outs effectively
 
-After creating block outs, you can view them all on the main Block outs page. The table shows:
-
-- **Name** - The name you gave the block out
-- **Starts** - When the block out begins
-- **Ends** - When the block out finishes  
-- **Walks** - Which walks are affected
-
-This gives you a quick overview of all your scheduled block outs so you can plan your availability accordingly.
+- **Plan ahead**: Create block outs as soon as you know about upcoming unavailable periods
+- **Use clear names**: Choose descriptive names so you can easily identify different block outs
+- **Regular maintenance**: Consider setting up recurring block outs for regular maintenance activities
+- **Holiday planning**: Block out holiday periods well in advance to prevent bookings during your time off
+- **Buffer time**: Consider adding a small buffer before and after important activities to allow for preparation or overrun
