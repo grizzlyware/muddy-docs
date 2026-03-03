@@ -282,7 +282,7 @@ description: Learn how to configure base pricing, walk-specific pricing, and dis
 - **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
 - **description**: A one-sentence summary of what the article covers
 
-The frontmatter goes BEFORE the main heading. The markdown content follows after the closing \`---\`.
+The frontmatter goes at the very top of the file. Do NOT add a H1 heading or introductory paragraph — the title and description are already in the frontmatter. Start the markdown content directly with H2 sections after the closing \`---\`.
 
 ## Documentation Guidelines
 - Write for a NON-TECHNICAL audience. The readers are small business owners (dog walkers), not developers.

@@ -10,13 +10,9 @@ order: 10
 description: Learn how to create block outs to prevent customers from booking walks at specific times.
 ---
 
-# How to add a block out
-
-Block outs are a useful feature that lets you prevent customers from booking walks at specific times. This is perfect when you need to reserve time for other activities - like cutting the grass, taking a personal break, or handling maintenance tasks.
-
 ## What is a block out?
 
-A block out temporarily blocks off time slots so customers cannot book walks during those periods. For example, if you need to spend Tuesday afternoon doing admin work, you can create a block out to prevent any walk bookings during that time.
+A block out temporarily blocks off time slots so customers cannot book walks during those periods. This is perfect when you need to reserve time for other activities — like cutting the grass, taking a personal break, or handling maintenance tasks.
 
 ## Finding block outs
 
