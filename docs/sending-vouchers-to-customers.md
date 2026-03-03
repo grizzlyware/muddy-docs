@@ -4,54 +4,69 @@ slug: sending-vouchers-to-customers
 category: Payments
 tags:
   - vouchers
-  - payments
   - customers
-order: 30
-description: Learn how to send voucher codes to customers via email with custom messages.
+  - payments
+order: 20
+description: Learn how to send voucher codes to customers via email and track deliveries.
 ---
 
-## Sending a voucher to a customer
+## Accessing voucher management
 
-Once you've created a voucher, you can send the code directly to a customer via email. This is useful when you want to offer discounts for special occasions, customer loyalty rewards, or promotional campaigns.
+To send vouchers to customers, you'll need to navigate to your vouchers and select the specific voucher you want to send.
 
-## How to send a voucher
+1. Go to **Vouchers** from the main sidebar menu
+2. Click on the voucher code you want to send from the list
 
-1. Go to **Vouchers** in the left-hand menu
+![Voucher detail page](../screenshots/voucher-detail-full-page-1772558664809.png)
 
-![vouchers-overview-page](../screenshots/vouchers-overview-page-1772557976526.png)
+This opens the individual voucher page where you can see the voucher details including its code, balance, expiry date, and status.
 
-2. Click on the voucher code you want to send to view its details
+## Sending a voucher
 
-![voucher-details-page](../screenshots/voucher-details-page-1772557822005.png)
+From the voucher detail page, you can send the voucher code to a customer via email.
 
-3. Click **Send voucher** **(1)** to open the sending options
+1. Click the **Send voucher** button on the voucher detail page
+2. A pop-up window will appear with a form to send the voucher
 
-4. A pop-up will appear where you can enter the customer's details and customize your message
+The send voucher form contains:
+- **Email address** field — Enter the customer's email address where they'll receive the voucher code
+- **Message** text area — Add a custom message to include with the voucher email (this is optional)
+- **Send** button to send the email
+- **Cancel** button to close the pop-up without sending
 
-![send-voucher-modal-annotated](../screenshots/send-voucher-modal-annotated-1772557910970.png)
+## Completing the send process
 
-5. Enter the customer's email address in the **Email address** field
+To send the voucher:
 
-6. Add a personal message in the **Message** field — this will be included in the email alongside the voucher code
+1. Enter the customer's email address in the **Email address** field
+2. Optionally add a personal message in the **Message** text area
+3. Click **Send** to email the voucher code to the customer
 
-![send-voucher-modal-filled](../screenshots/send-voucher-modal-filled-1772557928599.png)
+The customer will receive an email containing their voucher code and any custom message you included.
 
-7. Click **Send** **(1)** to email the voucher to the customer
+## Tracking voucher deliveries
 
-8. You'll see a confirmation message when the voucher has been sent successfully
+After sending vouchers, you can track all deliveries in the **Deliveries** section on the voucher detail page.
 
-![page-after-scrolling-down](../screenshots/page-after-scrolling-down-1772557962306.png)
+![Voucher page showing deliveries section](../screenshots/voucher-page-before-send-1772558634305.png)
 
-## What happens after sending
+The deliveries table shows:
+- **Recipient** — The email address the voucher was sent to
+- **Status** — Whether the email was successfully delivered
+- **Date** — When the voucher email was sent
 
-- The customer receives an email with their voucher code and your custom message
-- The voucher remains active and ready to be redeemed
-- You can track when vouchers were sent by checking the **Deliveries** section on each voucher's page
-- If needed, you can send the same voucher to multiple customers
+This helps you keep track of which customers have received voucher codes and when they were sent.
 
-## Tips for sending vouchers
+## Important notes
 
-- **Personalize your message** — include the customer's name and explain what the voucher is for (birthday discount, loyalty reward, etc.)
-- **Clear instructions** — let customers know how to use the code when booking
-- **Expiry reminders** — if your voucher expires, mention the deadline in your message
-- **Save the email address** — the system remembers previously used addresses for future sends
+- Each voucher can be sent to multiple customers if needed
+- The same voucher code can be used by any customer who receives it
+- Voucher deliveries are tracked separately from voucher usage
+- Customers will need the exact voucher code to redeem the voucher during booking
+- If a voucher has an expiry date, make sure to send it with enough time for the customer to use it
+
+## Managing multiple vouchers
+
+You can send different vouchers to different customers, or send the same voucher code to multiple customers. The voucher balance will be shared between all customers who have the code — when one customer uses part of the voucher, the remaining balance is available to others who have the same code.
+
+For individual customer vouchers, create separate vouchers for each customer rather than sharing the same code.
