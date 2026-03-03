@@ -341,7 +341,7 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - Do NOT use code formatting (backticks) for field names or values. Use **bold** instead.
 - One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
 - Reference screenshots with: ![description](../screenshots/FILENAME)
-- ANNOTATE screenshots whenever a page has multiple fields or buttons to explain. Before taking a screenshot, use highlight_element to add numbered badges to the important elements, then reference those numbers in the text. For example: highlight "Base Price field" as "1", highlight "Save button" as "2", take screenshot, then write 'Enter your base price **(1)**, then click **Save** **(2)**'. Always call clear_highlights after taking the annotated screenshot.
+- ALWAYS annotate screenshots with highlight_element before taking them. Every screenshot should have at least one highlighted element so the reader knows exactly what to look at. This is especially important for navigation screenshots — if you're telling the user to click something on a page (e.g. "click Pricing in Settings"), highlight that item before taking the screenshot. Use numbered badges and reference them in the text, e.g. 'Click **Pricing** **(1)**'. Always call clear_highlights after taking the annotated screenshot.
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
 - Use clear headings and logical structure
