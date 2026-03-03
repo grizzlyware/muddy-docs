@@ -19,7 +19,7 @@ export async function initBrowser(): Promise<BrowserSession> {
 
   const stagehand = new Stagehand({
     env: "LOCAL",
-    model: "openai/gpt-4.1",
+    model: "openai/gpt-4.1-mini",
     localBrowserLaunchOptions: {
       headless,
     },
@@ -310,6 +310,21 @@ export async function highlightElement(
       }
 
       if (!el) return null;
+
+      // If there's an open modal/dialog, prefer the match inside it over one behind it
+      var topLayer = document.querySelector('dialog[open], [role="dialog"], [class*="modal"]');
+      if (topLayer && !topLayer.contains(el)) {
+        // Re-search but only within the top-layer element
+        var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        for (var i = 0; i < candidates.length; i++) {
+          var t = (candidates[i].textContent || "").trim().toLowerCase();
+          if ((t === nameLower || t.includes(nameLower)) && candidates[i].getBoundingClientRect().width > 0) {
+            el = candidates[i];
+            break;
+          }
+        }
+      }
+
       var r = el.getBoundingClientRect();
       return [r.left, r.top, r.width, r.height];
     },
