@@ -13,9 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Create branch
+        run: |
+          BRANCH="docs/$(echo "${{ github.event.inputs.task }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//' | cut -c1-50)-${{ github.run_id }}"
+          git checkout -b "$BRANCH"
+          echo "BRANCH=$BRANCH" >> "$GITHUB_ENV"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,7 +48,10 @@ jobs:
           MUDDY_EMAIL: ${{ secrets.MUDDY_EMAIL }}
           MUDDY_PASSWORD: ${{ secrets.MUDDY_PASSWORD }}
 
-      - name: Commit and push
+      - name: Commit, push and open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TASK: ${{ github.event.inputs.task }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -46,7 +59,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: ${{ github.event.inputs.task }}"
-            git pull --rebase
-            git push
+            git commit -m "docs: ${TASK}"
+            git push -u origin "$BRANCH"
+            BODY=$(printf "## Summary\nAuto-generated documentation for: **%s**\n\nPlease review the docs and screenshots before merging.\n\n## Checklist\n- [ ] Content is accurate\n- [ ] Screenshots look correct\n- [ ] No sensitive data visible" "$TASK")
+            gh pr create --title "docs: ${TASK}" --body "$BODY"
           fi
