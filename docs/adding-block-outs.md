@@ -1,12 +1,24 @@
-# How to Add a Block Out
+---
+title: How to add a block out
+slug: adding-block-outs
+category: Bookings
+tags:
+  - block outs
+  - availability
+  - scheduling
+order: 10
+description: Learn how to create block outs to prevent customers from booking walks at specific times.
+---
+
+# How to add a block out
 
 Block outs are a useful feature that lets you prevent customers from booking walks at specific times. This is perfect when you need to reserve time for other activities - like cutting the grass, taking a personal break, or handling maintenance tasks.
 
-## What is a Block Out?
+## What is a block out?
 
 A block out temporarily blocks off time slots so customers cannot book walks during those periods. For example, if you need to spend Tuesday afternoon doing admin work, you can create a block out to prevent any walk bookings during that time.
 
-## Finding Block Outs
+## Finding block outs
 
 You can access block outs in two ways:
 
@@ -17,13 +29,13 @@ Both options will take you to the same block outs page.
 
 ![Block outs main page](../screenshots/block-outs-main-page-1772540474545.png)
 
-## Adding a New Block Out
+## Adding a new block out
 
-### Step 1: Start Creating a Block Out
+### Step 1: Start creating a block out
 
 On the Block outs page, click the **Create** button **(1)** to add a new block out.
 
-### Step 2: Fill in the Block Out Details
+### Step 2: Fill in the block out details
 
 You'll see a form with several fields to complete:
 
@@ -39,22 +51,22 @@ You'll see a form with several fields to complete:
 
 **Walks** - Select which walks this block out applies to. You'll see a list of your available walks (like "Sample Walk" in the example). You can select multiple walks if the block out affects more than one service.
 
-### Step 3: Check for Conflicts
+### Step 3: Check for conflicts
 
 The system will automatically check if your block out conflicts with any existing bookings. You'll see a message telling you whether there are any conflicts. If there are conflicts, you may need to adjust your block out times or handle those existing bookings separately.
 
-### Step 4: Save Your Block Out
+### Step 4: Save your block out
 
 Once you've filled in all the details and checked for conflicts, click **Create block out** to save your new block out.
 
-## Tips for Using Block Outs
+## Tips for using block outs
 
 - **Be specific with names** - Use clear names like "Vet appointment" or "Equipment maintenance" so you can easily identify block outs later
 - **Plan ahead** - Create block outs as soon as you know you'll be unavailable to prevent customers from booking those times
 - **Check conflicts** - Always review any booking conflicts before creating your block out
 - **Use descriptions** - The description field is helpful for adding details like "Annual vet check for Rover" or "Monthly equipment servicing"
 
-## Managing Existing Block Outs
+## Managing existing block outs
 
 After creating block outs, you can view them all on the main Block outs page. The table shows:
 

@@ -211,7 +211,7 @@ const tools: Anthropic.Tool[] = [
   {
     name: "finish_documentation",
     description:
-      "Write the final documentation markdown file and complete the task. Call this when you have gathered enough information and are ready to produce the output.",
+      "Write the final documentation markdown file and complete the task. The markdown_content MUST begin with YAML frontmatter (title, slug, category, tags, order, description). Call this when you have gathered enough information and are ready to produce the output.",
     input_schema: {
       type: "object" as const,
       properties: {
@@ -247,6 +247,30 @@ ${knowledgeSummary}
 5. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
 6. When you have enough information, call finish_documentation with comprehensive markdown
 
+## Documentation Format
+Every documentation file MUST begin with YAML frontmatter. Use this exact format:
+\`\`\`
+---
+title: Setting up pricing
+slug: setting-up-pricing
+category: Getting started
+tags:
+  - pricing
+  - walks
+  - settings
+order: 10
+description: Learn how to configure base pricing, walk-specific pricing, and discounts.
+---
+\`\`\`
+- **title**: A clear, human-readable title for the article
+- **slug**: A URL-friendly version of the title (lowercase, hyphens, no special characters)
+- **category**: A broad grouping (e.g. "Getting started", "Settings", "Bookings", "Customers", "Calendar")
+- **tags**: 2-5 relevant keywords for search and filtering
+- **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
+- **description**: A one-sentence summary of what the article covers
+
+The frontmatter goes BEFORE the main heading. The markdown content follows after the closing \`---\`.
+
 ## Documentation Guidelines
 - Write for a NON-TECHNICAL audience. The readers are small business owners (dog walkers), not developers.
 - Use simple, friendly language. Avoid jargon, technical terms, URLs, URL paths, API references, or internal identifiers.
@@ -262,6 +286,7 @@ ${knowledgeSummary}
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
 - Use clear headings and logical structure
+- Use sentence case for ALL headings and titles (e.g. "Setting up pricing" NOT "Setting Up Pricing"). Only capitalise the first word and proper nouns.
 - NEVER describe current field values as "defaults". The account you are browsing is a shared test account — values you see may have been changed by previous runs or by other users. Describe what each field DOES and what options are available, but do NOT state specific values as defaults (e.g. say "Base price — the starting price for a booking" NOT "Base price (Default: £8.00)"). If the app itself labels something as a default, you may mention that.
 
 ## Important Rules
