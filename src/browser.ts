@@ -43,6 +43,7 @@ export async function login(session: BrowserSession): Promise<void> {
 
   console.log("  Navigating to login page...");
   await page.goto("https://muddybooking.com/login");
+  await page.evaluate(() => localStorage.setItem("newsletter-popup-dismissed", "1"));
   await waitForPage(page);
 
   console.log("  Filling login form...");
@@ -455,16 +456,6 @@ export async function waitForPage(page: Page): Promise<void> {
     // networkidle timeout is OK
   }
   await sleep(2000);
-  // Remove common marketing overlays that block content (but NOT app modals/dialogs)
-  await page.evaluate(() => {
-    const selectors = [
-      '[class*="newsletter"]',
-      '[class*="klaviyo"]',
-    ];
-    for (const sel of selectors) {
-      document.querySelectorAll(sel).forEach((el) => el.remove());
-    }
-  });
   // Also clear any cookie banners that appeared after navigation
   await removeCookieElements(page);
 }
