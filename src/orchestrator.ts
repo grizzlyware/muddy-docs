@@ -22,6 +22,19 @@ import {
 const DOCS_DIR = path.resolve("docs");
 const MAX_TURNS = 60;
 
+function getExistingCategories(): string[] {
+  if (!fs.existsSync(DOCS_DIR)) return [];
+  const categories = new Set<string>();
+  for (const file of fs.readdirSync(DOCS_DIR).filter((f) => f.endsWith(".md"))) {
+    const content = fs.readFileSync(path.join(DOCS_DIR, file), "utf-8");
+    const match = content.match(/^---\s*\n[\s\S]*?\ncategory:\s*(.+)\n[\s\S]*?\n---/);
+    if (match) {
+      categories.add(match[1].trim());
+    }
+  }
+  return Array.from(categories).sort();
+}
+
 const tools: Anthropic.Tool[] = [
   {
     name: "navigate_to_url",
@@ -230,7 +243,7 @@ const tools: Anthropic.Tool[] = [
   },
 ];
 
-function buildSystemPrompt(task: string, knowledgeSummary: string): string {
+function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[]): string {
   return `You are a documentation assistant for Muddy Booking (muddybooking.com), a booking management platform for dog walking businesses. You control a web browser that is already logged into the app.
 
 ## Your Task
@@ -264,7 +277,7 @@ description: Learn how to configure base pricing, walk-specific pricing, and dis
 \`\`\`
 - **title**: A clear, human-readable title for the article
 - **slug**: A URL-friendly version of the title (lowercase, hyphens, no special characters)
-- **category**: A broad grouping (e.g. "Getting started", "Settings", "Bookings", "Customers", "Calendar")
+- **category**: A broad grouping. ${existingCategories.length > 0 ? `REUSE an existing category if it fits: ${existingCategories.map((c) => `"${c}"`).join(", ")}. Only create a new category if none of these are suitable.` : `Examples: "Getting started", "Settings", "Bookings", "Customers", "Calendar".`}
 - **tags**: 2-5 relevant keywords for search and filtering
 - **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
 - **description**: A one-sentence summary of what the article covers
@@ -441,7 +454,11 @@ export async function runOrchestrator(
   const client = new Anthropic();
   const knowledgeSummary = getKnowledgeSummary();
   const pageState = await getPageState(session.page);
-  const systemPrompt = buildSystemPrompt(task, knowledgeSummary);
+  const existingCategories = getExistingCategories();
+  if (existingCategories.length > 0) {
+    console.log(`  Existing categories: ${existingCategories.join(", ")}`);
+  }
+  const systemPrompt = buildSystemPrompt(task, knowledgeSummary, existingCategories);
 
   const messages: Anthropic.MessageParam[] = [
     {
