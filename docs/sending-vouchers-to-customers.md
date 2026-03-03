@@ -6,58 +6,52 @@ tags:
   - vouchers
   - customers
   - payments
-order: 30
-description: Learn how to send vouchers to customers via email with optional personal messages.
+order: 20
+description: Learn how to email vouchers to customers once they've been created.
 ---
 
-## Accessing your vouchers
+## Accessing the send voucher feature
 
-Start by navigating to your vouchers from the left-hand menu. You'll see an overview of all your vouchers with their codes, balances, expiry dates, and current status.
+Once you've created a voucher, you can send it to customers by email. To access the send feature:
 
-![vouchers-overview-page](../screenshots/vouchers-overview-page-1772559439422.png)
+1. Go to **Vouchers** in the left-hand menu
 
-## Opening an existing voucher
+![vouchers-main-page](../screenshots/vouchers-main-page-1772563264713.png)
 
-Click on any voucher from the list to open its individual page. Here you can see detailed information about the voucher including its full code, balance, status, and any previous deliveries or transactions.
+2. Click on any voucher from your list to view its details
+3. Click the **Send voucher** button
 
-From this page, you'll see several action buttons including **Send voucher** **(1)**.
+## Filling out the send voucher form
 
-![individual-voucher-page-with-send-button](../screenshots/individual-voucher-page-with-send-button-1772559466104.png)
+When you click **Send voucher**, a form will appear at the top of the page with the following fields:
 
-## Sending a voucher to a customer
+![send-voucher-modal-filled](../screenshots/send-voucher-modal-filled-1772563219421.png)
 
-1. Click **Send voucher** to open the sending form
+- **Recipient email** **(1)** — Enter the customer's email address where the voucher will be sent (required)
+- **Recipient name** **(2)** — Add the customer's name to personalise the greeting in the email (optional)
+- **Personal message** **(3)** — Include a custom message that will appear above the voucher details in the email (optional)
+- **Schedule for later** — Choose to send the voucher at a specific date and time instead of immediately (optional)
 
-A pop-up will appear with several fields to customize how your voucher is sent:
+## Sending the voucher
 
-![send-voucher-modal-annotated](../screenshots/send-voucher-modal-annotated-1772559554239.png)
-
-2. Fill in the **Recipient email** **(1)** - this is the email address where the voucher will be sent
-
-3. Optionally add a **Recipient name** **(2)** - this will personalize the email greeting
-
-4. Add a **Personal message** **(3)** if you want to include a custom note above the voucher details
-
-5. Click **Send voucher** **(4)** to send the email immediately
-
-### Optional scheduling
-
-If you don't want to send the voucher right away, you can use the **Schedule for later** option to choose a specific date and time for delivery.
+1. Fill in at least the **Recipient email** field with the customer's email address
+2. Add any optional information like the customer's name or a personal message
+3. Click **Send voucher** **(4)** to send the email immediately
 
 ## After sending
 
-Once you click **Send voucher**, the pop-up will close and you'll return to the voucher page. You'll immediately see confirmation that the voucher has been queued for delivery in the **Deliveries** section.
+Once the voucher is sent, you'll return to the voucher details page where you can see:
 
-![voucher-sent-successfully](../screenshots/voucher-sent-successfully-1772559600198.png)
+![voucher-after-sending-success](../screenshots/voucher-after-sending-success-1772563251721.png)
 
-The delivery will show:
-- The recipient's email address and name
-- Status (initially **PENDING** while the email is being sent)
-- The date it was sent
+- The **Deliveries** section **(1)** now shows the sent voucher with:
+  - The recipient's email and name
+  - Status (starts as PENDING, then changes to SENT)
+  - The date and time when it was sent
 
 ## Important notes
 
-- You can send the same voucher to multiple customers - each delivery is tracked separately
-- The voucher remains active and can still be used for bookings regardless of how many times it's been sent
-- Customers will receive an email with the voucher code and instructions on how to use it
-- You can track all deliveries in the **Deliveries** section of each voucher
+- You can send the same voucher to multiple customers — each will get their own copy
+- The voucher remains ACTIVE and can be used by any recipient who has the code
+- Vouchers can be sent immediately or scheduled for later delivery
+- All delivery attempts are tracked in the Deliveries section of each voucher
