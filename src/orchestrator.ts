@@ -356,7 +356,7 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - Save knowledge about app structure you discover for future runs
 - Be thorough — explore sub-pages and settings panels within the feature
 - When you encounter dropdowns or expandable sections, interact with them to document all options
-- Do NOT fill in or submit forms. You are documenting the app, not using it. Screenshot forms as they are and describe what each field does. Do not type into inputs, select dates, or click submit/save buttons — just observe, extract, and screenshot.`;
+- You may interact with forms, make bookings, and submit data if needed to fully document a feature. For example, you might need to create a booking to document the booking flow, or submit a form to show what happens next. Use the test account freely — it exists for this purpose.`;
 }
 
 async function executeTool(
