@@ -222,6 +222,32 @@ const tools: Anthropic.Tool[] = [
     },
   },
   {
+    name: "list_existing_docs",
+    description:
+      "List all existing documentation files with their frontmatter metadata (title, slug, category). Use this at the start of a task to check if a doc on this topic already exists so you can overwrite it rather than creating a duplicate.",
+    input_schema: {
+      type: "object" as const,
+      properties: {},
+      required: [],
+    },
+  },
+  {
+    name: "delete_documentation",
+    description:
+      "Delete an existing documentation file. Use this to remove an old doc before writing a replacement with finish_documentation, or to clean up duplicates.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        filename: {
+          type: "string",
+          description:
+            'The filename to delete (no directory), e.g. "setting-up-pricing.md"',
+        },
+      },
+      required: ["filename"],
+    },
+  },
+  {
     name: "finish_documentation",
     description:
       "Write the final documentation markdown file and complete the task. The markdown_content MUST begin with YAML frontmatter (title, slug, category, tags, order, description). Call this when you have gathered enough information and are ready to produce the output.",
@@ -253,12 +279,13 @@ function buildSystemPrompt(task: string, knowledgeSummary: string, existingCateg
 ${knowledgeSummary}
 
 ## Instructions
-1. First, check existing knowledge files to understand the app structure (if any exist)
-2. Navigate to the relevant pages — use the sidebar navigation or direct URLs
-3. Take screenshots at key views to include in the documentation
-4. Extract relevant data and content from pages
-5. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
-6. When you have enough information, call finish_documentation with comprehensive markdown
+1. First, call list_existing_docs to check if a doc on this topic already exists. If it does, you will REPLACE it (delete the old one, then write the new one with the same filename).
+2. Check existing knowledge files to understand the app structure (if any exist)
+3. Navigate to the relevant pages — use the sidebar navigation or direct URLs
+4. Take screenshots at key views to include in the documentation
+5. Extract relevant data and content from pages
+6. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
+7. When you have enough information: if replacing an existing doc, call delete_documentation first, then call finish_documentation with the same filename. If creating a new doc, just call finish_documentation.
 
 ## Documentation Format
 Every documentation file MUST begin with YAML frontmatter. Use this exact format:
@@ -425,6 +452,31 @@ async function executeTool(
         const files = listKnowledgeFiles();
         if (files.length === 0) return "No knowledge files exist yet.";
         return `Knowledge files: ${files.join(", ")}`;
+      }
+
+      case "list_existing_docs": {
+        if (!fs.existsSync(DOCS_DIR)) return "No documentation files exist yet.";
+        const files = fs.readdirSync(DOCS_DIR).filter((f) => f.endsWith(".md"));
+        if (files.length === 0) return "No documentation files exist yet.";
+        const docs = files.map((f) => {
+          const content = fs.readFileSync(path.join(DOCS_DIR, f), "utf-8");
+          const titleMatch = content.match(/\ntitle:\s*(.+)/);
+          const slugMatch = content.match(/\nslug:\s*(.+)/);
+          const categoryMatch = content.match(/\ncategory:\s*(.+)/);
+          return `- ${f} | title: "${titleMatch?.[1]?.trim() || "?"}" | slug: ${slugMatch?.[1]?.trim() || "?"} | category: ${categoryMatch?.[1]?.trim() || "?"}`;
+        });
+        return `Existing docs:\n${docs.join("\n")}`;
+      }
+
+      case "delete_documentation": {
+        const filename = input.filename as string;
+        const filepath = path.join(DOCS_DIR, filename);
+        if (!fs.existsSync(filepath)) {
+          return `File not found: docs/${filename}`;
+        }
+        fs.unlinkSync(filepath);
+        console.log(`  -> Deleted: ${filepath}`);
+        return `Deleted docs/${filename}. Old screenshots will be cleaned up automatically.`;
       }
 
       case "finish_documentation": {
