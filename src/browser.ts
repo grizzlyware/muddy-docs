@@ -19,7 +19,7 @@ export async function initBrowser(): Promise<BrowserSession> {
 
   const stagehand = new Stagehand({
     env: "LOCAL",
-    model: "openai/gpt-4.1",
+    model: "openai/gpt-4.1-mini",
     localBrowserLaunchOptions: {
       headless,
     },
