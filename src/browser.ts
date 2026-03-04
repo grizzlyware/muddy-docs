@@ -23,6 +23,7 @@ export async function initBrowser(): Promise<BrowserSession> {
     localBrowserLaunchOptions: {
       headless,
       locale: "en-GB",
+      viewport: { width: 1440, height: 900 },
     },
   });
 
@@ -121,11 +122,12 @@ export async function login(session: BrowserSession): Promise<void> {
 export async function takeScreenshot(
   page: Page,
   label: string,
+  fullPage: boolean = false,
 ): Promise<string> {
   const slug = label.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
   const filename = `${slug}-${Date.now()}.png`;
   const filepath = path.join(SCREENSHOTS_DIR, filename);
-  await page.screenshot({ path: filepath, fullPage: false });
+  await page.screenshot({ path: filepath, fullPage });
   console.log(`  Screenshot: ${filename}`);
   return filename;
 }
