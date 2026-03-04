@@ -22,13 +22,16 @@ export async function initBrowser(): Promise<BrowserSession> {
     model: "openai/gpt-4.1-mini",
     localBrowserLaunchOptions: {
       headless,
-      locale: "en-GB",
       viewport: { width: 1440, height: 900 },
+      args: ["--lang=en-GB"],
     },
   });
 
   await stagehand.init();
-  await stagehand.context.setExtraHTTPHeaders({ "Sec-GPC": "1" });
+  await stagehand.context.setExtraHTTPHeaders({
+    "Sec-GPC": "1",
+    "Accept-Language": "en-GB,en;q=0.9",
+  });
   const page = stagehand.context.pages()[0];
 
   return { stagehand, page };
@@ -327,6 +330,9 @@ export async function highlightElement(
           }
         }
       }
+
+      // Scroll the element into view so it's visible in viewport screenshots
+      el.scrollIntoView({ block: "center", behavior: "instant" });
 
       var r = el.getBoundingClientRect();
       return [r.left, r.top, r.width, r.height];
