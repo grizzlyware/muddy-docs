@@ -534,6 +534,13 @@ async function executeTool(
         fs.mkdirSync(DOCS_DIR, { recursive: true });
         fs.writeFileSync(filepath, content, "utf-8");
         console.log(`  -> Documentation written: ${filepath}`);
+
+        // Extract title for use in PR/commit messages
+        const titleMatch = content.match(/\ntitle:\s*(.+)/);
+        if (titleMatch) {
+          fs.writeFileSync(path.resolve(".doc-title"), titleMatch[1].trim(), "utf-8");
+        }
+
         return `Documentation saved to docs/${filename}`;
       }
 
