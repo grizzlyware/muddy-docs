@@ -137,7 +137,7 @@ const tools: Anthropic.Tool[] = [
   {
     name: "take_screenshot",
     description:
-      "Take a screenshot of the current page viewport. Returns the filename to use in documentation markdown.",
+      "Take a screenshot of the current page. By default captures only the visible viewport. Set full_page to true to capture the entire scrollable page (useful for long pages like calendars or settings).",
     input_schema: {
       type: "object" as const,
       properties: {
@@ -145,6 +145,10 @@ const tools: Anthropic.Tool[] = [
           type: "string",
           description:
             'Short descriptive label, e.g. "pricing-page-overview"',
+        },
+        full_page: {
+          type: "boolean",
+          description: "Capture the entire scrollable page instead of just the viewport. Default: false.",
         },
       },
       required: ["label"],
@@ -384,6 +388,8 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
 - Reference screenshots with: ![description](../screenshots/FILENAME)
 - ALWAYS annotate screenshots with highlight_element before taking them. Every screenshot should have at least one highlighted element so the reader knows exactly what to look at. This is especially important for navigation screenshots — if you're telling the user to click something on a page (e.g. "click Pricing in Settings"), highlight that item before taking the screenshot. Only highlight elements that the user needs to interact with for the current step — do NOT highlight unrelated items just because they are nearby. Use numbered badges and reference them in the text, e.g. 'Click **Pricing** **(1)**'. Always call clear_highlights after taking the annotated screenshot.
+- Before taking a screenshot, scroll to make sure the relevant content is visible in the viewport. If you need to show a specific element, scroll it into view first. If the page is long (like a calendar or settings page), consider using full_page mode to capture everything.
+- Make sure the element you highlighted is actually visible in the screenshot. If you highlighted something and then scrolled, the highlight might be off-screen. Scroll back to it or re-highlight after scrolling.
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
 - Use clear headings and logical structure
@@ -477,7 +483,8 @@ async function executeTool(
 
       case "take_screenshot": {
         const label = input.label as string;
-        const filename = await takeScreenshot(session.page, label);
+        const fullPage = (input.full_page as boolean) || false;
+        const filename = await takeScreenshot(session.page, label, fullPage);
         return `Screenshot saved: ${filename}. Reference it in markdown as: ![${label}](../screenshots/${filename})`;
       }
 
