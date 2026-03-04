@@ -20,19 +20,19 @@ An opening date lets you set a future date from which you'll start accepting boo
 
 From your dashboard, click **Settings** in the left menu, then scroll down to the **Advanced** section and click **Advanced settings** **(1)**.
 
-![Settings page with Advanced settings highlighted](../screenshots/settings-advanced-highlighted-1772621175269.png)
+![Settings page with Advanced settings highlighted](../screenshots/settings-advanced-highlighted-1772622266721.png)
 
 ### Step 2: Enter your opening date
 
 On the Advanced settings page, find the **Opening date** field **(1)**. This field includes a helpful explanation: "Set a future date from which you'll begin accepting bookings. Before this date, your calendar will be unavailable and no booking slots will be generated. Leave empty if you're already open."
 
-![Advanced settings page showing the opening date field](../screenshots/opening-date-field-highlighted-1772621205202.png)
+![Advanced settings page showing the opening date field](../screenshots/opening-date-field-highlighted-1772622298582.png)
 
 Click in the date field and enter your opening date. Use the format YYYY-MM-DD (for example, 2026-03-20 for 20th March 2026).
 
 ### Step 3: Save your changes
 
-Click the **Save** button to apply your opening date setting.
+Click the **Save** button to apply your opening date setting. You'll see a confirmation message at the top of the page confirming your opening date has been set.
 
 ## How the opening date affects customer bookings
 
@@ -42,25 +42,25 @@ Once you've set an opening date, customers will see the restriction when they tr
 
 To see how the opening date affects customer bookings, go to **Walks** in the left menu and click on one of your walks **(1)**.
 
-![Walks page showing walk selection](../screenshots/walks-page-highlighted-1772621263063.png)
+![Walks page showing walk selection](../screenshots/walks-page-highlighted-1772622356186.png)
 
 Then click the **New booking** button **(1)** to open the customer booking calendar.
 
-![Walk page with New booking button highlighted](../screenshots/walk-page-new-booking-highlighted-1772621291435.png)
+![Walk page with New booking button highlighted](../screenshots/walk-page-new-booking-highlighted-1772622388615.png)
 
 ### Step 2: View March 2026 - dates before opening date are blocked
 
-The booking calendar will open showing your walk's availability. In March 2026, you can see how the opening date of 20th March affects the calendar - dates before 20th March are unavailable for booking, while dates from 20th March onwards show as available.
+The booking calendar will open showing your walk's availability. In March 2026, you can see how the opening date of 20th March affects the calendar **(1)** - dates before 20th March are greyed out and unavailable for booking, while dates from 20th March onwards show as available and clickable.
 
-![March 2026 booking calendar showing dates before 20th March blocked and dates from 20th March available](../screenshots/march-2026-calendar-with-opening-date-1772621363098.png)
+![March 2026 booking calendar showing dates before 20th March blocked and dates from 20th March available](../screenshots/march-2026-calendar-with-opening-date-1772622481979.png)
 
 This demonstrates how the opening date works - customers cannot book walks on dates before your business officially opens.
 
 ### Step 3: View April 2026 - all dates available
 
-Navigate to April 2026 using the calendar navigation arrows. Since all dates in April are after your opening date of 20th March, the entire month shows as available for booking (subject to your other availability settings like opening times and block-outs).
+Navigate to April 2026 using the calendar navigation arrows. Since all dates in April are after your opening date of 20th March, the entire month shows as available for booking **(1)** (subject to your other availability settings like opening times and block-outs).
 
-![April 2026 calendar showing all dates available since they're after the opening date](../screenshots/april-2026-calendar-full-availability-1772621390657.png)
+![April 2026 calendar showing all dates available since they're after the opening date](../screenshots/april-2026-calendar-full-availability-1772622524028.png)
 
 This contrast between March (partially blocked) and April (fully available) clearly demonstrates how the opening date controls when customers can start booking your services.
 
