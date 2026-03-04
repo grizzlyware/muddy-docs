@@ -251,6 +251,22 @@ const tools: Anthropic.Tool[] = [
     },
   },
   {
+    name: "read_documentation",
+    description:
+      "Read the contents of an existing documentation file. Use this to review a doc before improving or rewriting it.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        filename: {
+          type: "string",
+          description:
+            'The filename to read (no directory), e.g. "setting-up-pricing.md"',
+        },
+      },
+      required: ["filename"],
+    },
+  },
+  {
     name: "delete_documentation",
     description:
       "Delete an existing documentation file. Use this to remove an old doc before writing a replacement with finish_documentation, or to clean up duplicates.",
@@ -298,13 +314,14 @@ function buildSystemPrompt(task: string, knowledgeSummary: string, existingCateg
 ${knowledgeSummary}
 
 ## Instructions
-1. First, call list_existing_docs to check if a doc on this topic already exists. If it does, you will REPLACE it (delete the old one, then write the new one with the same filename).
-2. Check existing knowledge files to understand the app structure (if any exist)
-3. Navigate to the relevant pages — use the sidebar navigation or direct URLs
-4. Take screenshots at key views to include in the documentation
-5. Extract relevant data and content from pages
-6. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
-7. When you have enough information: if replacing an existing doc, call delete_documentation first, then call finish_documentation with the same filename. If creating a new doc, just call finish_documentation.
+1. First, call list_existing_docs to check if a doc on this topic already exists. If it does, call read_documentation to read it. Decide whether you need to REPLACE it entirely or just IMPROVE specific parts (e.g. redo a screenshot, fix a section). Either way, you'll delete the old one and write the new one with the same filename.
+2. If you're improving an existing doc, keep everything that's already good — only redo the parts mentioned in the task. Re-use existing screenshot filenames where the screenshots don't need changing.
+3. Check existing knowledge files to understand the app structure (if any exist)
+4. Navigate to the relevant pages — use the sidebar navigation or direct URLs
+5. Take screenshots at key views to include in the documentation
+6. Extract relevant data and content from pages
+7. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
+8. When you have enough information: if replacing an existing doc, call delete_documentation first, then call finish_documentation with the same filename. If creating a new doc, just call finish_documentation.
 
 ## Documentation Format
 Every documentation file MUST begin with YAML frontmatter. Use this exact format:
@@ -486,6 +503,17 @@ async function executeTool(
           return `- ${f} | title: "${titleMatch?.[1]?.trim() || "?"}" | slug: ${slugMatch?.[1]?.trim() || "?"} | category: ${categoryMatch?.[1]?.trim() || "?"}`;
         });
         return `Existing docs:\n${docs.join("\n")}`;
+      }
+
+      case "read_documentation": {
+        const filename = input.filename as string;
+        const filepath = path.join(DOCS_DIR, filename);
+        if (!fs.existsSync(filepath)) {
+          return `File not found: docs/${filename}`;
+        }
+        const content = fs.readFileSync(filepath, "utf-8");
+        console.log(`  -> Read: ${filepath} (${content.length} chars)`);
+        return content;
       }
 
       case "delete_documentation": {
