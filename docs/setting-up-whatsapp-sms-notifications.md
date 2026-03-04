@@ -1,6 +1,5 @@
 ---
 title: Setting up WhatsApp and SMS notifications
-slug: setting-up-whatsapp-sms-notifications
 category: Getting started
 tags:
   - notifications

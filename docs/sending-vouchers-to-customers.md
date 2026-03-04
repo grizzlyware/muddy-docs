@@ -1,6 +1,5 @@
 ---
 title: Sending vouchers to customers
-slug: sending-vouchers-to-customers
 category: Payments
 tags:
   - vouchers

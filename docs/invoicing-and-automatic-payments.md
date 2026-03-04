@@ -1,6 +1,5 @@
 ---
 title: Invoicing and automatic payments
-slug: invoicing-and-automatic-payments
 category: Payments
 tags:
   - invoicing
