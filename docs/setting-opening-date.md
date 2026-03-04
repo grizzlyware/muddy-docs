@@ -28,7 +28,7 @@ On the Advanced settings page, find the **Opening date** field **(1)**. This fie
 
 ![Advanced settings page showing the opening date field](../screenshots/opening-date-field-highlighted-1772624286741.png)
 
-Click in the date field and enter your opening date. Use the format YYYY-MM-DD (for example, 2026-03-20 for 20th March 2026).
+Click in the date field and enter your opening date.
 
 ### Step 3: Save your changes
 
