@@ -20,6 +20,7 @@ import {
 } from "./knowledge.js";
 
 const DOCS_DIR = path.resolve("docs");
+const SCREENSHOTS_DIR = path.resolve("screenshots");
 const MAX_TURNS = 100;
 
 function getExistingCategories(): string[] {
@@ -390,6 +391,7 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - ALWAYS annotate screenshots with highlight_element before taking them. Every screenshot should have at least one highlighted element so the reader knows exactly what to look at. This is especially important for navigation screenshots — if you're telling the user to click something on a page (e.g. "click Pricing in Settings"), highlight that item before taking the screenshot. Only highlight elements that the user needs to interact with for the current step — do NOT highlight unrelated items just because they are nearby. Use numbered badges and reference them in the text, e.g. 'Click **Pricing** **(1)**'. Always call clear_highlights after taking the annotated screenshot.
 - Before taking a screenshot, scroll to make sure the relevant content is visible in the viewport. If you need to show a specific element, scroll it into view first. If the page is long (like a calendar or settings page), consider using full_page mode to capture everything.
 - Make sure the element you highlighted is actually visible in the screenshot. If you highlighted something and then scrolled, the highlight might be off-screen. Scroll back to it or re-highlight after scrolling.
+- You can SEE each screenshot after taking it. Check that it looks correct — the right content is visible, annotations are in the right place, and nothing is cut off. If a screenshot is bad, clear highlights, scroll to fix the position, re-highlight, and take it again.
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
 - Use clear headings and logical structure
@@ -697,11 +699,34 @@ Begin by checking available knowledge files, then navigate to the relevant pages
       if (block.name === "finish_documentation") {
         outputFile = result;
       }
-      toolResults.push({
-        type: "tool_result",
-        tool_use_id: block.id,
-        content: result,
-      });
+      // For screenshots, include the image so the agent can see what it captured
+      if (block.name === "take_screenshot" && !result.startsWith("Error")) {
+        const filenameMatch = result.match(/Screenshot saved: (.+?)\./);
+        if (filenameMatch) {
+          const imgPath = path.join(SCREENSHOTS_DIR, filenameMatch[1]);
+          if (fs.existsSync(imgPath)) {
+            const imgData = fs.readFileSync(imgPath).toString("base64");
+            toolResults.push({
+              type: "tool_result",
+              tool_use_id: block.id,
+              content: [
+                { type: "text", text: result },
+                { type: "image", source: { type: "base64", media_type: "image/png", data: imgData } },
+              ],
+            });
+          } else {
+            toolResults.push({ type: "tool_result", tool_use_id: block.id, content: result });
+          }
+        } else {
+          toolResults.push({ type: "tool_result", tool_use_id: block.id, content: result });
+        }
+      } else {
+        toolResults.push({
+          type: "tool_result",
+          tool_use_id: block.id,
+          content: result,
+        });
+      }
     }
 
     messages.push({ role: "user", content: toolResults });
