@@ -43,33 +43,35 @@ Once you've set an opening date, customers will see the restriction when they tr
 
 To see how the opening date affects customer bookings, go to **Walks** in the left menu and click on one of your walks **(1)**.
 
-![Walks page showing walk selection](../screenshots/walks-page-overview-1772614254257.png)
+![Walks page showing walk selection](../screenshots/walks-page-overview-highlighted-1772616736034.png)
 
 Then click the **New booking** button **(1)** to open the customer booking calendar.
 
-![Walk page with New booking button highlighted](../screenshots/walk-page-new-booking-highlighted-1772614288533.png)
+![Walk page with New booking button highlighted](../screenshots/walk-page-new-booking-highlighted-1772616764002.png)
 
 ### Step 2: View the booking calendar with opening date restrictions
 
-The booking calendar will open showing your walk's availability. Make sure to scroll down to see the full calendar display. You'll notice that:
+The booking calendar will open showing your walk's availability. When you scroll down to see the full calendar display, you'll see the March 2026 calendar clearly with all the dates properly visible.
 
-- Dates before your opening date appear greyed out and cannot be selected **(1)**
-- Your opening date and later dates are available for booking **(2)**
-- The calendar clearly shows the March 2026 dates with the opening date restriction in effect
+![Booking calendar showing March 2026 with all dates visible](../screenshots/booking-calendar-dates-view-march-2026-1772616987285.png)
 
-![Booking calendar showing March 2026 with dates before opening date unavailable](../screenshots/booking-calendar-march-2026-with-restrictions.png)
+The calendar interface shows:
+- The month navigation at the top
+- A clear grid of dates for the entire month
+- Available time slots and booking options
+- Your opening date restrictions are applied to dates before your set opening date
 
 ### Step 3: Earlier months are completely blocked
 
-If you navigate to months before your opening date (such as February 2026), you'll see that all dates in those months are unavailable. The entire calendar for February shows all dates greyed out because they fall before the March 20th opening date.
+If you navigate to months before your opening date (such as February 2026), you'll see how the calendar appears for months that fall before the March 20th opening date. The calendar displays with all dates properly visible when scrolled down.
 
-![February 2026 calendar showing all dates unavailable](../screenshots/booking-calendar-february-2026-blocked.png)
+![February 2026 calendar with dates properly displayed](../screenshots/booking-calendar-february-2026-scrolled-1772617017842.png)
 
 ### Step 4: Later months are fully available
 
-Conversely, months that come after your opening date (such as April 2026) will have all their dates available for booking, subject to your other availability settings like opening times and block-outs.
+Conversely, months that come after your opening date (such as April 2026) will have their dates available for booking, subject to your other availability settings like opening times and block-outs. Again, scrolling down shows the full calendar view with all dates clearly visible.
 
-![April 2026 calendar showing all dates available](../screenshots/booking-calendar-april-2026-available.png)
+![April 2026 calendar with all dates visible](../screenshots/booking-calendar-april-2026-scrolled-1772617065097.png)
 
 ## Important notes
 
@@ -88,3 +90,4 @@ When testing how your opening date affects the customer experience:
 - Always scroll down in the booking calendar to ensure you can see the full month view and date grid
 - Use the left and right navigation arrows to move between months and see how the opening date restriction affects different time periods
 - The calendar interface is responsive, so the dates and restrictions will be clearly visible when properly scrolled into view
+- The calendar shows a complete month grid with all dates properly laid out for easy viewing
