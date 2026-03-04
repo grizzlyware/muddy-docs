@@ -1,6 +1,5 @@
 ---
 title: Creating vouchers
-slug: creating-vouchers
 category: Payments
 tags:
   - vouchers

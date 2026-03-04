@@ -1,6 +1,5 @@
 ---
 title: Setting up a cancellation policy
-slug: setting-up-cancellation-policy
 category: Getting started
 tags:
   - bookings

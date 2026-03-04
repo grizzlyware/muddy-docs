@@ -1,6 +1,5 @@
 ---
 title: Customizing app terminology
-slug: customizing-app-terminology
 category: Getting started
 tags:
   - settings

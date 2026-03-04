@@ -1,6 +1,5 @@
 ---
 title: Adding your booking form to Squarespace
-slug: embedding-on-squarespace
 category: Website embedding
 tags:
   - embedding

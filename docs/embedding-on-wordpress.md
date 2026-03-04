@@ -1,6 +1,5 @@
 ---
 title: Adding your booking form to WordPress
-slug: embedding-on-wordpress
 category: Website embedding
 tags:
   - embedding

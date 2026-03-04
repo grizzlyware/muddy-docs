@@ -1,6 +1,5 @@
 ---
 title: How to add a block out
-slug: adding-block-outs
 category: Bookings
 tags:
   - block-outs

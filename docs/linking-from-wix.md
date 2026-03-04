@@ -1,6 +1,5 @@
 ---
 title: Adding your booking form to Wix
-slug: linking-from-wix
 category: Website embedding
 tags:
   - embedding

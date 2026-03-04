@@ -1,6 +1,5 @@
 ---
 title: Configuring booking rules
-slug: configuring-booking-rules
 category: Getting started
 tags:
   - bookings
