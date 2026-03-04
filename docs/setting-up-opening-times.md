@@ -1,6 +1,5 @@
 ---
 title: Setting up opening times
-slug: setting-up-opening-times
 category: Getting started
 tags:
   - availability

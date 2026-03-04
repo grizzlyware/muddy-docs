@@ -1,6 +1,5 @@
 ---
 title: Setting up legal documents
-slug: setting-up-legal-documents
 category: Getting started
 tags:
   - settings

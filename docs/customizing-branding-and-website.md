@@ -1,6 +1,5 @@
 ---
 title: Customizing branding and website
-slug: customizing-branding-and-website
 category: Getting started
 tags:
   - branding

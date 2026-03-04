@@ -1,6 +1,5 @@
 ---
 title: Setting up banned breeds
-slug: setting-up-banned-breeds
 category: Getting started
 tags:
   - settings

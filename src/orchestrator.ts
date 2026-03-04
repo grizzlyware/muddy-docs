@@ -137,7 +137,7 @@ const tools: Anthropic.Tool[] = [
   {
     name: "take_screenshot",
     description:
-      "Take a screenshot of the current page viewport. Returns the filename to use in documentation markdown.",
+      "Take a screenshot of the current page. By default captures only the visible viewport. Set full_page to true to capture the entire scrollable page (useful for long pages like calendars or settings).",
     input_schema: {
       type: "object" as const,
       properties: {
@@ -145,6 +145,10 @@ const tools: Anthropic.Tool[] = [
           type: "string",
           description:
             'Short descriptive label, e.g. "pricing-page-overview"',
+        },
+        full_page: {
+          type: "boolean",
+          description: "Capture the entire scrollable page instead of just the viewport. Default: false.",
         },
       },
       required: ["label"],
@@ -194,6 +198,31 @@ const tools: Anthropic.Tool[] = [
       type: "object" as const,
       properties: {},
       required: [],
+    },
+  },
+  {
+    name: "list_tabs",
+    description:
+      "List all open browser tabs with their index, URL, and title. Use this to see if a new tab has opened (e.g. after clicking a link that opens in a new tab).",
+    input_schema: {
+      type: "object" as const,
+      properties: {},
+      required: [],
+    },
+  },
+  {
+    name: "switch_tab",
+    description:
+      "Switch to a different browser tab by its index (from list_tabs). Use this when a new tab has opened and you need to interact with it, or to switch back to the original tab.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        tab_index: {
+          type: "number",
+          description: "The tab index to switch to (0-based, from list_tabs)",
+        },
+      },
+      required: ["tab_index"],
     },
   },
   {
@@ -251,6 +280,22 @@ const tools: Anthropic.Tool[] = [
     },
   },
   {
+    name: "read_documentation",
+    description:
+      "Read the contents of an existing documentation file. Use this to review a doc before improving or rewriting it.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        filename: {
+          type: "string",
+          description:
+            'The filename to read (no directory), e.g. "setting-up-pricing.md"',
+        },
+      },
+      required: ["filename"],
+    },
+  },
+  {
     name: "delete_documentation",
     description:
       "Delete an existing documentation file. Use this to remove an old doc before writing a replacement with finish_documentation, or to clean up duplicates.",
@@ -294,24 +339,26 @@ function buildSystemPrompt(task: string, knowledgeSummary: string, existingCateg
 ## Your Task
 "${task}"
 
+Today's date is ${new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}.
+
 ## Existing Knowledge
 ${knowledgeSummary}
 
 ## Instructions
-1. First, call list_existing_docs to check if a doc on this topic already exists. If it does, you will REPLACE it (delete the old one, then write the new one with the same filename).
-2. Check existing knowledge files to understand the app structure (if any exist)
-3. Navigate to the relevant pages — use the sidebar navigation or direct URLs
-4. Take screenshots at key views to include in the documentation
-5. Extract relevant data and content from pages
-6. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
-7. When you have enough information: if replacing an existing doc, call delete_documentation first, then call finish_documentation with the same filename. If creating a new doc, just call finish_documentation.
+1. First, call list_existing_docs to check if a doc on this topic already exists. If it does, call read_documentation to read it. Decide whether you need to REPLACE it entirely or just IMPROVE specific parts (e.g. redo a screenshot, fix a section). Either way, you'll delete the old one and write the new one with the same filename.
+2. If you're improving an existing doc, keep everything that's already good — only redo the parts mentioned in the task. Re-use existing screenshot filenames where the screenshots don't need changing.
+3. Check existing knowledge files to understand the app structure (if any exist)
+4. Navigate to the relevant pages — use the sidebar navigation or direct URLs
+5. Take screenshots at key views to include in the documentation
+6. Extract relevant data and content from pages
+7. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
+8. When you have enough information: if replacing an existing doc, call delete_documentation first, then call finish_documentation with the same filename. If creating a new doc, just call finish_documentation.
 
 ## Documentation Format
 Every documentation file MUST begin with YAML frontmatter. Use this exact format:
 \`\`\`
 ---
 title: Setting up pricing
-slug: setting-up-pricing
 category: Getting started
 tags:
   - pricing
@@ -322,7 +369,6 @@ description: Learn how to configure base pricing, walk-specific pricing, and dis
 ---
 \`\`\`
 - **title**: A clear, human-readable title for the article
-- **slug**: A URL-friendly version of the title (lowercase, hyphens, no special characters)
 - **category**: A broad grouping. ${existingCategories.length > 0 ? `REUSE an existing category if it fits: ${existingCategories.map((c) => `"${c}"`).join(", ")}. Only create a new category if none of these are suitable.` : `Examples: "Getting started", "Settings", "Bookings", "Customers", "Calendar".`} The "Getting started" category is special — it is shown first on the website. Use it for topics a new user would need early on (e.g. initial setup, first bookings, key settings). Don't put every article in it — only ones relevant to someone just starting out.
 - **tags**: 2-5 relevant keywords for search and filtering. ${existingTags.length > 0 ? `REUSE existing tags where they fit: ${existingTags.map((t) => `"${t}"`).join(", ")}. Only create a new tag if none of these are suitable.` : `Examples: "pricing", "walks", "settings", "bookings", "customers".`}
 - **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
@@ -342,6 +388,8 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
 - Reference screenshots with: ![description](../screenshots/FILENAME)
 - ALWAYS annotate screenshots with highlight_element before taking them. Every screenshot should have at least one highlighted element so the reader knows exactly what to look at. This is especially important for navigation screenshots — if you're telling the user to click something on a page (e.g. "click Pricing in Settings"), highlight that item before taking the screenshot. Only highlight elements that the user needs to interact with for the current step — do NOT highlight unrelated items just because they are nearby. Use numbered badges and reference them in the text, e.g. 'Click **Pricing** **(1)**'. Always call clear_highlights after taking the annotated screenshot.
+- Before taking a screenshot, scroll to make sure the relevant content is visible in the viewport. If you need to show a specific element, scroll it into view first. If the page is long (like a calendar or settings page), consider using full_page mode to capture everything.
+- Make sure the element you highlighted is actually visible in the screenshot. If you highlighted something and then scrolled, the highlight might be off-screen. Scroll back to it or re-highlight after scrolling.
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
 - Use clear headings and logical structure
@@ -365,22 +413,23 @@ async function executeTool(
   input: Record<string, unknown>,
   session: BrowserSession,
 ): Promise<string> {
-  const { stagehand, page } = session;
+  const { stagehand } = session;
 
   try {
     switch (name) {
       case "navigate_to_url": {
         const url = input.url as string;
         console.log(`  -> Navigating to: ${url}`);
-        await page.goto(url);
-        await waitForPage(page);
-        const state = await getPageState(page);
+        await session.page.goto(url);
+        await waitForPage(session.page);
+        const state = await getPageState(session.page);
         return `Navigated to ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 1000)}`;
       }
 
       case "click_element": {
         const desc = input.description as string;
         console.log(`  -> Clicking: ${desc}`);
+        const pagesBefore = stagehand.context.pages().length;
         try {
           const actions = await stagehand.observe(`Click: ${desc}`);
           if (actions.length > 0) {
@@ -392,8 +441,14 @@ async function executeTool(
           // Fallback to direct act
           await stagehand.act(`Click ${desc}`);
         }
-        await waitForPage(page);
-        const state = await getPageState(page);
+        // Auto-switch to new tab if one opened
+        const pagesAfter = stagehand.context.pages();
+        if (pagesAfter.length > pagesBefore) {
+          session.page = pagesAfter[pagesAfter.length - 1];
+          console.log(`  -> New tab opened, switched to tab ${pagesAfter.length - 1}`);
+        }
+        await waitForPage(session.page);
+        const state = await getPageState(session.page);
         return `Clicked "${desc}". Current URL: ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
       }
 
@@ -406,7 +461,7 @@ async function executeTool(
       }
 
       case "get_page_state": {
-        const state = await getPageState(page);
+        const state = await getPageState(session.page);
         return `URL: ${state.url}\nTitle: ${state.title}\n\nVisible content:\n${state.textContent}`;
       }
 
@@ -418,7 +473,7 @@ async function executeTool(
       }
 
       case "list_page_links": {
-        const links = await getPageLinks(page);
+        const links = await getPageLinks(session.page);
         if (links.length === 0) return "No links found on this page.";
         const formatted = links
           .map((l) => `- ${l.text}: ${l.href}`)
@@ -428,14 +483,15 @@ async function executeTool(
 
       case "take_screenshot": {
         const label = input.label as string;
-        const filename = await takeScreenshot(page, label);
+        const fullPage = (input.full_page as boolean) || false;
+        const filename = await takeScreenshot(session.page, label, fullPage);
         return `Screenshot saved: ${filename}. Reference it in markdown as: ![${label}](../screenshots/${filename})`;
       }
 
       case "scroll_page": {
         const direction = input.direction as "up" | "down";
         console.log(`  -> Scrolling ${direction}`);
-        await scrollPage(page, direction);
+        await scrollPage(session.page, direction);
         return `Scrolled ${direction}. Use get_page_state or take_screenshot to see the new view.`;
       }
 
@@ -448,9 +504,33 @@ async function executeTool(
       }
 
       case "clear_highlights": {
-        await clearHighlights(page);
+        await clearHighlights(session.page);
         console.log(`  -> Cleared highlights`);
         return "All highlights removed.";
+      }
+
+      case "list_tabs": {
+        const pages = stagehand.context.pages();
+        const tabs = await Promise.all(pages.map(async (p, i) => {
+          const url = p.url();
+          const title = await p.title();
+          const active = p === session.page ? " (active)" : "";
+          return `${i}: ${title} — ${url}${active}`;
+        }));
+        console.log(`  -> ${pages.length} tabs open`);
+        return `Open tabs:\n${tabs.join("\n")}`;
+      }
+
+      case "switch_tab": {
+        const tabIndex = input.tab_index as number;
+        const pages = stagehand.context.pages();
+        if (tabIndex < 0 || tabIndex >= pages.length) {
+          return `Invalid tab index ${tabIndex}. There are ${pages.length} tabs open (0-${pages.length - 1}).`;
+        }
+        session.page = pages[tabIndex];
+        const state = await getPageState(session.page);
+        console.log(`  -> Switched to tab ${tabIndex}: ${state.url}`);
+        return `Switched to tab ${tabIndex}. URL: ${state.url}. Title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
       }
 
       case "read_knowledge": {
@@ -488,6 +568,17 @@ async function executeTool(
         return `Existing docs:\n${docs.join("\n")}`;
       }
 
+      case "read_documentation": {
+        const filename = input.filename as string;
+        const filepath = path.join(DOCS_DIR, filename);
+        if (!fs.existsSync(filepath)) {
+          return `File not found: docs/${filename}`;
+        }
+        const content = fs.readFileSync(filepath, "utf-8");
+        console.log(`  -> Read: ${filepath} (${content.length} chars)`);
+        return content;
+      }
+
       case "delete_documentation": {
         const filename = input.filename as string;
         const filepath = path.join(DOCS_DIR, filename);
@@ -506,6 +597,13 @@ async function executeTool(
         fs.mkdirSync(DOCS_DIR, { recursive: true });
         fs.writeFileSync(filepath, content, "utf-8");
         console.log(`  -> Documentation written: ${filepath}`);
+
+        // Extract title for use in PR/commit messages
+        const titleMatch = content.match(/\ntitle:\s*(.+)/);
+        if (titleMatch) {
+          fs.writeFileSync(path.resolve(".doc-title"), titleMatch[1].trim(), "utf-8");
+        }
+
         return `Documentation saved to docs/${filename}`;
       }
 

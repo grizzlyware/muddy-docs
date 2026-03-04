@@ -1,6 +1,5 @@
 ---
 title: Changing the system colour scheme
-slug: changing-system-colour-scheme
 category: Getting started
 tags:
   - branding

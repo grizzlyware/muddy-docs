@@ -65,15 +65,23 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Use the doc title if available, otherwise fall back to task description
+          if [ -f .doc-title ]; then
+            TITLE=$(cat .doc-title)
+            rm -f .doc-title
+          else
+            TITLE="${TASK}"
+          fi
+
           git add -A docs/ screenshots/ knowledge/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: ${TASK}"
+            git commit -m "docs: ${TITLE}"
             git push -u origin "$BRANCH"
             # Only create a PR if we created a new branch
             if [ -z "${{ github.event.inputs.branch }}" ]; then
-              BODY=$(printf "## Summary\nAuto-generated documentation for: **%s**\n\nPlease review the docs and screenshots before merging.\n\n## Checklist\n- [ ] Content is accurate\n- [ ] Screenshots look correct\n- [ ] No sensitive data visible" "$TASK")
-              gh pr create --title "docs: ${TASK}" --body "$BODY"
+              BODY=$(printf "## Summary\nAuto-generated documentation for: **%s**\n\nPlease review the docs and screenshots before merging.\n\n## Checklist\n- [ ] Content is accurate\n- [ ] Screenshots look correct\n- [ ] No sensitive data visible" "$TITLE")
+              gh pr create --title "docs: ${TITLE}" --body "$BODY"
             fi
           fi
