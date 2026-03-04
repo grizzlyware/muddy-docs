@@ -22,6 +22,7 @@ export async function initBrowser(): Promise<BrowserSession> {
     model: "openai/gpt-4.1-mini",
     localBrowserLaunchOptions: {
       headless,
+      locale: "en-GB",
     },
   });
 
