@@ -197,6 +197,31 @@ const tools: Anthropic.Tool[] = [
     },
   },
   {
+    name: "list_tabs",
+    description:
+      "List all open browser tabs with their index, URL, and title. Use this to see if a new tab has opened (e.g. after clicking a link that opens in a new tab).",
+    input_schema: {
+      type: "object" as const,
+      properties: {},
+      required: [],
+    },
+  },
+  {
+    name: "switch_tab",
+    description:
+      "Switch to a different browser tab by its index (from list_tabs). Use this when a new tab has opened and you need to interact with it, or to switch back to the original tab.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        tab_index: {
+          type: "number",
+          description: "The tab index to switch to (0-based, from list_tabs)",
+        },
+      },
+      required: ["tab_index"],
+    },
+  },
+  {
     name: "read_knowledge",
     description:
       "Read a knowledge file from the persistent store. Returns the content or a message if not found.",
@@ -382,22 +407,23 @@ async function executeTool(
   input: Record<string, unknown>,
   session: BrowserSession,
 ): Promise<string> {
-  const { stagehand, page } = session;
+  const { stagehand } = session;
 
   try {
     switch (name) {
       case "navigate_to_url": {
         const url = input.url as string;
         console.log(`  -> Navigating to: ${url}`);
-        await page.goto(url);
-        await waitForPage(page);
-        const state = await getPageState(page);
+        await session.page.goto(url);
+        await waitForPage(session.page);
+        const state = await getPageState(session.page);
         return `Navigated to ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 1000)}`;
       }
 
       case "click_element": {
         const desc = input.description as string;
         console.log(`  -> Clicking: ${desc}`);
+        const pagesBefore = stagehand.context.pages().length;
         try {
           const actions = await stagehand.observe(`Click: ${desc}`);
           if (actions.length > 0) {
@@ -409,8 +435,14 @@ async function executeTool(
           // Fallback to direct act
           await stagehand.act(`Click ${desc}`);
         }
-        await waitForPage(page);
-        const state = await getPageState(page);
+        // Auto-switch to new tab if one opened
+        const pagesAfter = stagehand.context.pages();
+        if (pagesAfter.length > pagesBefore) {
+          session.page = pagesAfter[pagesAfter.length - 1];
+          console.log(`  -> New tab opened, switched to tab ${pagesAfter.length - 1}`);
+        }
+        await waitForPage(session.page);
+        const state = await getPageState(session.page);
         return `Clicked "${desc}". Current URL: ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
       }
 
@@ -423,7 +455,7 @@ async function executeTool(
       }
 
       case "get_page_state": {
-        const state = await getPageState(page);
+        const state = await getPageState(session.page);
         return `URL: ${state.url}\nTitle: ${state.title}\n\nVisible content:\n${state.textContent}`;
       }
 
@@ -435,7 +467,7 @@ async function executeTool(
       }
 
       case "list_page_links": {
-        const links = await getPageLinks(page);
+        const links = await getPageLinks(session.page);
         if (links.length === 0) return "No links found on this page.";
         const formatted = links
           .map((l) => `- ${l.text}: ${l.href}`)
@@ -445,14 +477,14 @@ async function executeTool(
 
       case "take_screenshot": {
         const label = input.label as string;
-        const filename = await takeScreenshot(page, label);
+        const filename = await takeScreenshot(session.page, label);
         return `Screenshot saved: ${filename}. Reference it in markdown as: ![${label}](../screenshots/${filename})`;
       }
 
       case "scroll_page": {
         const direction = input.direction as "up" | "down";
         console.log(`  -> Scrolling ${direction}`);
-        await scrollPage(page, direction);
+        await scrollPage(session.page, direction);
         return `Scrolled ${direction}. Use get_page_state or take_screenshot to see the new view.`;
       }
 
@@ -465,9 +497,33 @@ async function executeTool(
       }
 
       case "clear_highlights": {
-        await clearHighlights(page);
+        await clearHighlights(session.page);
         console.log(`  -> Cleared highlights`);
         return "All highlights removed.";
+      }
+
+      case "list_tabs": {
+        const pages = stagehand.context.pages();
+        const tabs = await Promise.all(pages.map(async (p, i) => {
+          const url = p.url();
+          const title = await p.title();
+          const active = p === session.page ? " (active)" : "";
+          return `${i}: ${title} — ${url}${active}`;
+        }));
+        console.log(`  -> ${pages.length} tabs open`);
+        return `Open tabs:\n${tabs.join("\n")}`;
+      }
+
+      case "switch_tab": {
+        const tabIndex = input.tab_index as number;
+        const pages = stagehand.context.pages();
+        if (tabIndex < 0 || tabIndex >= pages.length) {
+          return `Invalid tab index ${tabIndex}. There are ${pages.length} tabs open (0-${pages.length - 1}).`;
+        }
+        session.page = pages[tabIndex];
+        const state = await getPageState(session.page);
+        console.log(`  -> Switched to tab ${tabIndex}: ${state.url}`);
+        return `Switched to tab ${tabIndex}. URL: ${state.url}. Title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
       }
 
       case "read_knowledge": {
