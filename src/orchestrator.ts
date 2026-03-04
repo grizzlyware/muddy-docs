@@ -310,6 +310,8 @@ function buildSystemPrompt(task: string, knowledgeSummary: string, existingCateg
 ## Your Task
 "${task}"
 
+Today's date is ${new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}.
+
 ## Existing Knowledge
 ${knowledgeSummary}
 
