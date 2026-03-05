@@ -7,6 +7,7 @@ tags:
   - branding
 order: 50
 description: Learn how to customize the language used throughout Muddy Booking to match your specific business type.
+pinned: false
 ---
 
 ## Why customize terminology?

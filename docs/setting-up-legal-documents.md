@@ -9,6 +9,7 @@ tags:
   - policies
 order: 30
 description: Learn how to configure your terms and conditions, privacy policy, and cancellation policy for your booking system.
+pinned: false
 ---
 
 ## Accessing legal document settings

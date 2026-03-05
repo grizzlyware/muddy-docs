@@ -8,6 +8,7 @@ tags:
   - availability
 order: 40
 description: Learn how to create block outs to prevent bookings during specific times when you're not available.
+pinned: false
 ---
 
 ## What are block outs?

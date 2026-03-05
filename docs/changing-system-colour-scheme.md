@@ -7,6 +7,7 @@ tags:
   - colours
 order: 40
 description: Learn how to customise your Muddy Booking interface with different colour schemes.
+pinned: false
 ---
 
 ## Accessing the colour scheme settings

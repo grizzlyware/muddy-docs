@@ -8,6 +8,7 @@ tags:
   - settings
 order: 40
 description: Learn how to configure WhatsApp and SMS notifications, purchase credits, and manage automatic top-ups.
+pinned: false
 ---
 
 ## Overview

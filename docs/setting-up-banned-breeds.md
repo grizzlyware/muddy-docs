@@ -8,6 +8,7 @@ tags:
   - restrictions
 order: 70
 description: Learn how to configure your banned breeds policy to control which dog breeds can book walks.
+pinned: false
 ---
 
 ## Accessing banned breeds settings

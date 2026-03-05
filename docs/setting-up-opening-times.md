@@ -8,6 +8,7 @@ tags:
   - scheduling
 order: 30
 description: Define when your facility is available for bookings at both business and individual walk levels, and learn how walk-level times override business defaults.
+pinned: false
 ---
 
 ## What are opening times?

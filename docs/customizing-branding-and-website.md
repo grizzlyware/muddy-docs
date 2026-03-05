@@ -7,6 +7,7 @@ tags:
   - settings
 order: 30
 description: Learn how to upload your logo, choose colors, and customize your hosted booking website with content and social media links.
+pinned: false
 ---
 
 ## Overview

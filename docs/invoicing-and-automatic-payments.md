@@ -7,6 +7,7 @@ tags:
   - customers
 order: 20
 description: Learn how to raise invoices, set up automatic invoicing, and capture payments from your customers.
+pinned: false
 ---
 
 ## How invoicing works

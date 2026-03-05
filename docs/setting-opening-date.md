@@ -8,6 +8,7 @@ tags:
   - scheduling
 order: 15
 description: Set a future opening date to control when customers can start booking walks with your business.
+pinned: false
 ---
 
 ## What is an opening date?

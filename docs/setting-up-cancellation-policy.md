@@ -7,6 +7,7 @@ tags:
   - cancellations
 order: 40
 description: Configure cancellation notice periods, fees, and late cancellation rules to protect your business from last-minute changes.
+pinned: false
 ---
 
 ## Overview

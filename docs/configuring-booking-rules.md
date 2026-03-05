@@ -8,6 +8,7 @@ tags:
   - availability
 order: 40
 description: Set up booking notice periods, advance booking limits, maximum dogs per slot, buffer periods, and slot starting intervals.
+pinned: false
 ---
 
 ## Accessing booking settings

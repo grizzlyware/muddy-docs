@@ -7,6 +7,7 @@ tags:
   - website
 order: 30
 description: Learn how to link to your Muddy booking form from your Wix website.
+pinned: false
 ---
 
 ## Why we recommend linking instead of embedding

@@ -7,6 +7,7 @@ tags:
   - website
 order: 20
 description: Learn how to add your Muddy booking form to your Squarespace website.
+pinned: false
 ---
 
 ## Finding your embed code

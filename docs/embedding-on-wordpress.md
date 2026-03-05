@@ -7,6 +7,7 @@ tags:
   - website
 order: 10
 description: Learn how to add your Muddy booking form to your WordPress website.
+pinned: false
 ---
 
 ## Finding your embed code

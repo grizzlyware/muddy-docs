@@ -7,6 +7,7 @@ tags:
   - payments
 order: 20
 description: Learn how to email vouchers to customers once they've been created.
+pinned: false
 ---
 
 ## Accessing the send voucher feature

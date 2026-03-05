@@ -7,6 +7,7 @@ tags:
   - customers
 order: 20
 description: Learn how to create and manage vouchers that customers can redeem against bookings.
+pinned: false
 ---
 
 ## Getting to vouchers

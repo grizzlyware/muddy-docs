@@ -315,7 +315,7 @@ const tools: Anthropic.Tool[] = [
   {
     name: "finish_documentation",
     description:
-      "Write the final documentation markdown file and complete the task. The markdown_content MUST begin with YAML frontmatter (title, slug, category, tags, order, description). Call this when you have gathered enough information and are ready to produce the output.",
+      "Write the final documentation markdown file and complete the task. The markdown_content MUST begin with YAML frontmatter (title, category, tags, order, description, pinned). Call this when you have gathered enough information and are ready to produce the output.",
     input_schema: {
       type: "object" as const,
       properties: {
@@ -367,6 +367,7 @@ tags:
   - settings
 order: 10
 description: Learn how to configure base pricing, walk-specific pricing, and discounts.
+pinned: false
 ---
 \`\`\`
 - **title**: A clear, human-readable title for the article
@@ -374,6 +375,7 @@ description: Learn how to configure base pricing, walk-specific pricing, and dis
 - **tags**: 2-5 relevant keywords for search and filtering. ${existingTags.length > 0 ? `REUSE existing tags where they fit: ${existingTags.map((t) => `"${t}"`).join(", ")}. Only create a new tag if none of these are suitable.` : `Examples: "pricing", "walks", "settings", "bookings", "customers".`}
 - **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
 - **description**: A one-sentence summary of what the article covers
+- **pinned**: Whether this article should be pinned to the top of the help page. Always set to \`false\` unless explicitly told otherwise.
 
 The frontmatter goes at the very top of the file. Do NOT add a H1 heading or introductory paragraph — the title and description are already in the frontmatter. Start the markdown content directly with H2 sections after the closing \`---\`.
 
