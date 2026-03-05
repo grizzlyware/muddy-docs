@@ -32,7 +32,7 @@ jobs:
           if [ -n "${{ github.event.inputs.branch }}" ]; then
             BRANCH="${{ github.event.inputs.branch }}"
           else
-            BRANCH="docs/$(echo "${{ github.event.inputs.task }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-$//' | cut -c1-30)-${{ github.run_id }}"
+            BRANCH="docs/${{ github.run_id }}"
             git checkout -b "$BRANCH"
           fi
           echo "BRANCH=$BRANCH" >> "$GITHUB_ENV"
