@@ -8,6 +8,7 @@ tags:
 order: 30
 description: Learn how to create and configure a new walk for your dog walking business.
 pinned: true
+category_description: We've pinned a few handy articles to help you hit the ground running.
 ---
 
 ## Starting from scratch
