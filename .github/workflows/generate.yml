@@ -70,7 +70,8 @@ jobs:
             TITLE=$(cat .doc-title)
             rm -f .doc-title
           else
-            TITLE="${TASK}"
+            # Fall back to first line of task, trimmed to 60 chars
+            TITLE=$(echo "${TASK}" | head -1 | cut -c1-60)
           fi
 
           git add -A docs/ screenshots/ knowledge/

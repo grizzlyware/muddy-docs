@@ -604,9 +604,11 @@ async function executeTool(
         console.log(`  -> Documentation written: ${filepath}`);
 
         // Extract title for use in PR/commit messages
-        const titleMatch = content.match(/\ntitle:\s*(.+)/);
+        const titleMatch = content.match(/title:\s*(.+)/);
         if (titleMatch) {
-          fs.writeFileSync(path.resolve(".doc-title"), titleMatch[1].trim(), "utf-8");
+          const docTitlePath = path.resolve(".doc-title");
+          fs.writeFileSync(docTitlePath, titleMatch[1].trim(), "utf-8");
+          console.log(`  -> Doc title written: "${titleMatch[1].trim()}" to ${docTitlePath}`);
         }
 
         return `Documentation saved to docs/${filename}`;
