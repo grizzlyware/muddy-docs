@@ -7,7 +7,7 @@ tags:
   - bookings
 order: 30
 description: Learn how to create and configure a new walk for your dog walking business.
-pinned: false
+pinned: true
 ---
 
 ## Starting from scratch
