@@ -58,6 +58,8 @@ To configure the core settings for your walk, go to the Settings section. You'll
 
 ![walk-settings-booking](../screenshots/walk-settings-booking-1772711336635.png)
 
+These settings are inherited from your business by default, but you are able to change them on a per walk level if you need to.
+
 - **Maximum number of dogs** **(3)** — Set the capacity limit for each walk slot
 - **Start booking slots at** **(4)** — Choose when bookings can begin (e.g., on the hour, every 15 minutes, every 30 minutes)
 - **Buffer period** — Add extra time between bookings as a transition period
@@ -78,13 +80,11 @@ Don't forget to click **Save** to apply your changes.
 
 Once configured, your walk will appear in your walks list and you'll have access to a detailed overview page showing bookings, revenue, and key settings.
 
-![walk-completed](../screenshots/walk-completed-1772711388218.png)
-
 The overview page displays:
 
 - **Statistics dashboard** — Track bookings, revenue, and invoices over different time periods
 - **Recent bookings** — See your latest customer bookings at a glance
 - **Quick configuration summary** — View key settings like maximum dogs, booking intervals, and notice periods
-- **New booking button** — Quickly create manual bookings for walk-in customers
+- **New booking button** — Jump directly to the booking form
 
 Your walk is now ready to accept bookings! Customers can find and book it through your booking form, and you can manage all aspects from this central dashboard.
