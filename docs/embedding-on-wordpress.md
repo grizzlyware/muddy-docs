@@ -1,6 +1,7 @@
 ---
 title: Adding your booking form to WordPress
 category: Website embedding
+category_description: Add your Muddy booking form to your existing website.
 tags:
   - embedding
   - wordpress

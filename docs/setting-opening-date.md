@@ -1,6 +1,7 @@
 ---
 title: Setting an opening date for your business
 category: Getting started
+category_description: Essential guides to help you set up and start using Muddy Booking.
 tags:
   - settings
   - availability

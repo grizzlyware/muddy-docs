@@ -1,6 +1,7 @@
 ---
 title: Creating vouchers
 category: Payments
+category_description: Set up invoicing, vouchers, and payment options for your customers.
 tags:
   - vouchers
   - payments

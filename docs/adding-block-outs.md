@@ -1,6 +1,7 @@
 ---
 title: How to add a block out
 category: Bookings
+category_description: Manage your bookings, scheduling, and availability settings.
 tags:
   - block-outs
   - scheduling

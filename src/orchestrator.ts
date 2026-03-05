@@ -368,6 +368,7 @@ tags:
 order: 10
 description: Learn how to configure base pricing, walk-specific pricing, and discounts.
 pinned: false
+category_description: Essential guides to help you set up and start using Muddy Booking.
 ---
 \`\`\`
 - **title**: A clear, human-readable title for the article
@@ -376,6 +377,7 @@ pinned: false
 - **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
 - **description**: A one-sentence summary of what the article covers
 - **pinned**: Whether this article should be pinned to the top of the help page. Always set to \`false\` unless explicitly told otherwise.
+- **category_description** (optional): A short description of the category, shown on the help page. Only include this on ONE article per category — whichever has the lowest order. Omit it from all other articles in the same category.
 
 The frontmatter goes at the very top of the file. Do NOT add a H1 heading or introductory paragraph — the title and description are already in the frontmatter. Start the markdown content directly with H2 sections after the closing \`---\`.
 
