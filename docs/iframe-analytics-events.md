@@ -17,7 +17,7 @@ There is no extra setup. If the Muddy embed snippet is already on the page, the 
 
 ## Which events to listen for
 
-Attach listeners to `window` (not to the iframe, and not to the `message` event). Full payload shapes are in the [Embed JavaScript API](./embed-javascript-api.md) reference.
+Attach listeners to `window` (not to the iframe, and not to the `message` event). Full payload shapes are in the [Embed JavaScript API](./embed-javascript-api) reference.
 
 - **`muddy.booking:confirmed`** — fires once on the confirmation page after a successful booking. This is the event you want for conversion tracking.
 - **`muddy.booking:rescheduled`** — fires when a booking is rescheduled or edited.
@@ -151,4 +151,4 @@ window.addEventListener('muddy.booking:confirmed', function (event) {
 
 **The event fires twice.** Check you are not registering the listener inside a block that runs on every SPA route change on the host page. Register it once, at page load.
 
-For general embed troubleshooting (nothing firing, `event.detail` undefined, missing customer data), see the [Embed JavaScript API](./embed-javascript-api.md#troubleshooting) troubleshooting section.
+For general embed troubleshooting (nothing firing, `event.detail` undefined, missing customer data), see the [Embed JavaScript API](./embed-javascript-api#troubleshooting) troubleshooting section.

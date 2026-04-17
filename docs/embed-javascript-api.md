@@ -12,7 +12,7 @@ pinned: false
 ---
 The Muddy embed exposes a small JavaScript surface on the host page. You can trigger the booking flow from your own button, react to layout changes as the embed switches between mobile and desktop, and listen for booking activity to forward into other systems.
 
-If you just want to wire booking events into Google Analytics, GTM or another analytics tool, see the recipe-focused guide: [Tracking bookings with analytics events](./iframe-analytics-events.md).
+If you just want to wire booking events into Google Analytics, GTM or another analytics tool, see the recipe-focused guide: [Tracking bookings with analytics events](./iframe-analytics-events).
 
 ## How it works
 
@@ -148,7 +148,7 @@ Fires immediately after a customer cancels a booking, before the page reloads. A
 
 ## Money values in the payload
 
-Every price field follows the same shape, with both a decimal string and an integer in minor units:
+The `price` object on a booking is a taxed money value — an object with `net`, `tax` and `total`. Each of those (and every other monetary value anywhere in the payload) is a Money value that follows the same shape, with both a decimal string and an integer in minor units:
 
 ```js
 {
