@@ -1,398 +1,250 @@
 ---
-title: Analytics events for embedded booking forms
+title: Tracking bookings with analytics events
 category: Website embedding
+description: Fire Google Analytics, GTM, Meta Pixel and other analytics events when customers confirm, reschedule or cancel a booking inside the Muddy embed.
 tags:
-  - embedding
+  - embeds
   - analytics
-  - events
-  - website
-order: 40
-description: Track booking conversions and customer actions with automatic analytics events from your embedded Muddy booking form.
+  - ga4
+  - gtm
+  - tracking
+order: 50
 pinned: false
 ---
+When you embed the Muddy booking flow on your website, the embed automatically broadcasts events to your page every time a customer confirms, reschedules or cancels a booking. You can listen for those events and forward them to Google Analytics, Google Tag Manager, Meta Pixel, or any other analytics tool you already use.
 
-## What are analytics events?
+There is no extra setup. If the Muddy embed snippet is already on the page, the events are already firing — you just need to add a listener.
 
-When you embed your Muddy booking form on your website, it automatically fires analytics events when customers complete important actions like confirming, rescheduling, or cancelling bookings. These events help you track conversions and understand customer behavior without any additional setup.
+## How it works
 
-The events work with any analytics platform including Google Analytics 4, Google Tag Manager, Meta/Facebook Pixel, and custom tracking solutions. No extra installation is required beyond your existing Muddy embed code.
+The Muddy embed is an iframe. When something notable happens inside the iframe (such as a booking being confirmed), the embed posts a message to your page. A small piece of code that ships with the embed catches that message and re-broadcasts it as a standard browser `CustomEvent` on your page's `window` object.
+
+Every event name starts with `muddy.` and the event data lives on `event.detail`.
+
+- Listen on `window`, not on the iframe element.
+- Events only fire when the iframe is actually present. You can register listeners before the Muddy script tag loads — they will simply wait.
+- No personal information about the customer (name, email, phone number) is ever included in the payload. Only booking identifiers, the slot, and the price.
+
+## Money values in the payload
+
+Every price field follows the same shape, with both a decimal string and an integer in minor units:
+
+```js
+{
+  amount: "25.00",           // decimal string in major units
+  amount_minor: 2500,        // integer in minor units (pence, cents)
+  currency: "GBP",
+  is_positive: true,
+  is_negative: false,
+  is_zero: false,
+  formatted: {
+    full: "£25.00",
+    short: "£25",
+    full_absolute: "£25.00",
+    full_negated: "-£25.00"
+  }
+}
+```
+
+Most analytics tools expect a number. Use `Number(d.price.total.amount)` to convert the string to a number, or use `amount_minor` directly if the tool prefers integer cents.
 
 ## Available events
 
-All events are automatically fired on your website's window when customers interact with the embedded booking form:
+### muddy.mounted
 
-| Event name | When it fires | Payload summary |
-|------------|---------------|----------------|
-| [muddy.booking:ready](#ready-event) | When the booking form loads | Empty - signals form is ready |
-| [muddy.booking:viewport](#viewport-event) | When form switches between mobile/desktop view | Device type information |
-| [muddy.booking:confirmed](#confirmed-event) | When a booking is successfully confirmed | Complete booking and pricing data |
-| [muddy.booking:rescheduled](#rescheduled-event) | When a booking is successfully rescheduled | Updated booking and pricing data |
-| [muddy.booking:cancelled](#cancelled-event) | When a booking is cancelled | Original booking and pricing data |
+Fires once, when the Muddy embed has finished loading.
 
-## Ready event
+`event.detail` is an empty object. Useful as an "embed is ready" signal.
 
-Fires once when the embedded booking form has fully loaded and is ready to use.
+### muddy.mobile
 
-```typescript
-interface ReadyEventDetail {
-  // Empty object
+Fires when the embed switches between its mobile and desktop layouts (and once on first mount). Does **not** fire on every page change inside the embed.
+
+`event.detail`:
+
+```js
+{
+  isMobile: true
 }
 ```
 
-```javascript
-window.addEventListener('muddy.booking:ready', function(event) {
-  console.log('Muddy booking form is ready');
-  // Good time to mark page view or show dependent UI
-});
-```
+### muddy.booking:confirmed
 
-## Viewport event
+Fires the first time the customer lands on their booking confirmation page after a successful booking. Reloading the confirmation page does not re-fire the event.
 
-Fires when the embedded form transitions between mobile and desktop layouts. Also fires once when the form first loads.
+This is the event you want to use for conversion tracking.
 
-```typescript
-interface ViewportEventDetail {
-  isMobile: boolean;
-}
-```
+`event.detail`:
 
-```javascript
-window.addEventListener('muddy.booking:viewport', function(event) {
-  console.log('Viewport changed:', event.detail.isMobile);
-});
-```
-
-## Confirmed event
-
-Fires when a customer successfully confirms a new booking. This is your main conversion event.
-
-```typescript
-interface ConfirmedEventDetail {
-  id: number;
-  reference: string;
+```js
+{
+  id: 12345,
+  reference: "BK-8F3K2",
   slot: {
-    id: string;
-    signed_id: string;
-    start: {
-      iso: string;
-      // ... other localized date fields
-    };
-    end: {
-      iso: string;
-      // ... other localized date fields  
-    };
-    vanity_end: {
-      iso: string;
-      // ... other localized date fields
-    };
-    duration: {
-      // ... duration fields
-    };
-    vanity_duration: {
-      // ... duration fields
-    };
-    is_past: boolean;
-    is_future: boolean;
-    is_happening_now: boolean;
+    id: "signed-slot-id",
+    signed_id: "signed-slot-id",
+    start: { iso: "2026-05-10T10:00:00+01:00" /* ... */ },
+    end:   { iso: "2026-05-10T11:00:00+01:00" /* ... */ },
+    is_past: false,
+    is_future: true,
+    is_happening_now: false,
     has_slots: {
-      id: number | string;
-      label: string;
-      type: string;
-      operator_id: number;
-    };
-  };
+      id: 42,
+      label: "Morning Group Walk",
+      type: "walk",
+      operator_id: 7
+    }
+  },
   price: {
-    total: {
-      amount: number; // Minor units (pence/cents)
-      currency: string;
-      is_zero: boolean;
-      is_positive: boolean;
-      formatted: {
-        full: string; // e.g. "£25.00"
-        // ... other formatted versions
-      };
-    };
-    sub_total: {
-      // ... same structure as total
-    };
-    tax: {
-      // ... same structure as total
-    };
-  };
+    net:   { amount: "20.83", amount_minor: 2083, currency: "GBP", /* ... */ },
+    tax:   { amount: "4.17",  amount_minor: 417,  currency: "GBP", /* ... */ },
+    total: { amount: "25.00", amount_minor: 2500, currency: "GBP", /* ... */ }
+  }
 }
 ```
 
-```javascript
-window.addEventListener('muddy.booking:confirmed', function(event) {
-  const booking = event.detail;
-  console.log('Booking confirmed:', booking.reference);
-  console.log('Total amount:', booking.price.total.amount / 100); // Convert to major units
+### muddy.booking:rescheduled
+
+Fires when a customer lands on a booking page after completing a reschedule.
+
+`event.detail` has the same shape as `muddy.booking:confirmed`.
+
+### muddy.booking:cancelled
+
+Fires immediately after a customer cancels a booking, before the page reloads. Attach your listener early so you don't miss it.
+
+`event.detail` has the same shape as `muddy.booking:confirmed`.
+
+## Minimal example
+
+Drop this into your page to confirm the events are reaching you:
+
+```js
+window.addEventListener('muddy.booking:confirmed', function (event) {
+  console.log('Booking confirmed', event.detail);
 });
 ```
 
-## Rescheduled event
+Open your browser console, make a test booking through the embed, and you should see the payload logged on the confirmation page.
 
-Fires when a customer successfully reschedules an existing booking. Has the same data structure as the confirmed event.
+## Google Analytics 4 (gtag.js)
 
-```typescript
-interface RescheduledEventDetail {
-  // Same structure as ConfirmedEventDetail
-}
-```
+Fire a GA4 `purchase` event on confirmation, a `refund` event on cancellation, and a custom event on reschedule.
 
-```javascript
-window.addEventListener('muddy.booking:rescheduled', function(event) {
-  const booking = event.detail;
-  console.log('Booking rescheduled:', booking.reference);
-});
-```
+```js
+window.addEventListener('muddy.booking:confirmed', function (event) {
+  var d = event.detail;
 
-## Cancelled event
-
-Fires when a customer cancels their booking. Has the same data structure as the confirmed event.
-
-```typescript
-interface CancelledEventDetail {
-  // Same structure as ConfirmedEventDetail
-}
-```
-
-```javascript
-window.addEventListener('muddy.booking:cancelled', function(event) {
-  const booking = event.detail;
-  console.log('Booking cancelled:', booking.reference);
-});
-```
-
-## Analytics platform examples
-
-### Vanilla JavaScript
-
-Track all booking events with basic analytics:
-
-```javascript
-// Track booking confirmation
-window.addEventListener('muddy.booking:confirmed', function(event) {
-  const booking = event.detail;
-  
-  // Send to your analytics
-  analytics.track('Booking Confirmed', {
-    booking_id: booking.reference,
-    service_name: booking.slot.has_slots.label,
-    revenue: booking.price.total.amount / 100,
-    currency: booking.price.total.currency
-  });
-});
-
-// Track cancellations
-window.addEventListener('muddy.booking:cancelled', function(event) {
-  const booking = event.detail;
-  
-  analytics.track('Booking Cancelled', {
-    booking_id: booking.reference,
-    refund_amount: booking.price.total.amount / 100
-  });
-});
-
-// Track rescheduling
-window.addEventListener('muddy.booking:rescheduled', function(event) {
-  const booking = event.detail;
-  
-  analytics.track('Booking Rescheduled', {
-    booking_id: booking.reference,
-    service_name: booking.slot.has_slots.label
-  });
-});
-```
-
-### Google Analytics 4 via gtag.js
-
-Track purchases, refunds, and custom events:
-
-```javascript
-// Track booking confirmation as purchase
-window.addEventListener('muddy.booking:confirmed', function(event) {
-  const booking = event.detail;
-  
   gtag('event', 'purchase', {
-    transaction_id: booking.reference,
-    value: booking.price.total.amount / 100, // Convert to major units
-    currency: booking.price.total.currency,
+    transaction_id: d.reference,
+    value: Number(d.price.total.amount),
+    currency: d.price.total.currency,
     items: [{
-      item_id: booking.slot.has_slots.id,
-      item_name: booking.slot.has_slots.label,
-      category: booking.slot.has_slots.type,
-      price: booking.price.total.amount / 100,
+      item_id: String(d.slot.has_slots.id),
+      item_name: d.slot.has_slots.label,
+      item_category: d.slot.has_slots.type,
+      price: Number(d.price.total.amount),
       quantity: 1
     }]
   });
 });
 
-// Track cancellation as refund
-window.addEventListener('muddy.booking:cancelled', function(event) {
-  const booking = event.detail;
-  
+window.addEventListener('muddy.booking:cancelled', function (event) {
+  var d = event.detail;
+
   gtag('event', 'refund', {
-    transaction_id: booking.reference,
-    value: booking.price.total.amount / 100,
-    currency: booking.price.total.currency
+    transaction_id: d.reference,
+    value: Number(d.price.total.amount),
+    currency: d.price.total.currency
   });
 });
 
-// Track rescheduling as custom event
-window.addEventListener('muddy.booking:rescheduled', function(event) {
-  const booking = event.detail;
-  
+window.addEventListener('muddy.booking:rescheduled', function (event) {
+  var d = event.detail;
+
   gtag('event', 'booking_rescheduled', {
-    booking_reference: booking.reference,
-    service_name: booking.slot.has_slots.label
+    transaction_id: d.reference,
+    item_name: d.slot.has_slots.label,
+    new_start: d.slot.start.iso
   });
 });
 ```
 
-### Google Tag Manager via dataLayer
+## Google Tag Manager (dataLayer)
 
-Push events to dataLayer for GTM triggers:
+If you use GTM, push each event onto the dataLayer and let GTM fan out to GA4, Meta Ads, and anywhere else you need.
 
-```javascript
-// Handle all booking events
-window.addEventListener('muddy.booking:confirmed', function(event) {
-  const booking = event.detail;
-  
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'muddy_booking_confirmed',
-    booking_reference: booking.reference,
-    booking_id: booking.id,
-    service_name: booking.slot.has_slots.label,
-    service_type: booking.slot.has_slots.type,
-    total_amount: booking.price.total.amount / 100,
-    currency: booking.price.total.currency,
-    start_time: booking.slot.start.iso
-  });
-});
+```js
+window.dataLayer = window.dataLayer || [];
 
-window.addEventListener('muddy.booking:cancelled', function(event) {
-  const booking = event.detail;
-  
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'muddy_booking_cancelled',
-    booking_reference: booking.reference,
-    booking_id: booking.id,
-    refund_amount: booking.price.total.amount / 100,
-    currency: booking.price.total.currency
-  });
-});
+['confirmed', 'rescheduled', 'cancelled'].forEach(function (state) {
+  window.addEventListener('muddy.booking:' + state, function (event) {
+    var d = event.detail;
 
-window.addEventListener('muddy.booking:rescheduled', function(event) {
-  const booking = event.detail;
-  
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'muddy_booking_rescheduled',
-    booking_reference: booking.reference,
-    booking_id: booking.id,
-    service_name: booking.slot.has_slots.label
+    window.dataLayer.push({
+      event: 'muddy_booking_' + state,
+      muddy: {
+        booking_id: d.id,
+        booking_reference: d.reference,
+        value: Number(d.price.total.amount),
+        currency: d.price.total.currency,
+        walk_id: d.slot.has_slots.id,
+        walk_name: d.slot.has_slots.label,
+        slot_start: d.slot.start.iso
+      }
+    });
   });
 });
 ```
 
-#### GTM setup
+### Setting up the GTM triggers
 
-To use these events in Google Tag Manager:
+1. In GTM, create a **Custom Event** trigger. Set the event name to `muddy_booking_confirmed`. Repeat for `muddy_booking_rescheduled` and `muddy_booking_cancelled`.
+2. Create **Data Layer Variables** for the fields you care about — for example `muddy.booking_reference`, `muddy.value`, `muddy.currency`, `muddy.walk_name`.
+3. Wire those variables into a GA4 Event tag (or any other tag) and set its trigger to the Custom Event from step 1.
 
-1. **Create Custom Event triggers** with event names like `muddy_booking_confirmed`, `muddy_booking_cancelled`, and `muddy_booking_rescheduled`
+## Meta / Facebook Pixel
 
-2. **Create DataLayer Variables** for the booking data:
-   - `booking_reference` (Data Layer Variable)
-   - `booking_id` (Data Layer Variable)
-   - `total_amount` (Data Layer Variable)
-   - `currency` (Data Layer Variable)
+```js
+window.addEventListener('muddy.booking:confirmed', function (event) {
+  var d = event.detail;
 
-3. **Wire into GA4 Event tags** using these triggers and variables to send purchase/refund events to Google Analytics
-
-### Meta/Facebook Pixel
-
-Track booking confirmations as purchases:
-
-```javascript
-window.addEventListener('muddy.booking:confirmed', function(event) {
-  const booking = event.detail;
-  
   fbq('track', 'Purchase', {
-    value: booking.price.total.amount / 100,
-    currency: booking.price.total.currency,
-    content_name: booking.slot.has_slots.label,
-    content_type: 'service',
-    content_ids: [booking.slot.has_slots.id]
-  });
-});
-
-window.addEventListener('muddy.booking:cancelled', function(event) {
-  const booking = event.detail;
-  
-  fbq('trackCustom', 'BookingCancelled', {
-    booking_reference: booking.reference,
-    refund_value: booking.price.total.amount / 100,
-    currency: booking.price.total.currency
+    value: Number(d.price.total.amount),
+    currency: d.price.total.currency,
+    content_ids: [String(d.slot.has_slots.id)],
+    content_name: d.slot.has_slots.label,
+    content_type: 'product'
   });
 });
 ```
 
-### PostHog/Segment/Mixpanel
+## Forwarding to any analytics SDK
 
-Forward events to any analytics platform with a `track()` API:
+The pattern is the same for PostHog, Segment, Mixpanel, Amplitude, or an internal tracking endpoint: read `event.detail`, reshape as needed, then call your SDK's capture method.
 
-```javascript
-window.addEventListener('muddy.booking:confirmed', function(event) {
-  const booking = event.detail;
-  
-  // PostHog
-  posthog.capture('Booking Confirmed', {
-    booking_reference: booking.reference,
-    service_name: booking.slot.has_slots.label,
-    revenue: booking.price.total.amount / 100
-  });
-  
-  // Segment
+```js
+window.addEventListener('muddy.booking:confirmed', function (event) {
+  var d = event.detail;
+
   analytics.track('Booking Confirmed', {
-    booking_reference: booking.reference,
-    service_name: booking.slot.has_slots.label,
-    revenue: booking.price.total.amount / 100
-  });
-  
-  // Mixpanel
-  mixpanel.track('Booking Confirmed', {
-    booking_reference: booking.reference,
-    service_name: booking.slot.has_slots.label,
-    revenue: booking.price.total.amount / 100
+    booking_reference: d.reference,
+    value: Number(d.price.total.amount),
+    currency: d.price.total.currency,
+    walk_name: d.slot.has_slots.label,
+    slot_start: d.slot.start.iso
   });
 });
 ```
 
 ## Troubleshooting
 
-### Event doesn't fire
+**Nothing is firing.** Make sure the Muddy embed script is on the page, and that your listener is bound to `window` — not to the iframe element, and not to a `message` event.
 
-Make sure the Muddy embed script is properly installed on your page, and that your event listener is attached to the `window` object, not the iframe element itself.
+**The event fires twice.** Check you are not registering the listener inside a block that runs on every SPA route change on the host page. Register it once, at page load.
 
-```javascript
-// Correct - listen on window
-window.addEventListener('muddy.booking:confirmed', handler);
+**`event.detail` is `undefined`.** You have almost certainly bound to `message` instead of to `muddy.booking:confirmed`. Use the exact event name, including the colon.
 
-// Wrong - don't listen on iframe
-document.querySelector('iframe').addEventListener('muddy.booking:confirmed', handler);
-```
+**The `value` sent to analytics is a string or `NaN`.** `amount` is a decimal string like `"25.00"`. Wrap it in `Number(...)` before passing to GA4, Meta Pixel etc. If your tool prefers integer minor units, use `amount_minor` instead.
 
-### Event fires twice
-
-Check that you haven't registered the event listener inside code that runs on every page navigation (like SPA route changes). Event listeners should be registered once when the page loads.
-
-### event.detail is undefined
-
-Make sure you're listening for the correct event name with the colon (`:`) - it should be `muddy.booking:confirmed`, not `muddy.booking.confirmed` or similar.
-
-### Amounts look 100× too high
-
-All monetary amounts in the event data are in minor units (pence for GBP, cents for USD, etc.). Divide by 100 to get the major currency units for display or analytics platforms that expect major units.
+**Customer data is missing from the payload.** That is intentional — payloads never contain personal information. Use `reference` as your join key if you need to correlate with server-side data.
