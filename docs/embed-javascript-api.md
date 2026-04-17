@@ -134,6 +134,18 @@ This is the event you want to use for conversion tracking.
 }
 ```
 
+Listen for it with `window.addEventListener`:
+
+```js
+window.addEventListener('muddy.booking:confirmed', function (event) {
+  var booking = event.detail;
+
+  console.log('Booking confirmed', booking.reference, booking.price.total.formatted.full);
+});
+```
+
+The same pattern works for every `muddy.*` event — change the event name and the shape of `event.detail` accordingly.
+
 ### muddy.booking:rescheduled
 
 Fires when a customer lands on a booking page after completing a reschedule. This event also fires when a booking is updated or edited — in that case the `reference` will be the same as before. When a booking is truly rescheduled, a new `reference` is generated.
