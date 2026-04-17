@@ -50,12 +50,6 @@ Most analytics tools expect a number. Use `Number(d.price.total.amount)` to conv
 
 ## Available events
 
-### muddy.mounted
-
-Fires once, when the Muddy embed has finished loading.
-
-`event.detail` is an empty object. Useful as an "embed is ready" signal.
-
 ### muddy.mobile
 
 Fires when the embed switches between its mobile and desktop layouts (and once on first mount). Does **not** fire on every page change inside the embed.
@@ -105,7 +99,7 @@ This is the event you want to use for conversion tracking.
 
 ### muddy.booking:rescheduled
 
-Fires when a customer lands on a booking page after completing a reschedule.
+Fires when a customer lands on a booking page after completing a reschedule. This event also fires when a booking is updated or edited — in that case the `reference` will be the same as before. When a booking is truly rescheduled, a new `reference` is generated.
 
 `event.detail` has the same shape as `muddy.booking:confirmed`.
 
