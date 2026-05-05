@@ -40,9 +40,10 @@ test("readKnowledge returns null for missing topics", () => {
 });
 
 test("getKnowledgeSummary lists saved topics", () => {
+  saveKnowledge("Summary Topic", "# Summary\n\nbody");
   const summary = getKnowledgeSummary();
   assert.match(summary, /Available knowledge files/);
-  assert.match(summary, /pricing-setup/);
+  assert.match(summary, /summary-topic/);
 });
 
 test.after(() => {

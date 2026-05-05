@@ -27,3 +27,20 @@ test("@browserbasehq/stagehand exports Stagehand", async () => {
   const { Stagehand } = await import("@browserbasehq/stagehand");
   assert.equal(typeof Stagehand, "function");
 });
+
+// Construct Stagehand with the exact launch-options shape used in src/browser.ts
+// (without calling .init()) so a future rename like chromeFlags → args is caught
+// by the test suite, not just by tsc on src/.
+test("Stagehand accepts the launch options shape used by src/browser.ts", async () => {
+  const { Stagehand } = await import("@browserbasehq/stagehand");
+  const stagehand = new Stagehand({
+    env: "LOCAL",
+    model: "openai/gpt-4.1-mini",
+    localBrowserLaunchOptions: {
+      headless: true,
+      viewport: { width: 1440, height: 900 },
+      args: ["--lang=en-GB"],
+    },
+  });
+  assert.ok(stagehand);
+});
