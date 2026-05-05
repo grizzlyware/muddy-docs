@@ -28,7 +28,7 @@ Recurring bookings are off by default, so the first job is to turn them on for y
 1. Go to **Settings**.
 2. Under **Bookings**, click **Recurring bookings**.
 
-![Recurring booking settings page](../screenshots/recurring-settings-annotated-1777978135168.png)
+![Recurring booking settings page](../screenshots/recurring-settings-annotated-1777978135168-1777980048790.png)
 
 There are three things to look at on this page.
 
@@ -60,13 +60,13 @@ You can start a new recurring booking from two places:
 - The main **Recurring bookings** page (in the left-hand menu under **Bookings**) — click **Create recurring booking**.
 - Straight from a **customer's page** — scroll to the **Recurring bookings** section and click **Create**. The customer is filled in for you.
 
-![Recurring bookings list page with Create button](../screenshots/recurring-bookings-list-annotated-1777978206555.png)
+![Recurring bookings list page with Create button](../screenshots/recurring-bookings-list-annotated-1777978206555-1777980074003.png)
 
 ### The form
 
 The form has three steps along the top: **Configure**, **Review & publish**, and **Live**. Most of the work happens in **Configure**.
 
-![Create recurring booking form — top fields](../screenshots/create-form-top-annotated-1777978488717.png)
+![Create recurring booking form — top fields](../screenshots/create-form-top-annotated-1777978488717-1777980147385.png)
 
 #### Customer **(1)**
 
@@ -102,7 +102,7 @@ How long each occurrence lasts. Can affect pricing.
 
 ### Dates, cycles, and pricing
 
-![Create form — dates, end conditions, and pricing](../screenshots/create-form-dates-pricing-annotated-1777978505613.png)
+![Create form — dates, end conditions, and pricing](../screenshots/create-form-dates-pricing-annotated-1777978505613-1777980203550.png)
 
 #### Start ASAP **(1)**
 
