@@ -24,6 +24,20 @@ const SCREENSHOTS_DIR = path.resolve("screenshots");
 const SOFT_TURN_LIMIT = 100;
 const HARD_TURN_LIMIT = 200;
 const FINAL_WARNING_TURN = HARD_TURN_LIMIT - 10;
+const TOOL_TIMEOUT_MS = 90_000;
+
+function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(
+      () => reject(new Error(`${label} timed out after ${ms}ms`)),
+      ms,
+    );
+    p.then(
+      (v) => { clearTimeout(timer); resolve(v); },
+      (e) => { clearTimeout(timer); reject(e); },
+    );
+  });
+}
 
 function getExistingCategories(): string[] {
   if (!fs.existsSync(DOCS_DIR)) return [];
@@ -435,7 +449,7 @@ async function executeTool(
 ): Promise<string> {
   const { stagehand } = session;
 
-  try {
+  const run = async (): Promise<string> => {
     switch (name) {
       case "navigate_to_url": {
         const url = input.url as string;
@@ -632,6 +646,10 @@ async function executeTool(
       default:
         return `Unknown tool: ${name}`;
     }
+  };
+
+  try {
+    return await withTimeout(run(), TOOL_TIMEOUT_MS, `tool ${name}`);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     console.log(`  -> Tool error (${name}): ${message}`);
