@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import fs from "fs";
 import path from "path";
 import {
+  applyPageTimeouts,
   type BrowserSession,
   clearHighlights,
   getPageLinks,
@@ -479,6 +480,7 @@ async function executeTool(
         const pagesAfter = stagehand.context.pages();
         if (pagesAfter.length > pagesBefore) {
           session.page = pagesAfter[pagesAfter.length - 1];
+          applyPageTimeouts(session.page);
           console.log(`  -> New tab opened, switched to tab ${pagesAfter.length - 1}`);
         }
         await waitForPage(session.page);
@@ -562,6 +564,7 @@ async function executeTool(
           return `Invalid tab index ${tabIndex}. There are ${pages.length} tabs open (0-${pages.length - 1}).`;
         }
         session.page = pages[tabIndex];
+        applyPageTimeouts(session.page);
         const state = await getPageState(session.page);
         console.log(`  -> Switched to tab ${tabIndex}: ${state.url}`);
         return `Switched to tab ${tabIndex}. URL: ${state.url}. Title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
@@ -648,11 +651,16 @@ async function executeTool(
     }
   };
 
+  const startedAt = Date.now();
   try {
-    return await withTimeout(run(), TOOL_TIMEOUT_MS, `tool ${name}`);
+    const result = await withTimeout(run(), TOOL_TIMEOUT_MS, `tool ${name}`);
+    const elapsed = Date.now() - startedAt;
+    console.log(`  -> ${name} completed in ${elapsed}ms`);
+    return result;
   } catch (err) {
+    const elapsed = Date.now() - startedAt;
     const message = err instanceof Error ? err.message : String(err);
-    console.log(`  -> Tool error (${name}): ${message}`);
+    console.log(`  -> Tool error (${name}) after ${elapsed}ms: ${message}`);
     return `Error executing ${name}: ${message}`;
   }
 }
@@ -689,10 +697,14 @@ Begin by checking available knowledge files, then navigate to the relevant pages
   let outputFile = "";
   let softReminderSent = false;
   let finalReminderSent = false;
+  let consecutiveTimeouts = 0;
+  const CONSECUTIVE_TIMEOUT_ABORT = 8;
+  const runStartedAt = Date.now();
 
   for (let turn = 0; turn < HARD_TURN_LIMIT; turn++) {
     const turnNumber = turn + 1;
-    console.log(`\n--- Orchestrator turn ${turnNumber}/${HARD_TURN_LIMIT} (soft limit ${SOFT_TURN_LIMIT}) ---`);
+    const elapsedSec = Math.round((Date.now() - runStartedAt) / 1000);
+    console.log(`\n--- Orchestrator turn ${turnNumber}/${HARD_TURN_LIMIT} (soft limit ${SOFT_TURN_LIMIT}, elapsed ${elapsedSec}s) ---`);
 
     const response = await client.messages.create({
       model: "claude-sonnet-4-6",
@@ -729,6 +741,8 @@ Begin by checking available knowledge files, then navigate to the relevant pages
     }
 
     const toolResults: Anthropic.ToolResultBlockParam[] = [];
+    let turnHadTimeout = false;
+    let turnHadSuccess = false;
     for (const block of toolUseBlocks) {
       console.log(`  Tool call: ${block.name}(${JSON.stringify(block.input).substring(0, 100)})`);
       const result = await executeTool(
@@ -736,6 +750,11 @@ Begin by checking available knowledge files, then navigate to the relevant pages
         block.input as Record<string, unknown>,
         session,
       );
+      if (result.includes("timed out after")) {
+        turnHadTimeout = true;
+      } else if (!result.startsWith("Error executing")) {
+        turnHadSuccess = true;
+      }
       if (block.name === "finish_documentation") {
         outputFile = result;
       }
@@ -766,6 +785,19 @@ Begin by checking available knowledge files, then navigate to the relevant pages
           tool_use_id: block.id,
           content: result,
         });
+      }
+    }
+
+    // Track consecutive turns where every tool call timed out — likely the
+    // browser is wedged. Bail out so we don't burn the whole wall-clock budget.
+    if (turnHadSuccess) {
+      consecutiveTimeouts = 0;
+    } else if (turnHadTimeout) {
+      consecutiveTimeouts++;
+      console.log(`  -> Consecutive timeout-only turns: ${consecutiveTimeouts}/${CONSECUTIVE_TIMEOUT_ABORT}`);
+      if (consecutiveTimeouts >= CONSECUTIVE_TIMEOUT_ABORT) {
+        console.log(`  Aborting: ${CONSECUTIVE_TIMEOUT_ABORT} consecutive turns hit only timeouts. Browser is likely wedged.`);
+        break;
       }
     }
 
