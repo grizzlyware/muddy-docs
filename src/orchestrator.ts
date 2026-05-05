@@ -21,7 +21,9 @@ import {
 
 const DOCS_DIR = path.resolve("docs");
 const SCREENSHOTS_DIR = path.resolve("screenshots");
-const MAX_TURNS = 100;
+const SOFT_TURN_LIMIT = 100;
+const HARD_TURN_LIMIT = 200;
+const FINAL_WARNING_TURN = HARD_TURN_LIMIT - 10;
 
 function getExistingCategories(): string[] {
   if (!fs.existsSync(DOCS_DIR)) return [];
@@ -342,6 +344,17 @@ function buildSystemPrompt(task: string, knowledgeSummary: string, existingCateg
 
 Today's date is ${new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}.
 
+## Step budget
+You have a budget of tool-using turns. Aim to complete the task in ${SOFT_TURN_LIMIT} turns. ${HARD_TURN_LIMIT} is the hard maximum — if you reach it without calling finish_documentation, the run aborts with no output.
+
+Spend turns efficiently:
+- Skip pages and settings that are not directly relevant to the task.
+- Don't re-screenshot or re-read content you already captured.
+- Prefer one well-chosen full_page screenshot over several partial ones.
+- Once you have enough material, call finish_documentation rather than continuing to polish.
+
+After turn ${SOFT_TURN_LIMIT} you'll start receiving reminders to wrap up. Treat them as deadline pressure: stop exploring nice-to-haves, finish what's needed for an accurate doc, and call finish_documentation. After turn ${FINAL_WARNING_TURN} the reminder becomes urgent — call finish_documentation immediately with whatever you have, even if incomplete.
+
 ## Existing Knowledge
 ${knowledgeSummary}
 
@@ -656,9 +669,12 @@ Begin by checking available knowledge files, then navigate to the relevant pages
   ];
 
   let outputFile = "";
+  let softReminderSent = false;
+  let finalReminderSent = false;
 
-  for (let turn = 0; turn < MAX_TURNS; turn++) {
-    console.log(`\n--- Orchestrator turn ${turn + 1}/${MAX_TURNS} ---`);
+  for (let turn = 0; turn < HARD_TURN_LIMIT; turn++) {
+    const turnNumber = turn + 1;
+    console.log(`\n--- Orchestrator turn ${turnNumber}/${HARD_TURN_LIMIT} (soft limit ${SOFT_TURN_LIMIT}) ---`);
 
     const response = await client.messages.create({
       model: "claude-sonnet-4-20250514",
@@ -735,12 +751,36 @@ Begin by checking available knowledge files, then navigate to the relevant pages
       }
     }
 
-    messages.push({ role: "user", content: toolResults });
+    // Build the user-message content: tool results, plus an optional budget-reminder
+    // text block when we cross a threshold (sent once each).
+    const userContent: Array<Anthropic.ToolResultBlockParam | Anthropic.TextBlockParam> = [...toolResults];
+
+    if (!finalReminderSent && turnNumber >= FINAL_WARNING_TURN) {
+      userContent.push({
+        type: "text",
+        text: `URGENT BUDGET REMINDER: You have used ${turnNumber}/${HARD_TURN_LIMIT} turns. The run will abort at ${HARD_TURN_LIMIT} with NO documentation produced. Call finish_documentation NOW with whatever you have. Do not take any more screenshots or extract any more data — write the doc with what you've already gathered.`,
+      });
+      finalReminderSent = true;
+      console.log("  -> Sent FINAL budget reminder");
+    } else if (!softReminderSent && turnNumber >= SOFT_TURN_LIMIT) {
+      userContent.push({
+        type: "text",
+        text: `BUDGET REMINDER: You have used ${turnNumber}/${HARD_TURN_LIMIT} turns. You're past the ${SOFT_TURN_LIMIT}-turn target. Stop exploring nice-to-haves and start wrapping up. Call finish_documentation as soon as you have enough material for an accurate, useful doc.`,
+      });
+      softReminderSent = true;
+      console.log("  -> Sent soft budget reminder");
+    }
+
+    messages.push({ role: "user", content: userContent });
 
     if (outputFile) {
       console.log("  Documentation generated, finishing.");
       break;
     }
+  }
+
+  if (!outputFile) {
+    console.log(`  Hit hard turn limit (${HARD_TURN_LIMIT}) without finish_documentation.`);
   }
 
   return outputFile || "No documentation was generated.";
