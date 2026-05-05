@@ -686,8 +686,7 @@ Begin by checking available knowledge files, then navigate to the relevant pages
 
     // Process tool calls
     const toolUseBlocks = response.content.filter(
-      (b): b is Anthropic.ContentBlockParam & { type: "tool_use"; id: string; name: string; input: Record<string, unknown> } =>
-        b.type === "tool_use",
+      (b): b is Anthropic.ToolUseBlock => b.type === "tool_use",
     );
 
     if (toolUseBlocks.length === 0) {

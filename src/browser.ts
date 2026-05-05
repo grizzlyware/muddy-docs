@@ -23,7 +23,7 @@ export async function initBrowser(): Promise<BrowserSession> {
     localBrowserLaunchOptions: {
       headless,
       viewport: { width: 1440, height: 900 },
-      chromeFlags: ["--lang=en-GB"],
+      args: ["--lang=en-GB"],
     },
   });
 
