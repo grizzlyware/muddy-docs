@@ -27,6 +27,22 @@ const HARD_TURN_LIMIT = 200;
 const FINAL_WARNING_TURN = HARD_TURN_LIMIT - 10;
 const TOOL_TIMEOUT_MS = 35_000;
 
+// Tools that interact with the browser. If any of these times out, the
+// underlying page may be wedged and we open a fresh tab as recovery.
+const BROWSER_TOOLS = new Set([
+  "navigate_to_url",
+  "click_element",
+  "type_into_field",
+  "get_page_state",
+  "extract_data",
+  "list_page_links",
+  "take_screenshot",
+  "scroll_page",
+  "highlight_element",
+  "clear_highlights",
+  "switch_tab",
+]);
+
 function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
   return new Promise<T>((resolve, reject) => {
     const timer = setTimeout(
@@ -661,6 +677,28 @@ async function executeTool(
     const elapsed = Date.now() - startedAt;
     const message = err instanceof Error ? err.message : String(err);
     console.log(`  -> Tool error (${name}) after ${elapsed}ms: ${message}`);
+
+    // If a browser tool timed out, the page is likely wedged. Recover
+    // by opening a fresh tab in the same (already-authenticated) context
+    // and pointing the session at it. The wedged page is abandoned.
+    if (message.includes("timed out") && BROWSER_TOOLS.has(name)) {
+      try {
+        console.log(`  -> Attempting page recovery (opening fresh tab)`);
+        const newPage = await withTimeout(
+          stagehand.context.newPage(),
+          10_000,
+          "context.newPage",
+        );
+        applyPageTimeouts(newPage);
+        session.page = newPage;
+        console.log(`  -> Page recovery succeeded; subsequent tools will use the fresh tab`);
+        return `Error executing ${name}: ${message}. Note: the previous page appeared wedged; a fresh tab was opened. Re-issue navigate_to_url to continue.`;
+      } catch (recoveryErr) {
+        const recoveryMsg = recoveryErr instanceof Error ? recoveryErr.message : String(recoveryErr);
+        console.log(`  -> Page recovery failed: ${recoveryMsg}`);
+      }
+    }
+
     return `Error executing ${name}: ${message}`;
   }
 }
