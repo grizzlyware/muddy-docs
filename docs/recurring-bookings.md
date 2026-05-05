@@ -43,7 +43,7 @@ This controls **how often Muddy looks ahead and creates the next batch of bookin
 - **Weekly** — runs roughly once a week, keeps about two weeks of bookings created in advance.
 - **Monthly** — runs roughly once a month, keeps about two months in advance.
 
-> **Heads up:** This is an account-wide setting about *when bookings are generated*. It's nothing to do with how often a customer's bookings actually happen. A customer can have a daily or weekly schedule regardless of whether you generate weekly or monthly.
+**Heads up:** this is an account-wide setting about *when bookings are generated*. It's nothing to do with how often a customer's bookings actually happen. A customer can have a daily or weekly schedule regardless of whether you generate weekly or monthly.
 
 ### Day of month (only when cadence is set to Monthly)
 
@@ -125,7 +125,7 @@ Switch on **Override price** to lock every occurrence to a fixed amount instead.
 - Enter the amount in **Override price**.
 - Use the **Amount includes tax** switch to choose whether that amount is gross (includes tax) or net (excludes tax).
 
-> **Price adjustments still apply.** If you don't want a particular adjustment to apply to recurring bookings, set up an "Is not a recurring booking" rule on the adjustment itself.
+**Price adjustments still apply.** If you don't want a particular adjustment to apply to recurring bookings, set up an "Is not a recurring booking" rule on the adjustment itself.
 
 **When you set a fixed price, the customer self-service switches turn off and lock automatically.** You'll see a notice on the page: *"When a fixed price is set, customers can't self-manage their occurrences — they won't be able to reschedule, edit or cancel online."*
 
@@ -140,7 +140,7 @@ If you're not using an override price, you can pick what your customers can do w
 - **Allow customer to cancel** — when off, only you can cancel an occurrence.
 - **Release slots when occurrences are cancelled or rescheduled** — when off, the slot stays held even if the customer cancels or reschedules. Handy if you want to keep that time reserved for them.
 
-> All of these are off by default. Don't assume customers can self-serve — set them per schedule.
+All of these are off by default. Don't assume customers can self-serve — set them per schedule.
 
 #### Number of animals
 
@@ -181,7 +181,7 @@ Click any recurring booking to open its detail page. The calendar there shows:
 - **Published** — edit pricing and customer permissions only. The schedule itself is locked.
 - **Cancelling a published schedule** — when you cancel, you'll be asked whether you also want to cancel any upcoming bookings that have already been generated.
 
-> **Cancelling can't be undone.** A cancelled recurring booking can't be restarted — you'd have to set up a new one.
+**Cancelling can't be undone.** A cancelled recurring booking can't be restarted — you'd have to set up a new one.
 
 ---
 
