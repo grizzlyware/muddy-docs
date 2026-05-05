@@ -677,7 +677,7 @@ Begin by checking available knowledge files, then navigate to the relevant pages
     console.log(`\n--- Orchestrator turn ${turnNumber}/${HARD_TURN_LIMIT} (soft limit ${SOFT_TURN_LIMIT}) ---`);
 
     const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-4-6",
       max_tokens: 16384,
       system: systemPrompt,
       tools,
