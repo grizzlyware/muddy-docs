@@ -28,14 +28,21 @@ jobs:
           ref: ${{ github.event.inputs.branch || github.ref }}
 
       - name: Setup branch
+        env:
+          INPUT_BRANCH: ${{ github.event.inputs.branch }}
+          RUN_ID: ${{ github.run_id }}
         run: |
-          if [ -n "${{ github.event.inputs.branch }}" ]; then
-            BRANCH="${{ github.event.inputs.branch }}"
+          if [ -n "$INPUT_BRANCH" ]; then
+            BRANCH="$INPUT_BRANCH"
           else
-            BRANCH="docs/${{ github.run_id }}"
+            BRANCH="docs/$RUN_ID"
             git checkout -b "$BRANCH"
           fi
-          echo "BRANCH=$BRANCH" >> "$GITHUB_ENV"
+          {
+            echo "BRANCH<<__EOF__"
+            echo "$BRANCH"
+            echo "__EOF__"
+          } >> "$GITHUB_ENV"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,8 +57,9 @@ jobs:
         run: npx playwright install chromium --with-deps
 
       - name: Generate documentation
-        run: npm run generate -- "${{ github.event.inputs.task }}"
+        run: npm run generate -- "$TASK"
         env:
+          TASK: ${{ github.event.inputs.task }}
           HEADLESS: "true"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -62,6 +70,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TASK: ${{ github.event.inputs.task }}
+          INPUT_BRANCH: ${{ github.event.inputs.branch }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -71,18 +80,18 @@ jobs:
             rm -f .doc-title
           else
             # Fall back to first line of task, trimmed to 60 chars
-            TITLE=$(echo "${TASK}" | head -1 | cut -c1-60)
+            TITLE=$(echo "$TASK" | head -1 | cut -c1-60)
           fi
 
           git add -A docs/ screenshots/ knowledge/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: ${TITLE}"
+            git commit -m "docs: $TITLE"
             git push -u origin "$BRANCH"
             # Only create a PR if we created a new branch
-            if [ -z "${{ github.event.inputs.branch }}" ]; then
+            if [ -z "$INPUT_BRANCH" ]; then
               BODY=$(printf "## Summary\nAuto-generated documentation for: **%s**\n\nPlease review the docs and screenshots before merging.\n\n## Checklist\n- [ ] Content is accurate\n- [ ] Screenshots look correct\n- [ ] No sensitive data visible" "$TITLE")
-              gh pr create --title "docs: ${TITLE}" --body "$BODY"
+              gh pr create --title "docs: $TITLE" --body "$BODY"
             fi
           fi
