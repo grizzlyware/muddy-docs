@@ -3,12 +3,36 @@ import fs from "fs";
 import path from "path";
 
 const SCREENSHOTS_DIR = path.resolve("screenshots");
+const PAGE_TIMEOUT_MS = 60_000;
 
 export type Page = Awaited<ReturnType<Stagehand["context"]["pages"]>>[0];
 
 export interface BrowserSession {
   stagehand: Stagehand;
   page: Page;
+}
+
+/**
+ * Apply Playwright-level timeouts to a page so a hung navigation or
+ * action throws (and unblocks the queue) instead of stalling forever.
+ * Our orchestrator-level Promise.race timeout doesn't cancel the
+ * underlying browser op, so without this a wedged page.goto wedges
+ * every subsequent call.
+ *
+ * The Stagehand Page type doesn't expose these methods, but the
+ * underlying object is a Playwright Page that does. Cast and check.
+ */
+export function applyPageTimeouts(page: Page): void {
+  const pw = page as unknown as {
+    setDefaultTimeout?: (ms: number) => void;
+    setDefaultNavigationTimeout?: (ms: number) => void;
+  };
+  if (typeof pw.setDefaultTimeout === "function") {
+    pw.setDefaultTimeout(PAGE_TIMEOUT_MS);
+  }
+  if (typeof pw.setDefaultNavigationTimeout === "function") {
+    pw.setDefaultNavigationTimeout(PAGE_TIMEOUT_MS);
+  }
 }
 
 export async function initBrowser(): Promise<BrowserSession> {
@@ -33,6 +57,8 @@ export async function initBrowser(): Promise<BrowserSession> {
     "Accept-Language": "en-GB,en;q=0.9",
   });
   const page = stagehand.context.pages()[0];
+  applyPageTimeouts(page);
+  console.log(`  Browser ready (page timeout ${PAGE_TIMEOUT_MS}ms, headless=${headless})`);
 
   return { stagehand, page };
 }
