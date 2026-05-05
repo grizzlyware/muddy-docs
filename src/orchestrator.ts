@@ -25,7 +25,7 @@ const SCREENSHOTS_DIR = path.resolve("screenshots");
 const SOFT_TURN_LIMIT = 100;
 const HARD_TURN_LIMIT = 200;
 const FINAL_WARNING_TURN = HARD_TURN_LIMIT - 10;
-const TOOL_TIMEOUT_MS = 90_000;
+const TOOL_TIMEOUT_MS = 35_000;
 
 function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
   return new Promise<T>((resolve, reject) => {
@@ -455,7 +455,7 @@ async function executeTool(
       case "navigate_to_url": {
         const url = input.url as string;
         console.log(`  -> Navigating to: ${url}`);
-        await session.page.goto(url);
+        await session.page.goto(url, { timeoutMs: 30_000, waitUntil: "domcontentloaded" });
         await waitForPage(session.page);
         const state = await getPageState(session.page);
         return `Navigated to ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 1000)}`;
