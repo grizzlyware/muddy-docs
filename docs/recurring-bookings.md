@@ -135,12 +135,10 @@ This is on purpose. A fixed-price arrangement is a commitment between you and th
 
 If you're not using an override price, you can pick what your customers can do with their own occurrences:
 
-| Switch | What it controls |
-|---|---|
-| **Allow customer to reschedule** | When off, only you can move an occurrence to a different slot. |
-| **Allow customer to edit** | When off, only you can change a single occurrence's details. |
-| **Allow customer to cancel** | When off, only you can cancel an occurrence. |
-| **Release slots when occurrences are cancelled or rescheduled** | When off, the slot stays held even if the customer cancels or reschedules — handy if you want to keep that time reserved for them. |
+- **Allow customer to reschedule** — when off, only you can move an occurrence to a different slot.
+- **Allow customer to edit** — when off, only you can change a single occurrence's details.
+- **Allow customer to cancel** — when off, only you can cancel an occurrence.
+- **Release slots when occurrences are cancelled or rescheduled** — when off, the slot stays held even if the customer cancels or reschedules. Handy if you want to keep that time reserved for them.
 
 > All of these are off by default. Don't assume customers can self-serve — set them per schedule.
 
@@ -179,11 +177,9 @@ Click any recurring booking to open its detail page. The calendar there shows:
 
 ### What you can do at each stage
 
-| Stage | What you can do |
-|---|---|
-| **Draft** | Edit anything — schedule, customer, walk, pricing, permissions. Or delete it entirely. |
-| **Published** | Edit pricing and customer permissions only. The schedule itself is locked. |
-| **Cancelling a published schedule** | When you cancel, you'll be asked whether you also want to cancel any upcoming bookings that have already been generated. |
+- **Draft** — edit anything: schedule, customer, walk, pricing, permissions. Or delete it entirely.
+- **Published** — edit pricing and customer permissions only. The schedule itself is locked.
+- **Cancelling a published schedule** — when you cancel, you'll be asked whether you also want to cancel any upcoming bookings that have already been generated.
 
 > **Cancelling can't be undone.** A cancelled recurring booking can't be restarted — you'd have to set up a new one.
 
@@ -193,7 +189,7 @@ Click any recurring booking to open its detail page. The calendar there shows:
 
 Recurring bookings are **always paid through invoicing** — never charged automatically at the moment a booking is created. Each booking gets confirmed and added to your invoice queue, ready to be picked up the next time you run invoices on whatever cadence you've configured.
 
-**Before publishing your first recurring booking, take a minute to check your invoicing settings.** Go to **Settings**, then **Invoicing** to set your cadence, payment terms, and other invoice options. The [Invoicing and automatic payments](invoicing-and-automatic-payments.md) guide has the details.
+**Before publishing your first recurring booking, take a minute to check your invoicing settings.** Go to **Settings**, then **Invoicing** to set your cadence, payment terms, and other invoice options. The [Invoicing and automatic payments](https://muddybooking.com/help/payments/invoicing-and-automatic-payments) guide has the details.
 
 ---
 
