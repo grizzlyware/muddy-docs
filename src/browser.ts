@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const SCREENSHOTS_DIR = path.resolve("screenshots");
-const PAGE_TIMEOUT_MS = 60_000;
+const PAGE_TIMEOUT_MS = 30_000;
 
 export type Page = Awaited<ReturnType<Stagehand["context"]["pages"]>>[0];
 
@@ -27,13 +27,16 @@ export function applyPageTimeouts(page: Page): void {
     setDefaultTimeout?: (ms: number) => void;
     setDefaultNavigationTimeout?: (ms: number) => void;
   };
-  if (typeof pw.setDefaultTimeout === "function") {
-    pw.setDefaultTimeout(PAGE_TIMEOUT_MS);
-  }
-  if (typeof pw.setDefaultNavigationTimeout === "function") {
-    pw.setDefaultNavigationTimeout(PAGE_TIMEOUT_MS);
-  }
+  const hasSetDefault = typeof pw.setDefaultTimeout === "function";
+  const hasSetNav = typeof pw.setDefaultNavigationTimeout === "function";
+  if (hasSetDefault) pw.setDefaultTimeout!(PAGE_TIMEOUT_MS);
+  if (hasSetNav) pw.setDefaultNavigationTimeout!(PAGE_TIMEOUT_MS);
+  console.log(
+    `  applyPageTimeouts: setDefaultTimeout=${hasSetDefault} setDefaultNavigationTimeout=${hasSetNav} target=${PAGE_TIMEOUT_MS}ms`,
+  );
 }
+
+export const NAV_TIMEOUT_MS = PAGE_TIMEOUT_MS;
 
 export async function initBrowser(): Promise<BrowserSession> {
   fs.mkdirSync(SCREENSHOTS_DIR, { recursive: true });
@@ -73,7 +76,7 @@ export async function login(session: BrowserSession): Promise<void> {
   }
 
   console.log("  Navigating to login page...");
-  await page.goto("https://muddybooking.com/login");
+  await page.goto("https://muddybooking.com/login", { timeoutMs: 30_000, waitUntil: "domcontentloaded" });
   await page.evaluate(() => localStorage.setItem("newsletter-popup-dismissed", "1"));
   await waitForPage(page);
 
