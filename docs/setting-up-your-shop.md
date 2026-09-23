@@ -25,7 +25,7 @@ The **Shop** page is your starting point. At the top you'll see a few figures:
 
 - **Awaiting fulfilment** — paid orders you still need to send or hand over.
 - **Sales, last 30 days** — what customers have paid for orders in the last 30 days.
-- **Products for sale** — products customers can buy right now.
+- **Products for sale** — published products in your shop.
 
 Below the figures are links to every part of the shop:
 
@@ -48,7 +48,7 @@ Your shop starts closed, so you can set everything up before customers see it. W
 4. **Set up delivery or collection.** Customers can't buy anything that needs posting until you do. See *Setting up delivery and collection*.
 5. **Check your legal policies.** Your terms and conditions and other policies show at checkout (more on this below).
 
-While the shop is closed, a yellow box at the top of the **Shop** page tells you what's missing. For example, it says **Add a product with a price before you open it**, or tells you that nobody can buy your products until you set up delivery. When everything is in place, it tells you how many products are ready to sell, and the **Open shop** button appears.
+While the shop is closed, a yellow box at the top of the **Shop** page tells you what's missing. For example, it says **Add a product with a price before you open it**, or tells you that nobody can buy your products until you set up delivery. When at least one product is ready to sell, it tells you how many, and the **Open shop** button appears. The button doesn't check the rest of this list, so work through it before you open.
 
 **Tip:** you need a Stripe account connected before customers can pay by card. If you already take card payments for bookings, you're set. If not, click **Stripe setup** in the left-hand menu first.
 
@@ -136,6 +136,8 @@ The **Example** box shows what your next order number will look like as you type
 
 ## Emails you'll get
 
-- **New shop order** — sent to your account's admin users when a customer pays for an order. Each person can switch this off for themselves: go to your profile and look under **Notification preferences** for **Shop order placed**.
-- **Order could not be completed** — sent if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
-- **Not enough stock to fulfil order** — sent if two customers bought the last of something at the same time. See *Tracking stock*.
+These go to the admin users on your account. Each person can switch off the ones marked below from their profile, under **Notification preferences**.
+
+- **New shop order** — when a customer pays for an order. Listed as **Shop order placed** in your preferences, and can be switched off.
+- **Order could not be completed** — if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
+- **Not enough stock to fulfil order** — if two customers bought the last of something at the same time. See *Tracking stock*. Can be switched off.

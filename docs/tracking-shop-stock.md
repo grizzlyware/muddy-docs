@@ -12,7 +12,7 @@ pinned: false
 
 ## Why track stock
 
-If you tell Muddy how many of something you have, it counts down as customers buy, and it stops selling once you reach zero. Customers see **Out of stock** instead of an **Add to basket** button.
+If you tell Muddy how many of something you have, it counts down as customers buy, and it stops selling once you reach zero. Customers see **Out of stock**, and the **Add to basket** button is greyed out.
 
 You don't have to track stock. For anything you don't track, customers can order as many as they like. This suits things you make to order, or things you never run out of.
 
@@ -76,8 +76,8 @@ You can't edit or delete past changes. If something is wrong, add a new change t
 
 ## What customers see
 
-- When stock is low, customers see how many are left, such as **3 in stock**. Above 10, they see **10+ in stock**.
-- At zero, they see **Out of stock**, and they can't add the item to their basket. The product still appears in your shop.
+- Customers see how many are left, such as **3 in stock**. At 10 or more, they see **10+ in stock**.
+- At zero, they see **Out of stock**, and the **Add to basket** button is greyed out. The product still appears in your shop.
 - Customers can't add more to their basket than you have.
 - If something runs out while it's in a customer's basket, Muddy reduces or removes it and tells them why.
 

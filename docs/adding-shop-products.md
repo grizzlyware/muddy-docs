@@ -74,9 +74,10 @@ When you're done, click **Create product**.
 If a product comes in more than one version, such as a harness in three sizes and two colours, you don't need to create a separate product for each. Add **options** instead, and Muddy creates a **variant** for each combination.
 
 1. Under **Variants**, choose **It comes in different variants**.
-2. Under **Options**, type an **Option name**, such as **Size**.
-3. Add each **value**, such as **Small**, **Medium** and **Large**. Click **Add** after each one.
-4. To add another way the product varies, click **Add another option**. For example, add **Colour** with the values **Red** and **Blue**.
+2. Click **Add an option**.
+3. Type an **Option name**, such as **Size**.
+4. Add each **value**, such as **Small**, **Medium** and **Large**. Click **Add** after each one.
+5. To add another way the product varies, click **Add another option**. For example, add **Colour** with the values **Red** and **Blue**.
 
 As you type, Muddy suggests option names and values you've used on other products. Picking one of these keeps your shop consistent.
 
@@ -86,9 +87,9 @@ You can add up to three options per product, and a product can have up to 100 va
 
 Muddy lists every combination in the **Variants** table. In the example above, you'd get six variants: Small Red, Small Blue, Medium Red, and so on.
 
-- **Every variant sells at the product's price** unless you change it. To give one variant a different price, click its settings icon and change **Price**. A variant with its own price shows **custom** beside it.
+- **Every variant sells at the product's price** unless you change it. To give one variant a different price, click its settings icon and change **Price**. A variant with its own price, tax or weight shows **custom** beside its price.
 - **Untick a variant** you don't sell, such as a colour you don't stock in large. Customers won't be able to choose that combination. You can tick it again at any time.
-- In a variant's settings, you can also set its own **Tax classification**, **Weight (grams)** and **SKU**. Leave these blank to use the product's settings.
+- In a variant's settings, you can also set its own **Tax classification**, **Weight (grams)** and **SKU** ending. Tax starts as the product's rate. Leave the weight blank to use the product's weight.
 
 With variants, the product's **SKU** becomes an **SKU prefix**. Muddy adds the variant's values to the end to make each variant's code.
 
@@ -96,7 +97,7 @@ You must leave at least one variant ticked. Otherwise the product has nothing to
 
 ### What customers see
 
-On the product's page, customers pick from buttons for each option. Until they've chosen, the price shows as **From** the lowest variant price. Combinations you don't sell, or that are out of stock, are greyed out.
+On your shop front, the product shows **From** the lowest variant price. On the product's own page, the first available variant is already chosen, and customers pick from buttons for each option. The price changes as they choose. Combinations you don't sell, or that are out of stock, are greyed out.
 
 ## Renaming an option
 

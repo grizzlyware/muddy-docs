@@ -54,7 +54,7 @@ Customers see the expiry on the gift card's page before they buy.
 
 ### Images
 
-Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name), your brand colours, and the gift card's name. You can add your own images instead if you prefer.
+Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name) and your brand colours. You can add your own images instead if you prefer.
 
 ### Published
 
@@ -84,7 +84,7 @@ Once the order is paid, Muddy:
 
 You'll find the voucher on your **Vouchers** page, alongside any you've created yourself. You can check its balance and see when it's used, just like any other voucher.
 
-If the customer bought the gift card for themselves, the voucher is linked to their customer record.
+If a signed-in customer bought the gift card for themselves, the voucher is linked to their customer record.
 
 ## Things to know
 

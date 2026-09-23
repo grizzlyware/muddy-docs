@@ -58,10 +58,10 @@ Changes save straight away. If your shop is open, customers see the new order im
 ## How your shop front looks
 
 - Each collection appears as a section, in the order you set.
-- Each section shows its first four products, with a **View all** link to see the rest.
-- Empty collections are hidden.
+- Each section shows its first four products, with a **View all** link if it has more than four.
+- Collections with no published products are hidden.
 - Products that aren't in any collection appear at the end, under **More products**.
-- If you don't create any collections at all, every product appears together in one list.
+- If you have no collections, or they're all empty, your shop front shows your first four products, with a **View all** link to the rest.
 
 It's worth putting every product in at least one collection. Products left under **More products** are easy for customers to miss.
 
