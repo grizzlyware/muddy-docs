@@ -15,7 +15,7 @@ pinned: false
 
 It helps to know what your customers see, so you can answer their questions and set your shop up well. The easiest way to see it for yourself is to preview your shop (see [Setting up your online shop](setting-up-your-shop.md)).
 
-Your shop carries your name and branding, not Muddy's. Emails to customers come from your business too.
+Your shop carries your name and [branding](customizing-branding-and-website.md), not Muddy's. Emails to customers come from your business too.
 
 ## Browsing
 

@@ -54,7 +54,7 @@ Customers see the expiry on the gift card's page before they buy.
 
 ### Images
 
-Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name) and your brand colours. You can add your own images instead if you prefer.
+Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name) and your [brand colours](changing-system-colour-scheme.md). You can add your own images instead if you prefer.
 
 ### Published
 
@@ -82,7 +82,7 @@ Once the order is paid, Muddy:
 1. Creates a voucher with a code starting **GFT**, worth the gift card's value.
 2. Emails the code to the customer or the recipient, at the time they chose.
 
-You'll find the voucher on your **Vouchers** page, alongside any you've created yourself. You can check its balance and see when it's used, just like any other voucher.
+You'll find the voucher on your **Vouchers** page, alongside any you've created yourself. You can check its balance and see when it's used, just like any other voucher. See [Creating vouchers](creating-vouchers.md#managing-existing-vouchers).
 
 If a signed-in customer bought the gift card for themselves, the voucher is linked to their customer record.
 

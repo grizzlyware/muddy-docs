@@ -46,7 +46,7 @@ Your shop starts closed, so you can set everything up before customers see it. W
 2. **Group them into collections.** This is optional, but it makes your shop front much easier to browse. See [Organising your shop with collections](organising-shop-collections.md).
 3. **Set your stock**, if you want Muddy to stop selling things when they run out. See [Tracking stock](tracking-shop-stock.md).
 4. **Set up delivery or collection.** Customers can't buy anything that needs posting until you do. See [Setting up delivery and collection](setting-up-shop-delivery.md).
-5. **Check your legal policies.** Your terms and conditions and other policies show at checkout (more on this below).
+5. **Check your legal policies.** Your terms and conditions and other policies show at checkout (more on this below). See [Setting up legal documents](setting-up-legal-documents.md).
 
 While the shop is closed, a yellow box at the top of the **Shop** page tells you what's missing. For example, it says **Add a product with a price before you open it**, or tells you that nobody can buy your products until you set up delivery. When at least one product is ready to sell, it tells you how many, and the **Open shop** button appears. The button doesn't check the rest of this list, so work through it before you open.
 
@@ -96,7 +96,7 @@ While the shop is closed:
 
 Your shop is at the **/shop** page of your Muddy website. When it's open, customers reach it from the **Shop** link in your website's menu.
 
-If you've embedded Muddy on your own website (for example on WordPress or Squarespace), the **Shop** link isn't shown inside the embedded booking form. Add your own link to your shop from your website's menu instead.
+If you've embedded Muddy on your own website (for example on [WordPress](embedding-on-wordpress.md) or [Squarespace](embedding-on-squarespace.md)), the **Shop** link isn't shown inside the embedded booking form. Add your own link to your shop from your website's menu instead.
 
 ## Terms and policies at checkout
 
