@@ -21,7 +21,7 @@ Your shop carries your name and branding, not Muddy's. Emails to customers come 
 
 Customers reach your shop from the **Shop** link in your website's menu.
 
-The shop front shows each of your collections as a section, with up to four products each and a **View all** link. Products that aren't in a collection are listed under **More products** at the end.
+The shop front shows each of your collections as a section, with up to four products each, and a **View all** link when there are more. Products that aren't in a collection are listed under **More products** at the end.
 
 Each product shows its main image, its name and its price. If the price depends on which variant the customer picks, it shows **From** the lowest price.
 
@@ -51,7 +51,7 @@ If something in their basket runs out or is taken off sale, Muddy updates the ba
 
 ## Checkout
 
-Checkout is one page.
+Customers fill in one page, then pay on the next.
 
 ### Your details
 
@@ -93,7 +93,7 @@ Customers see a thank-you page with their order number, and they're emailed a co
 
 The order page shows what they ordered and how it's progressing. As you record dispatches, it shows each parcel and a tracking link. For collection orders, it shows where to collect from and when it's ready.
 
-Customers can come back to the order page at any time from the link in their emails, even if your shop is closed.
+Customers can come back to the order page from the link in their emails, even if your shop is closed. On a different device from the one they ordered on, they need to sign in.
 
 ## Your orders
 

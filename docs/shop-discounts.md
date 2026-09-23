@@ -73,7 +73,7 @@ Only an active discount can be used. Switch this off to pause a discount without
 
 ### Maximum uses
 
-The most times the discount can be used, across all orders (and bookings, if it applies to both). Leave it empty for no limit. This is handy for "first 50 customers" offers.
+The most times the discount can be used, across all orders (and bookings, if it applies to both). Leave it empty for no limit. This is handy for "first 50 customers" offers. A basket holding the discount counts as a use for an hour, even before the customer pays.
 
 ## Shop settings on a discount
 
@@ -143,8 +143,8 @@ Discounts add up. Every automatic discount the order qualifies for is applied, a
 They're applied in this order:
 
 1. Discounts on goods come off first, then discounts on delivery.
-2. Automatic discounts are applied in order of their **Adjustment ordering** number, lowest first.
-3. Codes are applied in the order the customer entered them.
+2. Within each, discounts apply in the order they were added to the order. A code goes on when the customer enters it. An automatic discount goes on when the basket first qualifies for it.
+3. If several automatic discounts qualify at the same moment, they go on in order of their **Adjustment ordering** number, lowest first.
 
 For percentages, **Apply to original price?** decides how they add up:
 
@@ -153,7 +153,7 @@ For percentages, **Apply to original price?** decides how they add up:
 
 ## What customers see
 
-Customers enter codes in the **Discount or voucher code** box, in their basket or at checkout. If a code can't be used, they're told why, for example that it's expired or that nothing in their basket qualifies.
+Customers enter codes in the **Discount or voucher code** box, in their basket or at checkout. If a code can't be used, they're told why. For example, that the code isn't valid (which includes expired codes), that their order doesn't qualify, or that it has been used as many times as it can be.
 
 Each discount shows as its own line in the basket and on the order, with the amount it took off.
 

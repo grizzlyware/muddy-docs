@@ -27,7 +27,7 @@ Written by hand from the shop source code on 23 September 2026. Page: `/manage/o
 - There is no free-delivery setting. Add a £0 rate with "From order value" set instead. Customers see "FREE".
 
 ## Postcodes
-- Entries are separated by commas, semicolons or new lines. Case and spaces are ignored.
+- The field is a single line. Separate entries with commas. Case and spaces are ignored.
 - A prefix entry (e.g. IV, TR18) matches any postcode that starts with it. PA2 therefore also matches PA20-PA29.
 - A range entry (e.g. PA20-49) matches district numbers from 20 to 49. The letters must appear only once: PA20-PA49 does not work.
 

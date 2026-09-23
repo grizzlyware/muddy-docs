@@ -55,7 +55,7 @@ A rate sets what a delivery method costs, and where it applies. Every delivery m
 
 ### VAT
 
-If you're VAT registered, choose the **VAT** rate for delivery. Tick **The price above includes VAT** if the price you entered already includes it.
+If you're VAT registered, choose the **VAT** rate for delivery. **The price above includes VAT** is ticked to start with. Untick it if the price you entered doesn't include VAT.
 
 If you're not VAT registered, leave **VAT** as **None**.
 
@@ -68,7 +68,7 @@ Limits let you charge different amounts depending on the order. There are four:
 
 An order has to meet every limit you set. "From" includes the amount you enter, and "Under" doesn't. So a rate **under £50** and another **from £50** fit together exactly, with no gap and no overlap.
 
-**Note:** if a rate uses weight, every physical product needs a weight set. If a basket contains a product with no weight, that rate won't apply to it. Muddy warns you at the top of the **Delivery** page if any of your products are missing a weight.
+**Note:** if a rate uses weight, every physical product needs a weight set. If the basket has anything without a weight, including a gift card, rates that use weight won't apply to it. Muddy warns you at the top of the **Delivery** page if any of your products are missing a weight.
 
 ## Offering free delivery over an amount
 
@@ -79,18 +79,18 @@ There's no separate setting for free delivery. Instead, add two rates to the sam
 
 Orders under £50 pay £4.95. Orders of £50 or more see **FREE** at checkout.
 
-Order value is what the customer pays for the goods after any discounts. So a £55 order with a £10 discount counts as £45.
+Order value is what the customer pays for the goods after any discounts. So a £55 order with a £10 discount counts as £45. Gift cards in the order count towards it.
 
 ## Using postcodes
 
 Postcodes let you charge more for hard-to-reach places, or offer local delivery to just your area.
 
-Separate postcodes with commas or put each on its own line. Capitals and spaces don't matter. You can list postcodes in two ways:
+Separate postcodes with commas. Capitals and spaces don't matter. You can list postcodes in two ways:
 
 - **The start of a postcode**, such as **IV** or **TR18**. This covers every postcode that starts that way. **IV** covers IV1, IV2, IV36 and so on.
 - **A range of districts**, such as **PA20-49**. This covers PA20, PA21 and so on, up to PA49, and nothing outside that range.
 
-Write ranges with the letters only once, like **PA20-49**. Writing **PA20-PA49** won't work.
+Write ranges with the letters only once, like **PA20-49**. Writing **PA20-PA49** won't work, and Muddy won't warn you, so double-check your ranges.
 
 **Watch out:** the start of a postcode matches anything that starts the same way. **PA2** covers PA2, but also PA20 to PA29. **B** covers every postcode starting with B, including BA, BB and BD. If you need to be precise, use a range.
 

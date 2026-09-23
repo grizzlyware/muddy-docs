@@ -20,9 +20,9 @@ The **Orders** page opens on **Awaiting fulfilment**. This is your to-do list: e
 
 Switch to **All orders** to see everything, including finished and cancelled orders.
 
-You can filter orders by **Order number**, by **Order** status (placed or cancelled), by **Payment**, and by **Delivery**. Customers who start a checkout but never pay don't appear here.
+You can filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Delivery**. Customers who start a checkout but never pay don't appear here.
 
-You'll also get a **New shop order** email each time a customer pays for an order.
+You'll also get a **New shop order** email each time a customer pays for an order, unless you've switched it off in your notification preferences.
 
 ## What the statuses mean
 
@@ -52,7 +52,7 @@ Each order has a **Payment** status and a **Delivery** status.
 
 Click an order to open it. You'll see:
 
-- **What was ordered**, and how many of each item.
+- A table of the items, with how many were ordered and how many have been sent.
 - **Price breakdown** — shown if the order had discounts.
 - **Fulfilments** — what you've sent or handed over so far.
 - **Returns** — anything the customer has sent back.
@@ -114,7 +114,7 @@ This doesn't email the customer. If you'd like to send them a confirmation, clic
 
 ### Collection points where customers help themselves
 
-If the collection point is set so that customers help themselves, such as a locker, marking the order ready also counts as handing it over. When you click **Ready to collect**, the pop-up is titled **Left for the customer**, and you enter **Where to find it** instead. There's no separate **Customer has collected** step, and no handover email.
+If the collection point is set so that customers help themselves, such as a locker, marking the order ready also counts as handing it over. When you click **Ready to collect**, the pop-up is titled **Left for the customer**, and you enter **Where to find it** instead. There's no separate **Customer has collected** step, and no handover email. After that, the order can't be cancelled.
 
 ## Closing an order without sending everything
 
@@ -171,14 +171,16 @@ When a customer sends something back, record a return. You can only return items
 
 When you record the return, switch on **Refund the customer for the returned items** to refund them straight away. The refund is the price the customer paid for those items.
 
-If the order had a delivery charge, you can also switch on **Refund delivery charge**. The delivery charge can only be refunded once per order.
+If the order had a delivery charge, you can also switch on **Refund delivery charge**. The delivery charge can only be refunded once per order. This option only appears when you refund at the same time as recording the return. To refund delivery later, add it to the **Amount** yourself.
 
 You don't have to refund straight away. You might want to wait until the items arrive back, for example. To refund later:
 
 1. Find the return under **Returns**.
 2. Click **Refund**.
-3. Check the **Amount**. It's filled in with the suggested refund, but you can lower it to give a partial refund.
+3. Check the **Amount**. It's filled in with the price of the returned items. You can change it, up to what's left to refund on the order.
 4. Click **Refund**.
+
+**Warning:** the **Refund** button stays on a return after you've refunded it. Check **Transactions** before you refund a return, so you don't refund it twice.
 
 The customer gets an email when the refund goes through. Recording a return on its own doesn't email them.
 
@@ -224,4 +226,4 @@ Muddy emails customers automatically at each step. These come from your business
 - **Your order has been cancelled** — when you cancel the order.
 - **Refund processed** — each time a refund goes through.
 
-Every email includes a link to the order, so customers can check its progress at any time.
+Order emails include a link to the order. Customers can open it on the device they ordered from, or by signing in.
