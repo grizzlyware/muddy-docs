@@ -42,7 +42,7 @@ This image is used when you haven't uploaded a specific cover photo for a walk.
 
 ### Choosing your color palette
 
-Your color palette affects the appearance of your booking forms and admin area.
+Your [color palette](changing-system-colour-scheme.md) affects the appearance of your booking forms and admin area.
 
 1. In the Colour palette section **(3)**, select from these options:
    - **Muddy** — Classic earthy tones

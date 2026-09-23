@@ -12,7 +12,7 @@ pinned: false
 
 ## Accessing the send voucher feature
 
-Once you've created a voucher, you can send it to customers by email. To access the send feature:
+Once you've [created a voucher](creating-vouchers.md), you can send it to customers by email. To access the send feature:
 
 1. Go to **Vouchers** in the left-hand menu
 

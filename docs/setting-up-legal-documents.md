@@ -55,7 +55,7 @@ You have two options for your cancellation policy:
 
 #### Automatic cancellation policy **(3)**
 
-Switch on **Automate cancellation policy** to have Muddy Booking automatically generate and maintain your cancellation policy based on your booking settings. This ensures your policy always matches your actual cancellation rules.
+Switch on **Automate cancellation policy** to have Muddy Booking automatically generate and maintain your cancellation policy based on your booking settings. This ensures your policy always matches your actual [cancellation rules](setting-up-cancellation-policy.md).
 
 ![Legal settings with automated policy](../screenshots/legal-settings-automated-policy-1772553357661.png)
 
@@ -75,7 +75,7 @@ Switch on **Require acceptance** to make customers explicitly agree to your poli
 - Your terms and conditions
 - Your privacy policy  
 - Your cancellation policy
-- Any banned breeds policies you've configured
+- Any [banned breeds policies](setting-up-banned-breeds.md) you've configured
 
 When this is switched off, your policies are still available to customers but they don't need to actively accept them.
 

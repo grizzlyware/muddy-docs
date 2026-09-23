@@ -12,7 +12,7 @@ pinned: false
 ---
 The Muddy embed exposes a small JavaScript surface on the host page. You can trigger the booking flow from your own button, react to layout changes as the embed switches between mobile and desktop, and listen for booking activity to forward into other systems.
 
-If you just want to wire booking events into Google Analytics, GTM or another analytics tool, see the recipe-focused guide: [Tracking bookings with analytics events](./iframe-analytics-events).
+If you just want to wire booking events into Google Analytics, GTM or another analytics tool, see the recipe-focused guide: [Tracking bookings with analytics events](iframe-analytics-events.md).
 
 ## How it works
 
@@ -43,7 +43,7 @@ The attribute works on multiple elements on the same page — every matching ele
 
 Notes:
 
-- The embed snippet itself must still be on the page. The `data-muddy-action="launch"` attribute only triggers the embed; it does not load it.
+- The [embed snippet](embedding-on-wordpress.md#finding-your-embed-code) itself must still be on the page. The `data-muddy-action="launch"` attribute only triggers the embed; it does not load it.
 - Default link and form behaviour is suppressed on click, so the page does not navigate away.
 - Launchers are wired up when the embed initialises. If you add launcher elements to the page later (for example after an AJAX update), they will not be picked up automatically.
 

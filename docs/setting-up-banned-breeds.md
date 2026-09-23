@@ -77,7 +77,7 @@ Once you've configured your banned breeds policy and added any additional inform
 ## Important considerations
 
 - Your banned breeds policy affects all bookings across your entire service
-- The policy information you provide will be visible to customers during the booking process
+- The policy information you provide will be visible to customers during the booking process. To make customers accept it before they book, see [Setting up legal documents](setting-up-legal-documents.md#requiring-customer-acceptance-5)
 - Consider your insurance requirements and local regulations when setting your policy
 - You can change your policy at any time by returning to this settings page
 

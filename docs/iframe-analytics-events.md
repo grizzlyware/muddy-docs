@@ -13,11 +13,11 @@ pinned: false
 ---
 When you embed the Muddy booking flow on your website, the embed automatically broadcasts events to your page every time a customer confirms, reschedules or cancels a booking. You can listen for those events and forward them to Google Analytics, Google Tag Manager, Meta Pixel, or any other analytics tool you already use.
 
-There is no extra setup. If the Muddy embed snippet is already on the page, the events are already firing — you just need to add a listener.
+There is no extra setup. If the [Muddy embed snippet](embedding-on-wordpress.md#finding-your-embed-code) is already on the page, the events are already firing — you just need to add a listener.
 
 ## Which events to listen for
 
-Attach listeners to `window` (not to the iframe, and not to the `message` event). Full payload shapes are in the [Embed JavaScript API](./embed-javascript-api) reference.
+Attach listeners to `window` (not to the iframe, and not to the `message` event). Full payload shapes are in the [Embed JavaScript API](embed-javascript-api.md) reference.
 
 - **`muddy.booking:confirmed`** — fires once on the confirmation page after a successful booking. This is the event you want for conversion tracking.
 - **`muddy.booking:rescheduled`** — fires when a booking is rescheduled or edited.
@@ -151,4 +151,4 @@ window.addEventListener('muddy.booking:confirmed', function (event) {
 
 **The event fires twice.** Check you are not registering the listener inside a block that runs on every SPA route change on the host page. Register it once, at page load.
 
-For general embed troubleshooting (nothing firing, `event.detail` undefined, missing customer data), see the [Embed JavaScript API](./embed-javascript-api#troubleshooting) troubleshooting section.
+For general embed troubleshooting (nothing firing, `event.detail` undefined, missing customer data), see the [Embed JavaScript API](embed-javascript-api.md#troubleshooting) troubleshooting section.

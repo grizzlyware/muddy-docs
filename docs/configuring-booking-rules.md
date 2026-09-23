@@ -58,7 +58,7 @@ This sets the minimum amount of notice you need before a booking takes place. Cu
 For example:
 - **1 hour** means customers must book at least 1 hour before the walk time
 - **24 hours** requires customers to book at least a day in advance
-- **0 hours** allows immediate bookings (as long as you have availability)
+- **0 hours** allows immediate bookings (as long as you have [availability](setting-up-opening-times.md))
 
 This gives you time to prepare and prevents last-minute bookings when you might not be available.
 
@@ -66,7 +66,7 @@ This gives you time to prepare and prevents last-minute bookings when you might 
 
 This controls how close to the walk time customers can still edit their bookings (like changing the number of dogs). 
 
-The system notes that "this can usually just be zero, to always allow edits" — meaning customers can modify their bookings right up until the walk time. However, you might want to set a small buffer if you need time to prepare for changes.
+The system notes that "this can usually just be zero, to always allow edits" — meaning customers can modify their bookings right up until the walk time. However, you might want to set a small buffer if you need time to prepare for changes. For cancellation and rescheduling rules, see [Setting up a cancellation policy](setting-up-cancellation-policy.md).
 
 ### Buffer period **(4)**
 
@@ -80,4 +80,4 @@ This prevents back-to-back bookings and gives you breathing room between walks. 
 
 ## Saving your changes
 
-After adjusting any of these settings, click **Save** at the bottom of the page to apply your new booking rules. The changes will take effect immediately for all future bookings.
+After adjusting any of these settings, click **Save** at the bottom of the page to apply your new booking rules. The changes will take effect immediately for all future bookings. To override some of these settings for a single walk, see [Creating a walk](creating-a-walk.md#booking-configuration).
