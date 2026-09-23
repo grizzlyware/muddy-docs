@@ -13,6 +13,7 @@ import {
   takeScreenshot,
   waitForPage,
 } from "./browser.js";
+import { findNewDocLinkProblems } from "./links.js";
 import {
   getKnowledgeSummary,
   listKnowledgeFiles,
@@ -367,7 +368,7 @@ const tools: Anthropic.Tool[] = [
   },
 ];
 
-function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[], existingTags: string[]): string {
+export function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[], existingTags: string[]): string {
   return `You are a documentation assistant for Muddy Booking (muddybooking.com), a booking management platform for dog walking businesses. You control a web browser that is already logged into the app.
 
 ## Your Task
@@ -436,6 +437,7 @@ The frontmatter goes at the very top of the file. Do NOT add a H1 heading or int
 - Do NOT use code formatting (backticks) for field names or values. Use **bold** instead.
 - One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
 - Reference screenshots with: ![description](../screenshots/FILENAME)
+- When you mention something another article covers, link to that article so the reader can go straight there. Link by the article's filename, e.g. [Managing shop orders](managing-shop-orders.md), or [Limits](setting-up-shop-delivery.md#limits) for a heading in it. Use list_existing_docs to find filenames. The help centre turns these into the right address. Never write a muddybooking.com/help address, because it breaks when an article moves category. Link to a heading in the same article with just the anchor, e.g. [Limits](#limits). A heading's anchor is the heading in lowercase, with spaces replaced by dashes and punctuation removed.
 - ALWAYS annotate screenshots with highlight_element before taking them. Every screenshot should have at least one highlighted element so the reader knows exactly what to look at. This is especially important for navigation screenshots — if you're telling the user to click something on a page (e.g. "click Pricing in Settings"), highlight that item before taking the screenshot. Only highlight elements that the user needs to interact with for the current step — do NOT highlight unrelated items just because they are nearby. Use numbered badges and reference them in the text, e.g. 'Click **Pricing** **(1)**'. Always call clear_highlights after taking the annotated screenshot.
 - Before taking a screenshot, scroll to make sure the relevant content is visible in the viewport. If you need to show a specific element, scroll it into view first. If the page is long (like a calendar or settings page), consider using full_page mode to capture everything.
 - Make sure the element you highlighted is actually visible in the screenshot. If you highlighted something and then scrolled, the highlight might be off-screen. Scroll back to it or re-highlight after scrolling.
@@ -647,6 +649,10 @@ async function executeTool(
         const filename = input.filename as string;
         const content = input.markdown_content as string;
         const filepath = path.join(DOCS_DIR, filename);
+        const linkProblems = findNewDocLinkProblems(filename, content, DOCS_DIR);
+        if (linkProblems.length > 0) {
+          return `Documentation NOT saved, because some links won't work. Fix them and call finish_documentation again:\n${linkProblems.map((p) => `- ${p}`).join("\n")}`;
+        }
         fs.mkdirSync(DOCS_DIR, { recursive: true });
         fs.writeFileSync(filepath, content, "utf-8");
         console.log(`  -> Documentation written: ${filepath}`);
@@ -793,7 +799,7 @@ Begin by checking available knowledge files, then navigate to the relevant pages
       } else if (!result.startsWith("Error executing")) {
         turnHadSuccess = true;
       }
-      if (block.name === "finish_documentation") {
+      if (block.name === "finish_documentation" && result.startsWith("Documentation saved")) {
         outputFile = result;
       }
       // For screenshots, include the image so the agent can see what it captured

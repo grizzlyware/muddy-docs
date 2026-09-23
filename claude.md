@@ -1,4 +1,32 @@
-# Stagehand Project
+# Muddy Docs
+
+Help articles for Muddy Booking live in `docs/*.md`. Muddy's help centre (muddybooking.com/help) reads them from the `main` branch of this repo, so merging to `main` publishes them. Articles are written for non-technical business owners.
+
+## Writing help articles
+
+- Write docs in simple technical English.
+- Keep the tone human and helpful, not robotic or overly formal.
+- Prefer clear, direct sentences and practical wording over jargon.
+- Start every article with YAML frontmatter: `title`, `category`, `tags`, `order`, `description`, `pinned`, and `category_description` on the lowest-ordered article in a category. The filename (without `.md`) is the article's slug.
+- Don't add an H1. Start the body with `##` headings. Use sentence case for headings.
+- **Link to other articles by filename**, e.g. `[Managing shop orders](managing-shop-orders.md)`, or `[Limits](setting-up-shop-delivery.md#limits)` for a heading. Muddy looks up the article's category and points the link at the right page. Never write a `muddybooking.com/help/...` address: it breaks when an article moves category. A link to a heading in the same article is just the anchor, e.g. `[Limits](#limits)`.
+- A heading's anchor is the heading in lowercase, with spaces replaced by dashes and punctuation removed ("Step 1 — Add a method" → `step-1--add-a-method`).
+- When an article mentions something another article covers, link to it.
+- Don't use tables. They don't render on the help site; use bullet lists.
+- Reference screenshots as `![description](../screenshots/FILENAME)`.
+- Run `npm test` before you push. It fails if any link points to an article or heading that doesn't exist, or uses a form that won't work on the help site (`src/links.ts`).
+
+## Previewing a branch
+
+Muddy can serve a docs branch instead of `main`: set `GITHUB_DOCS_BRANCH=<branch>` and `GITHUB_DOCS_CACHE_ENABLED=false` in its `.env`, then open `/help`.
+
+## Generating articles
+
+`npm run generate -- "Document how to set up pricing"` (or the "Generate Documentation" GitHub workflow) drives a browser through the app with Stagehand and writes an article. Its instructions are in `buildSystemPrompt` in `src/orchestrator.ts`. It won't save an article with broken links.
+
+---
+
+## Stagehand reference
 
 This is a project that uses Stagehand V3, a browser automation framework with AI-powered `act`, `extract`, `observe`, and `agent` methods.
 
@@ -9,12 +37,6 @@ The main class can be imported as `Stagehand` from `@browserbasehq/stagehand`.
 - `Stagehand`: Main orchestrator class providing `act`, `extract`, `observe`, and `agent` methods
 - `context`: A `V3Context` object that manages browser contexts and pages
 - `page`: Individual page objects accessed via `stagehand.context.pages()[i]` or created with `stagehand.context.newPage()`
-
-## Documentation writing style
-
-- Write docs in simple technical English.
-- Keep the tone human and helpful, not robotic or overly formal.
-- Prefer clear, direct sentences and practical wording over jargon.
 
 ## Initialize
 
