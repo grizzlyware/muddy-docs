@@ -14,7 +14,7 @@ Written by hand from the shop source code on 23 September 2026. The journey happ
 - The header button reads "Basket (N)".
 - "Order summary" panel: "Items", discount lines, "Subtotal" or "Total", "Delivery" ("At checkout" until an address is known), voucher lines, "Left to pay".
 - "Discount or voucher code" box with the "Add" button and a "Check voucher balance" link.
-- Apple Pay / Google Pay buttons (hidden once a voucher is on the order), then "— or —", then the "Checkout" button and the "Keep shopping" link.
+- Apple Pay / Google Pay buttons (hidden once a voucher is on the order; the payment page still offers them, charging the amount left after vouchers), then "— or —", then the "Checkout" button and the "Keep shopping" link.
 - Limits: 999 of one item and 100 lines per basket. Each gift card is its own line.
 
 ## Checkout (`/shop/checkout/{order}`)
