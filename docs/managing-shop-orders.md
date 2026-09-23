@@ -119,9 +119,10 @@ If the customer takes some of their order and comes back for the rest, record wh
 1. Open the order.
 2. Under **Fulfilments**, click **Record collection**.
 3. Under **Items**, enter how many of each item they took.
-4. Click **Record collection**.
+4. Leave **Send an email to the customer** switched on if you'd like to confirm what they've collected.
+5. Click **Record collection**.
 
-The order shows as **Partly dispatched** until everything has been collected.
+There's no carrier or tracking number to fill in. The order shows as **Partly dispatched** until everything has been collected.
 
 ### Collection points where customers help themselves
 
@@ -233,7 +234,7 @@ Muddy emails customers automatically at each step. These come from your business
 - **Your order is confirmed** — when they've paid.
 - **Your order is on its way** — when you record a dispatch (unless you switch the email off).
 - **Your order is ready to collect** — when you mark a collection order as ready.
-- **Your order has been collected** — only if you click **Send handover email**.
+- **Your order has been collected** — when you record a collection with the email switched on, or click **Send handover email**.
 - **Your order has been cancelled** — when you cancel the order.
 - **Refund processed** — each time a refund goes through.
 

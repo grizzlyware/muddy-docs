@@ -93,7 +93,7 @@ If the delivery price changes between the customer seeing it and paying, the pay
 
 Customers see a thank-you page with their order number, and they're emailed a confirmation.
 
-The order page shows what they ordered and how it's progressing. As you record dispatches, it shows each parcel and a tracking link. For collection orders, it shows where to collect from and when it's ready.
+The order page shows what they ordered and how it's progressing. As you record dispatches, it shows each parcel and a tracking link. For collection orders, it shows where to collect from, when it's ready, and that the order is complete once they've collected everything.
 
 Customers can come back to the order page from the link in their emails, even if your shop is closed. On a different device from the one they ordered on, they need to sign in.
 

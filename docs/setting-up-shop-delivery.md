@@ -38,7 +38,7 @@ You can add as many delivery methods as you like. For example, you could offer a
 
 ## Step 2 — Add delivery rates
 
-A rate sets what a delivery method costs, and where it applies. Every delivery method needs at least one rate.
+A rate sets what a delivery method costs, and where it applies. Every delivery method needs at least one rate. Collection points are always free, so they don't have rates, and you can't add a rate until you have at least one delivery method.
 
 1. Under **Delivery rates**, click **Add a delivery rate**.
 2. Under **Delivery method**, choose the method this rate is for.
