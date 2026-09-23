@@ -10,6 +10,12 @@ The main class can be imported as `Stagehand` from `@browserbasehq/stagehand`.
 - `context`: A `V3Context` object that manages browser contexts and pages
 - `page`: Individual page objects accessed via `stagehand.context.pages()[i]` or created with `stagehand.context.newPage()`
 
+## Documentation writing style
+
+- Write docs in simple technical English.
+- Keep the tone human and helpful, not robotic or overly formal.
+- Prefer clear, direct sentences and practical wording over jargon.
+
 ## Initialize
 
 ```typescript
