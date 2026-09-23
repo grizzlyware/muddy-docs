@@ -13,7 +13,7 @@ pinned: false
 
 ## Why this is worth reading
 
-It helps to know what your customers see, so you can answer their questions and set your shop up well. The easiest way to see it for yourself is to preview your shop (see *Setting up your online shop*).
+It helps to know what your customers see, so you can answer their questions and set your shop up well. The easiest way to see it for yourself is to preview your shop (see [Setting up your online shop](https://muddybooking.com/help/shop/setting-up-your-shop)).
 
 Your shop carries your name and branding, not Muddy's. Emails to customers come from your business too.
 
@@ -71,7 +71,7 @@ For collection, they see your collection points and instructions.
 
 ### Your policies
 
-If you've published legal policies, they're shown here. Depending on your settings, customers either tick a box to accept them, or see a note saying that by continuing, they accept them. See *Setting up legal documents*.
+If you've published legal policies, they're shown here. Depending on your settings, customers either tick a box to accept them, or see a note saying that by continuing, they accept them. See [Setting up legal documents](https://muddybooking.com/help/getting-started/setting-up-legal-documents).
 
 ### Paying
 
@@ -99,4 +99,4 @@ Customers can come back to the order page from the link in their emails, even if
 
 Customers with an account can see all their past orders under **Your orders**, in the account menu on your website. They need to sign in to see it.
 
-If a customer checked out as a guest and can't see an order in **Your orders**, the order might be on a different customer record. You can move it to the right customer from the order page (see *Managing shop orders*).
+If a customer checked out as a guest and can't see an order in **Your orders**, the order might be on a different customer record. You can move it to the right customer from the order page (see [Managing shop orders](https://muddybooking.com/help/shop/managing-shop-orders)).

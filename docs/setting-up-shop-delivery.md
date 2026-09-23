@@ -42,9 +42,9 @@ A rate sets what a delivery method costs, and where it applies. Every delivery m
 
 1. Under **Delivery rates**, click **Add a delivery rate**.
 2. Under **Delivery method**, choose the method this rate is for.
-3. Choose where the rate applies (see *Choosing where a rate applies* below).
+3. Choose where the rate applies (see [Choosing where a rate applies](#choosing-where-a-rate-applies) below).
 4. Enter the **Price** the customer pays for delivery.
-5. Set any limits on weight or order value (see *Limits* below). Leave them blank if the rate applies to every order.
+5. Set any limits on weight or order value (see [Limits](#limits) below). Leave them blank if the rate applies to every order.
 6. Click **Add delivery rate**.
 
 ### Choosing where a rate applies
@@ -166,7 +166,7 @@ If you offer both delivery and collection, customers choose between them at chec
 
 **Note:** the collection instructions are read when each email is sent. If you change them, emails sent after that show the new instructions, even for orders placed earlier.
 
-To see how collection orders work once they come in, read *Managing shop orders*.
+To see how collection orders work once they come in, read [Managing shop orders](https://muddybooking.com/help/shop/managing-shop-orders).
 
 ## Changing the order of methods
 

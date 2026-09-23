@@ -124,7 +124,7 @@ Sometimes you can't send the rest of an order. For example, an item might be dis
 2. Under **Fulfilments**, click **Nothing more to send** (or **Nothing more to hand over** on a collection order).
 3. Confirm.
 
-The order comes off your to-do list. **No money moves when you do this.** The confirmation tells you how much could still be refunded. If the customer should get money back for the items they didn't receive, refund it separately (see *Refunding without a return* below).
+The order comes off your to-do list. **No money moves when you do this.** The confirmation tells you how much could still be refunded. If the customer should get money back for the items they didn't receive, refund it separately (see [Refunding without a return](#refunding-without-a-return) below).
 
 If you change your mind, click **Reopen**. Recording another dispatch also puts the order back on your to-do list.
 
