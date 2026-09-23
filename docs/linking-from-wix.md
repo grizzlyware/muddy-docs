@@ -12,7 +12,7 @@ pinned: false
 
 ## Why we recommend linking instead of embedding
 
-Due to how Wix handles iframes, we don't recommend embedding your booking form directly onto your Wix site. Instead, we recommend adding a button that links to your hosted booking form. This gives your customers the best experience.
+Due to how Wix handles iframes, we don't recommend embedding your booking form directly onto your Wix site. Instead, we recommend adding a button that links to your [hosted booking form](customizing-branding-and-website.md#customizing-your-hosted-website). This gives your customers the best experience.
 
 ## Finding your booking form link
 

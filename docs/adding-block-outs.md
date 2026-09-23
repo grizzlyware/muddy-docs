@@ -14,7 +14,7 @@ pinned: false
 
 ## What are block outs?
 
-Block outs are a way to prevent bookings during specific times when you're not available. For example, you might want to reserve time for maintenance activities like cutting grass, personal appointments, or holidays.
+Block outs are a way to prevent bookings during specific times when you're not available. For example, you might want to reserve time for maintenance activities like cutting grass, personal appointments, or holidays. For your regular weekly hours, see [Setting up opening times](setting-up-opening-times.md).
 
 ## How to access block outs
 
@@ -58,7 +58,7 @@ Set when the block out begins. Click the field to select both the date and time.
 Set when the block out ends. Click the field to select both the date and time. Make sure this is after your start time.
 
 **Walks** **(5)** (Required)
-Choose which walks this block out applies to. You can select specific walks or multiple walks. This determines which services won't be available during the blocked time.
+Choose which [walks](creating-a-walk.md) this block out applies to. You can select specific walks or multiple walks. This determines which services won't be available during the blocked time.
 
 ### Step 3: Check for conflicts
 

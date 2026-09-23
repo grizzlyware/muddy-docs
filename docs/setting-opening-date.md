@@ -60,7 +60,7 @@ This demonstrates how the opening date works - customers cannot book walks on da
 
 ### Step 3: View April 2026 - all dates available
 
-Navigate to April 2026 using the calendar navigation arrows. Since all dates in April are after your opening date of 20th March, the entire month shows as available for booking **(1)** (subject to your other availability settings like opening times and block-outs).
+Navigate to April 2026 using the calendar navigation arrows. Since all dates in April are after your opening date of 20th March, the entire month shows as available for booking **(1)** (subject to your other availability settings like [opening times](setting-up-opening-times.md) and [block-outs](adding-block-outs.md)).
 
 ![April 2026 calendar showing all dates available since they're after the opening date](../screenshots/april-2026-calendar-full-availability-1772624458478.png)
 

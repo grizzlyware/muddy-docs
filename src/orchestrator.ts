@@ -13,6 +13,7 @@ import {
   takeScreenshot,
   waitForPage,
 } from "./browser.js";
+import { findNewDocLinkProblems } from "./links.js";
 import {
   getKnowledgeSummary,
   listKnowledgeFiles,
@@ -21,6 +22,7 @@ import {
 } from "./knowledge.js";
 
 const DOCS_DIR = path.resolve("docs");
+const WRITING_GUIDE = path.resolve("WRITING.md");
 const SCREENSHOTS_DIR = path.resolve("screenshots");
 const SOFT_TURN_LIMIT = 100;
 const HARD_TURN_LIMIT = 200;
@@ -367,7 +369,7 @@ const tools: Anthropic.Tool[] = [
   },
 ];
 
-function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[], existingTags: string[]): string {
+export function buildSystemPrompt(task: string, knowledgeSummary: string, existingCategories: string[], existingTags: string[]): string {
   return `You are a documentation assistant for Muddy Booking (muddybooking.com), a booking management platform for dog walking businesses. You control a web browser that is already logged into the app.
 
 ## Your Task
@@ -399,51 +401,18 @@ ${knowledgeSummary}
 7. Save structural knowledge you discover (navigation links, URL patterns, settings layout) for future tasks
 8. When you have enough information: if replacing an existing doc, call delete_documentation first, then call finish_documentation with the same filename. If creating a new doc, just call finish_documentation.
 
-## Documentation Format
-Every documentation file MUST begin with YAML frontmatter. Use this exact format:
-\`\`\`
----
-title: Setting up pricing
-category: Getting started
-tags:
-  - pricing
-  - walks
-  - settings
-order: 10
-description: Learn how to configure base pricing, walk-specific pricing, and discounts.
-pinned: false
-category_description: Essential guides to help you set up and start using Muddy Booking.
----
-\`\`\`
-- **title**: A clear, human-readable title for the article
-- **category**: A broad grouping. ${existingCategories.length > 0 ? `REUSE an existing category if it fits: ${existingCategories.map((c) => `"${c}"`).join(", ")}. Only create a new category if none of these are suitable.` : `Examples: "Getting started", "Settings", "Bookings", "Customers", "Calendar".`} The "Getting started" category is special — it is shown first on the website. Use it for topics a new user would need early on (e.g. initial setup, first bookings, key settings). Don't put every article in it — only ones relevant to someone just starting out.
-- **tags**: 2-5 relevant keywords for search and filtering. ${existingTags.length > 0 ? `REUSE existing tags where they fit: ${existingTags.map((t) => `"${t}"`).join(", ")}. Only create a new tag if none of these are suitable.` : `Examples: "pricing", "walks", "settings", "bookings", "customers".`}
-- **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
-- **description**: A one-sentence summary of what the article covers
-- **pinned**: Whether this article should be pinned to the top of the help page. Always set to \`false\` unless explicitly told otherwise.
-- **category_description** (optional): A short description of the category, shown on the help page. Only include this on ONE article per category — whichever has the lowest order. Omit it from all other articles in the same category.
+${fs.readFileSync(WRITING_GUIDE, "utf-8").trim()}
 
-The frontmatter goes at the very top of the file. Do NOT add a H1 heading or introductory paragraph — the title and description are already in the frontmatter. Start the markdown content directly with H2 sections after the closing \`---\`.
+## Categories and tags already in use
+${existingCategories.length > 0 ? `Categories: ${existingCategories.map((c) => `"${c}"`).join(", ")}.` : `No categories yet. Examples: "Getting started", "Settings", "Bookings", "Customers", "Calendar".`}
+${existingTags.length > 0 ? `Tags: ${existingTags.map((t) => `"${t}"`).join(", ")}.` : `No tags yet. Examples: "pricing", "walks", "settings", "bookings", "customers".`}
+Use list_existing_docs to find the filenames of articles you link to.
 
-## Documentation Guidelines
-- Write for a NON-TECHNICAL audience. The readers are small business owners (dog walkers), not developers.
-- Use simple, friendly language. Avoid jargon, technical terms, URLs, URL paths, API references, or internal identifiers.
-- Guide users by describing what to CLICK and what they'll SEE, not where things are in the URL structure. For example say "Go to Settings, then click Pricing" NOT "Navigate to /manage/operators/{id}/pricing".
-- Use the EXACT words and labels shown on screen. If a button says "Save", write "click **Save**" — don't paraphrase it as "persist your changes" or "save your configuration".
-- Avoid UI jargon. Don't say "toggle", "dropdown", "modal", or "sidebar". Instead say "switch", "menu", "pop-up", "left-hand menu".
-- Explain the WHY, not just the how. For example: "Set your base price — this is what customers will pay for a standard walk" is better than just "Set your base price".
-- Warn clearly before anything destructive or irreversible. If clicking something deletes data or can't be undone, flag it.
-- Do NOT use code formatting (backticks) for field names or values. Use **bold** instead.
-- One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
-- Reference screenshots with: ![description](../screenshots/FILENAME)
+## Screenshots
 - ALWAYS annotate screenshots with highlight_element before taking them. Every screenshot should have at least one highlighted element so the reader knows exactly what to look at. This is especially important for navigation screenshots — if you're telling the user to click something on a page (e.g. "click Pricing in Settings"), highlight that item before taking the screenshot. Only highlight elements that the user needs to interact with for the current step — do NOT highlight unrelated items just because they are nearby. Use numbered badges and reference them in the text, e.g. 'Click **Pricing** **(1)**'. Always call clear_highlights after taking the annotated screenshot.
 - Before taking a screenshot, scroll to make sure the relevant content is visible in the viewport. If you need to show a specific element, scroll it into view first. If the page is long (like a calendar or settings page), consider using full_page mode to capture everything.
 - Make sure the element you highlighted is actually visible in the screenshot. If you highlighted something and then scrolled, the highlight might be off-screen. Scroll back to it or re-highlight after scrolling.
 - You can SEE each screenshot after taking it. Check that it looks correct — the right content is visible, annotations are in the right place, and nothing is cut off. If a screenshot is bad, clear highlights, scroll to fix the position, re-highlight, and take it again.
-- Explain what each setting, option, or field does in plain English
-- Note important caveats, tips, or prerequisites
-- Use clear headings and logical structure
-- Use sentence case for ALL headings and titles (e.g. "Setting up pricing" NOT "Setting Up Pricing"). Only capitalise the first word and proper nouns.
 - NEVER describe current field values as "defaults". The account you are browsing is a shared test account — values you see may have been changed by previous runs or by other users. Describe what each field DOES and what options are available, but do NOT state specific values as defaults (e.g. say "Base price — the starting price for a booking" NOT "Base price (Default: £8.00)"). If the app itself labels something as a default, you may mention that.
 
 ## Important Rules
@@ -647,6 +616,10 @@ async function executeTool(
         const filename = input.filename as string;
         const content = input.markdown_content as string;
         const filepath = path.join(DOCS_DIR, filename);
+        const linkProblems = findNewDocLinkProblems(filename, content, DOCS_DIR);
+        if (linkProblems.length > 0) {
+          return `Documentation NOT saved, because some links won't work. Fix them and call finish_documentation again:\n${linkProblems.map((p) => `- ${p}`).join("\n")}`;
+        }
         fs.mkdirSync(DOCS_DIR, { recursive: true });
         fs.writeFileSync(filepath, content, "utf-8");
         console.log(`  -> Documentation written: ${filepath}`);
@@ -793,7 +766,7 @@ Begin by checking available knowledge files, then navigate to the relevant pages
       } else if (!result.startsWith("Error executing")) {
         turnHadSuccess = true;
       }
-      if (block.name === "finish_documentation") {
+      if (block.name === "finish_documentation" && result.startsWith("Documentation saved")) {
         outputFile = result;
       }
       // For screenshots, include the image so the agent can see what it captured

@@ -1,4 +1,24 @@
-# Stagehand Project
+# Muddy Docs
+
+Help articles for Muddy Booking live in `docs/*.md`. Muddy's help centre (muddybooking.com/help) reads them from the `main` branch of this repo, so merging to `main` publishes them. Articles are written for non-technical business owners.
+
+## Writing help articles
+
+Follow [WRITING.md](WRITING.md). It is the style guide for every article, and the documentation generator is given it word for word, so change the rules there rather than here.
+
+Run `npm test` before you push. It fails if any link points to an article or heading that doesn't exist, or uses a form that won't work on the help site (`src/links.ts`).
+
+## Previewing a branch
+
+Muddy can serve a docs branch instead of `main`: set `GITHUB_DOCS_BRANCH=<branch>` and `GITHUB_DOCS_CACHE_ENABLED=false` in its `.env`, then open `/help`.
+
+## Generating articles
+
+`npm run generate -- "Document how to set up pricing"` (or the "Generate Documentation" GitHub workflow) drives a browser through the app with Stagehand and writes an article. Its prompt is built by `buildSystemPrompt` in `src/orchestrator.ts`: `WRITING.md`, plus instructions that only apply to the generator (the turn budget, its tools, screenshots and the shared test account). It won't save an article with broken links.
+
+---
+
+## Stagehand reference
 
 This is a project that uses Stagehand V3, a browser automation framework with AI-powered `act`, `extract`, `observe`, and `agent` methods.
 
@@ -9,12 +29,6 @@ The main class can be imported as `Stagehand` from `@browserbasehq/stagehand`.
 - `Stagehand`: Main orchestrator class providing `act`, `extract`, `observe`, and `agent` methods
 - `context`: A `V3Context` object that manages browser contexts and pages
 - `page`: Individual page objects accessed via `stagehand.context.pages()[i]` or created with `stagehand.context.newPage()`
-
-## Documentation writing style
-
-- Write docs in simple technical English.
-- Keep the tone human and helpful, not robotic or overly formal.
-- Prefer clear, direct sentences and practical wording over jargon.
 
 ## Initialize
 

@@ -21,7 +21,7 @@ The colour scheme settings control the visual appearance of both your booking fo
 
 ## Selecting your colour scheme
 
-On the Branding settings page, you'll find the **Colour palette** section with seven different colour schemes to choose from **(1)**:
+On the [Branding settings page](customizing-branding-and-website.md#customizing-your-branding), you'll find the **Colour palette** section with seven different colour schemes to choose from **(1)**:
 
 ![Branding settings page with colour palette options](../screenshots/branding-settings-colour-palette-1772558373143.png)
 

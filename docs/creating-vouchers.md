@@ -65,7 +65,7 @@ This page shows:
 From the individual voucher page, you can:
 
 - **Edit voucher** — Modify the code or expiry date
-- **Send voucher** — Share the voucher code with customers
+- **Send voucher** — [Share the voucher code with customers](sending-vouchers-to-customers.md)
 - **Expire voucher** — Manually deactivate the voucher before its expiry date
 - **Record transaction** — Add additional credits or debits to adjust the balance
 

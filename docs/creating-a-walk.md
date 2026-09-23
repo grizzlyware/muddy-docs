@@ -37,7 +37,7 @@ After creating the walk, you'll be taken to the styling page where you can custo
 Here you can:
 
 - **Upload a cover image** **(1)** — Add a photo that represents your walk (up to 10MB). This image will be specific to this walk only
-- **Choose a colour palette** **(2)** — Select from predefined colour schemes like Muddy, Frosty Paws, or Pawsh Pink. Note that this colour scheme will apply to all your walks, not just this one
+- **Choose a colour palette** **(2)** — Select from [predefined colour schemes](changing-system-colour-scheme.md) like Muddy, Frosty Paws, or Pawsh Pink. Note that this colour scheme will apply to all your walks, not just this one
 
 Click **Save changes** when you're happy with your styling choices, or **Preview** to see how your booking form will look to customers.
 
@@ -59,7 +59,7 @@ To configure the core settings for your walk, go to the Settings section. You'll
 
 ![walk-settings-booking](../screenshots/walk-settings-booking-1772711336635.png)
 
-These settings are inherited from your business by default, but you are able to change them on a per walk level if you need to.
+These settings are inherited from your [business booking rules](configuring-booking-rules.md) by default, but you are able to change them on a per walk level if you need to.
 
 - **Maximum number of dogs** **(3)** — Set the capacity limit for each walk slot
 - **Start booking slots at** **(4)** — Choose when bookings can begin (e.g., on the hour, every 15 minutes, every 30 minutes)
@@ -67,7 +67,7 @@ These settings are inherited from your business by default, but you are able to 
 
 ### Display settings
 
-You can also customise the terminology used for this specific walk:
+You can also customise the [terminology](customizing-app-terminology.md) used for this specific walk:
 
 - **Display noun** — The word used to refer to this walk throughout the app
 - **Display verb** — The action word for attending this walk  
