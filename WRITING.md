@@ -1,7 +1,3 @@
-# Writing help articles
-
-This guide is for anyone writing a help article in `docs/`: a person, a Claude session, or the documentation generator (which is given this file word for word).
-
 ## Documentation Format
 Every documentation file MUST begin with YAML frontmatter. Use this exact format:
 ```
