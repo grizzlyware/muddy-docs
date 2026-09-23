@@ -112,6 +112,17 @@ This doesn't email the customer. If you'd like to send them a confirmation, clic
 
 **Note:** once an order has been collected, it can't be cancelled.
 
+### When the customer collects part of an order
+
+If the customer takes some of their order and comes back for the rest, record what they took:
+
+1. Open the order.
+2. Under **Fulfilments**, click **Record collection**.
+3. Under **Items**, enter how many of each item they took.
+4. Click **Record collection**.
+
+The order shows as **Partly dispatched** until everything has been collected.
+
 ### Collection points where customers help themselves
 
 If the collection point is set so that customers help themselves, such as a locker, marking the order ready also counts as handing it over. When you click **Ready to collect**, the pop-up is titled **Left for the customer**, and you enter **Where to find it** instead. There's no separate **Customer has collected** step, and no handover email. After that, the order can't be cancelled.

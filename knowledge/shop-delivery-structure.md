@@ -29,7 +29,7 @@ Written by hand from the shop source code on 23 September 2026. Page: `/manage/o
 ## Postcodes
 - The field is a single line. Separate entries with commas. Case and spaces are ignored.
 - A prefix entry (e.g. IV, TR18) matches any postcode that starts with it. PA2 therefore also matches PA20-PA29.
-- A range entry (e.g. PA20-49) matches district numbers from 20 to 49. The letters must appear only once: PA20-PA49 does not work.
+- A range entry (PA20-49 or PA20-PA49) matches district numbers from 20 to 49. A range that changes area (PA20-PB49) is refused when saving.
 
 ## Choosing the price (for each method)
 - Rates and exclusions are ranked by how specific they are: postcode > county > country > everywhere else.

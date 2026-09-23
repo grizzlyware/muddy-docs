@@ -27,7 +27,7 @@ Written by hand from the shop source code on 23 September 2026. Pages: `/manage/
   - For points with "Customers help themselves" on, the pop-up is titled "Left for the customer", the field is "Where to find it", and marking ready also records the handover.
 - "Resend ready-to-collect email" (button "Resend email").
 - "Customer has collected" (confirm "They have it") sends no email. "Send handover email" then sends one.
-- On collection orders, "Record dispatch" is labelled "Record collection", and closing is labelled "Nothing more to hand over".
+- On collection orders, the button is "Record collection". It opens "Record a collection", which has no Carrier or Tracking number fields; the goods are recorded as collected in person, and the success message is "Collection recorded." Closing is labelled "Nothing more to hand over".
 
 ## Cancelling
 - "Cancel order" (confirm "Cancel the order"). It is only available while nothing has been sent or collected and no payment is pending.

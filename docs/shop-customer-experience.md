@@ -42,7 +42,7 @@ Here they can:
 - Change quantities or remove items.
 - Enter a code in the **Discount or voucher code** box. This works for discount codes, vouchers and gift cards.
 - Check a voucher's balance, with **Check voucher balance**.
-- Pay straight away with Apple Pay or Google Pay, if their device supports it.
+- Pay straight away with Apple Pay or Google Pay, if their device supports it and there's no voucher on the order.
 - Click **Checkout** to continue.
 
 The basket shows **At checkout** for delivery, until they've entered their address.
@@ -83,7 +83,9 @@ Vouchers can't be used on an order that contains a gift card.
 
 ## Apple Pay and Google Pay
 
-On supported devices, Apple Pay and Google Pay buttons appear in the basket and at the top of checkout. Customers can pay in one step. Their wallet fills in their details and address, and shows your delivery options and prices.
+On supported devices, Apple Pay and Google Pay buttons appear in the basket and at the top of checkout. Customers can pay in one step.
+
+The buttons are hidden once a voucher or gift card is on the order, because the wallet can't show the amount left to pay. Customers then pay on the checkout page instead. Their wallet fills in their details and address, and shows your delivery options and prices.
 
 If the delivery price changes between the customer seeing it and paying, the payment is stopped and they're not charged. They're asked to use the checkout page instead.
 

@@ -68,7 +68,7 @@ Limits let you charge different amounts depending on the order. There are four:
 
 An order has to meet every limit you set. "From" includes the amount you enter, and "Under" doesn't. So a rate **under £50** and another **from £50** fit together exactly, with no gap and no overlap.
 
-**Note:** if a rate uses weight, every physical product needs a weight set. If the basket has anything without a weight, including a gift card, rates that use weight won't apply to it. Muddy warns you at the top of the **Delivery** page if any of your products are missing a weight.
+**Note:** if a rate uses weight, every physical product needs a weight set. If a basket contains a physical product with no weight, rates that use weight won't apply to it. Gift cards and other products that aren't posted don't count towards the weight. Muddy warns you at the top of the **Delivery** page if any of your products are missing a weight.
 
 ## Offering free delivery over an amount
 
@@ -90,7 +90,7 @@ Separate postcodes with commas. Capitals and spaces don't matter. You can list p
 - **The start of a postcode**, such as **IV** or **TR18**. This covers every postcode that starts that way. **IV** covers IV1, IV2, IV36 and so on.
 - **A range of districts**, such as **PA20-49**. This covers PA20, PA21 and so on, up to PA49, and nothing outside that range.
 
-Write ranges with the letters only once, like **PA20-49**. Writing **PA20-PA49** won't work, and Muddy won't warn you, so double-check your ranges.
+You can write a range as **PA20-49** or **PA20-PA49**. A range has to stay in one postcode area, so Muddy won't save one like **PA20-PB49**.
 
 **Watch out:** the start of a postcode matches anything that starts the same way. **PA2** covers PA2, but also PA20 to PA29. **B** covers every postcode starting with B, including BA, BB and BD. If you need to be precise, use a range.
 
