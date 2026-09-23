@@ -16,7 +16,7 @@ Collections are the sections of your shop front. You might have one for **Treats
 
 A product can be in more than one collection. For example, a Christmas treat box could be in both **Treats** and **Christmas gifts**.
 
-**Note:** in the shop, "collection" means a group of products. It's nothing to do with customers collecting an order from you. That's covered in [Setting up delivery and collection](https://muddybooking.com/help/shop/setting-up-shop-delivery).
+**Note:** in the shop, "collection" means a group of products. It's nothing to do with customers collecting an order from you. That's covered in [Setting up delivery and collection](setting-up-shop-delivery.md).
 
 ## Getting to your collections
 

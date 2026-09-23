@@ -128,7 +128,7 @@ The **Goods total** rules look at the total after any earlier discounts.
 - **What does this discount apply to?** — Delivery
 - **Shop rules** — Goods total is at or above £50
 
-You could also set this up with delivery rates instead. See [Setting up delivery and collection](https://muddybooking.com/help/shop/setting-up-shop-delivery).
+You could also set this up with delivery rates instead. See [Setting up delivery and collection](setting-up-shop-delivery.md).
 
 **£5 off with a code**
 
@@ -165,4 +165,4 @@ If a discount reaches its **Maximum uses** while a customer is checking out, it 
 
 ## Vouchers aren't discounts
 
-Customers also use the **Discount or voucher code** box for vouchers and gift cards, but these work differently. A discount lowers the price. A voucher is money the customer already has, so it's used to **pay** for the order. See [Selling gift cards](https://muddybooking.com/help/shop/selling-gift-cards).
+Customers also use the **Discount or voucher code** box for vouchers and gift cards, but these work differently. A discount lowers the price. A voucher is money the customer already has, so it's used to **pay** for the order. See [Selling gift cards](selling-gift-cards.md).

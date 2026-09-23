@@ -42,10 +42,10 @@ Below the figures are links to every part of the shop:
 
 Your shop starts closed, so you can set everything up before customers see it. Work through these in order:
 
-1. **Add your products.** Give each one a name, a price and a photo. See [Adding products and variants](https://muddybooking.com/help/shop/adding-shop-products).
-2. **Group them into collections.** This is optional, but it makes your shop front much easier to browse. See [Organising your shop with collections](https://muddybooking.com/help/shop/organising-shop-collections).
-3. **Set your stock**, if you want Muddy to stop selling things when they run out. See [Tracking stock](https://muddybooking.com/help/shop/tracking-shop-stock).
-4. **Set up delivery or collection.** Customers can't buy anything that needs posting until you do. See [Setting up delivery and collection](https://muddybooking.com/help/shop/setting-up-shop-delivery).
+1. **Add your products.** Give each one a name, a price and a photo. See [Adding products and variants](adding-shop-products.md).
+2. **Group them into collections.** This is optional, but it makes your shop front much easier to browse. See [Organising your shop with collections](organising-shop-collections.md).
+3. **Set your stock**, if you want Muddy to stop selling things when they run out. See [Tracking stock](tracking-shop-stock.md).
+4. **Set up delivery or collection.** Customers can't buy anything that needs posting until you do. See [Setting up delivery and collection](setting-up-shop-delivery.md).
 5. **Check your legal policies.** Your terms and conditions and other policies show at checkout (more on this below).
 
 While the shop is closed, a yellow box at the top of the **Shop** page tells you what's missing. For example, it says **Add a product with a price before you open it**, or tells you that nobody can buy your products until you set up delivery. When at least one product is ready to sell, it tells you how many, and the **Open shop** button appears. The button doesn't check the rest of this list, so work through it before you open.
@@ -140,4 +140,4 @@ These go to the admin users on your account. Each person can switch off the ones
 
 - **New shop order** — when a customer pays for an order. Listed as **Shop order placed** in your preferences, and can be switched off.
 - **Order could not be completed** — if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
-- **Not enough stock to fulfil order** — if two customers bought the last of something at the same time. See [Tracking stock](https://muddybooking.com/help/shop/tracking-shop-stock). Can be switched off.
+- **Not enough stock to fulfil order** — if two customers bought the last of something at the same time. See [Tracking stock](tracking-shop-stock.md). Can be switched off.

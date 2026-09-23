@@ -85,7 +85,7 @@ You can't edit or delete past changes. If something is wrong, add a new change t
 
 Because stock only comes off at payment, two customers can occasionally pay for the last item at almost the same time. Muddy won't refuse a payment that has already gone through, so both orders are placed.
 
-When this happens, your stock goes below zero (shown in red), and you get an email called **Not enough stock to fulfil order**. You can then decide what to do. You might find another one, or contact the customer and cancel their order, which refunds them in full. See [Managing shop orders](https://muddybooking.com/help/shop/managing-shop-orders).
+When this happens, your stock goes below zero (shown in red), and you get an email called **Not enough stock to fulfil order**. You can then decide what to do. You might find another one, or contact the customer and cancel their order, which refunds them in full. See [Managing shop orders](managing-shop-orders.md).
 
 ## Stopping tracking
 

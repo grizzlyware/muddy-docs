@@ -14,7 +14,7 @@ pinned: false
 1. Click **Shop** in the left-hand menu.
 2. Click **Products**.
 
-The **Products** page lists everything you sell. Products you haven't published yet have a **Draft** badge. The **Stock** column shows how many you have, if you track stock for that product (see [Tracking stock](https://muddybooking.com/help/shop/tracking-shop-stock)).
+The **Products** page lists everything you sell. Products you haven't published yet have a **Draft** badge. The **Stock** column shows how many you have, if you track stock for that product (see [Tracking stock](tracking-shop-stock.md)).
 
 If you've made collections, you can use the menu at the top to show one collection at a time.
 
@@ -25,7 +25,7 @@ To check how a product looks to customers, click **View in shop** next to it. Th
 1. On the **Products** page, click **Create**.
 2. Under **Product type**, choose **Standard product**.
 
-Choose **Gift card** instead if you want to sell a balance customers can spend later. Gift cards work a little differently, so they have their own article: [Selling gift cards](https://muddybooking.com/help/shop/selling-gift-cards). You can't change the product type after you've created the product.
+Choose **Gift card** instead if you want to sell a balance customers can spend later. Gift cards work a little differently, so they have their own article: [Selling gift cards](selling-gift-cards.md). You can't change the product type after you've created the product.
 
 Then fill in the details below.
 
@@ -137,4 +137,4 @@ If you change a product with variants back to **Just one variant**, Muddy stops 
 
 ## Products not in a collection
 
-If you use collections, a product that isn't in any collection only appears under **More products** at the end of your shop. Muddy warns you about this when you edit the product. See [Organising your shop with collections](https://muddybooking.com/help/shop/organising-shop-collections).
+If you use collections, a product that isn't in any collection only appears under **More products** at the end of your shop. Muddy warns you about this when you edit the product. See [Organising your shop with collections](organising-shop-collections.md).

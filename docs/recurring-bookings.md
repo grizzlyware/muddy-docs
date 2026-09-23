@@ -189,7 +189,7 @@ Click any recurring booking to open its detail page. The calendar there shows:
 
 Recurring bookings are **always paid through invoicing** — never charged automatically at the moment a booking is created. Each booking gets confirmed and added to your invoice queue, ready to be picked up the next time you run invoices on whatever cadence you've configured.
 
-**Before publishing your first recurring booking, take a minute to check your invoicing settings.** Go to **Settings**, then **Invoicing** to set your cadence, payment terms, and other invoice options. The [Invoicing and automatic payments](https://muddybooking.com/help/payments/invoicing-and-automatic-payments) guide has the details.
+**Before publishing your first recurring booking, take a minute to check your invoicing settings.** Go to **Settings**, then **Invoicing** to set your cadence, payment terms, and other invoice options. The [Invoicing and automatic payments](invoicing-and-automatic-payments.md) guide has the details.
 
 ---
 

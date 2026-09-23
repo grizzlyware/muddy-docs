@@ -166,7 +166,7 @@ If you offer both delivery and collection, customers choose between them at chec
 
 **Note:** the collection instructions are read when each email is sent. If you change them, emails sent after that show the new instructions, even for orders placed earlier.
 
-To see how collection orders work once they come in, read [Managing shop orders](https://muddybooking.com/help/shop/managing-shop-orders).
+To see how collection orders work once they come in, read [Managing shop orders](managing-shop-orders.md).
 
 ## Changing the order of methods
 
