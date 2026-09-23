@@ -74,4 +74,6 @@ Save your changes.
 
 Your customers will now see a **Book now** button on your page, which opens your booking form.
 
+To open the booking form from your own button, or to track bookings in analytics tools, see the [Embed JavaScript API](embed-javascript-api.md).
+
 ![Finished booking form on Squarespace](../screenshots/sq-step-twelve-_Xrq4Hmt.webp)

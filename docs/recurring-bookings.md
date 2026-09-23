@@ -17,7 +17,7 @@ category_description: Guides for creating, managing, and understanding bookings 
 
 A recurring booking is a schedule you set up once for a customer. Muddy then creates real bookings from it — weekly, monthly, or yearly — ahead of time, on a repeating cadence. Each booking it generates is just a normal booking: confirmed at creation, and pulled into your invoices like everything else.
 
-It's not a subscription. There's no separate billing arrangement — bookings get invoiced on whatever cadence you already use. Because payment runs through invoicing, **make sure your invoicing settings are set up before you publish a recurring booking** (head to **Settings**, then **Invoicing**).
+It's not a subscription. There's no separate billing arrangement — bookings get invoiced on whatever cadence you already use. Because payment runs through invoicing, **make sure your [invoicing settings](invoicing-and-automatic-payments.md#configuring-invoicing-settings) are set up before you publish a recurring booking** (head to **Settings**, then **Invoicing**).
 
 ---
 
@@ -74,7 +74,7 @@ Search for and pick the customer this schedule is for. Every booking it generate
 
 #### Walk **(2)**
 
-Choose the service. (Your account might call it something else — see *Tips* below.) This sets the available start times, durations, and pricing for every occurrence.
+Choose the [service](creating-a-walk.md). (Your account might call it something else — see *Tips* below.) This sets the available start times, durations, and pricing for every occurrence.
 
 #### Repeat every **(3)**
 
@@ -150,7 +150,7 @@ Applied to every occurrence, and used to calculate the price. If you're using an
 
 ## Step 3 — Check the preview and publish
 
-Before saving, scroll to the **Schedule preview**. It shows a 12-month calendar with every planned occurrence marked. Anything that would clash with an existing booking, a block-out, or a service closure gets flagged here, so you can spot problems before going live.
+Before saving, scroll to the **Schedule preview**. It shows a 12-month calendar with every planned occurrence marked. Anything that would clash with an existing booking, a [block-out](adding-block-outs.md), or a service closure gets flagged here, so you can spot problems before going live.
 
 If something looks off, scroll back up and tweak the schedule.
 
@@ -195,7 +195,7 @@ Recurring bookings are **always paid through invoicing** — never charged autom
 
 ## Notifications
 
-You and your customer both get notified at the key moments. These use your existing notification templates and channels (email, SMS, WhatsApp) as configured in **Notifications** settings.
+You and your customer both get notified at the key moments. These use your existing notification templates and [channels (email, SMS, WhatsApp)](setting-up-whatsapp-sms-notifications.md) as configured in **Notifications** settings.
 
 ### When a batch of bookings is generated successfully
 
@@ -218,7 +218,7 @@ You and your customer both get notified at the key moments. These use your exist
 
 ## Tips and things to watch out for
 
-- **Your account might use different words.** Walks and dogs are the defaults — your account might say "sessions" and "cats", for example. The labels in the app come from **Settings → Terminology**.
+- **Your account might use different words.** Walks and dogs are the defaults — your account might say "sessions" and "cats", for example. The labels in the app come from **Settings → Terminology**. See [Customizing app terminology](customizing-app-terminology.md).
 - **Check your price adjustments.** If you've got any set up, decide whether they should apply to recurring bookings. Each one has its own rule options.
 - **Materialisation cadence is account-wide.** It's not per schedule — every recurring booking on the account generates on the same cadence.
 - **Drafts are safe to leave.** A draft does nothing — no bookings, no notifications — until you publish it.

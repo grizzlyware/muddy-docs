@@ -18,7 +18,7 @@ Opening times define when your customers can book appointments with your busines
 - **Business level** — default times that apply to all your walks
 - **Walk level** — specific times for individual walks that override the business defaults
 
-This two-level system gives you flexibility to have standard operating hours while allowing certain walks to have different availability.
+This two-level system gives you flexibility to have standard operating hours while allowing certain walks to have different availability. For one-off closures such as holidays, see [How to add a block out](adding-block-outs.md).
 
 ## Setting business-level opening times
 

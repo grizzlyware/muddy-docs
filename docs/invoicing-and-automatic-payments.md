@@ -12,7 +12,7 @@ pinned: false
 
 ## How invoicing works
 
-Invoicing lets you bill customers after their bookings have finished, instead of requiring payment upfront. This is useful if you have regular customers — like professional dog walkers — who you'd prefer to invoice on a schedule.
+Invoicing lets you bill customers after their bookings have finished, instead of requiring payment upfront. This is useful if you have [regular customers](recurring-bookings.md) — like professional dog walkers — who you'd prefer to invoice on a schedule.
 
 Customers must be logged in to book without paying upfront, and invoices can only be raised for bookings that have already finished.
 

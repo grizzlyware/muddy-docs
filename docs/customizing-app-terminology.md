@@ -51,6 +51,8 @@ For complete control, you can set your own terminology using the three main fiel
 
 **Walk display subject** **(3)** - This replaces "dog" when referring to what's being booked for. Examples: "dogs", "pets", "horses", "clients"
 
+You can also change these words for a single walk. See [Creating a walk](creating-a-walk.md#display-settings).
+
 ## Seeing your changes in action
 
 As you type in the fields, watch the example text update in real-time. This shows exactly how your terminology will appear throughout the app:
@@ -71,8 +73,8 @@ Your custom terminology will be used in:
 - Customer booking forms
 - Booking confirmations and reminders
 - Your management dashboard
-- Invoice descriptions
-- Email and SMS notifications
+- [Invoice descriptions](invoicing-and-automatic-payments.md)
+- [Email and SMS notifications](setting-up-whatsapp-sms-notifications.md)
 - Calendar entries
 
 ## Tips for choosing terminology

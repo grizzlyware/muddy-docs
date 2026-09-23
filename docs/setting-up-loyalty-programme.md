@@ -39,7 +39,7 @@ Define how many points customers need to earn a reward (default is 10 points). W
 
 ### Reward type and value
 Choose between:
-- **Voucher** — Issues a voucher with a fixed monetary value
+- **Voucher** — Issues a [voucher](creating-vouchers.md) with a fixed monetary value
 - **Discount** — Applies a percentage discount
 
 Set the reward value — for vouchers, this is the fixed amount (e.g., £5.00).

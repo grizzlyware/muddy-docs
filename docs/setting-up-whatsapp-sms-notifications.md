@@ -35,7 +35,7 @@ Click **Notification settings** to choose which events trigger notifications and
 The system can send notifications for various events including:
 - Booking confirmations and cancellations
 - Booking reminders
-- Invoice notifications
+- [Invoice notifications](invoicing-and-automatic-payments.md)
 - Payment confirmations
 - Customer login links
 - Waiting list availability alerts
