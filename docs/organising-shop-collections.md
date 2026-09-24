@@ -48,9 +48,9 @@ Your new collection starts empty. An empty collection doesn't show in your shop,
 
 You'll see **Products added to the collection.** when it's done.
 
-You can also add products from the other direction. Products that aren't in any collection are listed below your collections, under **Not in a collection** **(2)**. Once you have a collection, click **Add to a collection** **(3)** next to any of them.
+You can also add products from the other direction. Products that aren't in any collection are listed below your collections, under **Not in a collection** **(1)**. Until one of your collections has a product in it, this list is headed **Your products** instead. Once you have a collection, click **Add to a collection** **(2)** next to any of them. Tick the collections you want the product in, then click **Save**.
 
-To take a product out of a collection, click the **X** **(4)** next to it on the collection's card. This only removes it from the collection. The product itself isn't deleted.
+To take a product out of a collection, click the **X** **(3)** next to it on the collection's card. This only removes it from the collection. The product itself isn't deleted.
 
 ![The Collections page with two collection cards and a product that isn't in a collection](../screenshots/shop-d3-collections-page-1790283295061.png)
 
@@ -61,7 +61,7 @@ The order on the **Collections** page is the order customers see.
 - **To move a collection**, drag it by its handle **(1)** to a new position.
 - **To move a product within a collection**, drag it by its handle **(2)** to a new position on the card.
 
-![A collection card with its drag handles and pencil icon marked](../screenshots/shop-d4-handles-and-pencil-1790283269162.png)
+![A collection card with its drag handles marked](../screenshots/shop-d4-handles-and-pencil-1790283269162.png)
 
 Changes save straight away. If your shop is open, customers see the new order immediately.
 
@@ -69,6 +69,7 @@ Changes save straight away. If your shop is open, customers see the new order im
 
 - Each collection appears as a section **(1)** **(2)**, in the order you set.
 - Each section shows its first four products, with a **View all** link if it has more than four.
+- A collection's cover image doesn't show on the shop front. It shows at the top of the collection's own page, which the **View all** link opens.
 - Collections with no published products are hidden.
 - Products that aren't in any collection appear at the end, under **More products** **(3)**.
 - If you have no collections, or they're all empty, your shop front shows your first four products, with a **View all** link to the rest.
@@ -91,4 +92,4 @@ It's worth putting every product in at least one collection. Products left under
 2. Click **Delete collection** **(4)**.
 3. Click **Delete it** to confirm.
 
-Deleting a collection doesn't delete the products in it. They stay in your shop. If they aren't in any other collection, they move to **More products**.
+Deleting a collection doesn't delete the products in it. They stay in your shop. If they aren't in any other collection, they move to **More products**. If none of your remaining collections has published products, your shop front shows all your products in one list instead.
