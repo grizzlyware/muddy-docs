@@ -66,13 +66,13 @@ Stock comes off when the customer **pays**, not when they add something to their
 
 Every change is listed under **Stock history**, with the date, the variant, how much changed, and why. The reasons you'll see are:
 
-- **Starting quantity** - when you first set the stock.
-- **Changed by staff** - a change you or your team made.
-- **Customer order** - sold to a customer.
-- **Customer return** - put back after a return.
-- **Order changed** - an order was changed after it was placed.
-- **Order cancelled** - put back after you cancelled an order.
-- **Stopped tracking** - when someone stopped tracking stock for the variant.
+- **Starting quantity**: when you first set the stock.
+- **Changed by staff**: a change you or your team made.
+- **Customer order**: sold to a customer.
+- **Customer return**: put back after a return.
+- **Order changed**: an order was changed after it was placed.
+- **Order cancelled**: put back after you cancelled an order.
+- **Stopped tracking**: when someone stopped tracking stock for the variant.
 
 You can't edit or delete past changes. If something is wrong, add a new change to correct it. That way the history always shows what really happened.
 

@@ -52,8 +52,8 @@ Choose when the discount starts. Then choose **Run indefinitely**, or **Set end 
 
 ### Discount type
 
-- **Percentage** - takes a share off, such as 10%.
-- **Fixed amount** - takes a set amount off, such as £5.
+- **Percentage**: takes a share off, such as 10%.
+- **Fixed amount**: takes a set amount off, such as £5.
 
 ### Discount amount or Discount percentage
 
@@ -68,8 +68,8 @@ Only an active discount can be used. Switch this off to pause a discount without
 
 ### Apply automatically
 
-- **Off** - customers must enter a code. Add one or more codes under **Discount codes**. Type your own and click **Add**, or click **Generate** for a random one. Codes can only contain letters and numbers, and must be different from every other code you use.
-- **On** - the discount is added to any order that meets its rules, without a code. Customers can't remove an automatic discount.
+- **Off**: customers must enter a code. Add one or more codes under **Discount codes**. Type your own and click **Add**, or click **Generate** for a random one. Codes can only contain letters and numbers, and must be different from every other code you use.
+- **On**: the discount is added to any order that meets its rules, without a code. Customers can't remove an automatic discount.
 
 ### Maximum uses
 
@@ -81,8 +81,8 @@ When a discount can be used in the shop, a **Shop orders** section appears. It c
 
 ### What does this discount apply to?
 
-- **Goods** - the items in the order.
-- **Delivery** - the delivery charge only. Use this for free or reduced delivery offers.
+- **Goods**: the items in the order.
+- **Delivery**: the delivery charge only. Use this for free or reduced delivery offers.
 
 A discount applies to one or the other, not both. For money off both, create two discounts.
 
@@ -90,8 +90,8 @@ A discount applies to one or the other, not both. For money off both, create two
 
 If you chose **Goods**:
 
-- **All goods** - every item in the order.
-- **Chosen items only** - only the products, variants or collections you pick. For example, 20% off only your **Treats** collection.
+- **All goods**: every item in the order.
+- **Chosen items only**: only the products, variants or collections you pick. For example, 20% off only your **Treats** collection.
 
 If you choose **Chosen items only**, you must pick at least one item.
 
@@ -105,12 +105,12 @@ Rules set the conditions an order must meet before the discount applies. If you 
 
 The rules you can add are:
 
-- **Goods total is at or above** - for example, orders of £40 or more.
+- **Goods total is at or above**: for example, orders of £40 or more.
 - **Goods total is at or below**
 - **Order contains one of these products**
 - **Order contains one of these variants**
-- **Order contains a product from one of these collections** - this includes products you add to the collection later.
-- **Order contains a physical product** - the order has at least one physical product.
+- **Order contains a product from one of these collections**: this includes products you add to the collection later.
+- **Order contains a physical product**: the order has at least one physical product.
 
 An order must meet every rule you add.
 
@@ -122,19 +122,19 @@ The **Goods total** rules look at the total after any earlier discounts.
 
 **Free delivery on orders over £50**
 
-- **Where can this discount be used?** - Shop orders
-- **Discount type** - Percentage, **100**
-- **Apply automatically** - on
-- **What does this discount apply to?** - Delivery
-- **Shop rules** - Goods total is at or above £50
+- **Where can this discount be used?**: Shop orders
+- **Discount type**: Percentage, **100**
+- **Apply automatically**: on
+- **What does this discount apply to?**: Delivery
+- **Shop rules**: Goods total is at or above £50
 
 You could also set this up with delivery rates instead. See [Setting up delivery and collection](setting-up-shop-delivery.md).
 
 **£5 off with a code**
 
-- **Discount type** - Fixed amount, **5**
-- **Apply automatically** - off, with a code such as **WELCOME5**
-- **What does this discount apply to?** - Goods, **All goods**
+- **Discount type**: Fixed amount, **5**
+- **Apply automatically**: off, with a code such as **WELCOME5**
+- **What does this discount apply to?**: Goods, **All goods**
 
 ## When a customer has more than one discount
 
@@ -148,8 +148,8 @@ They're applied in this order:
 
 For percentages, **Apply to original price?** decides how they add up:
 
-- **On** - each percentage is worked out on the original price. So 10% and 20% off make 30% off.
-- **Off** - the percentage is worked out on what's left after earlier discounts. So 10% off then 20% off makes 28% off.
+- **On**: each percentage is worked out on the original price. So 10% and 20% off make 30% off.
+- **Off**: the percentage is worked out on what's left after earlier discounts. So 10% off then 20% off makes 28% off.
 
 ## What customers see
 
