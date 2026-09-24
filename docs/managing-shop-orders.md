@@ -20,7 +20,7 @@ The **Orders** page opens on **Awaiting fulfilment**. This is your to-do list: e
 
 Switch to **All orders** **(1)** to see everything, including finished and cancelled orders.
 
-You can filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Fulfilment** **(2)**. Customers who start a checkout but never pay don't appear here.
+Click **Filters** to filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Fulfilment** **(2)**. Customers who start a checkout but never pay don't appear here.
 
 ![The Orders page on All orders, with the filters open and each order's payment and fulfilment status](../screenshots/shop-j21-all-orders-1790281151547.png)
 
@@ -60,7 +60,7 @@ Click an order to open it. You'll see:
 - **Returns** **(4)**: anything the customer has sent back.
 - **Transactions** **(5)**: payments and refunds.
 
-On the right, you'll see the total, anything still to pay **(6)**, the customer's **Contact** **(7)** details, and the delivery address under **Send it to** **(8)**.
+On the right, you'll see the **Total**, the **Balance** **(6)**, the customer's **Contact** **(7)** details, and the delivery address under **Send it to** **(8)**.
 
 ![An order before anything has been sent, with its sections on the left and the total, contact details and delivery address on the right](../screenshots/shop-j3-sam-order-page-1790279113228.png)
 
@@ -158,7 +158,7 @@ Sometimes you can't send the rest of an order. For example, an item might be dis
 
 The order comes off your to-do list. **No money moves when you do this.** The confirmation tells you how much could still be refunded. If the customer should get money back for the items they didn't receive, refund it separately (see [Refunding without a return](#refunding-without-a-return) below).
 
-If you change your mind, click **Reopen** **(2)**. Recording another dispatch also puts the order back on your to-do list **(1)**.
+If you change your mind, click **Reopen** **(2)**. Recording another dispatch also reopens it **(1)**.
 
 ![A closed order's Fulfilments section, with the Reopen button](../screenshots/shop-j8-closed-1790279555093.png)
 
@@ -218,7 +218,7 @@ You don't have to refund straight away. You might want to wait until the items a
 3. Check the **Amount**. It's filled in with the price of the returned items. You can change it, up to what's left to refund on the order.
 4. Click **Refund**.
 
-**Warning:** the **Refund** button stays on a return after you've refunded it. Check **Transactions** before you refund a return, so you don't refund it twice.
+**Warning:** the **Refund** button stays on a return after you've refunded it, as long as the order still has money left to refund. Check **Transactions** before you refund a return, so you don't refund it twice.
 
 The customer gets an email when the refund goes through. Recording a return on its own doesn't email them.
 
@@ -231,6 +231,8 @@ If you recorded a return by mistake, click the bin icon on its row, then **Remov
 ## Refunding without a return
 
 To refund money that isn't for returned items, such as for items you couldn't send, use the **Refund** button under **Transactions**.
+
+The amount is filled in with the most you can refund. Lower it if you're only refunding part of the order.
 
 **Warning:** refunds can't be undone.
 
