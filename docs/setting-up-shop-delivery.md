@@ -30,9 +30,11 @@ If you haven't opened your shop yet, click **Set up collection or delivery** on 
 ## Step 1 — Add a delivery method
 
 1. Under **Collection and delivery methods**, click **Add a delivery method**.
-2. Enter a **Name**. Customers see this at checkout, so make it clear, such as **Royal Mail tracked** or **Standard delivery**.
-3. Enter an **Estimate** if you'd like to tell customers how long it takes, such as **2 to 3 working days**. It's shown beside the name. This is optional.
-4. Click **Add method**.
+2. Enter a **Name** **(1)**. Customers see this at checkout, so make it clear, such as **Royal Mail tracked** or **Standard delivery**.
+3. Enter an **Estimate** **(2)** if you'd like to tell customers how long it takes, such as **2 to 3 working days**. It's shown beside the name. This is optional.
+4. Click **Add method** **(3)**.
+
+![The Add a delivery method form](../screenshots/shop-setup-s9-add-delivery-method-1790261028319.png)
 
 A new method has no rates, so customers can't choose it yet. The **Rates** column tells you this. Add a rate next.
 
@@ -43,11 +45,13 @@ You can add as many delivery methods as you like. For example, you could offer a
 A rate sets what a delivery method costs, and where it applies. Every delivery method needs at least one rate. Collection points are always free, so they don't have rates, and you can't add a rate until you have at least one delivery method.
 
 1. Under **Delivery rates**, click **Add a delivery rate**.
-2. Under **Delivery method**, choose the method this rate is for.
-3. Choose where the rate applies (see [Choosing where a rate applies](#choosing-where-a-rate-applies) below).
-4. Enter the **Price** the customer pays for delivery.
+2. Under **Delivery method** **(1)**, choose the method this rate is for.
+3. Choose where the rate applies **(2)** (see [Choosing where a rate applies](#choosing-where-a-rate-applies) below).
+4. Enter the **Price** **(3)** the customer pays for delivery.
 5. Set any limits on weight or order value (see [Limits](#limits) below). Leave them blank if the rate applies to every order.
-6. Click **Add delivery rate**.
+6. Click **Add delivery rate** **(4)**.
+
+![The Add a delivery rate form](../screenshots/shop-setup-s10-add-delivery-rate-1790261541601.png)
 
 ### Choosing where a rate applies
 
@@ -77,7 +81,9 @@ An order has to meet every limit you set. "From" includes the amount you enter, 
 There's no separate setting for free delivery. Instead, add two rates to the same delivery method:
 
 1. A rate with your normal **Price**, such as £4.95, and **Under order value** set to **50**.
-2. A rate with a **Price** of **0**, and **From order value** set to **50**.
+2. A rate with a **Price** **(1)** of **0**, and **From order value** **(2)** set to **50**.
+
+![A free delivery rate for orders from £50](../screenshots/shop-setup-s10b-free-delivery-rate-1790261585917.png)
 
 Orders under £50 pay £4.95. Orders of £50 or more see **Free** at checkout.
 
@@ -161,10 +167,12 @@ Exclusions follow the same rules as rates. A more specific rate beats a less spe
 If customers can pick their orders up from you, add a **collection point**. Collection is always free, and it's offered to every customer, wherever they live.
 
 1. Under **Collection and delivery methods**, click **Add a collection point**.
-2. Enter a **Name**, such as **Collect from the field**.
-3. Enter **Instructions** telling customers where to come and when, such as "Ring the bell at the back gate. We're open 9am to 5pm." These appear on the order and in the customer's emails.
-4. Switch on **Customers help themselves** if nobody hands the order over, for example if you leave orders in a locker or a collection box.
-5. Click **Add collection point**.
+2. Enter a **Name** **(1)**, such as **Collect from the field**.
+3. Enter **Instructions** **(2)** telling customers where to come and when, such as "Ring the bell at the back gate. We're open 9am to 5pm." These appear on the order and in the customer's emails.
+4. Switch on **Customers help themselves** **(3)** if nobody hands the order over, for example if you leave orders in a locker or a collection box.
+5. Click **Add collection point** **(4)**.
+
+![The Add a collection point form](../screenshots/shop-setup-s8-add-collection-point-1790260989948.png)
 
 If you offer both delivery and collection, customers choose between them at checkout. If you offer only collection, customers aren't asked to choose delivery. If you have one collection point, it's chosen for them.
 

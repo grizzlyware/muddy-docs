@@ -17,7 +17,9 @@ Your shop lets customers buy products from your own website, alongside their boo
 
 The shop lives on the same website as your booking pages. It isn't a separate site, and customers don't need a separate account to use it.
 
-To get there, click **Shop** in the left-hand menu. It sits in the **Payments** section, below **Vouchers** (and **Loyalty points**, if you use them).
+To get there, click **Shop** **(1)** in the left-hand menu. It sits in the **Payments** section, below **Vouchers** (and **Loyalty points**, if you use them).
+
+![Shop in the Payments section of the left-hand menu](../screenshots/shop-setup-s1-menu-shop-1790260722836.png)
 
 ## Setting up your shop for the first time
 
@@ -28,19 +30,39 @@ Your shop starts closed, so you can set everything up before customers see it. U
 ### Step 1 — Add your first product
 
 1. Click **Shop** in the left-hand menu.
-2. Under **1. Add your first product**, click **Add a product**.
-3. Fill in the product's details. See [Adding products and variants](adding-shop-products.md), or [Selling gift cards](selling-gift-cards.md) for gift cards.
-4. Click **Save and continue**.
+2. Under **1. Add your first product**, click **Add a product** **(1)**.
 
-Muddy takes you straight on to the next step. To add more products first, click **Back to setup**, then **Review products**, and add them from the **Products** page. Click **Continue** there when you're done.
+![The Set up your shop page before you've added a product](../screenshots/shop-setup-s2-set-up-your-shop-empty-1790260724917.png)
+
+3. Choose the **Product type** **(1)**, enter a **Product name** **(2)**, and fill in the rest of the product's details. See [Adding products and variants](adding-shop-products.md), or [Selling gift cards](selling-gift-cards.md) for gift cards.
+
+![The top of the product form, with the step bar showing Products](../screenshots/shop-setup-s3-product-form-top-1790260730961.png)
+
+4. Click **Save and continue** **(1)**.
+
+![The bottom of the product form, with Save and continue and Back to setup](../screenshots/shop-setup-s4-product-form-bottom-1790260778670.png)
+
+Muddy takes you straight on to the next step. To add more products first, click **Back to setup** **(2)**, then **Review products**, and add them from the **Products** page.
+
+While you're setting up, the **Products** page shows the same step bar. Click **Back to setup** **(1)** to return to the checklist, or **Continue** **(2)** when you're done.
+
+![The Products page during setup, with Back to setup and Continue](../screenshots/shop-setup-s7-products-setup-1790260839918.png)
 
 ### Step 2 — Set up collection or delivery
 
 Customers need a way to get anything physical you sell. Add at least one collection point, or a delivery method with a rate. See [Setting up delivery and collection](setting-up-shop-delivery.md).
 
-1. Under **2. Set up collection or delivery**, click **Set up collection or delivery**.
-2. Add a collection point, or a delivery method and then a rate for it.
-3. Click **Review shop**.
+1. Under **2. Set up collection or delivery**, click **Set up collection or delivery** **(1)**. If you want to add more products first, click **Review products** **(2)** instead.
+
+![The Set up your shop page after you've added a product](../screenshots/shop-setup-s6-set-up-your-shop-product-added-1790260820004.png)
+
+2. Add a collection point **(1)**, or a delivery method **(2)** and then a rate for it. **Back to setup** **(3)** takes you back to the checklist. **Review shop** **(4)** works once customers have a way to get their order.
+
+![The Collection and delivery page during setup, before anything is added](../screenshots/shop-setup-s5-delivery-setup-empty-1790260800097.png)
+
+3. When you've added them, click **Review shop** **(1)**.
+
+![The Collection and delivery page with a collection point, a delivery method and two rates](../screenshots/shop-setup-s11-delivery-setup-done-1790261725730.png)
 
 If you only sell things that don't need posting, such as gift cards, Muddy skips this step and shows **Not needed for your current products**.
 
@@ -55,10 +77,19 @@ While you're setting up, you can reach **Products** through **Review products**.
 
 ### Step 3 — Review and open
 
-1. Under **3. Review and open**, click **Review shop**. The button works once you have a product to sell and, if you need it, collection or delivery.
-2. The **Review your shop** page lists your products and your collection and delivery methods. Click **Change** next to either to go back to it.
-3. Click **Preview shop** to see your shop as a customer would (see below).
-4. Click **Open shop**, then **Open it** to confirm.
+1. Under **3. Review and open**, click **Review shop** **(1)**. The button works once you have a product to sell and, if you need it, collection or delivery.
+
+![The Set up your shop page, ready to review](../screenshots/shop-setup-s12-set-up-your-shop-ready-1790261731113.png)
+
+2. The **Review your shop** page lists your products and your collection and delivery methods. Click **Change** **(1)** next to either to go back to it.
+3. Click **Preview shop** **(2)** to see your shop as a customer would (see below).
+4. Click **Open shop** **(3)**.
+
+![The Review your shop page](../screenshots/shop-setup-s13-review-your-shop-1790261736494.png)
+
+5. Click **Open it** **(1)** to confirm.
+
+![The confirmation that asks if you want to open your shop](../screenshots/shop-setup-s14-open-your-shop-confirm-1790261757215.png)
 
 Anyone visiting your website can now see the shop and buy from it. A **Shop** link appears in your website's menu, and a **Your orders** link appears in the customer account menu.
 
@@ -90,7 +121,11 @@ You can look at your shop exactly as a customer would before anyone else can.
 - While you're setting up, click **Preview shop** on the **Review your shop** page.
 - After that, click **Shop** in the left-hand menu, then **Preview your shop** at the top of the page.
 
-Your shop opens in a new tab. A banner at the top reminds you that you're previewing, and shows pages customers may not be able to see yet. The preview lasts 30 minutes, then you'll need to click the preview button again.
+Your shop opens in a new tab. A banner at the top **(1)** reminds you that you're previewing, and shows pages customers may not be able to see yet.
+
+![A preview of the shop, with the preview banner at the top](../screenshots/shop-setup-s15-preview-1790261817869.png)
+
+The preview lasts 30 minutes, then you'll need to click the preview button again.
 
 Once your shop is open, the button on the **Shop** page says **View your shop** instead.
 
