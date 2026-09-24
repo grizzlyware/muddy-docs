@@ -10,7 +10,7 @@ tags:
 order: 10
 description: Learn how to enable recurring bookings, create booking schedules for your customers, and manage them from draft through to live.
 pinned: false
-category_description: Guides for creating, managing, and understanding bookings, including recurring schedules, block outs, and cancellations.
+category_description: Manage your bookings, scheduling, and availability settings.
 ---
 
 ## What's a recurring booking?
