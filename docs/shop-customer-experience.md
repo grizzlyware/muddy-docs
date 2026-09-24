@@ -7,7 +7,7 @@ tags:
   - website
   - payments
 order: 90
-description: A walk-through of your shop from a customer's point of view, from browsing and checkout to tracking their order.
+description: Go through an order as a buyer would, from browsing and the basket to checkout, payment and tracking.
 pinned: false
 ---
 

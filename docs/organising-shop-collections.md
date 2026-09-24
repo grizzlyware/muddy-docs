@@ -6,7 +6,7 @@ tags:
   - products
   - collections
 order: 30
-description: Learn how to group your products into collections and arrange how your shop front looks to customers.
+description: Group your products into sections such as Treats or Gift cards, and choose the order customers see them in.
 pinned: false
 ---
 

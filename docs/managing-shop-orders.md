@@ -7,7 +7,7 @@ tags:
   - payments
   - customers
 order: 70
-description: Learn how to find new orders, record what you've sent, handle collections, and deal with cancellations, returns and refunds.
+description: See what's waiting to go out, record what you've posted or handed over, and handle cancellations, returns and refunds.
 pinned: false
 ---
 
@@ -30,33 +30,33 @@ Each order has a **Payment** status and a **Fulfilment** status.
 
 **Payment:**
 
-- **Paid** — the order is paid in full.
-- **Unpaid** — nothing has been paid yet.
-- **Partially paid** — some of the order is paid.
-- **Refunded** or **Partially refunded** — you've given back all or some of the money.
+- **Paid** - the order is paid in full.
+- **Unpaid** - nothing has been paid yet.
+- **Partially paid** - some of the order is paid.
+- **Refunded** or **Partially refunded** - you've given back all or some of the money.
 
 **Payment pending** means a payment has started but hasn't finished yet, such as a bank payment that's still clearing.
 
 **Fulfilment:**
 
-- **Awaiting dispatch** — ready for you to send.
-- **Awaiting preparation** — the customer is collecting, and you haven't got it ready yet.
-- **Ready to collect** — you've told the customer it's ready.
-- **Partly fulfilled** — you've sent or handed over some of the order, but not all of it.
-- **Dispatched** — everything has been sent.
-- **Collected** — the customer has picked it up.
-- **Nothing more to come** — you've closed the order without sending everything (see below).
-- **Nothing to dispatch** — the order has nothing physical in it, such as an order for gift cards only.
+- **Awaiting dispatch** - ready for you to send.
+- **Awaiting preparation** - the customer is collecting, and you haven't got it ready yet.
+- **Ready to collect** - you've told the customer it's ready.
+- **Partly fulfilled** - you've sent or handed over some of the order, but not all of it.
+- **Dispatched** - everything has been sent.
+- **Collected** - the customer has picked it up.
+- **Nothing more to come** - you've closed the order without sending everything (see below).
+- **Nothing to dispatch** - the order has nothing physical in it, such as an order for gift cards only.
 
 ## Looking at an order
 
 Click an order to open it. You'll see:
 
 - A table of the items, with how many were ordered and how many have been sent.
-- **Price breakdown** — shown if the order had discounts.
-- **Fulfilments** — what you've sent or handed over so far.
-- **Returns** — anything the customer has sent back.
-- **Transactions** — payments and refunds.
+- **Price breakdown** - shown if the order had discounts.
+- **Fulfilments** - what you've sent or handed over so far.
+- **Returns** - anything the customer has sent back.
+- **Transactions** - payments and refunds.
 
 On the right, you'll see the total, anything still to pay, the customer's **Contact** details, and the delivery address under **Send it to**.
 
@@ -231,11 +231,11 @@ The order moves to that customer's record and their **Your orders** list. The co
 
 Muddy emails customers automatically at each step. These come from your business, not from Muddy.
 
-- **Your order is confirmed** — when they've paid.
-- **Your order is on its way** — when you record a dispatch (unless you switch the email off).
-- **Your order is ready to collect** — when you mark a collection order as ready.
-- **Your order has been collected** — when you record a collection with the email switched on, or click **Send handover email**.
-- **Your order has been cancelled** — when you cancel the order.
-- **Refund processed** — each time a refund goes through.
+- **Your order is confirmed** - when they've paid.
+- **Your order is on its way** - when you record a dispatch (unless you switch the email off).
+- **Your order is ready to collect** - when you mark a collection order as ready.
+- **Your order has been collected** - when you record a collection with the email switched on, or click **Send handover email**.
+- **Your order has been cancelled** - when you cancel the order.
+- **Refund processed** - each time a refund goes through.
 
 Order emails include a link to the order. Customers can open it on the device they ordered from, or by signing in.

@@ -5,7 +5,7 @@ tags:
   - shop
   - products
 order: 20
-description: Learn how to add products to your shop, offer them in different colours or sizes, and take them off sale.
+description: Put things up for sale with prices, photos and VAT, offer different sizes or colours, and take them off sale again.
 pinned: false
 ---
 

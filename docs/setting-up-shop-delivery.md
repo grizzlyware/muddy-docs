@@ -6,7 +6,7 @@ tags:
   - delivery
   - settings
 order: 60
-description: Learn how to offer delivery and collection on shop orders, and set what delivery costs to each place you send to.
+description: Choose how customers get their shop orders, what you charge to post them, and where you won't send them.
 pinned: false
 ---
 
@@ -14,9 +14,9 @@ pinned: false
 
 When a customer checks out, they choose how their order reaches them. You decide what they can choose from, and what each option costs. There are three parts to this:
 
-- **Delivery methods** — the options customers pick from, such as **Standard delivery** or **Next day**. Each one can also be a **collection point**, where customers pick the order up from you.
-- **Delivery rates** — what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
-- **Places you don't deliver to** — places inside an area you deliver to that you don't want to deliver to.
+- **Delivery methods** - the options customers pick from, such as **Standard delivery** or **Next day**. Each one can also be a **collection point**, where customers pick the order up from you.
+- **Delivery rates** - what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
+- **Places you don't deliver to** - places inside an area you deliver to that you don't want to deliver to.
 
 Delivery only applies to physical products. Customers buying only gift cards skip this step.
 
@@ -27,7 +27,7 @@ To get there:
 
 If you haven't opened your shop yet, click **Set up collection or delivery** on the **Shop** page instead. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
-## Step 1 — Add a delivery method
+## Step 1 - Add a delivery method
 
 1. Under **Collection and delivery methods**, click **Add a delivery method**.
 2. Enter a **Name** **(1)**. Customers see this at checkout, so make it clear, such as **Royal Mail tracked** or **Standard delivery**.
@@ -40,7 +40,7 @@ A new method has no rates, so customers can't choose it yet. The **Rates** colum
 
 You can add as many delivery methods as you like. For example, you could offer a cheaper standard option and a faster, more expensive one.
 
-## Step 2 — Add delivery rates
+## Step 2 - Add delivery rates
 
 A rate sets what a delivery method costs, and where it applies. Every delivery method needs at least one rate. Collection points are always free, so they don't have rates, and you can't add a rate until you have at least one delivery method.
 
@@ -55,9 +55,9 @@ A rate sets what a delivery method costs, and where it applies. Every delivery m
 
 ### Choosing where a rate applies
 
-- **Country** — the country the rate covers. Choose **Everywhere else** for a rate that covers every country you haven't given its own rate.
-- **County** — to cover just one county, choose it here. Leave it as **Anywhere in that country** to cover the whole country.
-- **Postcodes** — to cover just some postcodes, list them here. This is optional. If you add postcodes, the rate covers only them, not the whole country or county.
+- **Country** - the country the rate covers. Choose **Everywhere else** for a rate that covers every country you haven't given its own rate.
+- **County** - to cover just one county, choose it here. Leave it as **Anywhere in that country** to cover the whole country.
+- **Postcodes** - to cover just some postcodes, list them here. This is optional. If you add postcodes, the rate covers only them, not the whole country or county.
 
 ### VAT
 
@@ -69,8 +69,8 @@ If you're not VAT registered, leave **Tax classification** as **None**.
 
 Limits let you charge different amounts depending on the order. There are four:
 
-- **From order value** and **Under order value** — the cost of the goods, including VAT. The delivery charge isn't counted.
-- **From weight (grams)** and **Under weight (grams)** — the total weight of the order.
+- **From order value** and **Under order value** - the cost of the goods, including VAT. The delivery charge isn't counted.
+- **From weight (grams)** and **Under weight (grams)** - the total weight of the order.
 
 An order has to meet every limit you set. "From" includes the amount you enter, and "Under" doesn't. So a rate **under £50** and another **from £50** fit together exactly, with no gap and no overlap.
 
@@ -144,7 +144,7 @@ To give the Highlands free delivery over £50 too, split the postcode rate in th
 - UK, postcodes **IV, HS, ZE, KW, PA20-49**, under £50, £12
 - UK, postcodes **IV, HS, ZE, KW, PA20-49**, from £50, £0
 
-## Step 3 — Exclude places you don't deliver to (optional)
+## Step 3 - Exclude places you don't deliver to (optional)
 
 Sometimes a rate covers an area where you don't want to deliver. For example, you might deliver across the UK but not to Northern Ireland, or not deliver heavy orders to the islands. That's what exclusions are for.
 
@@ -213,5 +213,5 @@ If none of your delivery methods reach the customer's address, they're told deli
 
 Once your shop is open, Muddy warns you on the **Shop** page if delivery isn't set up properly:
 
-- **You haven't set up collection or delivery** — you have products that need posting, but no way for customers to get them. Customers can't order those products until you add one.
-- **You offer collection but no delivery** — customers can only collect. If that's what you want, click **Dismiss** and the warning won't come back.
+- **You haven't set up collection or delivery** - you have products that need posting, but no way for customers to get them. Customers can't order those products until you add one.
+- **You offer collection but no delivery** - customers can only collect. If that's what you want, click **Dismiss** and the warning won't come back.

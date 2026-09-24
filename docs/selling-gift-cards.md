@@ -6,7 +6,7 @@ tags:
   - vouchers
   - products
 order: 50
-description: Learn how to sell gift cards in your shop, which customers can buy for themselves or send to someone else.
+description: Let customers buy vouchers in your shop at amounts you set, for themselves or to send to someone else.
 pinned: false
 ---
 
@@ -37,8 +37,8 @@ What customers see in your shop. Muddy fills in **Gift Card** for you, but you c
 
 Choose how much the gift card is worth:
 
-- **One value** — the gift card is sold at a single amount. Enter it under **Gift card value**.
-- **Multiple values** — customers choose from amounts you set, such as £10, £25 and £50. Enter each amount under **Values**, and click **Add value** for more. You need at least two, and each one must be different.
+- **One value** - the gift card is sold at a single amount. Enter it under **Gift card value**.
+- **Multiple values** - customers choose from amounts you set, such as £10, £25 and £50. Enter each amount under **Values**, and click **Add value** for more. You need at least two, and each one must be different.
 
 The customer pays exactly the value of the gift card, and the voucher they get is worth the same.
 
@@ -70,8 +70,8 @@ When you're done, click **Create gift card**. If this is your first product and 
 
 When a customer buys a gift card, they're asked **Who is it for?**
 
-- **For me** — the gift card is emailed to the customer once they've paid.
-- **Send to someone else** — the customer enters the **Recipient name**, **Recipient email** and, if they like, a **Personal message**.
+- **For me** - the gift card is emailed to the customer once they've paid.
+- **Send to someone else** - the customer enters the **Recipient name**, **Recipient email** and, if they like, a **Personal message**.
 
 If they're sending it to someone else, they can also choose **Send it later** and pick a **Send date and time**. This can be up to six months ahead. Otherwise, the gift card is emailed as soon as payment is complete.
 

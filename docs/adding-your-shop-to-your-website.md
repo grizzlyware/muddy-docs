@@ -6,7 +6,7 @@ tags:
   - embedding
   - website
 order: 100
-description: Learn how to show your shop on your own website, so customers can browse and buy without leaving it.
+description: Keep customers on your own pages while they browse and buy, and choose how it looks on computers and phones.
 pinned: false
 ---
 
@@ -40,9 +40,9 @@ These settings change how the shop sits on your page. **Show header** and **Mobi
 
 Choose one from the menu:
 
-- **White** — the shop and the area around it have a solid, light background. This is the default, and the safest choice if you're not sure.
-- **Transparent** — the shop has no background, so your website's own background shows through. The shop's text is dark, so only choose this if your page has a light background.
-- **White panel, transparent surround** — the shop itself keeps a white background, so it's always easy to read. The area around it, behind your logo and along the bottom, shows your website's background. This suits a page with a coloured or dark background.
+- **White** - the shop and the area around it have a solid, light background. This is the default, and the safest choice if you're not sure.
+- **Transparent** - the shop has no background, so your website's own background shows through. The shop's text is dark, so only choose this if your page has a light background.
+- **White panel, transparent surround** - the shop itself keeps a white background, so it's always easy to read. The area around it, behind your logo and along the bottom, shows your website's background. This suits a page with a coloured or dark background.
 
 ### Rounded corners
 
@@ -50,8 +50,8 @@ Switch this on to give the shop rounded corners, or leave it off for square corn
 
 ### Full width
 
-- **Off** — the shop has a maximum width and sits in the middle of the space you put it in, so it doesn't stretch too wide on big screens.
-- **On** — the shop stretches to fill the whole width of that space.
+- **Off** - the shop has a maximum width and sits in the middle of the space you put it in, so it doesn't stretch too wide on big screens.
+- **On** - the shop stretches to fill the whole width of that space.
 
 On phones, this setting also makes the **Open** button stretch across the page.
 

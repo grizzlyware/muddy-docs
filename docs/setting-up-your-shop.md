@@ -7,7 +7,7 @@ tags:
   - settings
   - website
 order: 10
-description: Learn what the shop does, how to set it up and open it for the first time, and how to close and preview it.
+description: Add products, choose collection or delivery, preview what customers see and open for business, then close whenever you need to.
 pinned: false
 ---
 
@@ -27,7 +27,7 @@ Your shop starts closed, so you can set everything up before customers see it. U
 
 **Tip:** you need a Stripe account connected before customers can pay by card. If you already take card payments for bookings, you're set. If not, click **Stripe setup** in the left-hand menu first.
 
-### Step 1 — Add your first product
+### Step 1 - Add your first product
 
 1. Click **Shop** in the left-hand menu.
 2. Under **1. Add your first product**, click **Add a product** **(1)**.
@@ -48,7 +48,7 @@ While you're setting up, the **Products** page shows the same step bar. Click **
 
 ![The Products page during setup, with Back to setup and Continue](../screenshots/shop-setup-s7-products-setup-1790260839918.png)
 
-### Step 2 — Set up collection or delivery
+### Step 2 - Set up collection or delivery
 
 Customers need a way to get anything physical you sell. Add at least one collection point, or a delivery method with a rate. See [Setting up delivery and collection](setting-up-shop-delivery.md).
 
@@ -75,7 +75,7 @@ Setup doesn't check these, but they're worth doing before customers arrive:
 
 While you're setting up, you can reach **Products** through **Review products**. **Options**, **Collections** and **Collection and delivery** are also under **Settings** in the left-hand menu. The rest of the shop's pages, including **Stock**, appear on the **Shop** page once your shop is open. If you track stock, set it as soon as you open. See [Tracking stock](tracking-shop-stock.md).
 
-### Step 3 — Review and open
+### Step 3 - Review and open
 
 1. Under **3. Review and open**, click **Review shop** **(1)**. The button works once you have a product to sell and, if you need it, collection or delivery.
 
@@ -99,20 +99,20 @@ From now on, changes you make go live straight away. That includes prices, produ
 
 Once your shop is set up, the **Shop** page is your starting point. At the top you'll see a few figures:
 
-- **Awaiting fulfilment** — paid orders you still need to send or hand over.
-- **Sales, last 30 days** — what customers have paid for orders in the last 30 days.
-- **Products for sale** — published products in your shop.
+- **Awaiting fulfilment** - paid orders you still need to send or hand over.
+- **Sales, last 30 days** - what customers have paid for orders in the last 30 days.
+- **Products for sale** - published products in your shop.
 
 Below the figures are links to every part of the shop:
 
-- **Orders** — what customers have bought and what still needs to go out.
-- **Products** — the things you sell.
-- **Stock** — how many of each thing you have.
-- **Options** — the choices a product comes in, like colour or size.
-- **Collections** — the sections of your shop front.
-- **Collection and delivery** — how customers get their orders, and what delivery costs.
-- **Discounts** — money off, by code or automatically. Discounts can apply to bookings too, so they live in your settings rather than inside the shop.
-- **Settings** — how your order numbers look.
+- **Orders** - what customers have bought and what still needs to go out.
+- **Products** - the things you sell.
+- **Stock** - how many of each thing you have.
+- **Options** - the choices a product comes in, like colour or size.
+- **Collections** - the sections of your shop front.
+- **Collection and delivery** - how customers get their orders, and what delivery costs.
+- **Discounts** - money off, by code or automatically. Discounts can apply to bookings too, so they live in your settings rather than inside the shop.
+- **Settings** - how your order numbers look.
 
 ## Previewing your shop
 
@@ -170,8 +170,8 @@ The checkout shows the legal policies you've published (terms and conditions, pr
 2. Click **Legal**.
 3. Look at **Require acceptance**.
 
-- **Require acceptance on** — customers must tick **I accept the…** before they can continue to payment. This is the same setting that applies to bookings.
-- **Require acceptance off** — customers see **By continuing, you accept our…**, with links to each policy, but don't need to tick anything.
+- **Require acceptance on** - customers must tick **I accept the…** before they can continue to payment. This is the same setting that applies to bookings.
+- **Require acceptance off** - customers see **By continuing, you accept our…**, with links to each policy, but don't need to tick anything.
 
 If you haven't published any policies, nothing is shown.
 
@@ -202,6 +202,6 @@ The **Example** box shows what your next order number will look like as you type
 
 These go to the admin users on your account. Each person can switch off the ones marked below from their profile, under **Notification preferences**.
 
-- **New shop order** — when a customer pays for an order. Listed as **Shop order placed** in your preferences, and can be switched off.
-- **Order could not be completed** — if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
-- **Not enough stock for order #1042** — if two customers bought the last of something at the same time. See [Tracking stock](tracking-shop-stock.md). Can be switched off.
+- **New shop order** - when a customer pays for an order. Listed as **Shop order placed** in your preferences, and can be switched off.
+- **Order could not be completed** - if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
+- **Not enough stock for order #1042** - if two customers bought the last of something at the same time. See [Tracking stock](tracking-shop-stock.md). Can be switched off.
