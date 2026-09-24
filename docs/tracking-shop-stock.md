@@ -12,7 +12,7 @@ pinned: false
 
 ## Why track stock
 
-If you tell Muddy how many of something you have, it counts down as customers buy, and it stops selling once you reach zero. Customers see **Out of stock**, and the **Add to basket** button is greyed out.
+If you tell Muddy how many of something you have, it counts down as customers buy, and it stops selling once you reach zero.
 
 You don't have to track stock. For anything you don't track, customers can order as many as they like. This suits things you make to order, or things you never run out of.
 
@@ -23,7 +23,7 @@ You track stock for each **variant**, so you can track your Small harnesses sepa
 1. Click **Shop** in the left-hand menu.
 2. Click **Stock**.
 
-The **Stock** tile appears once your shop is open. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
+The **Stock** tile appears once you've opened your shop for the first time. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
 The **Stock** page lists every variant of every product, with its current stock. To find something quickly, click **Filters** and use the **Product or SKU** **(1)** search.
 
@@ -87,7 +87,8 @@ You can't edit or delete past changes. If something is wrong, add a new change t
 ## What customers see
 
 - Customers see how many are left, such as **3 in stock** **(1)**, above the **Add to basket** **(2)** button. At 10 or more, they see **10+ in stock**.
-- At zero, they see **Out of stock**, and the **Add to basket** button is greyed out. The product still appears in your shop.
+- If a product has options, out-of-stock choices are greyed out. Clicking one switches to a combination that's in stock, if there is one.
+- Once every variant is at zero, customers see **Out of stock**, and the **Add to basket** button is greyed out. The product still appears in your shop.
 - Customers can't add more to their basket than you have.
 - If something runs out while it's in a customer's basket, Muddy reduces or removes it and tells them why.
 
@@ -113,6 +114,6 @@ Customers can then order any amount of that variant. Its stock history is kept.
 
 ## Variants you no longer sell
 
-If you untick a variant on a product, it's hidden from the **Stock** page. Switch on **Show variants no longer for sale** to see it again, and to check its history.
+If you untick a variant on a product, it's hidden from the **Stock** page. If you still track its stock, switch on **Show variants no longer for sale** to see it again. Its past changes stay in the product's **Stock history**.
 
 If a variant you no longer sell still has stock, Muddy reminds you on the **Products** page. You might want to remove that stock, or sell the variant again.
