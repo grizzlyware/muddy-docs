@@ -33,7 +33,7 @@ Customers reach their basket from the **Basket** button **(2)** at the top of th
 
 On a product's page, customers see your images and description, and choose from its options, such as size **(1)** and colour **(2)**. Combinations that are out of stock, or that you don't sell, are greyed out.
 
-If you track stock, customers see how many are left (**8 in stock** **(3)**, or **10+ in stock** when you have plenty). When something runs out, they see **Out of stock**.
+If you track stock, customers see how many are left (**8 in stock** **(3)**, or **10+ in stock** when you have plenty). When a product has run out completely, they see **Out of stock**.
 
 To buy, they click **Add to basket** **(4)**.
 
@@ -57,7 +57,7 @@ Here they can:
 
 ![The basket with two items, the order summary, the code box and the Checkout button](../screenshots/shop-i4-basket-1790277240253.png)
 
-The basket shows **Calculated at checkout** for delivery, until they've entered their address.
+The basket shows **Calculated at checkout** for delivery, until they've chosen their delivery and clicked **Continue to payment**.
 
 If something in their basket runs out or is taken off sale, Muddy updates the basket and tells them what changed.
 
@@ -79,7 +79,7 @@ If you offer both, customers choose **Delivery** or **Collection** **(1)**.
 
 For delivery, they enter their address **(2)**. They can search for it, or enter it by hand. If the order is going to someone else, they tick **Deliver to someone else** **(3)** and enter the recipient's name.
 
-Once they've entered their address, Muddy shows the delivery options you offer there, with their prices **(4)**. If you don't deliver to that address, they're told, and invited to get in touch with you.
+Once they've entered their address, Muddy shows the delivery options you offer there, with their prices **(4)**. If you don't deliver to that address, they're told. If you've added a **Contact email address** or **Phone number** in **Business details**, they're also invited to get in touch with you.
 
 ![The checkout with Delivery chosen, an address entered and Royal Mail tracked chosen at £4.95](../screenshots/shop-i7-delivery-1790277558990.png)
 
@@ -87,7 +87,7 @@ For collection, they see your collection points and instructions.
 
 ### Your policies
 
-If you've published legal policies, they're shown here. Depending on your settings, customers either tick a box **(1)** to accept them, or see a note saying that by continuing, they accept them. See [Setting up legal documents](setting-up-legal-documents.md).
+If you've added legal documents, or a [banned breeds policy](setting-up-banned-breeds.md), the checkout links to them just above **Continue to payment**. If **Require acceptance** is on, customers tick a box **(1)** to accept them. If it's off, they see a note saying that by continuing, they accept them. See [Setting up legal documents](setting-up-legal-documents.md).
 
 ### Paying
 
@@ -103,9 +103,9 @@ Vouchers can't be used on an order that contains a gift card.
 
 ## Apple Pay and Google Pay
 
-On supported devices, Apple Pay and Google Pay buttons appear in the basket and at the top of checkout. Customers can pay in one step.
+On supported devices, Apple Pay and Google Pay buttons appear in the basket and at the top of checkout. Customers can pay in one step. Their wallet fills in their details and address, and shows your delivery options and prices.
 
-Once a voucher or gift card is on the order, these one-step buttons are hidden, because they can't show the amount left to pay. Customers fill in the checkout page instead, and can still pay with Apple Pay or Google Pay on the payment step. Their wallet fills in their details and address, and shows your delivery options and prices.
+Once a voucher or gift card is on the order, these one-step buttons are hidden, because they can't show the amount left to pay. Customers fill in the checkout page instead, and can still pay with Apple Pay or Google Pay on the payment step.
 
 If the delivery price changes between the customer seeing it and paying, the payment is stopped and they're not charged. They're asked to use the checkout page instead.
 
