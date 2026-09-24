@@ -13,9 +13,7 @@ pinned: false
 
 ## Accessing banned breeds settings
 
-To set up your banned breeds policy, navigate to your settings:
-
-1. Go to **Settings** from your main menu
+1. Go to **Settings** in the left-hand menu
 2. Find the **Pricing** section
 3. Click **Banned breeds** **(1)**
 
@@ -23,62 +21,59 @@ To set up your banned breeds policy, navigate to your settings:
 
 ## Understanding the policy options
 
-Muddy Booking provides four different policy options for handling banned breeds:
+There are four options:
 
 ![banned-breeds-main-page](../screenshots/banned-breeds-main-page-1772554550196.png)
 
 ### Allow all
-Choose this option if you accept all dog breeds without any restrictions. This is the most inclusive policy and places no breed-based limitations on bookings.
+You accept every breed.
 
 ### Allow none
-Select this option if you do not accept any of the commonly banned breeds. This provides the most restrictive policy regarding banned breeds.
+You don't accept any of the commonly banned breeds.
 
 ### Allow some
-This option lets you create a custom policy by selecting specific breeds that you're comfortable accepting. When you choose this option, you'll see a list of breeds to select from.
+You accept some of the commonly banned breeds and choose which ones.
 
 ### Unspecified
-Choose this if you prefer not to set a specific banned breeds policy through the system.
+You don't set a policy in Muddy.
 
 ## Setting up selective breed acceptance
 
-If you want to accept some but not all banned breeds, select **Allow some** **(1)**. This will reveal the breed selection options **(2)**:
+Select **Allow some** **(1)** to show the list of breeds **(2)**:
 
 ![banned-breeds-allow-some-selected](../screenshots/banned-breeds-allow-some-selected-1772554584757.png)
 
-You can select from these commonly banned breeds:
 - Pit Bull Terrier
 - Japanese Tosa
 - Dogo Argentino
 - Fila Brasileiro
 - XL Bully
 
-Simply tick the checkbox next to each breed you're willing to accept for walks.
+Tick each breed you're happy to accept.
 
 ## Adding additional information
 
-You can provide extra details about your banned breeds policy to help customers understand your requirements:
+You can explain your policy to customers:
 
-1. Scroll down to the **Additional information** section **(1)**
-2. Enter any relevant details about your policy
-3. Click **Save** **(2)** to apply your changes
+1. Scroll down to **Additional information** **(1)**
+2. Enter the details
+3. Click **Save** **(2)**
 
 ![banned-breeds-completed-form](../screenshots/banned-breeds-completed-form-1772554733182.png)
 
-The information you add here will be shown to customers, so consider including:
-- Your reasoning behind the policy
-- Contact information for questions
-- Any exceptions or special circumstances
-- Alternative arrangements you might offer
+Customers see this text, so you might include:
+- Why you have the policy
+- How to contact you with questions
+- Any exceptions
+- Any alternatives you offer
 
 ## Saving your settings
 
-Once you've configured your banned breeds policy and added any additional information, click **Save** to apply your changes. You'll be returned to the main settings page, and your policy will be active immediately.
+Click **Save**. You'll return to the settings page and the policy applies straight away.
 
 ## Important considerations
 
-- Your banned breeds policy affects all bookings across your entire service
-- The policy information you provide will be visible to customers during the booking process. To make customers accept it before they book, see [Setting up legal documents](setting-up-legal-documents.md#requiring-customer-acceptance-5)
-- Consider your insurance requirements and local regulations when setting your policy
-- You can change your policy at any time by returning to this settings page
-
-Setting a clear banned breeds policy helps manage customer expectations and ensures you only receive bookings for dogs you're comfortable walking.
+- The policy applies to all your bookings
+- Customers see the policy when they book. To make them accept it before booking, see [Setting up legal documents](setting-up-legal-documents.md#requiring-customer-acceptance-5)
+- Check your insurance and local regulations when choosing your policy
+- You can change the policy at any time

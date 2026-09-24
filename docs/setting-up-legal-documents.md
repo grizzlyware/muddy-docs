@@ -14,8 +14,6 @@ pinned: false
 
 ## Accessing legal document settings
 
-Your legal documents help protect your business and inform customers about your policies. To set them up:
-
 1. Click **Settings** in the left-hand menu
 2. Under the Business section, click **Legal**
 
@@ -23,71 +21,66 @@ Your legal documents help protect your business and inform customers about your 
 
 ## Setting up your legal documents
 
-The legal settings page allows you to configure three types of documents:
+You can set up three documents here:
 
 ![Legal settings with annotations](../screenshots/legal-settings-annotated-1772553330933.png)
 
 ### Terms and conditions **(1)**
 
-Your terms and conditions outline the rules and guidelines that customers must follow when using your dog walking services. Click in the text area and enter your complete terms and conditions.
-
-This might include information about:
-- Service expectations and limitations  
-- Customer responsibilities
-- Liability and insurance details
+The rules customers agree to when they use your services. Enter them in the text box. You might cover:
+- What your service includes and doesn't include
+- What you expect from customers
+- Liability and insurance
 - Payment terms
 - Booking requirements
 
 ### Privacy policy **(2)**
 
-Your privacy policy explains how you collect, use, and protect customer data. Click in the text area and enter your complete privacy policy.
-
-This should cover:
+How you collect, use and protect customer data. Enter it in the text box. It should cover:
 - What personal information you collect
-- How you use customer data
-- How you protect customer information
-- Customer rights regarding their data
-- Contact information for privacy questions
+- How you use it
+- How you keep it safe
+- Customers' rights over their data
+- Who to contact with privacy questions
 
 ### Cancellation policy
 
-You have two options for your cancellation policy:
+You can let Muddy write this for you, or write your own.
 
 #### Automatic cancellation policy **(3)**
 
-Switch on **Automate cancellation policy** to have Muddy Booking automatically generate and maintain your cancellation policy based on your booking settings. This ensures your policy always matches your actual [cancellation rules](setting-up-cancellation-policy.md).
+Switch on **Automate cancellation policy** and Muddy writes the policy from your [cancellation rules](setting-up-cancellation-policy.md), and keeps it up to date when you change them.
 
 ![Legal settings with automated policy](../screenshots/legal-settings-automated-policy-1772553357661.png)
 
-When automation is enabled, the cancellation policy text area disappears as the document is generated automatically.
+The text box is hidden while this is on.
 
 #### Manual cancellation policy **(4)**
 
-Switch off **Automate cancellation policy** if you prefer to write your own cancellation policy. The text area will appear where you can enter your custom policy covering:
-- Cancellation notice periods
-- Any cancellation fees
-- Refund procedures
-- Rescheduling policies
+Switch off **Automate cancellation policy** to write your own in the text box. Cover:
+- How much notice customers need to give
+- Any fees
+- Refunds
+- Rescheduling
 
 ### Requiring customer acceptance **(5)**
 
-Switch on **Require acceptance** to make customers explicitly agree to your policies before they can complete a booking. This includes:
+Switch on **Require acceptance** to make customers agree to the following before they can book:
 - Your terms and conditions
-- Your privacy policy  
+- Your privacy policy
 - Your cancellation policy
-- Any [banned breeds policies](setting-up-banned-breeds.md) you've configured
+- Your [banned breeds policy](setting-up-banned-breeds.md), if you have one
 
-When this is switched off, your policies are still available to customers but they don't need to actively accept them.
+When it's off, customers can still read your policies but don't have to accept them.
 
 ## Saving your changes
 
-After entering your legal documents and configuring your settings, click **Save** **(6)** to apply all changes.
+Click **Save** **(6)**.
 
 ![Legal settings with sample content](../screenshots/legal-settings-with-content-1772553410176.png)
 
 ## Important considerations
 
-- **Get professional advice**: Consider having a solicitor review your legal documents to ensure they properly protect your business
-- **Keep documents current**: Review and update your legal documents regularly, especially if your services or policies change
-- **Be comprehensive**: Make sure your documents cover all aspects of your service to avoid misunderstandings with customers
-- **Test the booking flow**: After saving, test your booking process from a customer's perspective to see how the legal documents are presented
+- **Get professional advice**: a solicitor can check your documents protect your business
+- **Keep them up to date**: review them whenever your services or policies change
+- **Check what customers see**: after saving, make a test booking to see how the documents are shown

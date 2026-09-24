@@ -14,114 +14,106 @@ pinned: false
 
 ## Accessing loyalty programme settings
 
-To set up your loyalty programme, go to **Settings** and click on **Loyalty programme** in the Pricing section.
+Go to **Settings** and click **Loyalty programme** in the Pricing section.
 
 ![Finding the loyalty programme settings](../screenshots/loyalty-programme-in-settings-1776433624375.png)
 
 ## Initial setup
 
-When you first access the loyalty programme settings, you'll see all the configuration options with a **Set up loyalty programme** button at the bottom.
+The first time you open it, you'll see all the options with a **Set up loyalty programme** button at the bottom.
 
 ![Initial loyalty programme setup screen](../screenshots/loyalty-programme-settings-full-1776433654263.png)
 
-Configure your loyalty programme settings:
-
 ### Earning style
-Choose how customers earn points:
-- **Fixed points per booking** — Customers earn a set number of points for each completed booking
-- **Points per amount spent** — Points are awarded based on the booking value
+How customers earn points:
+- **Fixed points per booking**: a set number of points for each completed booking
+- **Points per amount spent**: points based on how much the booking costs
 
 ### Points per booking
-Set how many points customers earn for each completed booking (default is 1 point per booking).
+How many points each completed booking earns. The default is 1.
 
 ### Reward threshold
-Define how many points customers need to earn a reward (default is 10 points). When customers reach this threshold, they automatically receive a reward.
+How many points a customer needs for a reward. The default is 10. The reward is issued automatically when they reach it.
 
 ### Reward type and value
-Choose between:
-- **Voucher** — Issues a [voucher](creating-vouchers.md) with a fixed monetary value
-- **Discount** — Applies a percentage discount
+- **Voucher**: issues a [voucher](creating-vouchers.md) for a fixed amount, such as £5.00
+- **Discount**: gives a percentage discount
 
-Set the reward value — for vouchers, this is the fixed amount (e.g., £5.00).
+Then enter the value of the reward.
 
 ### Additional settings
-- **Reward expiry** — Choose whether rewards expire after a set period
-- **Trigger mode** — Select "Automatic" to award points once bookings start, or "QR check-in" for manual verification
-- **Earning rules** — Add specific rules to control which bookings earn points (if no rules are set, all bookings earn points)
-- **Stamp card icon** — Upload an icon that appears on customers' loyalty cards
+- **Reward expiry**: whether rewards expire after a set time
+- **Trigger mode**: **Automatic** awards points once a booking starts. **QR check-in** awards them when you check the customer in
+- **Earning rules**: limit which bookings earn points. With no rules, every booking earns points
+- **Stamp card icon**: an icon shown on customers' loyalty cards
 
-Once configured, click **Set up loyalty programme** to enable the feature.
+Click **Set up loyalty programme** to turn it on.
 
 ![Enabling the loyalty programme](../screenshots/enable-loyalty-programme-1776433676384.png)
 
 ## Enabling and managing the programme
 
-After initial setup, you can enable or disable the loyalty programme using the toggle switch at the top of the settings page.
+After setup, use the switch at the top of the settings page to turn the programme on or off.
 
 ![Loyalty programme enabled state](../screenshots/loyalty-programme-enabled-complete-1776434467217.png)
 
-**Important:** Disabling the programme freezes all point accrual, but existing customer points are preserved and can be reactivated later.
+**Important:** turning the programme off stops customers earning points, but keeps the points they already have. They're still there if you turn it back on.
 
-Remember to click **Save changes** after making any modifications.
+Click **Save changes** after making any changes.
 
 ## Managing customer points
 
-Once customers start making bookings, you can view and manage their loyalty points through the customer management system.
-
 ### Viewing customer loyalty status
 
-1. Go to **Customers** in the main menu
-2. Click on any customer to view their profile
-3. Their current loyalty points and reward progress will be displayed
+1. Go to **Customers** in the left-hand menu
+2. Click a customer
+
+Their profile shows their points and how close they are to a reward.
 
 ### Manually adding points
 
-To manually add points to a customer (useful for special circumstances or to trigger rewards):
+You can add points yourself, for example to make up for a problem with a booking.
 
-1. Navigate to the customer's profile
-2. Look for the loyalty points section
-3. Click the option to manually adjust points
+1. Open the customer's profile
+2. Find the loyalty points section
+3. Choose to adjust their points
 4. Enter the number of points to add
-5. Add a note explaining the reason for the manual adjustment
-6. Save the changes
+5. Add a note saying why
+6. Save
 
-**Tip:** If you add enough points to push a customer over the reward threshold, their reward will be automatically triggered and issued.
+**Tip:** if the extra points take the customer past the reward threshold, their reward is issued automatically.
 
 ## Customer experience
 
 ### How customers see their progress
 
-Customers can view their loyalty progress through their customer dashboard. When logged into their account, they'll see:
+When logged in, customers can see on their dashboard:
 
-- Current points balance
-- Progress towards their next reward
-- A visual stamp card showing their journey
-- History of earned points and redeemed rewards
+- Their points balance
+- How close they are to their next reward
+- A stamp card
+- The points they've earned and the rewards they've used
 
 ### Impersonating customers
 
-To see what customers see:
+To see exactly what a customer sees:
 
-1. Go to the customer's profile in your management area
-2. Click the **Impersonate** or **View as customer** option
-3. This opens their dashboard view, showing exactly what they see
+1. Open the customer's profile
+2. Click **Impersonate**
 
 ### Viewing customer history
 
-From the customer's profile, you can:
+The customer's profile shows:
 
-- View all their booking history
-- See loyalty points earned from each booking
-- Track rewards issued and redeemed
-- Review any manual point adjustments
+- Their bookings
+- The points earned from each booking
+- Rewards issued and used
+- Any points you've added manually
 
-Click **View all history** to see a complete timeline of the customer's activity and loyalty interactions.
+Click **View all history** for the full timeline.
 
 ## Tips for success
 
-- **Set achievable thresholds** — Make sure customers can realistically reach reward levels to keep them engaged
-- **Communicate clearly** — Let customers know about your loyalty programme through your website and booking confirmations
-- **Monitor engagement** — Check which customers are close to rewards and consider targeted communication
-- **Use manual adjustments sparingly** — Reserve manual point additions for special circumstances like service issues or celebrations
-
-Your loyalty programme helps build customer retention by rewarding regular bookings with tangible benefits, encouraging repeat business and customer loyalty.
+- **Make rewards reachable**: if the threshold is too high, customers lose interest
+- **Tell customers about it**: mention the programme on your website and in booking confirmations
+- **Keep manual points for special cases**: such as making up for a problem or marking an occasion

@@ -54,7 +54,7 @@ Click **Add Block** in your new section.
 
 ![Add Block button](../screenshots/sq-step-seven-BXfpa41v.webp)
 
-Choose **Embed** (not "Code" — the Code block may be restricted depending on your Squarespace plan).
+Choose **Embed**, not **Code**. Some Squarespace plans restrict the Code block.
 
 ![Selecting Embed block](../screenshots/sq-step-eight-CzkisKFf.webp)
 

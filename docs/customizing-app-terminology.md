@@ -12,76 +12,69 @@ pinned: false
 
 ## Why customize terminology?
 
-While Muddy Booking was originally designed for dog walking businesses, you might offer different services like dog training, grooming, or even equine activities. The terminology settings let you change the language throughout the entire app to match your business perfectly.
+Muddy Booking was built for dog walking, but you might run training classes, grooming appointments or arena hire. Terminology settings change the words Muddy uses so they fit your business.
 
-For example, instead of "walks" you might want to use "sessions", "appointments", or "arena hire". These changes appear everywhere - in your booking form, management area, customer communications, and invoices.
+For example, you could call your walks "sessions", "appointments" or "arena hire". The new words appear in your booking form, your admin area, customer messages and invoices.
 
 ![terminology-settings-overview](../screenshots/terminology-settings-overview-1772551528158.png)
 
 ## Getting to terminology settings
 
-1. Click **Settings** in the left navigation
+1. Click **Settings** in the left-hand menu
 2. Under the Business section, click **Terminology**
 
 ## Using preset terminology
 
-The quickest way to customize your terminology is using the presets. These are pre-configured sets of terminology for common business types:
+Presets fill in the words for common business types:
 
-- **Dog field** - For outdoor field-based activities
-- **Dog training** - For training sessions and classes  
-- **Dog grooming** - For grooming appointments
-- **Equine arena hire** - For horse riding and arena bookings
+- **Dog field**: field hire and other outdoor field activities
+- **Dog training**: training sessions and classes
+- **Dog grooming**: grooming appointments
+- **Equine arena hire**: riding and arena bookings
 
-To apply a preset:
+To use one:
 
-1. Click the **Apply preset** dropdown
-2. Select your business type from the list
+1. Click the **Apply preset** menu
+2. Choose your business type
 3. Click **Apply**
-4. Click **Save** to confirm your changes
+4. Click **Save**
 
 ## Creating custom terminology
 
-For complete control, you can set your own terminology using the three main fields:
+To pick your own words, fill in the three fields:
 
 ![custom-terminology-example](../screenshots/custom-terminology-example-1772551719262.png)
 
-**Walk display noun** **(1)** - This replaces "walk" throughout the app. Examples: "session", "appointment", "class", "hire"
+**Walk display noun** **(1)** replaces "walk", for example "session", "appointment", "class" or "hire".
 
-**Walk display verb** **(2)** - This replaces "walking" when describing the activity. Examples: "attending", "training", "grooming", "riding"  
+**Walk display verb** **(2)** replaces "walking", for example "attending", "training", "grooming" or "riding".
 
-**Walk display subject** **(3)** - This replaces "dog" when referring to what's being booked for. Examples: "dogs", "pets", "horses", "clients"
+**Walk display subject** **(3)** replaces "dog", for example "dogs", "pets", "horses" or "clients".
 
 You can also change these words for a single walk. See [Creating a walk](creating-a-walk.md#display-settings).
 
 ## Seeing your changes in action
 
-As you type in the fields, watch the example text update in real-time. This shows exactly how your terminology will appear throughout the app:
+The example sentence under the fields updates as you type, so you can check how your words read:
 
 *"You have a booking for our [noun] with 1 [subject] tomorrow, [verb] professionally or with friends."*
 
 ## Saving your terminology
 
-Once you're happy with your terminology:
-
-1. Click **Save** **(4)** at the bottom of the page
-2. Your new terminology will be applied across the entire app immediately
+Click **Save** **(4)** at the bottom of the page. The new words apply straight away.
 
 ## Where terminology appears
 
-Your custom terminology will be used in:
-
 - Customer booking forms
 - Booking confirmations and reminders
-- Your management dashboard
+- Your admin area
 - [Invoice descriptions](invoicing-and-automatic-payments.md)
 - [Email and SMS notifications](setting-up-whatsapp-sms-notifications.md)
 - Calendar entries
 
 ## Tips for choosing terminology
 
-- Keep terms simple and clear for your customers
-- Use language your customers already know and expect
-- Test different options using the live example before saving
-- Consider how terms will read in different contexts (emails, invoices, etc.)
+- Use the words your customers already use
+- Check the example sentence before saving, and think about how the words will read in emails and on invoices
 
-Remember, you can change your terminology anytime by returning to this page.
+You can change your terminology at any time.
