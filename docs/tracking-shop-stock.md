@@ -88,7 +88,7 @@ You can't edit or delete past changes. If something is wrong, add a new change t
 
 - Customers see how many are left, such as **3 in stock** **(1)**, above the **Add to basket** **(2)** button. At 10 or more, they see **10+ in stock**.
 - If a product has options, out-of-stock choices are greyed out. Clicking one switches to a combination that's in stock, if there is one.
-- Once every variant is at zero, customers see **Out of stock**, and the **Add to basket** button is greyed out. The product still appears in your shop.
+- Once every variant you sell is at zero, customers see **Out of stock**, and the **Add to basket** button is greyed out. The product still appears in your shop.
 - Customers can't add more to their basket than you have.
 - If something runs out while it's in a customer's basket, Muddy reduces or removes it and tells them why.
 
