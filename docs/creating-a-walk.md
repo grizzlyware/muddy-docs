@@ -13,79 +13,75 @@ category_description: We've pinned a few handy articles to help you hit the grou
 
 ## Starting from scratch
 
-When you first set up Muddy Booking, you'll need to create your first walk. Go to **Walks** in the left menu to get started.
+Go to **Walks** in the left-hand menu.
 
 ![walks-empty-state](../screenshots/walks-empty-state-1772711154871.png)
 
-Click **Setup my first walk** **(1)** to begin the creation process.
+Click **Setup my first walk** **(1)**.
 
 ## Creating your walk
 
-The first step is simple — just give your walk a name. This is usually different from your business name, but if you only have one walk route, using the same name is fine.
+Give your walk a name. It's usually different from your business name, but if you only have one walk, using the same name is fine.
 
 ![walk-creation-form](../screenshots/walk-creation-form-1772711184444.png)
 
-1. Enter your walk name in the field **(1)** — for example, "Hyde Park Morning Walk"
-2. Click **Create my walk** **(2)** to proceed
+1. Enter the name **(1)**, for example "Hyde Park Morning Walk"
+2. Click **Create my walk** **(2)**
 
 ## Styling your walk
 
-After creating the walk, you'll be taken to the styling page where you can customise how your walk appears to customers.
+Next you'll see the styling page, where you choose how the walk looks to customers.
 
 ![walk-styling-page](../screenshots/walk-styling-page-1772711221634.png)
 
-Here you can:
+- **Upload a cover image** **(1)**: a photo for this walk only, up to 10MB
+- **Choose a colour palette** **(2)**: one of the [colour schemes](changing-system-colour-scheme.md), such as Muddy, Frosty Paws or Pawsh Pink. This applies to all your walks, not just this one
 
-- **Upload a cover image** **(1)** — Add a photo that represents your walk (up to 10MB). This image will be specific to this walk only
-- **Choose a colour palette** **(2)** — Select from [predefined colour schemes](changing-system-colour-scheme.md) like Muddy, Frosty Paws, or Pawsh Pink. Note that this colour scheme will apply to all your walks, not just this one
-
-Click **Save changes** when you're happy with your styling choices, or **Preview** to see how your booking form will look to customers.
+Click **Save changes**, or **Preview** to see the booking form as customers will.
 
 ## Configuring walk settings
 
-To configure the core settings for your walk, go to the Settings section. You'll find comprehensive options to customise how your walk operates.
+The walk's main settings are in its Settings section.
 
 ![walk-settings-basic](../screenshots/walk-settings-basic-1772711324103.png)
 
 ### Basic information
 
-- **Name** **(1)** — The display name for your walk that customers will see
-- **Address** **(2)** — The location of your walk. You can search for a town if you don't have an exact address, and pinpoint the location on a map
-- **what3words** — A precise location reference that customers can use for navigation (get one free at what3words.com)
-- **Access instructions** — Detailed directions to help customers find you and access the walk location. Gate codes don't need to be included here as they'll be displayed separately
-- **Short access instructions** — A single, concise sentence summarising how to find you (maximum 400 characters)
+- **Name** **(1)**: the name customers see
+- **Address** **(2)**: where the walk is. If you don't have an exact address, search for the town and pinpoint the spot on the map
+- **what3words**: a precise location customers can use to find you (get one free at what3words.com)
+- **Access instructions**: directions for finding and getting into the walk. Leave out gate codes, as they're shown separately
+- **Short access instructions**: one sentence on how to find you, up to 400 characters
 
 ### Booking configuration
 
 ![walk-settings-booking](../screenshots/walk-settings-booking-1772711336635.png)
 
-These settings are inherited from your [business booking rules](configuring-booking-rules.md) by default, but you are able to change them on a per walk level if you need to.
+These start out the same as your [business booking rules](configuring-booking-rules.md), but you can change them for this walk.
 
-- **Maximum number of dogs** **(3)** — Set the capacity limit for each walk slot
-- **Start booking slots at** **(4)** — Choose when bookings can begin (e.g., on the hour, every 15 minutes, every 30 minutes)
-- **Buffer period** — Add extra time between bookings as a transition period
+- **Maximum number of dogs** **(3)**: how many dogs each slot can take
+- **Start booking slots at** **(4)**: when bookings can start, such as on the hour, every 15 minutes or every 30 minutes
+- **Buffer period**: extra time between bookings
 
 ### Display settings
 
-You can also customise the [terminology](customizing-app-terminology.md) used for this specific walk:
+You can also change the [terminology](customizing-app-terminology.md) for this walk:
 
-- **Display noun** — The word used to refer to this walk throughout the app
-- **Display verb** — The action word for attending this walk  
-- **Display subject** — How the focus of this walk is described
+- **Display noun**: the word used for the walk
+- **Display verb**: the word for taking part in it
+- **Display subject**: the word for who or what is booked, such as dogs
 
-Most settings inherit from your business defaults, but you can override them for individual walks by unchecking "Use default instead?"
+Most settings use your business defaults. To set a different value for this walk, untick **Use default instead?** next to it.
 
-Don't forget to click **Save** to apply your changes.
+Click **Save** to apply your changes.
 
 ## Your completed walk
 
-Once configured, your walk will appear in your walks list and you'll have access to a detailed overview page showing bookings, revenue, and key settings.
+The walk now appears in your walks list. Its overview page shows:
 
-The overview page displays:
+- **Statistics**: bookings, revenue and invoices over different time periods
+- **Recent bookings**: the latest bookings for this walk
+- **Configuration summary**: key settings such as maximum dogs, booking intervals and notice periods
+- **New booking**: a button that takes you straight to the booking form
 
-- **Statistics dashboard** — Track bookings, revenue, and invoices over different time periods
-- **Recent bookings** — See your latest customer bookings at a glance
-- **Quick configuration summary** — View key settings like maximum dogs, booking intervals, and notice periods
-- **New booking button** — Jump directly to the booking form
-
-Your walk is now ready to accept bookings! Customers can find and book it through your booking form, and you can manage all aspects from this central dashboard.
+Customers can now book the walk through your booking form.

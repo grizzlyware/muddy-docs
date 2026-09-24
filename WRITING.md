@@ -15,14 +15,14 @@ category_description: Essential guides to help you set up and start using Muddy 
 ---
 ```
 - **title**: A clear, human-readable title for the article
-- **category**: A broad grouping. REUSE an existing category if it fits. Only create a new category if none of the existing ones are suitable. The "Getting started" category is special — it is shown first on the website. Use it for topics a new user would need early on (e.g. initial setup, first bookings, key settings). Don't put every article in it — only ones relevant to someone just starting out.
+- **category**: A broad grouping. REUSE an existing category if it fits. Only create a new category if none of the existing ones are suitable. The "Getting started" category is special: it is shown first on the website. Use it for topics a new user would need early on (e.g. initial setup, first bookings, key settings). Don't put every article in it, only ones relevant to someone just starting out.
 - **tags**: 2-5 relevant keywords for search and filtering. REUSE existing tags where they fit. Only create a new tag if none of the existing ones are suitable.
-- **order**: A number for sorting within the category (10, 20, 30... — use multiples of 10 so new articles can be inserted between existing ones)
+- **order**: A number for sorting within the category (10, 20, 30 and so on. Use multiples of 10 so new articles can be inserted between existing ones)
 - **description**: A one-sentence summary of what the article covers
 - **pinned**: Whether this article should be pinned to the top of the help page. Always set to `false` unless explicitly told otherwise.
-- **category_description** (optional): A short description of the category, shown on the help page. Only include this on ONE article per category — whichever has the lowest order. Omit it from all other articles in the same category.
+- **category_description** (optional): A short description of the category, shown on the help page. Only include this on ONE article per category, whichever has the lowest order. Omit it from all other articles in the same category.
 
-The frontmatter goes at the very top of the file. Do NOT add a H1 heading or introductory paragraph — the title and description are already in the frontmatter. Start the markdown content directly with H2 sections after the closing `---`.
+The frontmatter goes at the very top of the file. Do NOT add a H1 heading or introductory paragraph. The title and description are already in the frontmatter. Start the markdown content directly with H2 sections after the closing `---`.
 
 The filename (without `.md`) is the article's address on the help site, and the name other articles link to it by.
 
@@ -31,9 +31,9 @@ The filename (without `.md`) is the article's address on the help site, and the 
 - Use simple, friendly language. Avoid jargon, technical terms, URLs, URL paths, API references, or internal identifiers.
 - Keep the tone human and helpful, not robotic or overly formal.
 - Guide users by describing what to CLICK and what they'll SEE, not where things are in the URL structure. For example say "Go to Settings, then click Pricing" NOT "Navigate to /manage/operators/{id}/pricing".
-- Use the EXACT words and labels shown on screen. If a button says "Save", write "click **Save**" — don't paraphrase it as "persist your changes" or "save your configuration".
+- Use the EXACT words and labels shown on screen. If a button says "Save", write "click **Save**", and don't paraphrase it as "persist your changes" or "save your configuration".
 - Avoid UI jargon. Don't say "toggle", "dropdown", "modal", or "sidebar". Instead say "switch", "menu", "pop-up", "left-hand menu".
-- Explain the WHY, not just the how. For example: "Set your base price — this is what customers will pay for a standard walk" is better than just "Set your base price".
+- Explain the WHY, not just the how. For example: "Set your base price. This is what customers will pay for a standard walk" is better than just "Set your base price".
 - Warn clearly before anything destructive or irreversible. If clicking something deletes data or can't be undone, flag it.
 - Do NOT use code formatting (backticks) for field names or values. Use **bold** instead.
 - One action per step. "Click Settings, then click Pricing" should be two separate numbered steps, not one.
@@ -43,4 +43,6 @@ The filename (without `.md`) is the article's address on the help site, and the 
 - Explain what each setting, option, or field does in plain English
 - Note important caveats, tips, or prerequisites
 - Use clear headings and logical structure
+- Be brief. Say it once, in plain words, and stop. No filler ("simply", "comprehensive", "ensures", "helps you"), no restating what a screenshot or heading already says, and no closing summary paragraph.
+- Don't use em dashes (—) or en dashes (–). Use a full stop, comma or colon instead. In lists of fields or options, write "**Name**: what it does".
 - Use sentence case for ALL headings and titles (e.g. "Setting up pricing" NOT "Setting Up Pricing"). Only capitalise the first word and proper nouns.
