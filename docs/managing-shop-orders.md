@@ -18,15 +18,17 @@ pinned: false
 
 The **Orders** page opens on **Awaiting fulfilment**. This is your to-do list: every order that still has something to send or hand over. Once everything on an order has gone out, it drops off this list.
 
-Switch to **All orders** to see everything, including finished and cancelled orders.
+Switch to **All orders** **(1)** to see everything, including finished and cancelled orders.
 
-You can filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Fulfilment**. Customers who start a checkout but never pay don't appear here.
+You can filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Fulfilment** **(2)**. Customers who start a checkout but never pay don't appear here.
+
+![The Orders page on All orders, with the filters open and each order's payment and fulfilment status](../screenshots/shop-j21-all-orders-1790281151547.png)
 
 You'll also get a **New shop order** email each time a customer pays for an order, unless you've switched it off in your notification preferences.
 
 ## What the statuses mean
 
-Each order has a **Payment** status and a **Fulfilment** status.
+Each order has a **Payment** **(3)** status and a **Fulfilment** **(4)** status.
 
 **Payment:**
 
@@ -45,20 +47,22 @@ Each order has a **Payment** status and a **Fulfilment** status.
 - **Partly fulfilled**: you've sent or handed over some of the order, but not all of it.
 - **Dispatched**: everything has been sent.
 - **Collected**: the customer has picked it up.
-- **Nothing more to come**: you've closed the order without sending everything (see below).
+- **Nothing more to come**: you've closed the order without sending everything (see below), or cancelled it.
 - **Nothing to dispatch**: the order has nothing physical in it, such as an order for gift cards only.
 
 ## Looking at an order
 
 Click an order to open it. You'll see:
 
-- A table of the items, with how many were ordered and how many have been sent.
-- **Price breakdown**: shown if the order had discounts.
-- **Fulfilments**: what you've sent or handed over so far.
-- **Returns**: anything the customer has sent back.
-- **Transactions**: payments and refunds.
+- A table of the items **(1)**, with how many were ordered and how many have been sent.
+- **Price breakdown** **(2)**: shown if the order had discounts.
+- **Fulfilments** **(3)**: what you've sent or handed over so far.
+- **Returns** **(4)**: anything the customer has sent back.
+- **Transactions** **(5)**: payments and refunds.
 
-On the right, you'll see the total, anything still to pay, the customer's **Contact** details, and the delivery address under **Send it to**.
+On the right, you'll see the total, anything still to pay **(6)**, the customer's **Contact** **(7)** details, and the delivery address under **Send it to** **(8)**.
+
+![An order before anything has been sent, with its sections on the left and the total, contact details and delivery address on the right](../screenshots/shop-j3-sam-order-page-1790279113228.png)
 
 ## Sending an order
 
@@ -66,16 +70,20 @@ When you post an order, record it in Muddy. This keeps your to-do list accurate 
 
 1. Open the order.
 2. Under **Fulfilments**, click **Record dispatch**.
-3. Choose the **Courier**, such as Royal Mail or DPD. If yours isn't listed, choose **Other courier** and type its name under **Courier name**.
-4. Enter the **Tracking number**, if you have one. For the carriers listed, Muddy turns it into a tracking link for the customer.
-5. Check the **Items**. Every item still to send is filled in for you.
-6. Add any **Notes**. Only your team can see these.
-7. Leave **Send an email to the customer** switched on, so they know it's coming.
-8. Click **Record dispatch**.
+3. Choose the **Courier** **(1)**, such as Royal Mail or DPD. If yours isn't listed, choose **Other courier** and type its name under **Courier name**.
+4. Enter the **Tracking number** **(2)**, if you have one. For the carriers listed, Muddy turns it into a tracking link for the customer.
+5. Check the **Items** **(3)**. Every item still to send is filled in for you.
+6. Add any **Notes** **(4)**. Only your team can see these.
+7. Leave **Send an email to the customer** **(5)** switched on, so they know it's coming.
+8. Click **Record dispatch** **(6)**.
+
+![The Record a dispatch pop-up with a courier, tracking number and items filled in](../screenshots/shop-j4-record-dispatch-1790279277271.png)
 
 ### Sending part of an order
 
-If you can't send everything at once, lower the quantities under **Items** to match what's in this parcel. Set anything you're not sending to 0. The order shows as **Partly fulfilled**, and the email tells the customer what's in this parcel and what's still to come. Record another dispatch when you send the rest.
+If you can't send everything at once, lower the quantities under **Items** to match what's in this parcel. Set anything you're not sending to 0 **(1)**. The order shows as **Partly fulfilled**, and the email tells the customer what's in this parcel and what's still to come. Record another dispatch when you send the rest.
+
+![The Record a dispatch pop-up with one item's quantity set to 0](../screenshots/shop-j5-dog-towel-zero-1790279376368.png)
 
 ### Recording something you sent earlier
 
@@ -95,20 +103,28 @@ If the customer chose to collect their order, the steps are a little different.
 
 1. Open the order.
 2. Click **Ready to collect**.
-3. Add anything the customer needs to know for this order under **Where to collect it**, such as a locker number or a code. This is optional. It's added to the email, alongside your usual collection instructions.
-4. Click **Mark as ready**.
+3. Add anything the customer needs to know for this order under **Where to collect it** **(1)**, such as a locker number or a code. This is optional. It's added to the email, alongside your usual collection instructions.
+4. Click **Mark as ready** **(2)**.
 
-The customer is emailed straight away to say their order is ready.
+![The Ready to collect pop-up, with collection details under Where to collect it](../screenshots/shop-j15-ready-to-collect-1790280575122.png)
 
-If you need to correct the details, such as a wrong locker code, click **Resend ready-to-collect email**, update them, and click **Resend email**.
+The customer is emailed straight away to say their order is ready **(1)**.
+
+If you need to correct the details, such as a wrong locker code, click **Resend ready-to-collect email** **(2)**, update them, and click **Resend email**.
+
+![A collection order marked as ready to collect, with the Resend ready-to-collect email and Customer has collected buttons](../screenshots/shop-j16-ready-1790280674049.png)
 
 ### When the customer picks it up
 
 1. Open the order.
-2. Click **Customer has collected**.
-3. Click **Mark as collected** to confirm.
+2. Click **Customer has collected** **(3)**.
+3. Click **Mark as collected** **(1)** to confirm.
 
-This doesn't email the customer. If you'd like to send them a confirmation, click **Send handover email** on the collection's row.
+![The confirmation asking whether to mark the order as collected](../screenshots/shop-j17-mark-as-collected-1790280705514.png)
+
+This doesn't email the customer. If you'd like to send them a confirmation, click **Send handover email** **(1)** on the collection's row.
+
+![The collection's row under Fulfilments, with the Send handover email button](../screenshots/shop-j18-send-handover-email-1790280768129.png)
 
 **Note:** once an order has been collected, it can't be cancelled.
 
@@ -118,9 +134,11 @@ If the customer takes some of their order and comes back for the rest, record wh
 
 1. Open the order.
 2. Under **Fulfilments**, click **Record collection**.
-3. Under **Items**, enter how many of each item they took.
-4. Leave **Send an email to the customer** switched on if you'd like to confirm what they've collected.
-5. Click **Record collection**.
+3. Under **Items** **(1)**, enter how many of each item they took. Everything still to collect is filled in for you, so lower the quantities to match.
+4. Leave **Send an email to the customer** **(2)** switched on if you'd like to confirm what they've collected.
+5. Click **Record collection** **(3)**.
+
+![The Record a collection pop-up, with a quantity for each item and the customer email switched on](../screenshots/shop-j14-record-collection-1790280499357.png)
 
 There's no carrier or tracking number to fill in. The order shows as **Partly fulfilled** until everything has been collected.
 
@@ -134,11 +152,15 @@ Sometimes you can't send the rest of an order. For example, an item might be dis
 
 1. Open the order.
 2. Under **Fulfilments**, click **Nothing more to send** (or **Nothing more to collect** on a collection order).
-3. Confirm.
+3. Check the message **(1)**, then click **Nothing more to send** **(2)** again to confirm.
+
+![The confirmation for Nothing more to send, saying it doesn't refund anything](../screenshots/shop-j7-nothing-more-to-send-1790279543978.png)
 
 The order comes off your to-do list. **No money moves when you do this.** The confirmation tells you how much could still be refunded. If the customer should get money back for the items they didn't receive, refund it separately (see [Refunding without a return](#refunding-without-a-return) below).
 
-If you change your mind, click **Reopen**. Recording another dispatch also puts the order back on your to-do list.
+If you change your mind, click **Reopen** **(2)**. Recording another dispatch also puts the order back on your to-do list **(1)**.
+
+![A closed order's Fulfilments section, with the Reopen button](../screenshots/shop-j8-closed-1790279555093.png)
 
 ## Cancelling an order
 
@@ -146,8 +168,10 @@ You can cancel an order until something on it has been sent or collected.
 
 1. Open the order.
 2. Click **Cancel order**.
-3. Check the message. It tells you how much will go back to the customer.
-4. Click **Cancel the order**.
+3. Check the message **(1)**. It tells you how much will go back to the customer.
+4. Click **Cancel the order** **(2)**.
+
+![The confirmation for cancelling an order, showing how much will be refunded](../screenshots/shop-j19-cancel-order-1790280835559.png)
 
 When you cancel an order, Muddy:
 
@@ -172,12 +196,14 @@ When a customer sends something back, record a return. You can only return items
 
 1. Open the order.
 2. Under **Returns**, click **Record a return**.
-3. Choose the **Reason for return**, such as **Arrived damaged** or **Customer changed their mind**.
-4. Under **Returned items**, enter how many of each item came back. You can return part of an order.
-5. Add any **Notes**. Only your team can see these.
-6. Decide whether to refund the customer now (see below).
-7. Leave **Put these back into stock** switched on if the items can be sold again. Switch it off if they came back damaged, or never came back at all.
-8. Click **Record return**.
+3. Choose the **Reason for return** **(1)**, such as **Arrived damaged** or **Customer changed their mind**.
+4. Under **Returned items** **(2)**, enter how many of each item came back. You can return part of an order.
+5. Add any **Notes** **(3)**. Only your team can see these.
+6. Decide whether to refund the customer now **(4)** **(5)** (see below).
+7. Leave **Put these back into stock** **(6)** switched on if the items can be sold again. Switch it off if they came back damaged, or never came back at all.
+8. Click **Record return** **(7)**.
+
+![The Record a return pop-up, with a reason, one returned item, a note and the refund switches](../screenshots/shop-j11-record-return-1790279799467.png)
 
 ### Refunding a return
 
@@ -222,8 +248,10 @@ Muddy links each order to a customer record. If an order ended up on the wrong r
 
 1. Open the order.
 2. Click **Assign to another customer** (or **Assign to customer** if it has none).
-3. Search for the right customer.
-4. Click **Assign customer**.
+3. Search for the right customer **(1)**.
+4. Click **Assign customer** **(2)**.
+
+![The pop-up for assigning an order to another customer, with a customer chosen](../screenshots/shop-j20-assign-customer-1790280962637.png)
 
 The order moves to that customer's record and their **Your orders** list. The contact details on the order don't change, so emails about this order still go to the email address the customer used at checkout.
 

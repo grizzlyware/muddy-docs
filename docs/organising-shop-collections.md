@@ -30,53 +30,65 @@ Each collection shows as a card with its cover image, its name, how many product
 ## Creating a collection
 
 1. On the **Collections** page, click **Create**.
-2. Enter a **Collection name**. Customers see this as the heading for the section.
-3. Add a **Cover image** if you'd like one. This is optional.
-4. Click **Create collection**.
+2. Enter a **Collection name** **(1)**. Customers see this as the heading for the section.
+3. Add a **Cover image** **(2)** if you'd like one. This is optional.
+4. Click **Create collection** **(3)**.
+
+![The Create collection form with a name and cover image filled in](../screenshots/shop-d1-create-collection-1790272571123.png)
 
 Your new collection starts empty. An empty collection doesn't show in your shop, so add some products next.
 
 ## Adding products to a collection
 
 1. On the collection's card, click **Add products**.
-2. Pick the products you want to add.
-3. Click **Add products**.
+2. Pick the products you want to add **(1)**.
+3. Click **Add products** **(2)**.
+
+![The Add products pop-up with a product ticked](../screenshots/shop-d2-add-products-popup-1790282766282.png)
 
 You'll see **Products added to the collection.** when it's done.
 
-You can also add products from the other direction. Products that aren't in any collection are listed below your collections, under **Not in a collection**. Once you have a collection, click **Add to a collection** next to any of them.
+You can also add products from the other direction. Products that aren't in any collection are listed below your collections, under **Not in a collection** **(2)**. Once you have a collection, click **Add to a collection** **(3)** next to any of them.
 
-To take a product out of a collection, click the **X** next to it on the collection's card. This only removes it from the collection. The product itself isn't deleted.
+To take a product out of a collection, click the **X** **(4)** next to it on the collection's card. This only removes it from the collection. The product itself isn't deleted.
+
+![The Collections page with two collection cards and a product that isn't in a collection](../screenshots/shop-d3-collections-page-1790272814514.png)
 
 ## Changing the order
 
 The order on the **Collections** page is the order customers see.
 
-- **To move a collection**, drag it by its handle to a new position.
-- **To move a product within a collection**, drag it to a new position on the card.
+- **To move a collection**, drag it by its handle **(1)** to a new position.
+- **To move a product within a collection**, drag it by its handle **(2)** to a new position on the card.
+
+![A collection card with its drag handles and pencil icon marked](../screenshots/shop-d4-handles-and-pencil-1790272883377.png)
 
 Changes save straight away. If your shop is open, customers see the new order immediately.
 
 ## How your shop front looks
 
-- Each collection appears as a section, in the order you set.
+- Each collection appears as a section **(1)** **(2)**, in the order you set.
 - Each section shows its first four products, with a **View all** link if it has more than four.
 - Collections with no published products are hidden.
-- Products that aren't in any collection appear at the end, under **More products**.
+- Products that aren't in any collection appear at the end, under **More products** **(3)**.
 - If you have no collections, or they're all empty, your shop front shows your first four products, with a **View all** link to the rest.
+
+![The shop front with an Accessories section, a Gift cards section and More products](../screenshots/shop-d7-shop-front-1790273085219.png)
 
 It's worth putting every product in at least one collection. Products left under **More products** are easy for customers to miss.
 
 ## Renaming a collection or changing its image
 
 1. Click the pencil icon on the collection's card.
-2. Change the **Collection name** or **Cover image**.
-3. Click **Save changes**.
+2. Change the **Collection name** **(1)** or **Cover image** **(2)**.
+3. Click **Save changes** **(3)**.
+
+![The Edit collection page with Save changes and Delete collection](../screenshots/shop-d5-edit-collection-1790272935977.png)
 
 ## Deleting a collection
 
 1. Click the pencil icon on the collection's card.
-2. Click **Delete collection**.
+2. Click **Delete collection** **(4)**.
 3. Click **Delete it** to confirm.
 
 Deleting a collection doesn't delete the products in it. They stay in your shop. If they aren't in any other collection, they move to **More products**.

@@ -25,17 +25,21 @@ You track stock for each **variant**, so you can track your Small harnesses sepa
 
 The **Stock** tile appears once your shop is open. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
-The **Stock** page lists every variant of every product, with its current stock. Use the **Product or SKU** search to find something quickly.
+The **Stock** page lists every variant of every product, with its current stock. To find something quickly, click **Filters** and use the **Product or SKU** **(1)** search.
 
-You can set and change stock straight from this page. To see the full record for a product, including its history, click the product's name. The same buttons are there too.
+You can set **(2)** and change stock straight from this page. To see the full record for a product, including its history, click the product's name. The same buttons are there too.
+
+![The Stock page before you've set any stock, with the search open](../screenshots/shop-e1-stock-page-1790273417706.png)
 
 ## Starting to track a variant
 
 1. On the **Stock** page, find the variant.
 2. Click **Set stock**.
-3. Enter the **Current quantity**, which is how many you have right now. Enter 0 if you have none.
-4. Add a **Note** if it would help your team. This is optional.
-5. Click **Set stock**.
+3. Enter the **Current quantity** **(1)**, which is how many you have right now. Enter 0 if you have none.
+4. Add a **Note** **(2)** if it would help your team. This is optional.
+5. Click **Set stock** **(3)**.
+
+![The Set current stock pop-up, with a quantity and a note filled in](../screenshots/shop-e2-set-stock-popup-1790273539070.png)
 
 From now on, Muddy keeps count for this variant.
 
@@ -45,10 +49,12 @@ Use this when a delivery arrives, when something gets damaged, or when a stock c
 
 1. On the **Stock** page, find the variant.
 2. Click **Change stock**.
-3. Under **What changed?**, choose **Add stock** or **Remove stock**.
-4. Enter the **Quantity** to add or remove.
-5. Add a **Note** explaining why, such as "Damaged in transit". This is optional, but it helps later.
-6. Click **Save change**.
+3. Under **What changed?** **(1)**, choose **Add stock** or **Remove stock**.
+4. Enter the **Quantity** **(2)** to add or remove.
+5. Add a **Note** **(3)** explaining why, such as "Damaged in transit". This is optional, but it helps later.
+6. Click **Save change** **(4)**.
+
+![The Change stock pop-up, adding 12 to a current stock of 4](../screenshots/shop-e3-change-stock-popup-1790273663581.png)
 
 You enter the difference, not the new total. So if you had 4 and a box of 12 arrives, choose **Add stock** and enter **12**.
 
@@ -68,20 +74,24 @@ Every change is listed under **Stock history**, with the date, the variant, how 
 
 - **Starting quantity**: when you first set the stock.
 - **Changed by staff**: a change you or your team made.
-- **Customer order**: sold to a customer.
+- **Customer order** **(1)**: sold to a customer.
 - **Customer return**: put back after a return.
 - **Order changed**: an order was changed after it was placed.
-- **Order cancelled**: put back after you cancelled an order.
+- **Order cancelled** **(2)**: put back after you cancelled an order.
 - **Stopped tracking**: when someone stopped tracking stock for the variant.
+
+![A product's stock history, with a customer order and its cancellation](../screenshots/shop-j22-dog-towel-history-1790281257626.png)
 
 You can't edit or delete past changes. If something is wrong, add a new change to correct it. That way the history always shows what really happened.
 
 ## What customers see
 
-- Customers see how many are left, such as **3 in stock**. At 10 or more, they see **10+ in stock**.
+- Customers see how many are left, such as **3 in stock** **(1)**, above the **Add to basket** **(2)** button. At 10 or more, they see **10+ in stock**.
 - At zero, they see **Out of stock**, and the **Add to basket** button is greyed out. The product still appears in your shop.
 - Customers can't add more to their basket than you have.
 - If something runs out while it's in a customer's basket, Muddy reduces or removes it and tells them why.
+
+![A product page showing 3 in stock above the Add to basket button](../screenshots/shop-e8-medium-blue-in-stock-1790273980650.png)
 
 ## If two customers buy the last one
 
@@ -95,7 +105,9 @@ If you no longer want Muddy to count a variant:
 
 1. On the **Stock** page, find the variant.
 2. Click **Stop tracking**.
-3. Click **Stop tracking** to confirm.
+3. Click **Stop tracking** **(1)** to confirm.
+
+![The confirmation that asks if you want to stop tracking stock](../screenshots/shop-e5-stop-tracking-confirm-1790273756292.png)
 
 Customers can then order any amount of that variant. Its stock history is kept.
 

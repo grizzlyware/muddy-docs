@@ -14,9 +14,9 @@ pinned: false
 
 When a customer checks out, they choose how their order reaches them. You decide what they can choose from, and what each option costs. There are three parts to this:
 
-- **Delivery methods**: the options customers pick from, such as **Standard delivery** or **Next day**. Each one can also be a **collection point**, where customers pick the order up from you.
-- **Delivery rates**: what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
-- **Places you don't deliver to**: places inside an area you deliver to that you don't want to deliver to.
+- **Delivery methods** **(1)**: the options customers pick from, such as **Standard delivery** or **Next day**. Each one can also be a **collection point**, where customers pick the order up from you.
+- **Delivery rates** **(2)**: what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
+- **Places you don't deliver to** **(3)**: places inside an area you deliver to that you don't want to deliver to.
 
 Delivery only applies to physical products. Customers buying only gift cards skip this step.
 
@@ -24,6 +24,8 @@ To get there:
 
 1. Click **Shop** in the left-hand menu.
 2. Click **Collection and delivery**.
+
+![The Collection and delivery page, with its three sections](../screenshots/shop-g3-delivery-page-1790274508629.png)
 
 If you haven't opened your shop yet, click **Set up collection or delivery** on the **Shop** page instead. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
@@ -102,7 +104,9 @@ You can write a range as **PA20-49** or **PA20-PA49**. A range has to stay in on
 
 **Watch out:** the start of a postcode matches anything that starts the same way. **PA2** covers PA2, but also PA20 to PA29. **B** covers every postcode starting with B, including BA, BB and BD. If you need to be precise, use a range.
 
-For example, to charge more for the Scottish Highlands and Islands, you might add a rate with the postcodes **IV, HS, ZE, KW, PA20-49**.
+For example, to charge more for the Scottish Highlands and Islands, you might add a rate with the postcodes **IV, HS, ZE, KW, PA20-49** **(1)** and a **Price** **(2)** of **12**.
+
+![The Add a delivery rate pop-up, with Highlands and Islands postcodes and a price of 12.00](../screenshots/shop-g1-postcode-rate-1790274382284.png)
 
 ## How Muddy chooses the price
 
@@ -151,10 +155,12 @@ Sometimes a rate covers an area where you don't want to deliver. For example, yo
 This section is hidden while you're following the shop setup steps. To add a place before you open, click **Settings** in the left-hand menu, then **Collection and delivery**.
 
 1. Under **Places you don't deliver to**, click **Add a place**.
-2. Choose the **Delivery method**.
-3. Choose the **Country**, **County** or **Postcodes** you don't want to deliver to.
-4. Add any limits, if you only want to exclude some orders. For example, set **From weight (grams)** to **2000** to stop heavy orders going there.
-5. Click **Stop delivering there**.
+2. Choose the **Delivery method** **(1)**.
+3. Choose the **Country** **(2)**, **County** **(3)** or **Postcodes** **(4)** you don't want to deliver to.
+4. Add any limits, if you only want to exclude some orders. For example, set **From weight (grams)** **(5)** to **2000** to stop heavy orders going there.
+5. Click **Stop delivering there** **(6)**.
+
+![The Add a place you don't deliver to pop-up, with the postcode BT](../screenshots/shop-g2-exclude-bt-1790274431632.png)
 
 Customers in an excluded place won't be offered that delivery method.
 
@@ -182,11 +188,13 @@ To see how collection orders work once they come in, read [Managing shop orders]
 
 ## Changing the order of methods
 
-Customers see your delivery methods in the order they appear on the **Collection and delivery** page. To change it, drag a method by its handle to a new position.
+Customers see your delivery methods in the order they appear on the **Collection and delivery** page. To change it, drag a method by its handle **(1)** to a new position.
+
+![The Collection and delivery methods table, with a drag handle, Edit and Stop offering](../screenshots/shop-g4-methods-table-1790274576327.png)
 
 ## Editing a method or rate
 
-Click **Edit** next to a delivery method or rate, make your changes, then click **Save changes**. Changes apply to new orders straight away. Orders already placed keep the method name and price they were charged.
+Click **Edit** **(2)** next to a delivery method or rate, make your changes, then click **Save changes**. Changes apply to new orders straight away. Orders already placed keep the method name and price they were charged.
 
 You can't turn a delivery method into a collection point, or the other way round. Add a new one instead.
 
@@ -196,22 +204,32 @@ A rate can't be moved to a different delivery method. Remove it and add it again
 
 To stop offering a delivery method:
 
-1. Click **Stop offering** next to it.
-2. Click **Stop offering it** to confirm.
+1. Click **Stop offering** **(3)** next to it.
+2. Click **Stop offering it** **(1)** to confirm.
 
-Customers can no longer choose it. Orders already sent with it keep its name. Its rates are kept, so you can click **Offer again** to bring it back as it was.
+![The confirmation asking if you want to stop offering Royal Mail tracked](../screenshots/shop-g5-stop-offering-confirm-1790274580376.png)
+
+Customers can no longer choose it. Orders already sent with it keep its name. Its rates are kept, so you can click **Offer again** **(1)** to bring it back as it was.
+
+![A stopped delivery method, struck through, with an Offer again button](../screenshots/shop-g6-offer-again-1790274590210.png)
 
 To remove a single rate, click **Remove** next to it, then **Remove it** to confirm.
 
 ## What customers see at checkout
 
-Customers enter their address, and Muddy works out which options they can have. Each option shows its name, its estimate (or collection instructions) and its price, or **Free**.
+Customers enter their address, and Muddy works out which options they can have. Each option shows its name, its estimate (or collection instructions) **(1)** and its price, or **Free** **(2)**.
 
-If none of your delivery methods reach the customer's address, they're told delivery isn't available there. If you've added an email address or phone number to your account, they're also invited to get in touch with you.
+![The checkout with Collection chosen, showing the collection point's instructions and Free](../screenshots/shop-g10-collection-1790275215133.png)
+
+If none of your delivery methods reach the customer's address, they're told delivery isn't available there **(1)**. If you've added an email address or phone number to your account, they're also invited to get in touch with you.
+
+![The checkout with a Belfast address, saying it can't deliver there](../screenshots/shop-g9-no-delivery-to-bt-1790275210350.png)
 
 ## Warnings on the shop page
 
 Once your shop is open, Muddy warns you on the **Shop** page if delivery isn't set up properly:
 
 - **You haven't set up collection or delivery**: you have products that need posting, but no way for customers to get them. Customers can't order those products until you add one.
-- **You offer collection but no delivery**: customers can only collect. If that's what you want, click **Dismiss** and the warning won't come back.
+- **You offer collection but no delivery**: customers can only collect. If that's what you want, click **Dismiss** **(1)** and the warning won't come back. Otherwise, click **Set up delivery** **(2)**.
+
+![The Shop page with a warning that you offer collection but no delivery](../screenshots/shop-g7-delivery-warning-1790274647307.png)

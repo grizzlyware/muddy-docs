@@ -91,7 +91,9 @@ While you're setting up, you can reach **Products** through **Review products**.
 
 ![The confirmation that asks if you want to open your shop](../screenshots/shop-setup-s14-open-your-shop-confirm-1790261757215.png)
 
-Anyone visiting your website can now see the shop and buy from it. A **Shop** link appears in your website's menu, and a **Your orders** link appears in the customer account menu.
+Anyone visiting your website can now see the shop and buy from it. A **Shop** **(1)** link appears in your website's menu, and a **Your orders** **(2)** link appears in the customer account menu.
+
+![Your website with the More menu open, showing the Shop and Your orders links](../screenshots/shop-b3-website-more-menu-1790269572263.png)
 
 From now on, changes you make go live straight away. That includes prices, products, delivery charges and the order of your collections, so it's worth making big changes carefully.
 
@@ -99,9 +101,11 @@ From now on, changes you make go live straight away. That includes prices, produ
 
 Once your shop is set up, the **Shop** page is your starting point. At the top you'll see a few figures:
 
-- **Awaiting fulfilment**: paid orders you still need to send or hand over.
-- **Sales, last 30 days**: what customers have paid for orders in the last 30 days.
-- **Products for sale**: published products in your shop.
+- **Awaiting fulfilment** **(1)**: paid orders you still need to send or hand over.
+- **Sales, last 30 days** **(2)**: what customers have paid for orders in the last 30 days.
+- **Products for sale** **(3)**: published products in your shop.
+
+![The Shop page with its three figures at the top](../screenshots/shop-j1-shop-page-with-orders-1790278839139.png)
 
 Below the figures are links to every part of the shop:
 
@@ -127,15 +131,22 @@ Your shop opens in a new tab. A banner at the top **(1)** reminds you that you'r
 
 The preview lasts 30 minutes, then you'll need to click the preview button again.
 
-Once your shop is open, the button on the **Shop** page says **View your shop** instead.
+Once your shop is open, the button on the **Shop** page says **View your shop** **(1)** instead.
+
+![The Shop page while the shop is open, with View your shop at the top right](../screenshots/shop-b2-view-your-shop-button-1790269482387.png)
 
 ## Opening your shop again
 
 If you've closed your shop since you first opened it:
 
 1. Click **Shop** in the left-hand menu.
-2. Click **Open shop** in the yellow box.
-3. Click **Open it** to confirm.
+2. Click **Open shop** **(1)** in the yellow box. If you want to check your shop first, click **Preview your shop** **(2)**.
+
+![The Shop page while the shop is closed, with Open shop in the yellow box](../screenshots/shop-b7-shop-closed-1790269750795.png)
+
+3. Click **Open it** **(1)** to confirm.
+
+![The confirmation that asks if you want to open your shop again](../screenshots/shop-b8-open-shop-confirm-1790269771509.png)
 
 ## Closing your shop
 
@@ -143,7 +154,9 @@ You can close your shop at any time, for example while you're away or restocking
 
 1. Click **Shop** in the left-hand menu.
 2. Click **Close shop** in the green box.
-3. Click **Close it** to confirm.
+3. Click **Close it** **(1)** to confirm.
+
+![The confirmation that asks if you want to close your shop](../screenshots/shop-b6-close-shop-confirm-1790269724849.png)
 
 Closing the shop doesn't delete anything. Your products, collections, delivery settings and orders all stay as they are, ready for when you open again.
 
@@ -168,7 +181,9 @@ The checkout shows the legal policies you've published (terms and conditions, pr
 
 1. Go to **Settings**.
 2. Click **Legal**.
-3. Look at **Require acceptance**.
+3. Look at **Require acceptance** **(1)**.
+
+![Legal settings with Require acceptance switched on](../screenshots/shop-b5-require-acceptance-1790269669258.png)
 
 - **Require acceptance on**: customers must tick **I accept the…** before they can continue to payment. This is the same setting that applies to bookings.
 - **Require acceptance off**: customers see **By continuing, you accept our…**, with links to each policy, but don't need to tick anything.
@@ -184,19 +199,21 @@ Every order gets a number, like **#1042**. Customers see it on their receipt and
 1. Click **Shop** in the left-hand menu.
 2. Click **Settings**.
 
+![Shop settings with MW- as the prefix and 1042 as the next order number](../screenshots/shop-b4-order-numbers-1790269603272.png)
+
 ### Order number prefix
 
-The letters or symbols shown in front of the number. For example, a prefix of **MW-** gives order numbers like **MW-1042**. Leave it blank to use **#**.
+The letters or symbols shown in front of the number. For example, a prefix of **MW-** **(1)** gives order numbers like **MW-1042** **(2)**. Leave it blank to use **#**.
 
 You can use up to 10 characters: letters, numbers, spaces, and the characters **- / _ #**. Changing the prefix only affects new orders. Orders you've already taken keep the number they were given.
 
 ### Next order number
 
-The number your next order uses. This is handy if you're moving from another shop and want your numbering to carry on from where it left off. Leave it empty to carry on from your last Muddy order.
+The number your next order uses **(3)**. This is handy if you're moving from another shop and want your numbering to carry on from where it left off. Leave it empty to carry on from your last Muddy order.
 
 It has to be higher than any order number you've already used. After the next order takes the number, numbering carries on from there automatically.
 
-The **Example** box shows what your next order number will look like as you type. Click **Save** when you're happy.
+The **Example** box **(2)** shows what your next order number will look like as you type. Click **Save** **(4)** when you're happy.
 
 ## Emails you'll get
 

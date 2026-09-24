@@ -23,27 +23,39 @@ Customers reach your shop from the **Shop** link in your website's menu.
 
 The shop front shows each of your collections as a section, with up to four products each, and a **View all** link when there are more. Products that aren't in a collection are listed under **More products** at the end.
 
-Each product shows its main image, its name and its price. If the price depends on which variant the customer picks, it shows **From** the lowest price.
+Each product shows its main image, its name and its price. If the price depends on which variant the customer picks, it shows **From** **(1)** the lowest price.
+
+Customers reach their basket from the **Basket** button **(2)** at the top of the page.
+
+![The top of the shop front, with the Harness priced from £30.00 and the Basket button](../screenshots/shop-i1-shop-front-1790277034428.png)
 
 ## The product page
 
-On a product's page, customers see your images and description, and choose from its options, such as size and colour. Combinations that are out of stock, or that you don't sell, are greyed out.
+On a product's page, customers see your images and description, and choose from its options, such as size **(1)** and colour **(2)**. Combinations that are out of stock, or that you don't sell, are greyed out.
 
-If you track stock, customers see how many are left (**3 in stock**, or **10+ in stock** when you have plenty). When something runs out, they see **Out of stock**.
+If you track stock, customers see how many are left (**8 in stock** **(3)**, or **10+ in stock** when you have plenty). When something runs out, they see **Out of stock**.
 
-To buy, they click **Add to basket**. The button then changes so they can change the quantity.
+To buy, they click **Add to basket** **(4)**.
+
+![The Harness product page with Red and Medium chosen, 8 in stock and the Add to basket button](../screenshots/shop-i2-harness-page-1790277113125.png)
+
+The button then changes so they can change the quantity **(1)**, and a **View basket** **(2)** button appears.
+
+![The Harness page after adding it, with a quantity control and a View basket button](../screenshots/shop-i3-after-adding-1790277155440.png)
 
 ## The basket
 
-Customers reach their basket from the **Basket** button at the top of the page. It shows each item, its price and quantity, and an **Order summary**.
+The basket shows each item, its price and quantity, and an **Order summary** **(3)**.
 
 Here they can:
 
-- Change quantities or remove items.
-- Enter a code in the **Discount or voucher code** box. This works for discount codes, vouchers and gift cards.
-- Check a voucher's balance, with **Check voucher balance**.
+- Change quantities **(1)** or remove items **(2)**.
+- Enter a code in the **Discount or voucher code** box **(4)**. This works for discount codes, vouchers and gift cards.
+- Check a voucher's balance, with **Check voucher balance** **(5)**.
 - Pay straight away with Apple Pay or Google Pay, if their device supports it. With a voucher on the order, they use these on the payment step instead.
-- Click **Checkout** to continue.
+- Click **Checkout** **(6)** to continue.
+
+![The basket with two items, the order summary, the code box and the Checkout button](../screenshots/shop-i4-basket-1790277240253.png)
 
 The basket shows **Calculated at checkout** for delivery, until they've entered their address.
 
@@ -55,29 +67,37 @@ Customers fill in one page, then pay on the next.
 
 ### Your details
 
-Customers enter their **First name**, **Last name**, **Email** and **Phone**. Their receipt and updates go to the email address. The phone number is so you can contact them about the order.
+Customers enter their **First name**, **Last name**, **Email** and **Phone** **(1)**. Their receipt and updates go to the email address. The phone number is so you can contact them about the order.
 
-Customers don't need an account to buy. If they already have one, they can click **Already a customer? Sign in**, and their details are filled in for them.
+Customers don't need an account to buy. If they already have one, they can click **Already a customer? Sign in** **(2)**, and their details are filled in for them.
+
+![The Your details section of the checkout, with the Already a customer? Sign in link](../screenshots/shop-i6-your-details-1790277400330.png)
 
 ### Delivery or collection
 
-If you offer both, customers choose **Delivery** or **Collection**.
+If you offer both, customers choose **Delivery** or **Collection** **(1)**.
 
-For delivery, they enter their address. They can search for it, or enter it by hand. If the order is going to someone else, they tick **Deliver to someone else** and enter the recipient's name.
+For delivery, they enter their address **(2)**. They can search for it, or enter it by hand. If the order is going to someone else, they tick **Deliver to someone else** **(3)** and enter the recipient's name.
 
-Once they've entered their address, Muddy shows the delivery options you offer there, with their prices. If you don't deliver to that address, they're told, and invited to get in touch with you.
+Once they've entered their address, Muddy shows the delivery options you offer there, with their prices **(4)**. If you don't deliver to that address, they're told, and invited to get in touch with you.
+
+![The checkout with Delivery chosen, an address entered and Royal Mail tracked chosen at £4.95](../screenshots/shop-i7-delivery-1790277558990.png)
 
 For collection, they see your collection points and instructions.
 
 ### Your policies
 
-If you've published legal policies, they're shown here. Depending on your settings, customers either tick a box to accept them, or see a note saying that by continuing, they accept them. See [Setting up legal documents](setting-up-legal-documents.md).
+If you've published legal policies, they're shown here. Depending on your settings, customers either tick a box **(1)** to accept them, or see a note saying that by continuing, they accept them. See [Setting up legal documents](setting-up-legal-documents.md).
 
 ### Paying
 
-Customers click **Continue to payment**, then pay by card.
+Customers click **Continue to payment** **(2)**, then pay by card.
 
-If vouchers or gift cards cover the whole order, including delivery, they click **Pay with vouchers** instead, and don't need a card.
+![The bottom of the checkout, with the policy box ticked and the Continue to payment button](../screenshots/shop-i8-policies-1790277622871.png)
+
+If vouchers or gift cards cover the whole order, including delivery **(1)**, they click **Pay with vouchers** **(2)** instead, and don't need a card.
+
+![The Payment page with £0.00 to pay and the Pay with vouchers button](../screenshots/shop-i9-pay-with-vouchers-1790277672903.png)
 
 Vouchers can't be used on an order that contains a gift card.
 
@@ -91,9 +111,19 @@ If the delivery price changes between the customer seeing it and paying, the pay
 
 ## After paying
 
-Customers see a thank-you page with their order number, and they're emailed a confirmation.
+Customers see a thank-you message **(1)** and their order number **(2)**, and they're emailed a confirmation.
 
-The order page shows what they ordered and how it's progressing. As you record dispatches, it shows each parcel and a tracking link. For collection orders, it shows where to collect from, when it's ready, and that the order is complete once they've collected everything.
+The order page shows what they ordered **(3)** and how it's progressing.
+
+![The order page straight after paying, with a thank-you message, the order number and what was ordered](../screenshots/shop-i10-thank-you-1790277749283.png)
+
+As you record dispatches, it tells them their order is on its way **(1)**, and shows each parcel and a tracking link **(2)**.
+
+![A dispatched order's page, with a Your parcels card and a Track this parcel link](../screenshots/shop-i12-on-its-way-1790278545601.png)
+
+For collection orders, it shows where to collect from **(1)**, when it's ready, and that the order is complete once they've collected everything.
+
+![A collection order's page, with a Where to collect from card and the collection instructions](../screenshots/shop-i11-where-to-collect-1790278242148.png)
 
 Customers can come back to the order page from the link in their emails, even if your shop is closed. On a different device from the one they ordered on, they need to sign in.
 

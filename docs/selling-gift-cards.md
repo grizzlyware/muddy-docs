@@ -23,28 +23,32 @@ Gift cards don't need delivering and don't need stock. You don't need to do anyt
 1. Click **Shop** in the left-hand menu.
 2. Click **Products**.
 3. Click **Create**.
-4. Under **Product type**, choose **Gift card**.
+4. Under **Product type**, choose **Gift card** **(1)**.
 
 If you haven't opened your shop yet, click **Add a product** on the **Shop** page instead of steps 2 and 3. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
 Then fill in the details below.
 
+![The top of the Create gift card form, with Gift card chosen and three values of £10, £25 and £50](../screenshots/shop-f1-gift-card-values-1790271825376.png)
+
 ### Gift card name
 
-What customers see in your shop. Muddy fills in **Gift Card** for you, but you can change it, for example to **Christmas gift card**.
+What customers see in your shop. Muddy fills in **Gift Card** **(2)** for you, but you can change it, for example to **Christmas gift card**.
 
 ### Gift card values
 
 Choose how much the gift card is worth:
 
 - **One value**: the gift card is sold at a single amount. Enter it under **Gift card value**.
-- **Multiple values**: customers choose from amounts you set, such as £10, £25 and £50. Enter each amount under **Values**, and click **Add value** for more. You need at least two, and each one must be different.
+- **Multiple values** **(3)**: customers choose from amounts you set, such as £10, £25 and £50. Enter each amount under **Values** **(4)**, and click **Add value** **(5)** for more. You need at least two, and each one must be different.
 
 The customer pays exactly the value of the gift card, and the voucher they get is worth the same.
 
 ### Gift card expires
 
-Switch this on if the gift card should only be usable for a set time. Then choose how long under **Expires after**, in months or years. The time starts from the day the gift card is sent, not the day it's bought.
+Switch this on **(1)** if the gift card should only be usable for a set time. Then choose how long under **Expires after** **(2)**, in months or years. The time starts from the day the gift card is sent, not the day it's bought.
+
+![The whole Create gift card form, with Gift card expires switched on, the gift card artwork and the Create gift card button](../screenshots/shop-f2-gift-card-rest-1790271830049.png)
 
 Muddy starts with your usual voucher expiry, which you can change under **Settings** then **Vouchers**. Switch this off if the gift card never expires.
 
@@ -60,22 +64,26 @@ Shown on the gift card's page in your shop. It's a good place to explain what th
 
 ### Images
 
-Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name) and your [brand colours](changing-system-colour-scheme.md). You can add your own images instead if you prefer.
+Adding images is optional. If you don't add any, customers see artwork Muddy makes for you **(3)**, using your logo (or business name) and your [brand colours](changing-system-colour-scheme.md). You can add your own images instead if you prefer.
 
-When you're done, click **Create gift card**. If this is your first product and you're still setting up your shop, the button says **Save and continue** instead.
+When you're done, click **Create gift card** **(4)**. If this is your first product and you're still setting up your shop, the button says **Save and continue** instead.
 
 **Tip:** put your gift cards in their own collection, such as **Gift cards**, so they're easy to find. See [Organising your shop with collections](organising-shop-collections.md).
 
 ## What customers fill in
 
-When a customer buys a gift card, they're asked **Who is it for?**
+On the gift card's page, customers choose a **Gift card value** **(1)** if you've set more than one, and see how long the gift card lasts **(2)**.
+
+When a customer buys a gift card, they're asked **Who is it for?** **(3)**
 
 - **For me**: the gift card is emailed to the customer once they've paid.
-- **Send to someone else**: the customer enters the **Recipient name**, **Recipient email** and, if they like, a **Personal message**.
+- **Send to someone else**: the customer enters the **Recipient name** **(4)**, **Recipient email** and, if they like, a **Personal message**.
 
-If they're sending it to someone else, they can also choose **Send it later** and pick a **Send date and time**. This can be up to six months ahead. Otherwise, the gift card is emailed as soon as payment is complete.
+If they're sending it to someone else, they can also choose **Send it later** **(5)** and pick a **Send date and time**. This can be up to six months ahead. Otherwise, the gift card is emailed as soon as payment is complete.
 
-Each gift card goes in the basket on its own line, so each one can have its own recipient and message. To buy three, the customer adds three separate gift cards.
+![The gift card's page in the shop, with £25 chosen and the gift card set to send to someone else on a later date](../screenshots/shop-f3-gift-card-page-1790272286303.png)
+
+Each gift card goes in the basket **(6)** on its own line, so each one can have its own recipient and message. To buy three, the customer adds three separate gift cards.
 
 ## After a gift card is sold
 
