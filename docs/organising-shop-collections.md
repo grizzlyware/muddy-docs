@@ -92,4 +92,4 @@ It's worth putting every product in at least one collection. Products left under
 2. Click **Delete collection** **(4)**.
 3. Click **Delete it** to confirm.
 
-Deleting a collection doesn't delete the products in it. They stay in your shop. If they aren't in any other collection, they move to **More products**. If none of your remaining collections has published products, your shop front shows all your products in one list instead.
+Deleting a collection doesn't delete the products in it. They stay in your shop. If they aren't in any other collection, they move to **More products**. If that leaves no collection with published products, your shop front shows your products in one list, without a **More products** heading.
