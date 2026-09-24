@@ -123,7 +123,7 @@ The rules you can add are:
 
 An order must meet every rule you add.
 
-To add a rule, click **Add rule**, choose one in the **Choose a rule** pop-up, then click **Add**. If the rule needs details, such as an amount or some products, fill them in and click **Close**. The rule is saved when you save the discount.
+To add a rule, click **Add rule** in the **Shop rules** box, choose one in the **Choose a rule** pop-up, then click **Add**. If the rule needs details, such as an amount or some products, fill them in and click **Close**. The rule is saved when you save the discount.
 
 ![The Choose a rule pop-up](../screenshots/shop-h5-choose-a-rule-1790276216310.png)
 
