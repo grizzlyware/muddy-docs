@@ -1,6 +1,6 @@
 # Shop Customer Journey Structure
 
-Written by hand from the shop source code on 23 September 2026. The journey happens on the operator website: `https://{operator-slug}.muddybooking.com/shop`.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. The journey happens on the operator website: `https://{operator-slug}.muddybooking.com/shop`.
 
 ## Browsing
 - Website menu link: "Shop". In the account menu: "Your orders".
@@ -12,15 +12,15 @@ Written by hand from the shop source code on 23 September 2026. The journey happ
 
 ## Basket (`/shop/basket`)
 - The header button reads "Basket (N)".
-- "Order summary" panel: "Items", discount lines, "Subtotal" or "Total", "Delivery" ("At checkout" until an address is known), voucher lines, "Left to pay".
+- "Order summary" panel: "Items", discount lines, "Subtotal" or "Total", "Delivery" ("Calculated at checkout" until an address is known), voucher lines, "Left to pay".
 - "Discount or voucher code" box with the "Add" button and a "Check voucher balance" link.
-- Apple Pay / Google Pay buttons (hidden once a voucher is on the order; the payment page still offers them, charging the amount left after vouchers), then "— or —", then the "Checkout" button and the "Keep shopping" link.
+- Apple Pay / Google Pay buttons (hidden once a voucher is on the order; the payment page still offers them, charging the amount left after vouchers), then "— or —", then the "Checkout" button and the "Continue shopping" link.
 - Limits: 999 of one item and 100 lines per basket. Each gift card is its own line.
 
 ## Checkout (`/shop/checkout/{order}`)
 - "Your details": "First name", "Last name", "Email", "Phone". An "Already a customer? Sign in" link is shown. Guest checkout is allowed.
 - If the operator offers both, the customer chooses between "Delivery" and "Collection" cards.
-- "Delivery address": a "Delivery to someone else" checkbox, address lookup, and "Enter the address manually".
+- "Delivery address": a "Deliver to someone else" checkbox, address lookup, and "Enter the address manually".
 - Delivery options load after the address is filled in; a "Working out delivery costs…" message shows meanwhile.
 - Policies: an "I accept the ..." checkbox, or the text "By continuing, you accept our ...".
 - Button: "Continue to payment".

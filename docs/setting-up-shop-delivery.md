@@ -16,18 +16,20 @@ When a customer checks out, they choose how their order reaches them. You decide
 
 - **Delivery methods** — the options customers pick from, such as **Standard delivery** or **Next day**. Each one can also be a **collection point**, where customers pick the order up from you.
 - **Delivery rates** — what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
-- **Delivery exclusions** — places inside an area you deliver to that you don't want to deliver to.
+- **Places you don't deliver to** — places inside an area you deliver to that you don't want to deliver to.
 
 Delivery only applies to physical products. Customers buying only gift cards skip this step.
 
 To get there:
 
 1. Click **Shop** in the left-hand menu.
-2. Click **Delivery**.
+2. Click **Collection and delivery**.
+
+If you haven't opened your shop yet, click **Set up collection or delivery** on the **Shop** page instead. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
 ## Step 1 — Add a delivery method
 
-1. Under **Delivery methods**, click **Add a delivery method**.
+1. Under **Collection and delivery methods**, click **Add a delivery method**.
 2. Enter a **Name**. Customers see this at checkout, so make it clear, such as **Royal Mail tracked** or **Standard delivery**.
 3. Enter an **Estimate** if you'd like to tell customers how long it takes, such as **2 to 3 working days**. It's shown beside the name. This is optional.
 4. Click **Add method**.
@@ -55,9 +57,9 @@ A rate sets what a delivery method costs, and where it applies. Every delivery m
 
 ### VAT
 
-If you're VAT registered, choose the **VAT** rate for delivery. **The price above includes VAT** is ticked to start with. Untick it if the price you entered doesn't include VAT.
+If you're VAT registered, choose the **Tax classification** for delivery. **Price includes tax** then appears, ticked. Untick it if the price you entered doesn't include VAT.
 
-If you're not VAT registered, leave **VAT** as **None**.
+If you're not VAT registered, leave **Tax classification** as **None**.
 
 ### Limits
 
@@ -68,7 +70,7 @@ Limits let you charge different amounts depending on the order. There are four:
 
 An order has to meet every limit you set. "From" includes the amount you enter, and "Under" doesn't. So a rate **under £50** and another **from £50** fit together exactly, with no gap and no overlap.
 
-**Note:** if a rate uses weight, every physical product needs a weight set. If a basket contains a physical product with no weight, rates that use weight won't apply to it. Gift cards and other products that aren't posted don't count towards the weight. Muddy warns you at the top of the **Delivery** page if any of your products are missing a weight.
+**Note:** if a rate uses weight, every physical product needs a weight set. If a basket contains a physical product with no weight, rates that use weight won't apply to it. Gift cards and other products that aren't posted don't count towards the weight. Muddy warns you at the top of the **Collection and delivery** page if a rate uses weight and some of your products are missing one.
 
 ## Offering free delivery over an amount
 
@@ -77,7 +79,7 @@ There's no separate setting for free delivery. Instead, add two rates to the sam
 1. A rate with your normal **Price**, such as £4.95, and **Under order value** set to **50**.
 2. A rate with a **Price** of **0**, and **From order value** set to **50**.
 
-Orders under £50 pay £4.95. Orders of £50 or more see **FREE** at checkout.
+Orders under £50 pay £4.95. Orders of £50 or more see **Free** at checkout.
 
 Order value is what the customer pays for the goods after any discounts. So a £55 order with a £10 discount counts as £45. Gift cards in the order count towards it.
 
@@ -140,7 +142,9 @@ To give the Highlands free delivery over £50 too, split the postcode rate in th
 
 Sometimes a rate covers an area where you don't want to deliver. For example, you might deliver across the UK but not to Northern Ireland, or not deliver heavy orders to the islands. That's what exclusions are for.
 
-1. Under **Delivery exclusions**, click **Add an exclusion**.
+This section is hidden while you're following the shop setup steps. To add a place before you open, click **Settings** in the left-hand menu, then **Collection and delivery**.
+
+1. Under **Places you don't deliver to**, click **Add a place**.
 2. Choose the **Delivery method**.
 3. Choose the **Country**, **County** or **Postcodes** you don't want to deliver to.
 4. Add any limits, if you only want to exclude some orders. For example, set **From weight (grams)** to **2000** to stop heavy orders going there.
@@ -156,13 +160,13 @@ Exclusions follow the same rules as rates. A more specific rate beats a less spe
 
 If customers can pick their orders up from you, add a **collection point**. Collection is always free, and it's offered to every customer, wherever they live.
 
-1. Under **Delivery methods**, click **Add a collection point**.
+1. Under **Collection and delivery methods**, click **Add a collection point**.
 2. Enter a **Name**, such as **Collect from the field**.
 3. Enter **Instructions** telling customers where to come and when, such as "Ring the bell at the back gate. We're open 9am to 5pm." These appear on the order and in the customer's emails.
 4. Switch on **Customers help themselves** if nobody hands the order over, for example if you leave orders in a locker or a collection box.
 5. Click **Add collection point**.
 
-If you offer both delivery and collection, customers choose between them at checkout. If you offer only collection, it's chosen for them.
+If you offer both delivery and collection, customers choose between them at checkout. If you offer only collection, customers aren't asked to choose delivery. If you have one collection point, it's chosen for them.
 
 **Note:** the collection instructions are read when each email is sent. If you change them, emails sent after that show the new instructions, even for orders placed earlier.
 
@@ -170,7 +174,7 @@ To see how collection orders work once they come in, read [Managing shop orders]
 
 ## Changing the order of methods
 
-Customers see your delivery methods in the order they appear on the **Delivery** page. To change it, drag a method by its handle to a new position.
+Customers see your delivery methods in the order they appear on the **Collection and delivery** page. To change it, drag a method by its handle to a new position.
 
 ## Editing a method or rate
 
@@ -193,13 +197,13 @@ To remove a single rate, click **Remove** next to it, then **Remove it** to conf
 
 ## What customers see at checkout
 
-Customers enter their address, and Muddy works out which options they can have. Each option shows its name, its estimate (or collection instructions) and its price, or **FREE**.
+Customers enter their address, and Muddy works out which options they can have. Each option shows its name, its estimate (or collection instructions) and its price, or **Free**.
 
 If none of your delivery methods reach the customer's address, they're told delivery isn't available there. If you've added an email address or phone number to your account, they're also invited to get in touch with you.
 
 ## Warnings on the shop page
 
-Muddy warns you on the **Shop** page if delivery isn't set up properly:
+Once your shop is open, Muddy warns you on the **Shop** page if delivery isn't set up properly:
 
-- **You haven't set up delivery yet** — you have products that need posting, but no delivery methods. Customers can't buy those products until you add one.
+- **You haven't set up collection or delivery** — you have products that need posting, but no way for customers to get them. Customers can't order those products until you add one.
 - **You offer collection but no delivery** — customers can only collect. If that's what you want, click **Dismiss** and the warning won't come back.

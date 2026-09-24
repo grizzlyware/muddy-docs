@@ -30,7 +30,7 @@ Discounts are shared between bookings and the shop, so they live in your setting
 1. Go to **Settings**.
 2. Click **Discounts**.
 
-You can also get there by clicking **Shop** in the left-hand menu, then **Discounts**.
+Once your shop is set up, you can also get there by clicking **Shop** in the left-hand menu, then **Discounts**.
 
 ## Creating a discount
 
@@ -110,7 +110,7 @@ The rules you can add are:
 - **Order contains one of these products**
 - **Order contains one of these variants**
 - **Order contains a product from one of these collections** — this includes products you add to the collection later.
-- **Order contains something postable** — the order has at least one physical product.
+- **Order contains a physical product** — the order has at least one physical product.
 
 An order must meet every rule you add.
 
@@ -153,7 +153,7 @@ For percentages, **Apply to original price?** decides how they add up:
 
 ## What customers see
 
-Customers enter codes in the **Discount or voucher code** box, in their basket or at checkout. If a code can't be used, they're told why. For example, that the code isn't valid (which includes expired codes), that their order doesn't qualify, or that it has been used as many times as it can be.
+Customers enter codes in the **Discount or voucher code** box, in their basket or at checkout. If a code can't be used, they're told why. For example, that the code isn't valid (which includes expired codes), that their order doesn't qualify, or that the code can't be used any more.
 
 Each discount shows as its own line in the basket and on the order, with the amount it took off.
 

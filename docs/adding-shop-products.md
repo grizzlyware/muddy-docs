@@ -14,6 +14,8 @@ pinned: false
 1. Click **Shop** in the left-hand menu.
 2. Click **Products**.
 
+If you haven't opened your shop yet, the **Shop** page shows your setup steps instead. Use **Add a product** or **Review products** there. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
+
 The **Products** page lists everything you sell. Products you haven't published yet have a **Draft** badge. The **Stock** column shows how many you have, if you track stock for that product (see [Tracking stock](tracking-shop-stock.md)).
 
 If you've made collections, you can use the menu at the top to show one collection at a time.
@@ -33,25 +35,7 @@ Then fill in the details below.
 
 What customers see in your shop, in their basket and on their receipt.
 
-### Description
-
-Shown on the product's own page. Use it for anything a customer would want to know before buying, like size, ingredients or care instructions. You can use bold text, lists and links.
-
-### Published
-
-Leave this on to show the product in your shop. Switch it off to hide the product without deleting it. This is useful for seasonal items, or for a product you're still working on.
-
-### Physical product
-
-Leave this on for anything you post or hand over, including things customers collect from you. Switch it off only for things that never need delivering. Muddy only asks customers for a delivery address when something in their order is physical.
-
-### Images
-
-Add photos of the product. The first image is the main one, marked **Primary**, and it's the one shown on your shop front. Customers can look through the rest on the product's page. Use the arrows on each image to change the order.
-
-### SKU
-
-A short code to identify the product, useful if you keep stock records elsewhere. Muddy suggests one as you type the name, but you can change it. Each product needs a different SKU.
+Leave **Variants** set to **Just one variant** unless the product comes in different colours or sizes (see [below](#products-that-come-in-different-colours-or-sizes)).
 
 ### Price
 
@@ -63,11 +47,33 @@ If you're VAT registered, choose the VAT rate that applies to this product. If y
 
 If you choose a VAT rate, a **Prices include tax** switch appears. Leave it on if the price you entered already includes VAT, which is usual for things you sell to the public.
 
+### Published
+
+Leave this on to show the product in your shop. Switch it off to hide the product without deleting it. This is useful for seasonal items, or for a product you're still working on.
+
+### Physical product
+
+Leave this on for anything you post or hand over, including things customers collect from you. Switch it off only for things that never need delivering. Muddy only asks customers for a delivery address when something in their order is physical.
+
+### Description
+
+Shown on the product's own page. Use it for anything a customer would want to know before buying, like size, ingredients or care instructions. You can use bold text, lists and links.
+
+### Images
+
+Add photos of the product. The first image is the main one, marked **Primary**, and it's the one shown on your shop front. Customers can look through the rest on the product's page. Use the arrows on each image to change the order.
+
+### SKU
+
+A short code to identify the product, useful if you keep stock records elsewhere. Muddy suggests one as you type the name, but you can change it. Each product needs a different SKU.
+
 ### Weight (grams)
 
 Only needed if you charge for delivery by weight. If any of your delivery rates use weight, set a weight on every physical product. Otherwise customers can't have a basket containing that product delivered by that method.
 
 When you're done, click **Create product**.
+
+If you're adding your first product while setting up your shop, the button says **Save and continue** and takes you to the next setup step.
 
 ## Products that come in different colours or sizes
 
@@ -88,12 +94,12 @@ You can add up to three options per product, and a product can have up to 100 va
 Muddy lists every combination in the **Variants** table. In the example above, you'd get six variants: Small Red, Small Blue, Medium Red, and so on.
 
 - **Every variant sells at the product's price** unless you change it. To give one variant a different price, click its settings icon and change **Price**. A variant with its own price, tax or weight shows **custom** beside its price.
-- **Untick a variant** you don't sell, such as a colour you don't stock in large. Customers won't be able to choose that combination. You can tick it again at any time.
+- Untick **For sale** on a variant you don't sell, such as a colour you don't stock in large. Customers won't be able to choose that combination. You can tick it again at any time.
 - In a variant's settings, you can also set its own **Tax classification**, **Weight (grams)** and **SKU** ending. Tax starts as the product's rate. Leave the weight blank to use the product's weight.
 
 With variants, the product's **SKU** becomes an **SKU prefix**. Muddy adds the variant's values to the end to make each variant's code.
 
-You must leave at least one variant ticked. Otherwise the product has nothing to sell.
+You must leave at least one variant for sale. Otherwise the product has nothing to sell.
 
 ### What customers see
 

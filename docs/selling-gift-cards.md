@@ -25,22 +25,20 @@ Gift cards don't need delivering and don't need stock. You don't need to do anyt
 3. Click **Create**.
 4. Under **Product type**, choose **Gift card**.
 
+If you haven't opened your shop yet, click **Add a product** on the **Shop** page instead of steps 2 and 3. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
+
 Then fill in the details below.
 
 ### Gift card name
 
 What customers see in your shop. Muddy fills in **Gift Card** for you, but you can change it, for example to **Christmas gift card**.
 
-### Description
-
-Shown on the gift card's page in your shop. It's a good place to explain what the gift card can be spent on.
-
 ### Gift card values
 
 Choose how much the gift card is worth:
 
 - **One value** — the gift card is sold at a single amount. Enter it under **Gift card value**.
-- **Multiple values** — customers choose from amounts you set, such as £10, £25 and £50. Enter each one as a **Denomination**, and click **Add denomination** for more. You need at least two, and each one must be different.
+- **Multiple values** — customers choose from amounts you set, such as £10, £25 and £50. Enter each amount under **Values**, and click **Add value** for more. You need at least two, and each one must be different.
 
 The customer pays exactly the value of the gift card, and the voucher they get is worth the same.
 
@@ -52,15 +50,19 @@ Muddy starts with your usual voucher expiry, which you can change under **Settin
 
 Customers see the expiry on the gift card's page before they buy.
 
-### Images
-
-Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name) and your [brand colours](changing-system-colour-scheme.md). You can add your own images instead if you prefer.
-
 ### Published
 
 Leave this on to show the gift card in your shop.
 
-When you're done, click **Create gift card**.
+### Description
+
+Shown on the gift card's page in your shop. It's a good place to explain what the gift card can be spent on.
+
+### Images
+
+Adding images is optional. If you don't add any, customers see artwork Muddy makes for you, using your logo (or business name) and your [brand colours](changing-system-colour-scheme.md). You can add your own images instead if you prefer.
+
+When you're done, click **Create gift card**. If this is your first product and you're still setting up your shop, the button says **Save and continue** instead.
 
 **Tip:** put your gift cards in their own collection, such as **Gift cards**, so they're easy to find. See [Organising your shop with collections](organising-shop-collections.md).
 

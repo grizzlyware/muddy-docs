@@ -1,13 +1,15 @@
 # Shop Products, Options, Collections, Stock and Gift Cards
 
-Written by hand from the shop source code on 23 September 2026. Paths are relative to `/manage/operators/{id}`.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Paths are relative to `/manage/operators/{id}`.
 
 ## Products list (`/shop/products`)
 - "Create" button. There is also a collection filter ("All collections"), shown only when collections exist.
 - Columns: "Name" (with a "Draft" badge when unpublished) and "Stock".
+- Before first-time setup is complete, the list shows the setup step bar with "Back to setup" and "Continue". The Stock, Options and Collections tiles on `/shop` are hidden until then; Options and Collections are still linked from Settings.
 - "View in shop" opens the product through staff preview. It works for drafts and for a closed shop.
 
 ## Product form (`/shop/products/new`, `/shop/products/{id}`)
+- Field order: Product type, name, Variants, Price / Tax classification / Prices include tax, [Variants table], Published, Physical product, Description, Images, SKU, Weight. Gift card: name, Gift card values, Gift card expires, Published, Description, Images.
 - "Product type": "Standard product" or "Gift card". Shown on create only; it can't be changed later.
 - "Product name" (or "Gift card name"), "Description" (markdown).
 - "Variants": "Just one variant" or "It comes in different variants".
@@ -17,15 +19,15 @@ Written by hand from the shop source code on 23 September 2026. Paths are relati
 - "Price", "Tax classification" (None, VAT standard rate, VAT reduced rate, VAT exempt, VAT zero rated, Outside the scope of VAT).
 - "Prices include tax": shown only when the product is taxed.
 - "Weight (grams)": shown only when "Physical product" is on.
-- Buttons: "Create product" / "Create gift card" / "Save changes" / "Delete product" (confirm "Delete it").
+- Buttons: "Create product" / "Create gift card" / "Save changes" / "Delete product" (confirm "Delete it"). In setup mode (`?setup=1`): "Save and continue" and "Back to setup".
 - Deleting a product is permanent. Past orders keep a copy of the product's details.
 
 ## Options and variants
 - "Options": "Option name" and "Values", with "Add" and "Add another option". Max 3 options and max 100 variants.
-- "Variants" table: columns "Variant", "SKU", "Price", "Sold", plus a settings icon per variant.
+- "Variants" table: columns "Variant", "SKU", "Price", "For sale", plus a settings icon per variant.
   - The settings icon opens: "Price", "Tax classification", "Weight (grams)", "SKU". Button: "Apply".
   - A price set on a variant shows "custom".
-  - The "Sold" checkbox untick stops the variant selling. At least one variant must stay ticked.
+  - Unticking "For sale" stops the variant selling. At least one variant must stay for sale.
 - Options page (`/shop/options`): columns "Name", "Values", "Used by".
   - Renaming an option or value here renames it on every product.
   - Values can't be added here.
@@ -47,12 +49,12 @@ Written by hand from the shop source code on 23 September 2026. Paths are relati
   - "Change stock" pop-up: "What changed?" ("Add stock" / "Remove stock"), "Quantity", "Note (optional)", and the "Save change" button.
 - Product stock page: "Stock levels" and "Stock history".
   - History reasons: Starting quantity, Changed by staff, Customer order, Customer return, Order changed, Order cancelled, Stopped tracking.
-- Stock is taken when an order is paid, not reserved while items sit in a basket. An oversell makes stock negative, and staff get the email "Not enough stock to fulfil order".
+- Stock is taken when an order is paid, not reserved while items sit in a basket. An oversell makes stock negative, and staff get the email "Not enough stock for order {reference}".
 - Customers see "N in stock" (capped at "10+ in stock") or "Out of stock".
 
 ## Gift cards
 - Create a product with "Product type" set to "Gift card". A gift card has no SKU, weight or stock.
-- "Gift card values": "One value" ("Gift card value") or "Multiple values" ("Denomination 1..." and "Add denomination", minimum 2).
+- "Gift card values": "One value" ("Gift card value") or "Multiple values" ("Values": "Value 1..." and "Add value", minimum 2).
 - "Gift card expires" switch with "Expires after" (months or years). It defaults to the voucher expiry in Settings > Vouchers.
 - Artwork is generated automatically when no images are added.
 - Customer fields: "Who is it for?" is "For me" or "Send to someone else".

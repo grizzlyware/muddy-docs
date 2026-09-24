@@ -1,6 +1,6 @@
 # Shop Discounts Structure
 
-Written by hand from the shop source code on 23 September 2026.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026.
 Page: `/manage/operators/{id}/discounts` (Settings > "Discounts"). Create with the "Create" button (`/discounts/new`).
 
 ## Form fields (in order)
@@ -23,7 +23,7 @@ Page: `/manage/operators/{id}/discounts` (Settings > "Discounts"). Create with t
 - Order contains one of these products
 - Order contains one of these variants
 - Order contains a product from one of these collections
-- Order contains something postable
+- Order contains a physical product
 
 ## Behaviour
 - Surcharges never apply to shop orders.

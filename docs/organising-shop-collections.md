@@ -23,6 +23,8 @@ A product can be in more than one collection. For example, a Christmas treat box
 1. Click **Shop** in the left-hand menu.
 2. Click **Collections**.
 
+The **Collections** tile appears once your shop is open. Until then, click **Settings** in the left-hand menu, then **Collections**.
+
 Each collection shows as a card with its cover image, its name, how many products it has, and the products themselves.
 
 ## Creating a collection
@@ -42,7 +44,7 @@ Your new collection starts empty. An empty collection doesn't show in your shop,
 
 You'll see **Products added to the collection.** when it's done.
 
-You can also add products from the other direction. Products that aren't in any collection are listed in the **Not in a collection** panel. Click **Add to a collection** next to any of them.
+You can also add products from the other direction. Products that aren't in any collection are listed below your collections, under **Not in a collection**. Once you have a collection, click **Add to a collection** next to any of them.
 
 To take a product out of a collection, click the **X** next to it on the collection's card. This only removes it from the collection. The product itself isn't deleted.
 

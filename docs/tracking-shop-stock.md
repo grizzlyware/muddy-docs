@@ -23,6 +23,8 @@ You track stock for each **variant**, so you can track your Small harnesses sepa
 1. Click **Shop** in the left-hand menu.
 2. Click **Stock**.
 
+The **Stock** tile appears once your shop is open. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
+
 The **Stock** page lists every variant of every product, with its current stock. Use the **Product or SKU** search to find something quickly.
 
 You can set and change stock straight from this page. To see the full record for a product, including its history, click the product's name. The same buttons are there too.
@@ -85,7 +87,7 @@ You can't edit or delete past changes. If something is wrong, add a new change t
 
 Because stock only comes off at payment, two customers can occasionally pay for the last item at almost the same time. Muddy won't refuse a payment that has already gone through, so both orders are placed.
 
-When this happens, your stock goes below zero (shown in red), and you get an email called **Not enough stock to fulfil order**. You can then decide what to do. You might find another one, or contact the customer and cancel their order, which refunds them in full. See [Managing shop orders](managing-shop-orders.md).
+When this happens, your stock goes below zero (shown in red), and you get an email with the subject **Not enough stock for order**, followed by the order number. You can then decide what to do. You might find another one, or contact the customer and cancel their order, which refunds them in full. See [Managing shop orders](managing-shop-orders.md).
 
 ## Stopping tracking
 

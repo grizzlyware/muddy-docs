@@ -45,7 +45,7 @@ Here they can:
 - Pay straight away with Apple Pay or Google Pay, if their device supports it. With a voucher on the order, they use these on the payment step instead.
 - Click **Checkout** to continue.
 
-The basket shows **At checkout** for delivery, until they've entered their address.
+The basket shows **Calculated at checkout** for delivery, until they've entered their address.
 
 If something in their basket runs out or is taken off sale, Muddy updates the basket and tells them what changed.
 
@@ -63,7 +63,7 @@ Customers don't need an account to buy. If they already have one, they can click
 
 If you offer both, customers choose **Delivery** or **Collection**.
 
-For delivery, they enter their address. They can search for it, or enter it by hand. If the order is going to someone else, they tick **Delivery to someone else** and enter the recipient's name.
+For delivery, they enter their address. They can search for it, or enter it by hand. If the order is going to someone else, they tick **Deliver to someone else** and enter the recipient's name.
 
 Once they've entered their address, Muddy shows the delivery options you offer there, with their prices. If you don't deliver to that address, they're told, and invited to get in touch with you.
 

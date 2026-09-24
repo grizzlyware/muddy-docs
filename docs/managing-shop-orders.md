@@ -20,13 +20,13 @@ The **Orders** page opens on **Awaiting fulfilment**. This is your to-do list: e
 
 Switch to **All orders** to see everything, including finished and cancelled orders.
 
-You can filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Delivery**. Customers who start a checkout but never pay don't appear here.
+You can filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Fulfilment**. Customers who start a checkout but never pay don't appear here.
 
 You'll also get a **New shop order** email each time a customer pays for an order, unless you've switched it off in your notification preferences.
 
 ## What the statuses mean
 
-Each order has a **Payment** status and a **Delivery** status.
+Each order has a **Payment** status and a **Fulfilment** status.
 
 **Payment:**
 
@@ -37,15 +37,15 @@ Each order has a **Payment** status and a **Delivery** status.
 
 **Payment pending** means a payment has started but hasn't finished yet, such as a bank payment that's still clearing.
 
-**Delivery:**
+**Fulfilment:**
 
 - **Awaiting dispatch** — ready for you to send.
-- **Awaiting collection** — the customer is collecting, and you haven't got it ready yet.
+- **Awaiting preparation** — the customer is collecting, and you haven't got it ready yet.
 - **Ready to collect** — you've told the customer it's ready.
-- **Partly dispatched** — you've sent some of the order, but not all of it.
+- **Partly fulfilled** — you've sent or handed over some of the order, but not all of it.
 - **Dispatched** — everything has been sent.
 - **Collected** — the customer has picked it up.
-- **Nothing more to send** — you've closed the order without sending everything (see below).
+- **Nothing more to come** — you've closed the order without sending everything (see below).
 - **Nothing to dispatch** — the order has nothing physical in it, such as an order for gift cards only.
 
 ## Looking at an order
@@ -66,7 +66,7 @@ When you post an order, record it in Muddy. This keeps your to-do list accurate 
 
 1. Open the order.
 2. Under **Fulfilments**, click **Record dispatch**.
-3. Choose the **Carrier**, such as Royal Mail or DPD. If yours isn't listed, choose **Someone else** and type its name.
+3. Choose the **Courier**, such as Royal Mail or DPD. If yours isn't listed, choose **Other courier** and type its name under **Courier name**.
 4. Enter the **Tracking number**, if you have one. For the carriers listed, Muddy turns it into a tracking link for the customer.
 5. Check the **Items**. Every item still to send is filled in for you.
 6. Add any **Notes**. Only your team can see these.
@@ -75,7 +75,7 @@ When you post an order, record it in Muddy. This keeps your to-do list accurate 
 
 ### Sending part of an order
 
-If you can't send everything at once, lower the quantities under **Items** to match what's in this parcel. Set anything you're not sending to 0. The order shows as **Partly dispatched**, and the email tells the customer what's in this parcel and what's still to come. Record another dispatch when you send the rest.
+If you can't send everything at once, lower the quantities under **Items** to match what's in this parcel. Set anything you're not sending to 0. The order shows as **Partly fulfilled**, and the email tells the customer what's in this parcel and what's still to come. Record another dispatch when you send the rest.
 
 ### Recording something you sent earlier
 
@@ -95,7 +95,7 @@ If the customer chose to collect their order, the steps are a little different.
 
 1. Open the order.
 2. Click **Ready to collect**.
-3. Add anything the customer needs to know for this order under **Where to come for it**, such as a locker number or a code. This is optional. It's added to the email, alongside your usual collection instructions.
+3. Add anything the customer needs to know for this order under **Where to collect it**, such as a locker number or a code. This is optional. It's added to the email, alongside your usual collection instructions.
 4. Click **Mark as ready**.
 
 The customer is emailed straight away to say their order is ready.
@@ -106,7 +106,7 @@ If you need to correct the details, such as a wrong locker code, click **Resend 
 
 1. Open the order.
 2. Click **Customer has collected**.
-3. Click **They have it** to confirm.
+3. Click **Mark as collected** to confirm.
 
 This doesn't email the customer. If you'd like to send them a confirmation, click **Send handover email** on the collection's row.
 
@@ -122,7 +122,7 @@ If the customer takes some of their order and comes back for the rest, record wh
 4. Leave **Send an email to the customer** switched on if you'd like to confirm what they've collected.
 5. Click **Record collection**.
 
-There's no carrier or tracking number to fill in. The order shows as **Partly dispatched** until everything has been collected.
+There's no carrier or tracking number to fill in. The order shows as **Partly fulfilled** until everything has been collected.
 
 ### Collection points where customers help themselves
 
@@ -133,7 +133,7 @@ If the collection point is set so that customers help themselves, such as a lock
 Sometimes you can't send the rest of an order. For example, an item might be discontinued, or the customer might tell you they no longer want the rest. Once part of an order has gone out, you can't cancel it, but you can close it.
 
 1. Open the order.
-2. Under **Fulfilments**, click **Nothing more to send** (or **Nothing more to hand over** on a collection order).
+2. Under **Fulfilments**, click **Nothing more to send** (or **Nothing more to collect** on a collection order).
 3. Confirm.
 
 The order comes off your to-do list. **No money moves when you do this.** The confirmation tells you how much could still be refunded. If the customer should get money back for the items they didn't receive, refund it separately (see [Refunding without a return](#refunding-without-a-return) below).

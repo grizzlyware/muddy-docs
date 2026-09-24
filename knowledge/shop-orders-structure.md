@@ -1,14 +1,14 @@
 # Shop Orders Structure
 
-Written by hand from the shop source code on 23 September 2026. Pages: `/manage/operators/{id}/shop/orders` and `/shop/orders/{sequence number}`.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Pages: `/manage/operators/{id}/shop/orders` and `/shop/orders/{sequence number}`.
 
 ## Orders list
 - View switcher: "Awaiting fulfilment" (the default) and "All orders".
-- Filters: "Order number", "Order" (Placed / Cancelled), "Payment", "Delivery".
-- Columns: "Order", "Customer", "Total", "Payment", "Delivery".
+- Filters: "Order number", "Order" (Placed / Cancelled), "Payment", "Fulfilment" (All orders view only), plus customer filters.
+- Columns: "Order", "Customer", "Total", "Payment", "Fulfilment".
 - Checkouts that were never paid are hidden.
 - Payment statuses: Unpaid, Paid, Partially paid, Refunded, Partially refunded, plus a "Payment pending" note.
-- Delivery statuses: Nothing to dispatch, Awaiting dispatch, Awaiting collection, Ready to collect, Partly dispatched, Dispatched, Collected, Nothing more to send.
+- Fulfilment statuses: Nothing to dispatch, Awaiting dispatch, Awaiting preparation, Ready to collect, Partly fulfilled, Dispatched, Collected, Nothing more to come.
 
 ## Order page
 - Main column: the items, "Price breakdown" (only when discounts apply), "Fulfilments", "Returns", "Transactions" (with "Record payment" and "Refund").
@@ -16,18 +16,18 @@ Written by hand from the shop source code on 23 September 2026. Pages: `/manage/
 
 ## Fulfilment (posted orders)
 - "Record dispatch" opens the "Record a dispatch" pop-up. Fields:
-  - "Carrier": Royal Mail, Parcelforce, Evri, DPD, DHL, UPS, FedEx, Yodel, Collected in person, Someone else.
+  - "Courier": Royal Mail, Parcelforce, Evri, DPD, DHL, UPS, FedEx, Yodel, Collected in person, Other courier (then "Courier name").
   - "Tracking number", "Items" (with per-line quantities, so part of an order can be sent), "Notes".
   - "Send an email to the customer" (default on).
 - Each dispatch row has "Send dispatch email" / "Resend dispatch email" and a bin icon (confirm "Remove it"). A dispatch can't be removed once the customer has been emailed.
 - "Nothing more to send" closes the order with no money moving. "Reopen" undoes it.
 
 ## Collection orders
-- "Ready to collect" opens a pop-up with the field "Where to come for it" and the button "Mark as ready". This always emails the customer.
+- "Ready to collect" opens a pop-up with the field "Where to collect it" and the button "Mark as ready". This always emails the customer.
   - For points with "Customers help themselves" on, the pop-up is titled "Left for the customer", the field is "Where to find it", and marking ready also records the handover.
 - "Resend ready-to-collect email" (button "Resend email").
-- "Customer has collected" (confirm "They have it") sends no email. "Send handover email" then sends one.
-- On collection orders, the button is "Record collection". It opens "Record a collection", which has no Carrier or Tracking number fields; the goods are recorded as collected in person, and the success message is "Collection recorded." Closing is labelled "Nothing more to hand over".
+- "Customer has collected" (confirm "Mark as collected") sends no email. "Send handover email" then sends one.
+- On collection orders, the button is "Record collection". It opens "Record a collection", which has no Courier or Tracking number fields; the goods are recorded as collected in person, and the success message is "Collection recorded." Closing is labelled "Nothing more to collect".
 
 ## Cancelling
 - "Cancel order" (confirm "Cancel the order"). It is only available while nothing has been sent or collected and no payment is pending.
