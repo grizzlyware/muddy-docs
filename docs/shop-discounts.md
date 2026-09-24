@@ -117,12 +117,17 @@ The rules you can add are:
 - **Order contains one of these variants**
 - **Order contains a product from one of these collections**: this includes products you add to the collection later.
 - **Order contains a physical product**: the order has at least one physical product.
+- **Must have no discounts**: the order has no other discount.
+- **One of these customer groups**: the customer is signed in and is in at least one of the groups you pick.
+- **Not in one of these customer groups**: the customer is signed in and isn't in any of the groups you pick.
 
 An order must meet every rule you add.
 
+To add a rule, click **Add rule**, choose one in the **Choose a rule** pop-up, then click **Add**. If the rule needs details, such as an amount or some products, fill them in and click **Close**. The rule is saved when you save the discount.
+
 ![The Choose a rule pop-up](../screenshots/shop-h5-choose-a-rule-1790276216310.png)
 
-**Tip:** rules decide *when* a discount applies, not *what* it comes off. If you want 10% off treats whenever someone buys a treat, add the rule **Order contains a product from one of these collections** with your Treats collection, *and* set **Which goods does it apply to?** to **Chosen items only** with the same collection. Otherwise, the 10% comes off the whole order.
+**Tip:** rules decide *when* a discount applies, not *what* it comes off. If you want 10% off treats whenever someone buys a treat, add the rule **Order contains a product from one of these collections** with your Treats collection, *and* set **Which goods does it apply to?** to **Chosen items only** with the same collection. Otherwise, the 10% comes off every item in the order.
 
 The **Goods total** rules look at the total after any earlier discounts.
 
