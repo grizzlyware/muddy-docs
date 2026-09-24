@@ -52,7 +52,7 @@ You can also add products from the other direction. Products that aren't in any 
 
 To take a product out of a collection, click the **X** **(4)** next to it on the collection's card. This only removes it from the collection. The product itself isn't deleted.
 
-![The Collections page with two collection cards and a product that isn't in a collection](../screenshots/shop-d3-collections-page-1790272814514.png)
+![The Collections page with two collection cards and a product that isn't in a collection](../screenshots/shop-d3-collections-page-1790283295061.png)
 
 ## Changing the order
 
@@ -61,7 +61,7 @@ The order on the **Collections** page is the order customers see.
 - **To move a collection**, drag it by its handle **(1)** to a new position.
 - **To move a product within a collection**, drag it by its handle **(2)** to a new position on the card.
 
-![A collection card with its drag handles and pencil icon marked](../screenshots/shop-d4-handles-and-pencil-1790272883377.png)
+![A collection card with its drag handles and pencil icon marked](../screenshots/shop-d4-handles-and-pencil-1790283269162.png)
 
 Changes save straight away. If your shop is open, customers see the new order immediately.
 
