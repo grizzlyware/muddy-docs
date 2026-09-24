@@ -1,7 +1,7 @@
 ---
 title: Embed JavaScript API
 category: Website embedding
-description: Reference for the Muddy embed: launch triggers, layout events, and the booking event payloads you can listen for on your page.
+description: Reference for the Muddy embed, covering launch triggers, layout events, and the booking event payloads you can listen for on your page.
 tags:
   - embeds
   - javascript
