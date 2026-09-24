@@ -57,6 +57,10 @@ Related knowledge files: shop-products-structure, shop-delivery-structure, shop-
   - "You haven't set up collection or delivery, so customers can't order physical products." with the "Set up delivery" button. It can't be dismissed.
   - "You offer collection but no delivery..." with the "Dismiss" and "Set up delivery" buttons.
 
+## Shop embed (from v0.120.0)
+- Settings > "Website embedding" ("Embeddable components") > "Create component" > "Component type" card "Shop" (beside "Booking form" and "Management panel"). The card shows only while the shop is open and the subscription is current. A Shop component has no walk picker and uses the same look settings as the booking embed. It frames the operator website's `/shop`. Copy its code with "Copy HTML" on its row.
+- If the shop closes, an existing Shop component keeps its type and can still be saved, but no new one can be created. The frame then loads the shop's 404.
+
 ## Shop settings (`/shop/settings`)
 - "Order number prefix": optional, max 10 characters. Letters, numbers, spaces and - / _ # are allowed. Blank means "#".
 - "Example" box: "Your next order number will be ...".

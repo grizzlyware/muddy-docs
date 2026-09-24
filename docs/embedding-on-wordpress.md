@@ -23,6 +23,8 @@ pinned: false
 
 This copies the embed code to your clipboard, ready to paste into WordPress.
 
+Adding your shop rather than your booking form? Create a **Shop** component first, as explained in [Adding your shop to your website](adding-your-shop-to-your-website.md). Then copy its code in the same way and follow the steps below.
+
 ## Adding the form to your WordPress page
 
 ### Step 1: Open your page

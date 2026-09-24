@@ -125,7 +125,7 @@ While the shop is closed:
 
 Your shop is at the **/shop** page of your Muddy website. When it's open, customers reach it from the **Shop** link in your website's menu.
 
-If you've embedded Muddy on your own website (for example on [WordPress](embedding-on-wordpress.md) or [Squarespace](embedding-on-squarespace.md)), the **Shop** link isn't shown inside the embedded booking form. Add your own link to your shop from your website's menu instead.
+If you've embedded Muddy on your own website (for example on [WordPress](embedding-on-wordpress.md) or [Squarespace](embedding-on-squarespace.md)), the **Shop** link isn't shown inside the embedded booking form. Instead, add your shop to a page on your website and link to that page from your website's menu. See [Adding your shop to your website](adding-your-shop-to-your-website.md).
 
 ## Terms and policies at checkout
 
