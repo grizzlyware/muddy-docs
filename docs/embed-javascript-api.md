@@ -1,7 +1,7 @@
 ---
 title: Embed JavaScript API
 category: Website embedding
-description: Complete reference for the Muddy embed — launch triggers, layout events, and booking event payloads you can listen for on your page.
+description: Reference for the Muddy embed: launch triggers, layout events, and the booking event payloads you can listen for on your page.
 tags:
   - embeds
   - javascript
@@ -10,26 +10,26 @@ tags:
 order: 40
 pinned: false
 ---
-The Muddy embed exposes a small JavaScript surface on the host page. You can trigger the booking flow from your own button, react to layout changes as the embed switches between mobile and desktop, and listen for booking activity to forward into other systems.
+The Muddy embed gives your page a small JavaScript API. You can open the booking flow from your own button, react when the embed switches between its mobile and desktop layouts, and listen for bookings to pass on to other systems.
 
-If you just want to wire booking events into Google Analytics, GTM or another analytics tool, see the recipe-focused guide: [Tracking bookings with analytics events](iframe-analytics-events.md).
+If you only want to send bookings to Google Analytics, GTM or another analytics tool, see [Tracking bookings with analytics events](iframe-analytics-events.md).
 
 ## How it works
 
-The Muddy embed is an iframe. The embed snippet on your page listens for messages from that iframe and re-broadcasts them as standard browser `CustomEvent`s on your page's `window` object.
+The Muddy embed is an iframe. The embed snippet on your page listens for messages from the iframe and re-dispatches them as `CustomEvent`s on your page's `window`.
 
 Every event name starts with `muddy.` and the event data lives on `event.detail`.
 
 - Listen on `window`, not on the iframe element.
-- You can register listeners before the Muddy script tag loads — they will simply wait.
-- No personal information about the customer (name, email, phone number) is ever included in any payload.
+- You can add listeners before the Muddy script loads.
+- Payloads never include the customer's personal details, such as their name, email or phone number.
 
 ## Launching the embed from your own button
 
-Add `data-muddy-action="launch"` to any element on your page (a button, a link, an image, anything clickable). When a customer clicks it, the embed decides what to do based on the viewport:
+Add `data-muddy-action="launch"` to any clickable element, such as a button, link or image. What happens on click depends on the screen size:
 
 - **On mobile:** the embed opens fullscreen over your page.
-- **On desktop:** the page smoothly scrolls to bring the embed into view.
+- **On desktop:** the page scrolls to the embed.
 
 ```html
 <button data-muddy-action="launch">Book now</button>
@@ -39,19 +39,19 @@ Add `data-muddy-action="launch"` to any element on your page (a button, a link, 
 <a href="#book" data-muddy-action="launch">Reserve your spot</a>
 ```
 
-The attribute works on multiple elements on the same page — every matching element becomes a launcher.
+You can put the attribute on as many elements as you like.
 
 Notes:
 
-- The [embed snippet](embedding-on-wordpress.md#finding-your-embed-code) itself must still be on the page. The `data-muddy-action="launch"` attribute only triggers the embed; it does not load it.
-- Default link and form behaviour is suppressed on click, so the page does not navigate away.
-- Launchers are wired up when the embed initialises. If you add launcher elements to the page later (for example after an AJAX update), they will not be picked up automatically.
+- The [embed snippet](embedding-on-wordpress.md#finding-your-embed-code) must still be on the page. The attribute opens the embed but doesn't load it.
+- The element's default click behaviour is prevented, so links and forms don't navigate away.
+- Launchers are found when the embed initialises. Elements added later, for example by an AJAX update, are not picked up.
 
 ## Layout events
 
 ### muddy.mobile
 
-Fires when the embed switches between its mobile and desktop layouts (and once on first mount). Does **not** fire on every page change inside the embed.
+Fires once when the embed mounts, then whenever it switches between its mobile and desktop layouts. It does **not** fire on page changes inside the embed.
 
 `event.detail`:
 
@@ -73,7 +73,7 @@ window.addEventListener('muddy.mobile', function (event) {
 
 ### muddy.full_screen
 
-Fires whenever the embed enters or leaves its fullscreen overlay. This happens when a customer taps a launcher on mobile, and again when they close the embed.
+Fires when the embed opens or closes its fullscreen overlay, which happens when a customer taps a launcher on mobile and when they close the embed.
 
 `event.detail`:
 
@@ -86,24 +86,24 @@ Fires whenever the embed enters or leaves its fullscreen overlay. This happens w
 ```js
 window.addEventListener('muddy.full_screen', function (event) {
   if (event.detail.fullScreen) {
-    // Embed is covering the page — hide your own sticky header, etc.
+    // Embed is covering the page, so hide your own sticky header etc.
   } else {
     // Embed has returned to its inline layout.
   }
 });
 ```
 
-While the embed is fullscreen it sets `overflow: hidden` on `document.body` so the page behind it cannot scroll. That styling is cleared automatically when fullscreen is dismissed.
+While fullscreen, the embed sets `overflow: hidden` on `document.body` so the page behind can't scroll, and removes it on close.
 
 ## Booking events
 
-These fire as customers complete, change or cancel bookings inside the embed. They are the events you normally want to forward into analytics tools.
+These fire when a customer completes, changes or cancels a booking in the embed. They're usually the ones you'll send to analytics tools.
 
 ### muddy.booking:confirmed
 
-Fires the first time the customer lands on their booking confirmation page after a successful booking. Reloading the confirmation page does not re-fire the event.
+Fires the first time the customer reaches their confirmation page after booking. Reloading the page doesn't fire it again.
 
-This is the event you want to use for conversion tracking.
+Use this event for conversion tracking.
 
 `event.detail`:
 
@@ -144,23 +144,23 @@ window.addEventListener('muddy.booking:confirmed', function (event) {
 });
 ```
 
-The same pattern works for every `muddy.*` event — change the event name and the shape of `event.detail` accordingly.
+Every `muddy.*` event works the same way. Only the name and the shape of `event.detail` change.
 
 ### muddy.booking:rescheduled
 
-Fires when a customer lands on a booking page after completing a reschedule. This event also fires when a booking is updated or edited — in that case the `reference` will be the same as before. When a booking is truly rescheduled, a new `reference` is generated.
+Fires when a customer reaches a booking page after rescheduling. It also fires when a booking is edited, in which case the `reference` stays the same. A reschedule generates a new `reference`.
 
 `event.detail` has the same shape as `muddy.booking:confirmed`.
 
 ### muddy.booking:cancelled
 
-Fires immediately after a customer cancels a booking, before the page reloads. Attach your listener early so you don't miss it.
+Fires as soon as a customer cancels a booking, before the page reloads. Add your listener early so you don't miss it.
 
 `event.detail` has the same shape as `muddy.booking:confirmed`.
 
 ## Money values in the payload
 
-The `price` object on a booking is a taxed money value — an object with `net`, `tax` and `total`. Each of those (and every other monetary value anywhere in the payload) is a Money value that follows the same shape, with both a decimal string and an integer in minor units:
+A booking's `price` has `net`, `tax` and `total`. Each of these, like every other amount in the payload, is a Money value with both a decimal string and an integer in minor units:
 
 ```js
 {
@@ -179,18 +179,18 @@ The `price` object on a booking is a taxed money value — an object with `net`,
 }
 ```
 
-Most analytics tools expect a number. Use `Number(d.price.total.amount)` to convert the string to a number, or use `amount_minor` directly if the tool prefers integer minor units.
+Most analytics tools expect a number. Use `Number(d.price.total.amount)`, or `amount_minor` if the tool wants minor units.
 
 ## Troubleshooting
 
-**Nothing is firing.** Make sure the Muddy embed script is on the page, and that your listener is bound to `window` — not to the iframe element, and not to a `message` event.
+**Nothing is firing.** Check the Muddy embed script is on the page and your listener is on `window`, not the iframe element or a `message` event.
 
-**My launch button does nothing.** Check the embed snippet is on the same page and that the attribute is spelled exactly `data-muddy-action="launch"`. The attribute must be present when the embed script runs — elements added to the DOM afterwards are ignored.
+**My launch button does nothing.** Check the embed snippet is on the same page and the attribute is exactly `data-muddy-action="launch"`. The element must exist when the embed script runs, as elements added later are ignored.
 
-**`muddy.full_screen` never fires on desktop.** That is expected. Fullscreen is only used for the mobile layout; on desktop, clicking a launcher scrolls to the embed instead.
+**`muddy.full_screen` never fires on desktop.** That's expected. Fullscreen is only used on mobile. On desktop, a launcher scrolls to the embed instead.
 
-**The event fires twice.** Check you are not registering the listener inside a block that runs on every SPA route change on the host page. Register it once, at page load.
+**The event fires twice.** You may be adding the listener in code that runs on every route change of a single-page app. Add it once, at page load.
 
-**`event.detail` is `undefined`.** You have almost certainly bound to `message` instead of to the `muddy.*` event. Use the exact event name, including the colon in booking events and the underscore in `full_screen`.
+**`event.detail` is `undefined`.** You're probably listening for `message` instead of the `muddy.*` event. Use the exact event name, including the colon in booking events and the underscore in `full_screen`.
 
-**Customer data is missing from the booking payload.** That is intentional — payloads never contain personal information. Use `reference` as your join key if you need to correlate with server-side data.
+**Customer data is missing from the booking payload.** That's deliberate, as payloads never contain personal details. To match a booking with your own records, use `reference`.
