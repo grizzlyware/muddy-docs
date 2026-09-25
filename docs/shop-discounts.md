@@ -30,7 +30,7 @@ Discounts are shared between bookings and the shop, so they live in your setting
 1. Go to **Settings**.
 2. Click **Discounts**.
 
-Once your shop is set up, you can also get there by clicking **Shop** in the left-hand menu, then **Discounts**.
+Once you've opened your shop for the first time, you can also get there by clicking **Shop** in the left-hand menu, then **Discounts**.
 
 ## Creating a discount
 
@@ -143,7 +143,7 @@ The **Goods total** rules look at the total after any earlier discounts.
 
 ![The discount form set up for free delivery on orders over £50](../screenshots/shop-h6-free-delivery-rule-1790339053314.png)
 
-You could also set this up with delivery rates instead. See [Offering free delivery over an amount](setting-up-shop-delivery.md#offering-free-delivery-over-an-amount).
+You could also set this up with delivery rates instead, which lets you keep charging for some methods or places. See [Offering free delivery over an amount](setting-up-shop-delivery.md#offering-free-delivery-over-an-amount).
 
 **£5 off with a code**
 

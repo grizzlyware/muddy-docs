@@ -18,7 +18,7 @@ If you haven't opened your shop yet, the **Shop** page shows your setup steps in
 
 The **Products** page lists everything you sell. Products you haven't published yet have a **Draft** **(1)** badge. The **Stock** **(2)** column shows how many you have, if you track stock for that product (see [Tracking stock](tracking-shop-stock.md)).
 
-If you've made collections, you can use the menu at the top to show one collection at a time.
+If you've made collections, click **Filters**, then use **Collections** to show only the products in the collections you pick.
 
 To check how a product looks to customers, click **View in shop** **(3)** next to it. This works for drafts too, and before your shop is open.
 
@@ -61,7 +61,7 @@ Leave this on for anything you post or hand over, including things customers col
 
 ### Description
 
-Shown on the product's own page. Use it for anything a customer would want to know before buying, like size, ingredients or care instructions. You can use bold text, lists and links.
+Shown on the product's own page. Use it for anything a customer would want to know before buying, like size, ingredients or care instructions. Use the buttons above the box to add headings, bold or italic text, and lists.
 
 ### Images
 
@@ -119,6 +119,12 @@ On your shop front, the product shows **From** the lowest variant price. On the 
 
 ![A product's page in the shop, with Large chosen and Blue greyed out](../screenshots/shop-c8-harness-large-1790282801764.png)
 
+### Switching back to a single variant
+
+If you change a product with variants back to **Just one variant**, Muddy stops selling the other variants. Orders already placed aren't affected.
+
+Muddy keeps your old options and variants. If you switch back to **It comes in different variants** later, they come back unticked. Tick the ones you want to sell again. They keep their old prices and SKUs.
+
 ## Renaming an option
 
 If you rename an option or one of its values, the change applies to every product that uses it. So if you rename **Colour** to **Colours**, every product with a colour option changes too.
@@ -128,6 +134,8 @@ If you rename an option or one of its values, the change applies to every produc
 3. Click the option you want to change.
 4. Change the **Option name** **(2)** or any of its **Values** **(3)**.
 5. Click **Save changes** **(5)**.
+
+If you haven't opened your shop yet, click **Settings** in the left-hand menu, then **Options**, instead of steps 1 and 2.
 
 ![The Edit option page for Colour, with both values marked In use](../screenshots/shop-c6-edit-option-1790271231202.png)
 
@@ -147,17 +155,19 @@ There are two ways to stop selling something.
 
 ### Unpublish it (recommended)
 
-Edit the product, switch **Published** **(1)** off, then click **Save changes** **(2)**. The product disappears from your shop and from any baskets it's in. Everything else stays, so you can publish it again later.
+1. On the **Products** page, click the product.
+2. Switch **Published** **(1)** off.
+3. Click **Save changes** **(2)**.
+
+The product disappears from your shop and from any baskets it's in. Everything else stays, so you can publish it again later.
 
 ### Delete it
 
-Edit the product, then click **Delete product** **(3)**, then click **Delete it** to confirm.
+1. On the **Products** page, click the product.
+2. Click **Delete product** **(3)**.
+3. Click **Delete it** to confirm.
 
 **Warning:** deleting a product is permanent and can't be undone. Its variants, and its place in any collections, go with it. Orders customers have already placed keep the product's name and details, but they're no longer linked to the product. Unless you're sure you'll never need it again, unpublish it instead.
-
-### Switching back to a single variant
-
-If you change a product with variants back to **Just one variant**, Muddy stops selling the other variants. Orders already placed aren't affected. If you change your mind and add the same options back, the old variants come back as they were.
 
 ## Products not in a collection
 

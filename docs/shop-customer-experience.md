@@ -91,7 +91,7 @@ If you've added legal documents, or a [banned breeds policy](setting-up-banned-b
 
 ### Paying
 
-Customers click **Continue to payment** **(2)**, then pay by card.
+Customers click **Continue to payment** **(2)**, then pay by card. If your Stripe account takes Direct Debit, they can choose **Direct Debit** instead. A Direct Debit takes a few working days to clear. Until it does, their order page says their payment is on its way, and their confirmation email arrives once it clears.
 
 ![The bottom of the checkout, with the policy box ticked and the Continue to payment button](../screenshots/shop-i8-policies-1790339605441.png)
 
@@ -129,6 +129,6 @@ Customers can come back to the order page from the link in their emails, even if
 
 ## Your orders
 
-Customers with an account can see all their past orders under **Your orders**, in the account menu on your website. They need to sign in to see it.
+Customers with an account can see all their past orders under **Your orders**, in your website's menu. They need to sign in to see it.
 
 If a customer checked out as a guest and can't see an order in **Your orders**, the order might be on a different customer record. You can move it to the right customer from the order page (see [Managing shop orders](managing-shop-orders.md)).

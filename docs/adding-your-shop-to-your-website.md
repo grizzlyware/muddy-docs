@@ -93,7 +93,7 @@ Next, paste the code into the page on your website where you want your shop to a
 - [Adding the form to your WordPress page](embedding-on-wordpress.md#adding-the-form-to-your-wordpress-page)
 - [Adding the form to your Squarespace page](embedding-on-squarespace.md#adding-the-form-to-your-squarespace-page)
 
-Where the guide mentions the booking form, use your shop code instead. On another website builder, look for a block that lets you add HTML, code or an embed, and paste the code into that.
+Where the guide mentions the booking form, use your shop code instead. When you've saved the page, customers see your shop there, or an **Open** button on phones, not a **Book now** button (see [What your customers see](#what-your-customers-see)). On another website builder, look for a block that lets you add HTML, code or an embed, and paste the code into that.
 
 **Tip:** give your shop a page of its own, such as a page called **Shop**, and add that page to your website's menu. That way, customers can always find it.
 

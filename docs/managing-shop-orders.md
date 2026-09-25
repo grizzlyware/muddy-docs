@@ -18,6 +18,8 @@ pinned: false
 
 The **Orders** page opens on **Awaiting fulfilment**. This is your to-do list: every order that still has something to send or hand over. Once everything on an order has gone out, it drops off this list.
 
+The list also includes orders whose payment is still clearing, such as a Direct Debit, so check an order's **Payment** status before you send it.
+
 Switch to **All orders** **(1)** to see everything, including finished and cancelled orders.
 
 Click **Filters** to filter orders by **Order number**, by customer, by **Order** status (placed or cancelled), by **Payment**, and, under **All orders**, by **Fulfilment** **(2)**. Customers who start a checkout but never pay don't appear here.
@@ -37,7 +39,7 @@ Each order has a **Payment** **(3)** status and a **Fulfilment** **(4)** status.
 - **Partially paid**: some of the order is paid.
 - **Refunded** or **Partially refunded**: you've given back all or some of the money.
 
-**Payment pending** means a payment has started but hasn't finished yet, such as a bank payment that's still clearing.
+**Payment pending** means a payment has started but hasn't finished yet, such as a Direct Debit that's still clearing. A Direct Debit can take a few working days to clear.
 
 **Fulfilment:**
 
@@ -122,7 +124,7 @@ If you need to correct the details, such as a wrong locker code, click **Resend 
 
 ![The confirmation asking whether to mark the order as collected](../screenshots/shop-j17-mark-as-collected-1790340201201.png)
 
-This doesn't email the customer. If you'd like to send them a confirmation, click **Send handover email** **(1)** on the collection's row.
+This doesn't email the customer. If you'd like to send them a confirmation, click **Send handover email** **(1)** on the collection's row, then **Send it**.
 
 ![The collection's row under Fulfilments, with the Send handover email button](../screenshots/shop-j18-send-handover-email-1790340239599.png)
 
@@ -144,7 +146,7 @@ There's no carrier or tracking number to fill in. The order shows as **Partly fu
 
 ### Collection points where customers help themselves
 
-If the collection point is set so that customers help themselves, such as a locker, marking the order ready also counts as handing it over. When you click **Ready to collect**, the pop-up is titled **Left for the customer**, and you enter **Where to find it** instead. There's no separate **Customer has collected** step, and no handover email. After that, the order can't be cancelled.
+If the collection point has **Customers help themselves** switched on, for example because you leave orders in a locker (see [Offering collection](setting-up-shop-delivery.md#offering-collection)), marking the order ready also counts as handing it over. When you click **Ready to collect**, the pop-up is titled **Left for the customer**, and you enter **Where to find it** instead. There's no separate **Customer has collected** step, and no handover email. After that, the order can't be cancelled.
 
 ## Closing an order without sending everything
 
@@ -239,8 +241,9 @@ The amount is filled in with the most you can refund. Lower it if you're only re
 ## Where refunds go
 
 - **Card payments** go back to the customer's card. It can take a few working days to appear on their statement.
+- **Direct Debit payments** go back to the customer's bank account.
 - **Voucher payments** go back onto a voucher. Whether that's the original voucher or a new one depends on your voucher settings.
-- **Cash or bank transfer payments** can't be refunded automatically. Muddy emails you a **Manual refund required** reminder, and you'll need to pay the customer back yourself.
+- **Cash or bank transfer payments** that you recorded with **Record payment** can't be refunded automatically. You'll need to pay the customer back yourself. If you cancel the order or refund a return, Muddy emails you a **Manual refund required** reminder.
 
 If an order was paid partly by card and partly by voucher, the refund is shared between them, starting with the most recent payment.
 

@@ -13,7 +13,7 @@ pinned: false
 
 ## What the shop is
 
-Your shop lets customers buy products from your own website, alongside their bookings. You might sell treats, leads, towels, branded merchandise or gift cards. Customers pay by card (or Apple Pay and Google Pay) and choose delivery or collection. You then see each order in Muddy and record it when it goes out.
+Your shop lets customers buy products from your own website, alongside their bookings. You might sell treats, leads, towels, branded merchandise or gift cards. Customers choose delivery or collection, then pay by card, with Apple Pay or Google Pay, or with a voucher. If your Stripe account can take Direct Debit, customers can pay that way too, but it takes a few working days to clear. You then see each order in Muddy and record it when it goes out.
 
 The shop lives on the same website as your booking pages. It isn't a separate site, and customers don't need a separate account to use it.
 
@@ -42,7 +42,9 @@ Your shop starts closed, so you can set everything up before customers see it. U
 
 ![The bottom of the product form, with Save and continue and Back to setup](../screenshots/shop-setup-s4-product-form-bottom-1790260778670.png)
 
-Muddy takes you straight on to the next step. To add more products first, click **Back to setup** **(2)**, then **Review products**, and add them from the **Products** page.
+Muddy saves the product and takes you straight on to the next step. To add more products first, click **Back to setup** on that page, then **Review products**, and add them from the **Products** page.
+
+**Back to setup** **(2)** on the product form leaves without saving the product.
 
 While you're setting up, the **Products** page shows the same step bar. Click **Back to setup** **(1)** to return to the checklist, or **Continue** **(2)** when you're done.
 
@@ -81,7 +83,7 @@ While you're setting up, you can reach **Products** through **Review products**.
 
 ![The Set up your shop page, ready to review](../screenshots/shop-setup-s12-set-up-your-shop-ready-1790261731113.png)
 
-2. The **Review your shop** page lists your products and your collection and delivery methods. Click **Change** **(1)** next to either to go back to it.
+2. The **Review your shop** page shows how many products are ready to sell, and your collection and delivery methods. Click **Change** **(1)** next to either to go back to it.
 3. Click **Preview shop** **(2)** to see your shop as a customer would (see below).
 4. Click **Open shop** **(3)**.
 
@@ -91,7 +93,7 @@ While you're setting up, you can reach **Products** through **Review products**.
 
 ![The confirmation that asks if you want to open your shop](../screenshots/shop-setup-s14-open-your-shop-confirm-1790261757215.png)
 
-Anyone visiting your website can now see the shop and buy from it. A **Shop** **(1)** link appears in your website's menu, and a **Your orders** **(2)** link appears in the customer account menu.
+Anyone visiting your website can now see the shop and buy from it. **Shop** **(1)** and **Your orders** **(2)** links appear in your website's menu.
 
 ![Your website with the More menu open, showing the Shop and Your orders links](../screenshots/shop-b3-website-more-menu-1790269572263.png)
 
@@ -101,8 +103,8 @@ From now on, changes you make go live straight away. That includes prices, produ
 
 Once your shop is set up, the **Shop** page is your starting point. At the top you'll see a few figures:
 
-- **Awaiting fulfilment** **(1)**: paid orders you still need to send or hand over.
-- **Sales, last 30 days** **(2)**: what customers have paid for orders in the last 30 days.
+- **Awaiting fulfilment** **(1)**: orders you still need to send or hand over. This includes orders with a payment that's still clearing, which show **Payment pending** on the **Orders** page.
+- **Sales, last 30 days** **(2)**: the total of orders placed in the last 30 days, not counting cancelled orders.
 - **Products for sale** **(3)**: published products in your shop.
 
 ![The Shop page with its three figures at the top](../screenshots/shop-j1-shop-page-with-orders-1790278839139.png)
@@ -125,7 +127,7 @@ You can look at your shop exactly as a customer would before anyone else can.
 - While you're setting up, click **Preview shop** on the **Review your shop** page.
 - After that, click **Shop** in the left-hand menu, then **Preview your shop** at the top of the page.
 
-Your shop opens in a new tab. A banner at the top **(1)** reminds you that you're previewing, and shows pages customers may not be able to see yet.
+Your shop opens in a new tab. A banner at the top **(1)** reminds you that you're previewing, which lets you see pages your customers can't see yet.
 
 ![A preview of the shop, with the preview banner at the top](../screenshots/shop-setup-s15-preview-1790261817869.png)
 
@@ -219,6 +221,6 @@ The **Example** box **(2)** shows what your next order number will look like as 
 
 These go to the admin users on your account. Each person can switch off the ones marked below from their profile, under **Notification preferences**.
 
-- **New shop order**: when a customer pays for an order. Listed as **Shop order placed** in your preferences, and can be switched off.
-- **Order could not be completed**: if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
-- **Not enough stock for order #1042**: if two customers bought the last of something at the same time. See [Tracking stock](tracking-shop-stock.md). Can be switched off.
+- **New shop order #1042**: when a customer pays for an order. Listed as **Shop order placed** in your preferences, and can be switched off.
+- **Order #1042 could not be completed**: if a customer paid but something went wrong on our side. The payment is kept, but the customer hasn't been sent a confirmation. Contact support if you get one of these. You can't switch this email off.
+- **Not enough stock for order #1042**: if two customers bought the last of something at the same time. See [Tracking stock](tracking-shop-stock.md). Listed as **Stock oversold** in your preferences, and can be switched off.

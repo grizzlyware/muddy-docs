@@ -14,7 +14,7 @@ pinned: false
 
 When a customer checks out, they choose how their order reaches them. You decide what they can choose from, and what each option costs. There are three parts to this:
 
-- **Delivery methods** **(1)**: the options customers pick from, such as **Standard delivery** or **Next day**. You can also add **collection points**, where customers pick the order up from you. See [Offering collection](#offering-collection).
+- **Collection and delivery methods** **(1)**: the options customers pick from. These are your delivery methods, such as **Standard delivery** or **Next day**, and any **collection points**, where customers pick the order up from you. See [Offering collection](#offering-collection).
 - **Delivery rates** **(2)**: what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
 - **Places you don't deliver to** **(3)**: places inside an area you deliver to that you don't want to deliver to.
 
@@ -89,7 +89,7 @@ The simplest way is to add two rates to the same delivery method:
 
 Orders under £50 pay £4.95. Orders of £50 or more see **Free** at checkout.
 
-You can also give free delivery with a discount on delivery. Customers then see the delivery price, with the discount under it. See the free delivery example in [Discounts in the shop](shop-discounts.md#examples).
+You can also give free delivery with a discount on delivery. Customers then see the delivery price, with the discount under it. A discount takes the charge off whichever delivery method and address the customer chooses, so faster methods and places you charge more for, such as the Highlands example below, become free too. Use rates if you only want free delivery on some methods or places. See the free delivery example in [Discounts in the shop](shop-discounts.md#examples).
 
 Order value is what the customer pays for the goods after any discounts. So a £55 order with a £10 discount counts as £45. Gift cards in the order count towards it.
 

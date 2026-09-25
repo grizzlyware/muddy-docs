@@ -98,6 +98,6 @@ If a signed-in customer bought the gift card for themselves, the voucher is link
 
 ## Things to know
 
-- **Vouchers can't be used to buy gift cards.** If a basket contains a gift card, the customer has to pay by card.
+- **Vouchers can't be used to buy gift cards.** If a basket contains a gift card, the customer can't pay with a voucher.
 - **Discounts don't reduce the price of gift cards**, unless you switch on **Include gift cards** on the discount. Even then, the gift card keeps its full value. The customer just pays less for it. See [Discounts in the shop](shop-discounts.md).
 - **If you cancel an order** that contains a gift card, the gift card is cancelled too. You can't cancel it once any of the gift card's balance has been spent.
