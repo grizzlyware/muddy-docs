@@ -112,7 +112,7 @@ The customer is emailed straight away to say their order is ready **(1)**.
 
 If you need to correct the details, such as a wrong locker code, click **Resend ready-to-collect email** **(2)**, update them, and click **Resend email**.
 
-![A collection order marked as ready to collect, with the Resend ready-to-collect email and Customer has collected buttons](../screenshots/shop-j16-ready-1790280674049.png)
+![A collection order marked as ready to collect, with the Resend ready-to-collect email and Customer has collected buttons](../screenshots/shop-j16-ready-1790340157836.png)
 
 ### When the customer picks it up
 
@@ -120,11 +120,11 @@ If you need to correct the details, such as a wrong locker code, click **Resend 
 2. Click **Customer has collected** **(3)**.
 3. Click **Mark as collected** **(1)** to confirm.
 
-![The confirmation asking whether to mark the order as collected](../screenshots/shop-j17-mark-as-collected-1790280705514.png)
+![The confirmation asking whether to mark the order as collected](../screenshots/shop-j17-mark-as-collected-1790340201201.png)
 
 This doesn't email the customer. If you'd like to send them a confirmation, click **Send handover email** **(1)** on the collection's row.
 
-![The collection's row under Fulfilments, with the Send handover email button](../screenshots/shop-j18-send-handover-email-1790280768129.png)
+![The collection's row under Fulfilments, with the Send handover email button](../screenshots/shop-j18-send-handover-email-1790340239599.png)
 
 **Note:** once an order has been collected, it can't be cancelled.
 

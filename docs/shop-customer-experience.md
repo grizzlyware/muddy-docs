@@ -55,7 +55,7 @@ Here they can:
 - Pay straight away with Apple Pay or Google Pay, if their device supports it. With a voucher on the order, they use these on the payment step instead.
 - Click **Checkout** **(6)** to continue.
 
-![The basket with two items, the order summary, the code box and the Checkout button](../screenshots/shop-i4-basket-1790277240253.png)
+![The basket with two items, the order summary, the code box and the Checkout button](../screenshots/shop-i4-basket-1790339497846.png)
 
 The basket shows **Calculated at checkout** for delivery, until they've chosen their delivery and clicked **Continue to payment**.
 
@@ -71,7 +71,7 @@ Customers enter their **First name**, **Last name**, **Email** and **Phone** **(
 
 Customers don't need an account to buy. If they already have one, they can click **Already a customer? Sign in** **(2)**, and their details are filled in for them.
 
-![The Your details section of the checkout, with the Already a customer? Sign in link](../screenshots/shop-i6-your-details-1790277400330.png)
+![The Your details section of the checkout, with the Already a customer? Sign in link](../screenshots/shop-i6-your-details-1790339556543.png)
 
 ### Delivery or collection
 
@@ -81,7 +81,7 @@ For delivery, they enter their address **(2)**. They can search for it, or enter
 
 Once they've entered their address, Muddy shows the delivery options you offer there, with their prices **(4)**. If you don't deliver to that address, they're told. If you've added a **Contact email address** or **Phone number** in **Business details**, they're also invited to get in touch with you.
 
-![The checkout with Delivery chosen, an address entered and Royal Mail tracked chosen at £4.95](../screenshots/shop-i7-delivery-1790277558990.png)
+![The checkout with Delivery chosen, an address entered and Royal Mail tracked chosen at £4.95](../screenshots/shop-i7-delivery-1790339593158.png)
 
 For collection, they see your collection points and instructions.
 
@@ -93,7 +93,7 @@ If you've added legal documents, or a [banned breeds policy](setting-up-banned-b
 
 Customers click **Continue to payment** **(2)**, then pay by card.
 
-![The bottom of the checkout, with the policy box ticked and the Continue to payment button](../screenshots/shop-i8-policies-1790277622871.png)
+![The bottom of the checkout, with the policy box ticked and the Continue to payment button](../screenshots/shop-i8-policies-1790339605441.png)
 
 If vouchers or gift cards cover the whole order, including delivery **(1)**, they click **Pay with vouchers** **(2)** instead, and don't need a card.
 
@@ -123,7 +123,7 @@ As you record dispatches, it tells them their order is on its way **(1)**, and s
 
 For collection orders, it shows where to collect from **(1)**, when it's ready, and that the order is complete once they've collected everything.
 
-![A collection order's page, with a Where to collect from card and the collection instructions](../screenshots/shop-i11-where-to-collect-1790278242148.png)
+![A collection order's page, with a Where to collect from card and the collection instructions](../screenshots/shop-i11-where-to-collect-1790339868342.png)
 
 Customers can come back to the order page from the link in their emails, even if your shop is closed. On a different device from the one they ordered on, they need to sign in.
 
