@@ -172,7 +172,7 @@ Customers enter codes in the **Discount or voucher code** box **(1)**, in their 
 
 ![The basket, with a message that says the code isn't valid](../screenshots/shop-h7-code-cannot-be-used-1790276505849.png)
 
-Each discount shows as its own line **(1)** in the basket and on the order, with the amount it took off. After a code is added, the **Discount or voucher code** box empties, so the customer can enter another **(2)**.
+Each discount shows as its own line **(1)** in the basket and on the order, with the amount it took off. A discount on delivery shows under the **Delivery** line once the customer chooses delivery at checkout. If they enter its code earlier, such as in their basket, it's kept until then. After a code is added, the **Discount or voucher code** box empties, so the customer can enter another **(2)**.
 
 ![The basket, with the discount on its own line in the order summary](../screenshots/shop-h8-welcome-offer-line-1790276513299.png)
 

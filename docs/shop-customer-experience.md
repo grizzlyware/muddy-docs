@@ -50,7 +50,7 @@ The basket shows each item, its price and quantity, and an **Order summary** **(
 Here they can:
 
 - Change quantities **(1)** or remove items **(2)**.
-- Enter a code in the **Discount or voucher code** box **(4)**. This works for discount codes, vouchers and gift cards.
+- Enter a code in the **Discount or voucher code** box **(4)**. This works for discount codes, vouchers and gift cards. A delivery discount, such as free delivery, shows under **Delivery** once they've chosen their delivery at checkout.
 - Check a voucher's balance, with **Check voucher balance** **(5)**.
 - Pay straight away with Apple Pay or Google Pay, if their device supports it. With a voucher on the order, they use these on the payment step instead.
 - Click **Checkout** **(6)** to continue.

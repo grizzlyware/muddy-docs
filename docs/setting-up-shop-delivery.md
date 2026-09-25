@@ -209,9 +209,9 @@ To stop offering a delivery method:
 
 ![The confirmation asking if you want to stop offering Royal Mail tracked](../screenshots/shop-g5-stop-offering-confirm-1790274580376.png)
 
-Customers can no longer choose it. Orders already sent with it keep its name. Its rates are kept, so you can click **Offer again** **(1)** to bring it back as it was.
+Customers can no longer choose it. Orders already sent with it keep its name. Its rates and exclusions are kept, so you can click **Offer again** **(1)** to bring it back as it was. Until then, they stay on the page, struck through.
 
-![A stopped delivery method, struck through, with an Offer again button](../screenshots/shop-g6-offer-again-1790274590210.png)
+![A stopped delivery method and its rates, struck through, with an Offer again button](../screenshots/shop-g6-offer-again-1790274590210.png)
 
 To remove a single rate, click **Remove** next to it, then **Remove it** to confirm.
 
