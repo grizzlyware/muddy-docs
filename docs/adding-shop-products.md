@@ -77,7 +77,7 @@ Only needed if you charge for delivery by weight. If any of your delivery rates 
 
 When you're done, click **Create product**.
 
-If you're adding your first product while setting up your shop, the button says **Save and continue** and takes you to the next setup step.
+If you're adding a product while setting up your shop, the button says **Save and continue** and takes you to the next setup step.
 
 ## Products that come in different colours or sizes
 

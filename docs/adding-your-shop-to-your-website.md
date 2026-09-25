@@ -57,11 +57,11 @@ Switch this on to give the shop rounded corners, or leave it off for square corn
 - **Off**: the shop has a maximum width and sits in the middle of the space you put it in, so it doesn't stretch too wide on big screens.
 - **On**: the shop stretches to fill the whole width of that space.
 
-On phones, this setting also makes the **Open** button stretch across the page.
+Where customers see the **Open** button, this setting also makes it stretch across the space.
 
 ### Show header **(4)**
 
-When this is on, the top of the shop shows your logo (or your business name, if you haven't uploaded a logo) and your [default cover photo](customizing-branding-and-website.md#setting-a-default-walk-cover-photo). Switch it off if your page already shows your logo and a large picture just above the shop, so customers don't see them twice.
+When this is on, the top of the shop shows your logo (or your business name, if you haven't uploaded a logo) and a cover photo. This is your [default cover photo](customizing-branding-and-website.md#setting-a-default-walk-cover-photo), except on a collection's own page, which shows that collection's cover image if it has one. Switch it off if your page already shows your logo and a large picture just above the shop, so customers don't see them twice.
 
 On a phone, the cover photo always shows once the shop is open full screen, whatever this setting says.
 
@@ -69,11 +69,13 @@ On a phone, the cover photo always shows once the shop is open full screen, what
 
 On phones, your shop doesn't sit inside your page. Instead, customers see an **Open** button. When they tap it, the shop opens full screen over your page. They tap the cross in the top-right corner to close it and go back to your page.
 
-Leave this on unless you've added your own button to open the shop. If you switch it off, customers on phones won't see your shop at all, unless **Automatically launch** is on or you've added your own button. Whoever looks after your website can add one by following [Launching the embed from your own button](embed-javascript-api.md#launching-the-embed-from-your-own-button).
+This depends on how wide the space for your shop is, not on the device. If you paste the code into a narrow space, such as the middle column of many WordPress pages, customers on a computer see the **Open** button too. To show the whole shop on computers, the space needs to be at least as wide as a tablet held upright. Whoever looks after your website can widen it.
+
+Leave this on unless you've added your own button to open the shop. If you switch it off, customers who would see the **Open** button won't see your shop at all, unless **Automatically launch** is on or you've added your own button. Whoever looks after your website can add one by following [Launching the embed from your own button](embed-javascript-api.md#launching-the-embed-from-your-own-button).
 
 ### Automatically launch **(6)**
 
-This only affects phones. When it's on, your shop opens full screen as soon as the page loads, so customers don't need to tap **Open**. It suits a page that's only for your shop. Leave it off if the page has other things customers should see first.
+This only affects customers who would see the **Open** button, such as on phones. When it's on, your shop opens full screen as soon as the page loads, so customers don't need to tap **Open**. It suits a page that's only for your shop. Leave it off if the page has other things customers should see first.
 
 ## Adding the shop to your website
 
@@ -119,8 +121,8 @@ When you show Muddy on your own website, Muddy asks you to add your website's ad
 
 ## What your customers see
 
-- **On a computer or tablet**, your shop sits inside your page, with your collections, your products and a basket. It grows and shrinks to fit, so customers scroll your page as normal.
-- **On a phone**, customers see an **Open** button, unless you've switched off **Mobile launch button**. Tapping it opens the shop full screen.
+- **On a computer or tablet**, your shop sits inside your page, with your collections, your products and a basket, as long as the space you pasted the code into is wide enough (see **Mobile launch button** above). It grows and shrinks to fit, so customers scroll your page as normal.
+- **On a phone, or in a narrow space**, customers see an **Open** button, unless you've switched off **Mobile launch button**. Tapping it opens the shop full screen.
 
 It's the same shop as on your Muddy website, with the same products, prices, delivery options and discounts. For a walk-through of browsing, the basket and checkout, see [What your customers see when they shop](shop-customer-experience.md).
 

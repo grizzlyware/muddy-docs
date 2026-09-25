@@ -25,7 +25,7 @@ Gift cards don't need delivering and don't need stock. You don't need to do anyt
 3. Click **Create**.
 4. Under **Product type**, choose **Gift card** **(1)**.
 
-If you haven't opened your shop yet, click **Add a product** on the **Shop** page instead of steps 2 and 3. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
+If you haven't opened your shop yet, the **Shop** page shows your setup steps instead. Click **Add a product** there, or click **Review products** and then **Create** if you've already added a product. See [Setting up your shop for the first time](setting-up-your-shop.md#setting-up-your-shop-for-the-first-time).
 
 Then fill in the details below.
 
@@ -33,7 +33,7 @@ Then fill in the details below.
 
 ### Gift card name
 
-What customers see in your shop. Muddy fills in **Gift Card** **(2)** for you, but you can change it, for example to **Christmas gift card**.
+What customers see in your shop. Muddy fills in a name for you **(2)**, but you can change it, for example to **Christmas gift card**.
 
 ### Gift card values
 
@@ -66,7 +66,7 @@ Shown on the gift card's page in your shop. It's a good place to explain what th
 
 Adding images is optional. If you don't add any, customers see artwork Muddy makes for you **(3)**, using your logo (or business name) and your [brand colours](changing-system-colour-scheme.md). You can add your own images instead if you prefer.
 
-When you're done, click **Create gift card** **(4)**. If this is your first product and you're still setting up your shop, the button says **Save and continue** instead.
+When you're done, click **Create gift card** **(4)**. If you're still setting up your shop, the button says **Save and continue** and takes you to the next setup step.
 
 **Tip:** put your gift cards in their own collection, such as **Gift cards**, so they're easy to find. See [Organising your shop with collections](organising-shop-collections.md).
 
@@ -83,7 +83,7 @@ If they're sending it to someone else, they can also choose **Send it later** **
 
 ![The gift card's page in the shop, with £25 chosen and the gift card set to send to someone else on a later date](../screenshots/shop-f3-gift-card-page-1790272286303.png)
 
-Each gift card goes in the basket **(6)** on its own line, so each one can have its own recipient and message. To buy three, the customer adds three separate gift cards.
+To buy, the customer clicks **Add gift card to basket** **(6)**. Each gift card goes in the basket on its own line, so each one can have its own recipient and message. To buy three, they add three separate gift cards.
 
 ## After a gift card is sold
 

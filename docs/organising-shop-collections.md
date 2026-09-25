@@ -23,7 +23,7 @@ A product can be in more than one collection. For example, a Christmas treat box
 1. Click **Shop** in the left-hand menu.
 2. Click **Collections**.
 
-The **Collections** tile appears once your shop is open. Until then, click **Settings** in the left-hand menu, then **Collections**.
+The **Collections** tile appears once you've opened your shop for the first time. Until then, click **Settings** in the left-hand menu, then **Collections**.
 
 Each collection shows as a card with its cover image, its name, how many products it has, and the products themselves.
 
@@ -93,3 +93,5 @@ It's worth putting every product in at least one collection. Products left under
 3. Click **Delete it** to confirm.
 
 Deleting a collection doesn't delete the products in it. They stay in your shop. If they aren't in any other collection, they move to **More products**. If that leaves no collection with published products, your shop front shows your products in one list, without a **More products** heading.
+
+**Warning:** deleting a collection is permanent and can't be undone. Any discount that picks this collection, under **Chosen items only** or in the rule **Order contains a product from one of these collections**, stops counting it. If it was the only thing the discount picked, the discount stops taking money off. Check your [discounts](shop-discounts.md) before you delete a collection.

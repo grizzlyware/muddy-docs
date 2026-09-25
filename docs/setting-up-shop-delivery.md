@@ -14,7 +14,7 @@ pinned: false
 
 When a customer checks out, they choose how their order reaches them. You decide what they can choose from, and what each option costs. There are three parts to this:
 
-- **Delivery methods** **(1)**: the options customers pick from, such as **Standard delivery** or **Next day**. Each one can also be a **collection point**, where customers pick the order up from you.
+- **Delivery methods** **(1)**: the options customers pick from, such as **Standard delivery** or **Next day**. You can also add **collection points**, where customers pick the order up from you. See [Offering collection](#offering-collection).
 - **Delivery rates** **(2)**: what a delivery method costs. A rate can depend on where the order is going, how much it weighs, and how much the goods cost.
 - **Places you don't deliver to** **(3)**: places inside an area you deliver to that you don't want to deliver to.
 
@@ -166,6 +166,8 @@ This section is hidden while you're following the shop setup steps. To add a pla
 
 Customers in an excluded place won't be offered that delivery method.
 
+**Note:** an exclusion that uses weight only works if every physical product in the basket has a weight. If one doesn't, Muddy can't tell how heavy the order is, so it ignores the exclusion and still offers the method there. See [Limits](#limits).
+
 You can only exclude a place that one of your rates already covers. Add a rate for the wider area first.
 
 Exclusions follow the same rules as rates. A more specific rate beats a less specific exclusion. So if you exclude a whole county but have a rate for some postcodes inside it, those postcodes are still delivered to. If a rate and an exclusion are equally specific, the exclusion wins.
@@ -217,13 +219,15 @@ Customers can no longer choose it. Orders already sent with it keep its name. It
 
 To remove a single rate, click **Remove** next to it, then **Remove it** to confirm.
 
+**Warning:** removing a rate can't be undone. To charge it again, add it again. Orders already placed keep the price they were charged.
+
 ## What customers see at checkout
 
 Customers enter their address, and Muddy works out which options they can have. Each option shows its name, its estimate (or collection instructions) **(1)** and its price, or **Free** **(2)**.
 
 ![The checkout with Collection chosen, showing the collection point's instructions and Free](../screenshots/shop-g10-collection-1790275215133.png)
 
-If none of your delivery methods reach the customer's address, they're told delivery isn't available there **(1)**. If you've added an email address or phone number to your account, they're also invited to get in touch with you.
+If none of your delivery methods reach the customer's address, they're told delivery isn't available there **(1)**. If you've added a **Contact email address** or **Phone number** in **Business details**, they're also invited to get in touch with you.
 
 ![The checkout with a Belfast address, saying it can't deliver there](../screenshots/shop-g9-no-delivery-to-bt-1790275210350.png)
 

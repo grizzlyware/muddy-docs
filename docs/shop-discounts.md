@@ -143,10 +143,11 @@ The **Goods total** rules look at the total after any earlier discounts.
 
 ![The discount form set up for free delivery on orders over £50](../screenshots/shop-h6-free-delivery-rule-1790339053314.png)
 
-You could also set this up with delivery rates instead. See [Setting up delivery and collection](setting-up-shop-delivery.md).
+You could also set this up with delivery rates instead. See [Offering free delivery over an amount](setting-up-shop-delivery.md#offering-free-delivery-over-an-amount).
 
 **£5 off with a code**
 
+- **Where can this discount be used?**: Shop orders
 - **Discount type**: Fixed amount, **5**
 - **Apply automatically**: off, with a code such as **WELCOME5**
 - **What does this discount apply to?**: Goods, **All goods**
@@ -158,7 +159,7 @@ Discounts add up. Every automatic discount the order qualifies for is applied, a
 They're applied in this order:
 
 1. Discounts on goods come off first, then discounts on delivery.
-2. Within each, discounts apply in the order they were added to the order. A code goes on when the customer enters it. An automatic discount goes on when the basket first qualifies for it.
+2. Within each, discounts apply in the order they were added to the order. A code goes on when the customer enters it. An automatic discount goes on when the basket qualifies for it. If it comes off and the basket qualifies again later, it goes back on after the discounts already on the order.
 3. If several automatic discounts qualify at the same moment, they go on in order of their **Adjustment ordering** number, lowest first.
 
 For percentages, **Apply to original price?** decides how they add up:

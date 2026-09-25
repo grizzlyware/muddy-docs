@@ -27,7 +27,7 @@ The **Stock** tile appears once you've opened your shop for the first time. See 
 
 The **Stock** page lists every variant of every product, with its current stock. To find something quickly, click **Filters** and use the **Product or SKU** **(1)** search.
 
-You can set **(2)** and change stock straight from this page. To see the full record for a product, including its history, click the product's name. The same buttons are there too.
+You can click **Set stock** **(2)** or **Change stock** straight from this page. To see the full record for a product, including its history, click the product's name. The same buttons are there too.
 
 ![The Stock page before you've set any stock, with the search open](../screenshots/shop-e1-stock-page-1790273417706.png)
 
@@ -35,7 +35,7 @@ You can set **(2)** and change stock straight from this page. To see the full re
 
 1. On the **Stock** page, find the variant.
 2. Click **Set stock**.
-3. Enter the **Current quantity** **(1)**, which is how many you have right now. Enter 0 if you have none.
+3. Enter the **Current quantity** **(1)**, which is how many you have available to sell right now. Don't count anything customers have already paid for that you haven't sent or handed over yet. Enter 0 if you have none.
 4. Add a **Note** **(2)** if it would help your team. This is optional.
 5. Click **Set stock** **(3)**.
 
@@ -76,7 +76,6 @@ Every change is listed under **Stock history**, with the date, the variant, how 
 - **Changed by staff**: a change you or your team made.
 - **Customer order** **(1)**: sold to a customer.
 - **Customer return**: put back after a return.
-- **Order changed**: an order was changed after it was placed.
 - **Order cancelled** **(2)**: put back after you cancelled an order.
 - **Stopped tracking**: when someone stopped tracking stock for the variant.
 
@@ -98,7 +97,7 @@ You can't edit or delete past changes. If something is wrong, add a new change t
 
 Because stock only comes off at payment, two customers can occasionally pay for the last item at almost the same time. Muddy won't refuse a payment that has already gone through, so both orders are placed.
 
-When this happens, your stock goes below zero (shown in red), and you get an email with the subject **Not enough stock for order**, followed by the order number. You can then decide what to do. You might find another one, or contact the customer and cancel their order, which refunds them in full. See [Managing shop orders](managing-shop-orders.md).
+When this happens, your stock goes below zero (shown in red), and you get an email with the subject **Not enough stock for order**, followed by the order number. You can then decide what to do. If you find another one, use **Change stock** to add it, so your count is right again. If you can't, cancel the order, which refunds the customer in full and emails them. See [Cancelling an order](managing-shop-orders.md#cancelling-an-order).
 
 ## Stopping tracking
 
