@@ -80,7 +80,7 @@ An order has to meet every limit you set. "From" includes the amount you enter, 
 
 ## Offering free delivery over an amount
 
-There's no separate setting for free delivery. Instead, add two rates to the same delivery method:
+The simplest way is to add two rates to the same delivery method:
 
 1. A rate with your normal **Price**, such as £4.95, and **Under order value** set to **50**.
 2. A rate with a **Price** **(1)** of **0**, and **From order value** **(2)** set to **50**.
@@ -88,6 +88,8 @@ There's no separate setting for free delivery. Instead, add two rates to the sam
 ![A free delivery rate for orders from £50](../screenshots/shop-setup-s10b-free-delivery-rate-1790261585917.png)
 
 Orders under £50 pay £4.95. Orders of £50 or more see **Free** at checkout.
+
+You can also give free delivery with a discount on delivery. Customers then see the delivery price, with the discount under it. See the free delivery example in [Discounts in the shop](shop-discounts.md#examples).
 
 Order value is what the customer pays for the goods after any discounts. So a £55 order with a £10 discount counts as £45. Gift cards in the order count towards it.
 
