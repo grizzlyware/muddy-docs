@@ -18,7 +18,7 @@ category_description: Essential guides to help you set up and start using Muddy 
 - **category**: A broad grouping. REUSE an existing category if it fits. Only create a new category if none of the existing ones are suitable. The "Getting started" category is special: it is shown first on the website. Use it for topics a new user would need early on (e.g. initial setup, first bookings, key settings). Don't put every article in it, only ones relevant to someone just starting out.
 - **tags**: 2-5 relevant keywords for search and filtering. REUSE existing tags where they fit. Only create a new tag if none of the existing ones are suitable.
 - **order**: A number for sorting within the category (10, 20, 30 and so on. Use multiples of 10 so new articles can be inserted between existing ones)
-- **description**: A one-sentence summary of what the article covers
+- **description**: A one-sentence summary of what the article covers. It's shown under the title, so don't repeat the title's words. Under "Setting up delivery", write something like "Choose how orders reach customers, and what you charge for it.", not "Learn how to set up delivery."
 - **pinned**: Whether this article should be pinned to the top of the help page. Always set to `false` unless explicitly told otherwise.
 - **category_description** (optional): A short description of the category, shown on the help page. Only include this on ONE article per category, whichever has the lowest order. Omit it from all other articles in the same category.
 
