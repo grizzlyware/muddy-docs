@@ -170,11 +170,11 @@ For percentages, **Apply to original price?** decides how they add up:
 
 Customers enter codes in the **Discount or voucher code** box **(1)**, in their basket or at checkout. If a code can't be used, they're told why **(2)**. For example, that the code isn't valid (which includes expired codes), that their order doesn't qualify, or that the code can't be used any more.
 
-![The basket, with a message that says the code isn't valid](../screenshots/shop-h7-code-cannot-be-used-1790339116761.png)
+![The basket, with a message that says the code isn't valid](../screenshots/shop-h7-code-cannot-be-used-1790362589505.png)
 
 Each discount shows as its own line **(1)** in the basket and on the order, with the amount it took off. A discount on delivery shows under the **Delivery** line once the customer chooses delivery at checkout. If they enter its code earlier, such as in their basket, it's kept until then. After a code is added, the **Discount or voucher code** box empties, so the customer can enter another **(2)**.
 
-![The basket, with the discount on its own line in the order summary](../screenshots/shop-h8-welcome-offer-line-1790339124210.png)
+![The basket, with the discount on its own line in the order summary](../screenshots/shop-h8-welcome-offer-line-1790362596956.png)
 
 Automatic discounts appear and disappear as the basket changes. If a customer adds enough to reach your minimum, the discount is added straight away. If they remove items and drop below it, it comes off again.
 

@@ -55,7 +55,7 @@ Here they can:
 - Pay straight away with Apple Pay or Google Pay, if their device supports it. With a voucher on the order, they use these on the payment step instead.
 - Click **Checkout** **(6)** to continue.
 
-![The basket with two items, the order summary, the code box and the Checkout button](../screenshots/shop-i4-basket-1790339497846.png)
+![The basket with two items, the order summary, the code box and the Checkout button](../screenshots/shop-i4-basket-1790362772415.png)
 
 The basket shows **Calculated at checkout** for delivery, until they've chosen their delivery and clicked **Continue to payment**.
 
