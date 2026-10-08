@@ -27,7 +27,7 @@ A few things to know before you start:
 
 In the left-hand menu, click **Marketing**. You will see a list of automations. **Ask for reviews** shows whether it is off, running, or needs setup, and how many requests were sent and how many customers clicked the review link in the last 30 days.
 
-![Marketing page showing the Ask for reviews automation](../screenshots/marketing-page-final-1791482392272.png)
+![Marketing page showing the Ask for reviews automation](../screenshots/marketing-page-1791483540356.png)
 
 Click **Ask for reviews** to open the settings page.
 
@@ -35,7 +35,7 @@ Click **Ask for reviews** to open the settings page.
 
 Before you can turn on review requests, you need to link at least one review platform so Muddy Booking knows where to send customers.
 
-![Ask for reviews page with Google and Facebook not yet linked](../screenshots/ask-reviews-page-full-1791482376386.png)
+![Ask for reviews page with Google and Facebook not yet linked](../screenshots/ask-reviews-not-linked-1791483543568.png)
 
 The page shows a row for **Google** and a row for **Facebook**, each showing whether it is linked.
 
@@ -67,7 +67,7 @@ If only one platform is linked, customers always go directly to that one.
 
 ### How the request is delivered
 
-![Ask for reviews switched on, with the review destination and delivery channels](../screenshots/ask-reviews-switched-on-1791483341123.png)
+![Ask for reviews switched on, with the review destination and delivery channels](../screenshots/ask-reviews-switched-on-1791483568537.png)
 
 Once **Ask customers for a review** is on (1), choose how the request is sent (2). You can turn on any combination of **Emails**, **WhatsApp**, and **SMS**. At least one must be on.
 
