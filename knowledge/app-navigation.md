@@ -12,7 +12,9 @@
 - Block outs: `/block-outs`
 - Boards: `/bookings/boards`
 - Calendar: `/calendar`
-- Walks: `/walks`
+- Walks: `/resources`
+- Advisories: `/advisories`
+- Marketing: `/marketing`
 - Settings: `/settings`
 
 ### Financial/Payment Sections  
@@ -21,6 +23,10 @@
 - Payouts: `/payouts`
 - Invoices: `/invoices`
 - Vouchers: `/vouchers`
+
+### Marketing URLs
+- Marketing overview: `/marketing`
+- Ask for reviews: `/marketing/automations/review_request`
 
 ### Pricing-Related URLs
 - Main pricing setup: `/pricing`
@@ -31,6 +37,9 @@
 - Gate codes: `/gate-codes`
 - Subscription: `/subscription`
 - Settings/Branding: `/settings/branding`
+- Shop: `/shop`
+- Reports: `/reports`
+- Import data: `/imports`
 
 ## Settings Page Structure
 The main settings page provides organized sections including:
