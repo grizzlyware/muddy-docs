@@ -45,7 +45,9 @@ Click **Link** next to Google. A search box appears where you can type your busi
 
 ### Linking Facebook
 
-Click **Link** next to Facebook. You can either click **Connect** to log in with Facebook and select your Page, or paste your Facebook Page URL directly into the box. Once linked, the row shows your Page name and a **View** link. To switch to a different Page later, click **Change**.
+Click **Link** next to Facebook and paste the link to your Facebook Page. If you see **Connect** instead, click it to sign in with Facebook and choose your Page. Once linked, the row shows your Page and a **View** link. To switch to a different Page later, click **Change**.
+
+Links to Google and Facebook are saved as soon as you add them.
 
 You only need to link one platform to get started. If you link both, you can choose what customers see (explained in the next section).
 
@@ -65,19 +67,21 @@ If only one platform is linked, customers always go directly to that one.
 
 ### How the request is delivered
 
-You can turn on any combination of **Emails**, **WhatsApp**, and **SMS**. At least one must be on.
+![Ask for reviews switched on, with the review destination and delivery channels](../screenshots/ask-reviews-switched-on-1791483341123.png)
+
+Once **Ask customers for a review** is on (1), choose how the request is sent (2). You can turn on any combination of **Emails**, **WhatsApp**, and **SMS**. At least one must be on.
 
 - **Emails**: a review request email is sent to the customer's email address.
-- **WhatsApp**: a WhatsApp message is sent if the customer has a mobile number. The message includes a "Leave a review" button and an Unsubscribe button.
-- **SMS**: a text message is sent with a link. SMS is used as a fallback when both WhatsApp and SMS are on. If a customer can receive WhatsApp, SMS is not sent to them.
+- **WhatsApp**: a WhatsApp message is sent to customers with a UK mobile number who use WhatsApp. The message includes a "Leave a review" button and an Unsubscribe button.
+- **SMS**: a text message with a link, sent to customers with a UK mobile number. When both WhatsApp and SMS are on, SMS is only used for customers who can't get the WhatsApp message.
 
 WhatsApp and SMS messages use notification credits. The page will tell you if a message costs more than one credit. You can find out more about credits in [Setting up WhatsApp and SMS notifications](setting-up-whatsapp-sms-notifications.md).
 
-When SMS is on, the page shows a preview of the SMS text that will be sent.
+When SMS is on, you can edit the text message that is sent.
 
 ### Saving
 
-Click **Save changes** to apply everything: the platform links, the on/off switch, the review destination, and the delivery channels.
+Click **Save changes** to save the switch, where customers leave reviews, and the delivery channels.
 
 ## Understanding the stats
 

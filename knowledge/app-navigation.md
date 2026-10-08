@@ -19,6 +19,7 @@
 
 ### Financial/Payment Sections  
 - Stripe setup: `/onboarding`
+- Stripe account: `/account`
 - Payouts: `/payouts`
 - Invoices: `/invoices`
 - Vouchers: `/vouchers`
