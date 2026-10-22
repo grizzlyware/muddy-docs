@@ -160,6 +160,16 @@ export async function takeScreenshot(
   const slug = label.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
   const filename = `${slug}-${Date.now()}.png`;
   const filepath = path.join(SCREENSHOTS_DIR, filename);
+  // The test account has no Stripe connection, so every page nags about it.
+  await page.evaluate(() => {
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href$="/onboarding"]')) {
+      const alert = link.closest<HTMLElement>(".bg-orange-100");
+      if (alert && link.textContent?.includes("Setup Stripe")) {
+        alert.style.display = "none";
+      }
+    }
+  });
+
   if (fullPage) {
     // Grow the window to the page's height instead of stitching a full-page
     // capture, which paints the fixed sidebar wherever the page was scrolled.
