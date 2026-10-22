@@ -215,7 +215,7 @@ const tools: Anthropic.Tool[] = [
         description: {
           type: "string",
           description:
-            'Natural language description of the element to highlight, e.g. "the Base Price input field"',
+            'The element\'s exact visible text, then one type word, e.g. "Base price field", "Save button", "Repeat every section". For a form field, use its label text as it appears on the page. Do not add other words: the text is matched against the page.',
         },
         label: {
           type: "string",

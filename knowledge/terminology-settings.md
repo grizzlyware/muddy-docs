@@ -14,12 +14,25 @@ The terminology settings allow users to customize the language used throughout t
 - Dog grooming  
 - Equine arena hire
 
-## Custom Terminology Fields
-Three main fields control the terminology:
+## Business-level Custom Terminology Fields (as of October 2026)
+Three main fields control the business-wide defaults:
 
-1. **Walk display noun** - The word used to refer to walks throughout the app
-2. **Walk display verb** - The word used to describe the action of attending a walk
-3. **Walk display subject** - The word used to refer to the subject of a walk
+1. **Resource display noun** - The word used to refer to resources throughout the app (e.g. "field", "park", "pool")
+2. **Service display verb** - The word used to describe the action of attending a service (e.g. "walking", "attending", "training")
+3. **Service display subject** - The word used to refer to the subject of a service (e.g. "dog", "horse", "client")
+
+Note: The old field names were "Walk display noun", "Walk display verb", "Walk display subject". These have been renamed.
+
+## Per-Resource Override
+Each resource has its own **Display noun** field in its settings page (/resources/{id}/settings).
+- "Inherited from your business, click to edit" label shown when using the business default
+- Can be set independently per resource
+- "Use default instead?" link appears when it has been customised
+
+## Per-Service Override
+Each service has its own **Display verb** and **Display subject** fields in its settings page (/services/{id}/settings).
+- "Inherited from your business, click to edit" label shown when using business default
+- "Use default instead?" link to revert to business default
 
 ## Live Example
 The page includes a live example that updates in real-time as you change the terminology:

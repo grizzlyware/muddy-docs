@@ -1,86 +1,147 @@
 ---
-title: Creating a walk
+title: Setting up your offerings
 category: Getting started
 tags:
   - walks
   - settings
   - bookings
+  - scheduling
 order: 30
-description: Learn how to create and configure a new walk for your dog walking business.
+description: How to set up resources, services and offerings so customers can start booking with you.
 pinned: true
 ---
 
-## Starting from scratch
+## How offerings work
 
-Go to **Walks** in the left-hand menu.
+Muddy Booking organises what customers can book around three things:
 
-![walks-empty-state](../screenshots/walks-empty-state-1772711154871.png)
+- **Resources**: the places customers book, like a field, a paddock, or a pool.
+- **Services**: the types of booking you offer, like private hire, a training session, or a hydrotherapy swim.
+- **Offerings**: a specific service at a specific resource. Each offering gets its own prices, opening times and booking rules.
 
-Click **Setup my first walk** **(1)**.
+For example, if you offer private hire and training sessions at two different fields, you would have two resources and two services. That gives you up to four offerings, one for each combination. If you only offer one kind of booking at one place, you will have one resource, one service, and one offering.
 
-## Creating your walk
+Go to **Offerings** in the left-hand menu to get started.
 
-Give your walk a name. It's usually different from your business name, but if you only have one walk, using the same name is fine.
+![offerings list page](../screenshots/offerings-list-clean-1792670807947.png)
 
-![walk-creation-form](../screenshots/walk-creation-form-1772711184444.png)
+## Step 1: Create a resource
 
-1. Enter the name **(1)**, for example "Hyde Park Morning Walk"
-2. Click **Create my walk** **(2)**
+A resource is the place or person being booked. Click **Offerings** in the left-hand menu, then click the **resources** link in the description text, or go directly to **Resources** from the Offerings area.
 
-## Styling your walk
+![resources list page](../screenshots/resources-list-annotated-1792670843470.png)
 
-Next you'll see the styling page, where you choose how the walk looks to customers.
+Click **Add resource** **(1)**.
 
-![walk-styling-page](../screenshots/walk-styling-page-1772711221634.png)
+![new resource form](../screenshots/new-resource-form-annotated-1792670871699.png)
 
-- **Upload a cover image** **(1)**: a photo for this walk only, up to 10MB
-- **Choose a colour palette** **(2)**: one of the [colour schemes](changing-system-colour-scheme.md), such as Muddy, Frosty Paws or Pawsh Pink. This applies to all your walks, not just this one
+Give the resource a **Name** **(1)** and click **Create my resource** **(2)**. If you only have one walk location, the name can match your business name.
 
-Click **Save changes**, or **Preview** to see the booking form as customers will.
+Once created, click **Settings** on the resource to fill in the details.
 
-## Configuring walk settings
+![resource settings page](../screenshots/resource-settings-full-1792671045793.png)
 
-The walk's main settings are in its Settings section.
+### Resource settings
 
-![walk-settings-basic](../screenshots/walk-settings-basic-1772711324103.png)
+- **Name**: what customers see when they choose where to book.
+- **Address**: where the resource is. Search for a town name if you don't have an exact address, and pin the spot on the map. Setting an address also lets you anchor opening times to sunrise or sunset.
+- **what3words**: a precise location customers can use to find you. Get one free at what3words.com.
+- **Description**: a short summary (up to 400 characters) shown on the booking page so customers know what to expect.
+- **Cover photo**: a photo of this resource, up to 10 MB. If you leave this blank it will use your business cover photo.
+- **Display noun**: the word customers see for this resource, for example "field" or "park". Inherits from your business settings unless you change it here.
 
-### Basic information
+Click **Save** when you are done.
 
-- **Name** **(1)**: the name customers see
-- **Address** **(2)**: where the walk is. If you don't have an exact address, search for the town and pinpoint the spot on the map
-- **what3words**: a precise location customers can use to find you (get one free at what3words.com)
-- **Access instructions**: directions for finding and getting into the walk. Leave out gate codes, as they're shown separately
-- **Short access instructions**: one sentence on how to find you, up to 400 characters
+> Prices, opening times, booking rules and access instructions are set on the offering, not on the resource itself. You do not need to add those here.
 
-### Booking configuration
+## Step 2: Create a service
 
-![walk-settings-booking](../screenshots/walk-settings-booking-1772711336635.png)
+A service is the type of booking you offer. Click the **services** link from the Offerings page, or go directly to **Services**.
 
-These start out the same as your [business booking rules](configuring-booking-rules.md), but you can change them for this walk.
+![services list page](../screenshots/services-list-1792671091871.png)
 
-- **Maximum number of dogs** **(3)**: how many dogs each slot can take
-- **Start booking slots at** **(4)**: when bookings can start, such as on the hour, every 15 minutes or every 30 minutes
-- **Buffer period**: extra time between bookings
+Click **Create**.
 
-### Display settings
+![new service form](../screenshots/new-service-form-1792671119269.png)
 
-You can also change the [terminology](customizing-app-terminology.md) for this walk:
+### Service settings
 
-- **Display noun**: the word used for the walk
-- **Display verb**: the word for taking part in it
-- **Display subject**: the word for who or what is booked, such as dogs
+- **Name**: what customers see when they choose a service, and what appears on their booking confirmation and emails. For example "Private hire" or "Training session".
+- **Cover photo**: a photo that represents this service, up to 10 MB. Falls back to your business photo if not set.
+- **Description**: up to 400 characters shown to customers on the service selection cards.
+- **Display verb**: the action word used throughout the app and booking flow, for example "Walking". Inherits from your business settings. Untick **Use default instead?** to set a different word for this service.
+- **Display subject**: what is being booked, for example "Dog". Inherits from your business settings. Untick **Use default instead?** to set a different word here.
 
-Most settings use your business defaults. To set a different value for this walk, untick **Use default instead?** next to it.
+Click **Save** when you are done.
 
-Click **Save** to apply your changes.
+## Step 3: Create an offering
 
-## Your completed walk
+An offering links one service to one resource, and is what customers actually book. Go to **Offerings** and click **Add**.
 
-The walk now appears in your walks list. Its overview page shows:
+![add offering page](../screenshots/add-offering-page-1792671165987.png)
 
-- **Statistics**: bookings, revenue and invoices over different time periods
-- **Recent bookings**: the latest bookings for this walk
-- **Configuration summary**: key settings such as maximum dogs, booking intervals and notice periods
-- **New booking**: a button that takes you straight to the booking form
+Choose the **Resource** and **Service** from the menus. You can also choose **A new resource** or **A new service** to create one inline without leaving the page.
 
-Customers can now book the walk through your booking form.
+If that combination already exists, the page will tell you and offer a link to open it instead.
+
+Click **Add** to create the offering.
+
+## Step 4: Configure offering settings
+
+After creating an offering, click **Settings** on its overview page to set the booking rules.
+
+![offering settings page](../screenshots/offering-settings-full-1792671345104.png)
+
+- **Maximum number of dogs**: the most dogs allowed on a single booking.
+- **Start booking slots at**: when bookings can begin. Choose from the top of the hour, quarter past, half past, quarter to, every 15 minutes, or every 30 minutes.
+- **Future booking period**: how far in advance customers can book. Enter a number of days, hours or minutes.
+- **Booking notice period**: how much notice you need before a booking. Customers cannot book sooner than this.
+- **Cancellation notice period**: how much notice a customer must give to cancel or reschedule their booking.
+- **Buffer period**: extra time added after each booking as a transition period. Only affects new bookings, not existing ones.
+- **Tax classification**: choose None, or the VAT rate that applies to your bookings.
+- **Access instructions**: directions to help customers find you and get in. Gate codes are shown to customers separately, so you do not need to include them here.
+- **Short access instructions**: a single sentence version, up to 400 characters, with no line breaks. Used in places where space is limited.
+
+Click **Save** when you are done.
+
+## Step 5: Set pricing
+
+Click **Pricing** from the offering overview to set your prices. Each offering has its own pricing, so you can charge differently for different services or locations.
+
+![offering pricing page](../screenshots/offering-pricing-1792671437150.png)
+
+Pricing is organised by booking duration. You will see a tab for each duration you offer, such as "15 minutes" or "1 hour". Click **Add duration** to add more.
+
+For each duration, set:
+
+- **Base price**: the price for a booking with up to the included number of dogs.
+- **Price per extra dog**: added for each dog beyond the number included in the base price.
+- **Extra dogs surcharge**: a flat amount added once to any booking with more dogs than the base price includes. It is charged on top of the price per extra dog, so set the per-dog price to 0 if you only want a flat charge.
+- **Total included dogs**: how many dogs the base price covers.
+- **Prices include tax**: choose **Yes** if the prices you enter already include VAT, or **No** if tax should be added on top.
+
+You can also switch on **Separate commercial price?** if you want to charge a different rate for commercial bookings.
+
+Click **Save all pricing configurations** when you are done.
+
+To remove a duration you no longer offer, click **Delete this duration** at the bottom of that tab.
+
+## Step 6: Set opening times
+
+Click **Opening times** from the offering overview to set when this offering is available for booking.
+
+![offering opening times page](../screenshots/offering-opening-times-1792671583336.png)
+
+You can apply the same hours to every day at once using **Apply preset to all days**, then click **Apply**. Or set each day individually using the menu next to Monday, Tuesday, and so on. Preset options include common ranges like 09:00 to 17:00, 06:00 to 20:00, 24/7, **Closed**, or **Custom** if you need specific times.
+
+> If your hours follow daylight (for example, you always walk at sunrise or before dusk), set a location on your resource first. The offering's opening times page will then let you anchor times to sunrise, sunset, first light, or last light rather than fixed clock times.
+
+Click **Save** after making changes.
+
+## Activating your offering
+
+Customers can book an offering once it has prices and opening times. Until then, its overview page shows a warning with buttons to **Add prices** or **Set opening times**. If its opening times use sunrise or sunset, the resource also needs a location before customers can book.
+
+The offering overview page shows a summary of your configuration, including prices, opening times, slot intervals, notice periods, and maximum dogs, so you can see everything at a glance.
+
+![offering overview page](../screenshots/offering-overview-1792671214570.png)

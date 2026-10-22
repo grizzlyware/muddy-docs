@@ -1,46 +1,31 @@
 # Muddy Booking Booking Rules Structure
 
-## URL and Navigation
-- Main booking settings: `/settings/booking`
-- Navigation: Settings > Bookings > Booking settings
+## Updated Structure (as of October 2026)
 
-## Available Settings
+Most booking rules are now set **per offering** (not globally).
 
-### Maximum Dogs Per Walk
-- Field type: Number input
-- Description: The maximum number of dogs that can be on a single booking
-- Field shows current value (e.g., 20)
+### Offering-level booking rules
+Path: Offerings > [offering name] > Settings
 
-### Start Booking Slots At
-- Field type: Dropdown/Select
-- Description: The time that bookings can start at (e.g., 9am, 9:15am, 9:30am etc.)
-- Options:
-  - Top of the hour
-  - Quarter past the hour
-  - Half past the hour
-  - Quarter to the hour
-  - Every fifteen minutes
-  - Every thirty minutes
+- **Maximum number of dogs** - per booking
+- **Start booking slots at** - options: top of hour, quarter past, half past, quarter to, every 15 mins, every 30 mins
+- **Future booking period** (days/hours/minutes) - how far ahead bookings can be made
+- **Booking notice period** (days/hours/minutes) - minimum notice before a booking
+- **Cancellation notice period** (days/hours/minutes) - minimum notice to cancel/reschedule
+- **Buffer period** (days/hours/minutes) - transition time added after bookings
+- (Also: Tax classification, Access instructions, Short access instructions - not booking rules)
 
-### Future Booking Period
-- Field type: Three separate inputs (Days, Hours, Minutes)
-- Description: How far in the future can bookings be made?
-- Controls how far in advance customers can book
+URL: `/offerings/{id}/settings`
 
-### Booking Notice Period
-- Field type: Three separate inputs (Days, Hours, Minutes)
-- Description: How much notice do you need before a booking?
-- Controls minimum advance booking time
+### Global Booking Settings (Settings > Booking settings)
 
-### Editing Booking Notice Period
-- Field type: Three separate inputs (Days, Hours, Minutes)
-- Description: Up to what point before the booking can it be edited? (e.g., changing number of dogs)
-- Note: "This can usually just be zero, to always allow edits"
+Now only contains ONE setting:
 
-### Buffer Period
-- Field type: Three separate inputs (Days, Hours, Minutes)
-- Description: The amount of time added to a booking's duration to act as a transition period
-- Note: "This will only affect new bookings"
+- **Editing booking notice period** (days/hours/minutes) - how close to start a booking can be edited
+  - Hint: "This can usually just be zero, to always allow edits"
 
-## Form Actions
-- Save button at bottom of form
+URL: `/settings/booking`
+
+### Settings page note
+The Settings page now says: "You can manage nearly all of your settings from this panel, any others are set on each offering."
+The Booking settings card says: "Manage how close to the start a booking can still be edited."

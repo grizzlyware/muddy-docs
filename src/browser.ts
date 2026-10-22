@@ -4,6 +4,7 @@ import path from "path";
 
 const SCREENSHOTS_DIR = path.resolve("screenshots");
 const PAGE_TIMEOUT_MS = 30_000;
+const VIEWPORT = { width: 1440, height: 900 };
 
 export type Page = Awaited<ReturnType<Stagehand["context"]["pages"]>>[0];
 
@@ -49,7 +50,7 @@ export async function initBrowser(): Promise<BrowserSession> {
     model: "openai/gpt-4.1-mini",
     localBrowserLaunchOptions: {
       headless,
-      viewport: { width: 1440, height: 900 },
+      viewport: VIEWPORT,
       args: ["--lang=en-GB"],
     },
   });
@@ -151,6 +152,21 @@ export async function login(session: BrowserSession): Promise<void> {
   await dismissCookieBanner(page);
 }
 
+/**
+ * The test account has no Stripe connection, so every page nags about it.
+ * Hide the nag before measuring highlights too, or they drift when it goes.
+ */
+async function hideStripeBanner(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href$="/onboarding"]')) {
+      const alert = link.closest<HTMLElement>(".bg-orange-100");
+      if (alert && link.textContent?.includes("Setup Stripe")) {
+        alert.style.display = "none";
+      }
+    }
+  });
+}
+
 export async function takeScreenshot(
   page: Page,
   label: string,
@@ -159,7 +175,25 @@ export async function takeScreenshot(
   const slug = label.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
   const filename = `${slug}-${Date.now()}.png`;
   const filepath = path.join(SCREENSHOTS_DIR, filename);
-  await page.screenshot({ path: filepath, fullPage });
+  await hideStripeBanner(page);
+
+  if (fullPage) {
+    // Grow the window to the page's height instead of stitching a full-page
+    // capture, which paints the fixed sidebar wherever the page was scrolled.
+    const pageHeight = () => page.evaluate(() => document.documentElement.scrollHeight);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.setViewportSize(VIEWPORT.width, await pageHeight());
+    await sleep(300);
+    await page.setViewportSize(VIEWPORT.width, await pageHeight());
+    await sleep(300);
+    try {
+      await page.screenshot({ path: filepath });
+    } finally {
+      await page.setViewportSize(VIEWPORT.width, VIEWPORT.height);
+    }
+  } else {
+    await page.screenshot({ path: filepath });
+  }
   console.log(`  Screenshot: ${filename}`);
   return filename;
 }
@@ -243,25 +277,35 @@ export async function highlightElement(
   const isInput = /input|field/.test(desc) && !/text\s*area|textarea/.test(desc);
   const isTextarea = /text\s*area|textarea/.test(desc);
 
+  await hideStripeBanner(page);
+
   // Step 1: Find the element's bounding box
   const box = await page.evaluate(
     (args: string[]) => {
-      var name = args[0], isButton = args[1] === "1", isLink = args[2] === "1", isInput = args[3] === "1", isTextarea = args[4] === "1";
+      var name = args[0], isButton = args[1] === "1", isLink = args[2] === "1", isInput = args[3] === "1", isTextarea = args[4] === "1", wantsMenu = args[5] === "1";
       var nameLower = name.toLowerCase();
       var el = null;
+      // Skip hidden copies, such as the closed mobile menu, which sit off the page edge.
+      // Keep the helper in an array: tsx wraps named function values in a __name()
+      // call, and that helper does not exist in the browser.
+      var isShown = [(e: Element): boolean => {
+        var r = e.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && r.left >= 0 && r.right <= document.documentElement.clientWidth
+          && (e as HTMLElement).checkVisibility({ visibilityProperty: true, opacityProperty: true });
+      }][0];
 
       if (isButton) {
         var btns = document.querySelectorAll('button, a, [role="button"]');
         // First pass: exact match
         for (var i = 0; i < btns.length; i++) {
           var t = (btns[i].textContent || "").trim().toLowerCase();
-          if (t === nameLower && btns[i].getBoundingClientRect().width > 0) { el = btns[i]; break; }
+          if (t === nameLower && isShown(btns[i])) { el = btns[i]; break; }
         }
         // Second pass: includes match
         if (!el) {
           for (var i = 0; i < btns.length; i++) {
             var t = (btns[i].textContent || "").trim().toLowerCase();
-            if (t.includes(nameLower) && btns[i].getBoundingClientRect().width > 0) { el = btns[i]; break; }
+            if (t.includes(nameLower) && isShown(btns[i])) { el = btns[i]; break; }
           }
         }
       }
@@ -270,12 +314,12 @@ export async function highlightElement(
         var as = document.querySelectorAll("a");
         for (var i = 0; i < as.length; i++) {
           var t = (as[i].textContent || "").trim().toLowerCase();
-          if (t === nameLower && as[i].getBoundingClientRect().width > 0) { el = as[i]; break; }
+          if (t === nameLower && isShown(as[i])) { el = as[i]; break; }
         }
         if (!el) {
           for (var i = 0; i < as.length; i++) {
             var t = (as[i].textContent || "").trim().toLowerCase();
-            if (t.includes(nameLower) && as[i].getBoundingClientRect().width > 0) { el = as[i]; break; }
+            if (t.includes(nameLower) && isShown(as[i])) { el = as[i]; break; }
           }
         }
       }
@@ -289,8 +333,8 @@ export async function highlightElement(
           var lt = (lbls[i].textContent || "").trim().toLowerCase();
           if (lt === nameLower) {
             var fid = lbls[i].getAttribute("for");
-            if (fid) { var match = document.getElementById(fid); if (match && match.getBoundingClientRect().width > 0) { el = match; } }
-            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && match.getBoundingClientRect().width > 0) { el = match; } nd = nd.parentElement; } }
+            if (fid) { var match = document.getElementById(fid); if (match && isShown(match)) { el = match; } }
+            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && isShown(match)) { el = match; } nd = nd.parentElement; } }
           }
         }
         // Second pass: includes match
@@ -298,8 +342,8 @@ export async function highlightElement(
           var lt = (lbls[i].textContent || "").trim().toLowerCase();
           if (lt.includes(nameLower)) {
             var fid = lbls[i].getAttribute("for");
-            if (fid) { var match = document.getElementById(fid); if (match && match.getBoundingClientRect().width > 0) { el = match; } }
-            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && match.getBoundingClientRect().width > 0) { el = match; } nd = nd.parentElement; } }
+            if (fid) { var match = document.getElementById(fid); if (match && isShown(match)) { el = match; } }
+            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && isShown(match)) { el = match; } nd = nd.parentElement; } }
           }
         }
         // Fallback: find by text content near input (e.g. span/div label + sibling input)
@@ -311,7 +355,7 @@ export async function highlightElement(
               var nd = allText[i].parentElement;
               for (var d = 0; d < 5 && nd && !el; d++) {
                 var match = nd.querySelector(targetTag) as HTMLElement | null;
-                if (match && match.getBoundingClientRect().width > 0) { el = match; }
+                if (match && isShown(match)) { el = match; }
                 nd = nd.parentElement;
               }
             }
@@ -320,18 +364,23 @@ export async function highlightElement(
       }
 
       if (!el) {
-        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t === nameLower && all[i].getBoundingClientRect().width > 0) { el = all[i]; break; }
+          if (t === nameLower && isShown(all[i])) { el = all[i]; break; }
         }
       }
 
       if (!el) {
-        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
+        // Take the match with the shortest text, which is the closest to the name.
+        // On a tie, keep the later match: it is the deeper element.
+        // The first one in document order is an outer wrapper that holds the whole
+        // page, and the smallest one is often a help text that only mentions it.
+        var shortestText = Infinity;
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t.includes(nameLower) && all[i].getBoundingClientRect().width > 0) { el = all[i]; break; }
+          if (t.includes(nameLower) && t.length <= shortestText && isShown(all[i])) { shortestText = t.length; el = all[i]; }
         }
       }
 
@@ -340,23 +389,32 @@ export async function highlightElement(
         for (var i = 0; i < aria.length; i++) {
           var al = (aria[i].getAttribute("aria-label") || "").toLowerCase();
           var ti = (aria[i].getAttribute("title") || "").toLowerCase();
-          if ((al.includes(nameLower) || ti.includes(nameLower)) && aria[i].getBoundingClientRect().width > 0) { el = aria[i]; break; }
+          if ((al.includes(nameLower) || ti.includes(nameLower)) && isShown(aria[i])) { el = aria[i]; break; }
         }
       }
 
       if (!el) return null;
 
+      // The menu repeats the names of many pages, so prefer a match in the page content.
+      var main = document.querySelector("main");
+      if (main && !wantsMenu && el.closest("nav") && !main.contains(el)) {
+        var inMain = main.querySelectorAll("button, a, summary, h1, h2, h3, h4, h5, h6, label, legend, span, p, li, div");
+        var shortestMainText = Infinity;
+        for (var i = 0; i < inMain.length; i++) {
+          var t = (inMain[i].textContent || "").trim().toLowerCase();
+          if (t.includes(nameLower) && t.length <= shortestMainText && isShown(inMain[i])) { shortestMainText = t.length; el = inMain[i]; }
+        }
+      }
+
       // If there's an open modal/dialog, prefer the match inside it over one behind it
       var topLayer = document.querySelector('dialog[open], [role="dialog"], [class*="modal"]');
       if (topLayer && !topLayer.contains(el)) {
         // Re-search but only within the top-layer element
-        var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
+        var shortestDialogText = Infinity;
         for (var i = 0; i < candidates.length; i++) {
           var t = (candidates[i].textContent || "").trim().toLowerCase();
-          if ((t === nameLower || t.includes(nameLower)) && candidates[i].getBoundingClientRect().width > 0) {
-            el = candidates[i];
-            break;
-          }
+          if (t.includes(nameLower) && t.length <= shortestDialogText && isShown(candidates[i])) { shortestDialogText = t.length; el = candidates[i]; }
         }
       }
 
@@ -366,11 +424,11 @@ export async function highlightElement(
       var r = el.getBoundingClientRect();
       return [r.left, r.top, r.width, r.height];
     },
-    [name, isButton ? "1" : "", isLink ? "1" : "", isInput ? "1" : "", isTextarea ? "1" : ""],
+    [name, isButton ? "1" : "", isLink ? "1" : "", isInput ? "1" : "", isTextarea ? "1" : "", /menu|sidebar|nav/.test(desc) ? "1" : ""],
   );
 
   if (!box) {
-    return `Could not find element: "${description}"`;
+    return `Could not find element: "${description}". Use the exact visible text from the page, then one type word, e.g. "Customer field". Do not highlight a nearby help text instead.`;
   }
 
   // Step 2: Inject the highlight overlay
