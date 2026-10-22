@@ -114,10 +114,10 @@ Pricing is organised by booking duration. You will see a tab for each duration y
 
 For each duration, set:
 
-- **Base price**: the starting price, which includes the first dog. Enter the amount in pounds.
+- **Base price**: the price for a booking with up to the included number of dogs.
 - **Price per extra dog**: added for each dog beyond the number included in the base price.
-- **Extra dogs surcharge**: a one-off surcharge applied when there is more than one dog, instead of a per-dog rate. Use this if you want a flat extra charge rather than a per-dog amount.
-- **Total included dogs**: how many dogs are covered by the base price before the per-extra-dog or surcharge pricing kicks in.
+- **Extra dogs surcharge**: a flat amount added once to any booking with more dogs than the base price includes. It is charged on top of the price per extra dog, so set the per-dog price to 0 if you only want a flat charge.
+- **Total included dogs**: how many dogs the base price covers.
 - **Prices include tax**: choose **Yes** if the prices you enter already include VAT, or **No** if tax should be added on top.
 
 You can also switch on **Separate commercial price?** if you want to charge a different rate for commercial bookings.
@@ -140,7 +140,7 @@ Click **Save** after making changes.
 
 ## Activating your offering
 
-Once you have set up pricing and opening times, your offering will be marked as **Active** and customers will be able to book it. If something is missing, such as pricing not being configured, the offering will show as **Inactive** and will not appear to customers.
+Customers can book an offering once it has prices and opening times. Until then, its overview page shows a warning with buttons to **Add prices** or **Set opening times**. If its opening times use sunrise or sunset, the resource also needs a location before customers can book.
 
 The offering overview page shows a summary of your configuration, including prices, opening times, slot intervals, notice periods, and maximum dogs, so you can see everything at a glance.
 
