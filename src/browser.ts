@@ -282,7 +282,7 @@ export async function highlightElement(
   // Step 1: Find the element's bounding box
   const box = await page.evaluate(
     (args: string[]) => {
-      var name = args[0], isButton = args[1] === "1", isLink = args[2] === "1", isInput = args[3] === "1", isTextarea = args[4] === "1";
+      var name = args[0], isButton = args[1] === "1", isLink = args[2] === "1", isInput = args[3] === "1", isTextarea = args[4] === "1", wantsMenu = args[5] === "1";
       var nameLower = name.toLowerCase();
       var el = null;
       // Skip hidden copies, such as the closed mobile menu, which sit off the page edge.
@@ -374,12 +374,13 @@ export async function highlightElement(
       if (!el) {
         var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
         // Take the match with the shortest text, which is the closest to the name.
+        // On a tie, keep the later match: it is the deeper element.
         // The first one in document order is an outer wrapper that holds the whole
         // page, and the smallest one is often a help text that only mentions it.
         var shortestText = Infinity;
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t.includes(nameLower) && t.length < shortestText && isShown(all[i])) { shortestText = t.length; el = all[i]; }
+          if (t.includes(nameLower) && t.length <= shortestText && isShown(all[i])) { shortestText = t.length; el = all[i]; }
         }
       }
 
@@ -394,6 +395,17 @@ export async function highlightElement(
 
       if (!el) return null;
 
+      // The menu repeats the names of many pages, so prefer a match in the page content.
+      var main = document.querySelector("main");
+      if (main && !wantsMenu && el.closest("nav") && !main.contains(el)) {
+        var inMain = main.querySelectorAll("button, a, summary, h1, h2, h3, h4, h5, h6, label, legend, span, p, li, div");
+        var shortestMainText = Infinity;
+        for (var i = 0; i < inMain.length; i++) {
+          var t = (inMain[i].textContent || "").trim().toLowerCase();
+          if (t.includes(nameLower) && t.length <= shortestMainText && isShown(inMain[i])) { shortestMainText = t.length; el = inMain[i]; }
+        }
+      }
+
       // If there's an open modal/dialog, prefer the match inside it over one behind it
       var topLayer = document.querySelector('dialog[open], [role="dialog"], [class*="modal"]');
       if (topLayer && !topLayer.contains(el)) {
@@ -402,7 +414,7 @@ export async function highlightElement(
         var shortestDialogText = Infinity;
         for (var i = 0; i < candidates.length; i++) {
           var t = (candidates[i].textContent || "").trim().toLowerCase();
-          if (t.includes(nameLower) && t.length < shortestDialogText && isShown(candidates[i])) { shortestDialogText = t.length; el = candidates[i]; }
+          if (t.includes(nameLower) && t.length <= shortestDialogText && isShown(candidates[i])) { shortestDialogText = t.length; el = candidates[i]; }
         }
       }
 
@@ -412,7 +424,7 @@ export async function highlightElement(
       var r = el.getBoundingClientRect();
       return [r.left, r.top, r.width, r.height];
     },
-    [name, isButton ? "1" : "", isLink ? "1" : "", isInput ? "1" : "", isTextarea ? "1" : ""],
+    [name, isButton ? "1" : "", isLink ? "1" : "", isInput ? "1" : "", isTextarea ? "1" : "", /menu|sidebar|nav/.test(desc) ? "1" : ""],
   );
 
   if (!box) {
