@@ -364,7 +364,7 @@ export async function highlightElement(
       }
 
       if (!el) {
-        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
           if (t === nameLower && isShown(all[i])) { el = all[i]; break; }
@@ -372,10 +372,16 @@ export async function highlightElement(
       }
 
       if (!el) {
-        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
+        // Take the smallest match. The first one in document order is an outer
+        // wrapper that holds the whole page.
+        var smallestArea = Infinity;
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t.includes(nameLower) && isShown(all[i])) { el = all[i]; break; }
+          if (t.includes(nameLower) && isShown(all[i])) {
+            var ar = all[i].getBoundingClientRect();
+            if (ar.width * ar.height < smallestArea) { smallestArea = ar.width * ar.height; el = all[i]; }
+          }
         }
       }
 
@@ -394,12 +400,13 @@ export async function highlightElement(
       var topLayer = document.querySelector('dialog[open], [role="dialog"], [class*="modal"]');
       if (topLayer && !topLayer.contains(el)) {
         // Re-search but only within the top-layer element
-        var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
+        var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
+        var smallestDialogArea = Infinity;
         for (var i = 0; i < candidates.length; i++) {
           var t = (candidates[i].textContent || "").trim().toLowerCase();
           if ((t === nameLower || t.includes(nameLower)) && isShown(candidates[i])) {
-            el = candidates[i];
-            break;
+            var cr = candidates[i].getBoundingClientRect();
+            if (cr.width * cr.height < smallestDialogArea) { smallestDialogArea = cr.width * cr.height; el = candidates[i]; }
           }
         }
       }
