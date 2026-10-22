@@ -48,19 +48,19 @@ How far ahead customers can book, set in days, hours and minutes. For example, 3
 
 ### Booking notice period **(3)**
 
-The minimum notice you need before a walk starts. Customers can't book a slot that begins sooner than this. For example:
+The minimum notice you need before a booking starts. Customers can't book a slot that begins sooner than this. For example:
 
-- **1 hour** means customers must book at least an hour before the walk
+- **1 hour** means customers must book at least an hour before the booking starts
 - **24 hours** means customers must book at least a day ahead
 - **0 hours** allows bookings right up to the start time, as long as you have [opening times](setting-up-opening-times.md) set
 
 ### Cancellation notice period **(4)**
 
-How much notice a customer must give to cancel or reschedule a booking on their own. For example, 24 hours means they can't cancel within a day of the walk. For how fees work when customers cancel, see [Setting up a cancellation policy](setting-up-cancellation-policy.md).
+How much notice a customer must give to cancel or reschedule a booking on their own. For example, 24 hours means they can't cancel within a day of the booking. For how fees work when customers cancel, see [Setting up a cancellation policy](setting-up-cancellation-policy.md).
 
 ### Buffer period **(5)**
 
-Extra time added to the end of each booking so walks don't run back to back. For example, 15 minutes turns a 30-minute walk into a 45-minute slot in your calendar, giving you time to travel or prepare.
+Extra time added to the end of each booking so bookings don't run back to back. For example, 15 minutes turns a 30-minute booking into a 45-minute slot in your calendar, giving you time to travel or prepare.
 
 The buffer only applies to bookings made after you change it.
 
@@ -76,6 +76,6 @@ There is one booking rule that applies across all your offerings rather than per
 
 ### Editing booking notice period **(1)**
 
-How close to the start of a walk a customer can still edit their booking, for example to change the number of dogs. As the page note says, this can usually be left at zero, which allows edits right up to the walk. Set it higher if you need more preparation time before changes take effect.
+How close to the start of a booking a customer can still edit their booking, for example to change the number of dogs. As the page note says, this can usually be left at zero, which allows edits right up to the start. Set it higher if you need more preparation time before changes take effect.
 
 Click **Save** to apply the change.
