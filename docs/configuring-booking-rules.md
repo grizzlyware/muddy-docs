@@ -25,7 +25,7 @@ If you haven't set up your offerings yet, see [Setting up your offerings](creati
 
 The settings page for an offering contains the booking rules for that offering.
 
-![offering-settings-annotated](../screenshots/offering-settings-annotated-1792673698801.png)
+![offering-settings-annotated](../screenshots/offering-settings-annotated-1792674398412.png)
 
 ### Maximum number of dogs **(1)**
 
@@ -72,7 +72,7 @@ Click **Save** at the bottom of the page. The new rules apply straight away to f
 
 There is one booking rule that applies across all your offerings rather than per offering. Go to **Settings** in the left-hand menu, then click **Booking settings** in the Bookings section.
 
-![booking-settings-edit-notice](../screenshots/booking-settings-edit-notice-1792673629668.png)
+![booking-settings-edit-notice](../screenshots/booking-settings-edit-notice-1792674457928.png)
 
 ### Editing booking notice period **(1)**
 
