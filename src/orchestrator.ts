@@ -2,14 +2,15 @@ import Anthropic from "@anthropic-ai/sdk";
 import fs from "fs";
 import path from "path";
 import {
-  applyPageTimeouts,
   type BrowserSession,
   clearHighlights,
   getPageLinks,
   getPageState,
   highlightElement,
+  NAV_TIMEOUT_MS,
   scrollPage,
   sleep,
+  switchToPage,
   takeScreenshot,
   waitForPage,
 } from "./browser.js";
@@ -440,7 +441,7 @@ async function executeTool(
       case "navigate_to_url": {
         const url = input.url as string;
         console.log(`  -> Navigating to: ${url}`);
-        await session.page.goto(url, { timeoutMs: 30_000, waitUntil: "domcontentloaded" });
+        await session.page.goto(url, { timeout: NAV_TIMEOUT_MS, waitUntil: "domcontentloaded" });
         await waitForPage(session.page);
         const state = await getPageState(session.page);
         return `Navigated to ${state.url}. Page title: "${state.title}". Content preview: ${state.textContent.substring(0, 1000)}`;
@@ -449,9 +450,9 @@ async function executeTool(
       case "click_element": {
         const desc = input.description as string;
         console.log(`  -> Clicking: ${desc}`);
-        const pagesBefore = stagehand.context.pages().length;
+        const pagesBefore = (await session.browser.context.pages()).length;
         try {
-          const actions = await stagehand.observe(`Click: ${desc}`);
+          const { data: actions } = await stagehand.observe(`Click: ${desc}`);
           if (actions.length > 0) {
             await stagehand.act(actions[0]);
           } else {
@@ -462,10 +463,9 @@ async function executeTool(
           await stagehand.act(`Click ${desc}`);
         }
         // Auto-switch to new tab if one opened
-        const pagesAfter = stagehand.context.pages();
+        const pagesAfter = await session.browser.context.pages();
         if (pagesAfter.length > pagesBefore) {
-          session.page = pagesAfter[pagesAfter.length - 1];
-          applyPageTimeouts(session.page);
+          await switchToPage(session, pagesAfter[pagesAfter.length - 1]);
           console.log(`  -> New tab opened, switched to tab ${pagesAfter.length - 1}`);
         }
         await waitForPage(session.page);
@@ -531,11 +531,11 @@ async function executeTool(
       }
 
       case "list_tabs": {
-        const pages = stagehand.context.pages();
+        const pages = await session.browser.context.pages();
         const tabs = await Promise.all(pages.map(async (p, i) => {
-          const url = p.url();
+          const url = await p.url();
           const title = await p.title();
-          const active = p === session.page ? " (active)" : "";
+          const active = p.pageId === session.page.pageId ? " (active)" : "";
           return `${i}: ${title} — ${url}${active}`;
         }));
         console.log(`  -> ${pages.length} tabs open`);
@@ -544,12 +544,11 @@ async function executeTool(
 
       case "switch_tab": {
         const tabIndex = input.tab_index as number;
-        const pages = stagehand.context.pages();
+        const pages = await session.browser.context.pages();
         if (tabIndex < 0 || tabIndex >= pages.length) {
           return `Invalid tab index ${tabIndex}. There are ${pages.length} tabs open (0-${pages.length - 1}).`;
         }
-        session.page = pages[tabIndex];
-        applyPageTimeouts(session.page);
+        await switchToPage(session, pages[tabIndex]);
         const state = await getPageState(session.page);
         console.log(`  -> Switched to tab ${tabIndex}: ${state.url}`);
         return `Switched to tab ${tabIndex}. URL: ${state.url}. Title: "${state.title}". Content preview: ${state.textContent.substring(0, 800)}`;
@@ -658,12 +657,11 @@ async function executeTool(
       try {
         console.log(`  -> Attempting page recovery (opening fresh tab)`);
         const newPage = await withTimeout(
-          stagehand.context.newPage(),
+          session.browser.context.newPage(),
           10_000,
           "context.newPage",
         );
-        applyPageTimeouts(newPage);
-        session.page = newPage;
+        await switchToPage(session, newPage);
         console.log(`  -> Page recovery succeeded; subsequent tools will use the fresh tab`);
         return `Error executing ${name}: ${message}. Note: the previous page appeared wedged; a fresh tab was opened. Re-issue navigate_to_url to continue.`;
       } catch (recoveryErr) {
