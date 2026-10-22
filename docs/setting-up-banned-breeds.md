@@ -23,8 +23,6 @@ pinned: false
 
 There are four options:
 
-![banned-breeds-policy-options](../screenshots/banned-breeds-policy-options-1792680040985.png)
-
 ### Allow all
 You accept every breed. No breed restrictions apply to bookings.
 
