@@ -26,7 +26,7 @@ You can get to block outs in two ways:
 1. Click **Settings** in the left-hand menu
 2. Under **Bookings**, click **Block outs** **(1)**
 
-![Settings block outs option](../screenshots/settings-block-outs-option-1772547747847.png)
+![Settings block outs option](../screenshots/settings-block-outs-option-1792678439414.png)
 
 Both take you to the same page.
 
@@ -36,11 +36,11 @@ Both take you to the same page.
 
 Click **Create** **(1)**.
 
-![Block outs create button](../screenshots/block-outs-create-button-1772547618896.png)
+![Block outs create button](../screenshots/block-outs-create-button-1792678465322.png)
 
 ### Step 2: Fill out the block out details
 
-![Create block out form](../screenshots/create-block-out-form-annotated-1772547677887.png)
+![Create block out form](../screenshots/create-block-out-form-annotated-1792678404378.png)
 
 **Name** **(1)** (Required)
 A name to help you recognise the block out, such as "Grass cutting", "Holiday" or "Equipment maintenance". Customers don't see it.
@@ -54,8 +54,8 @@ The date and time the block out begins, in your business timezone.
 **Ends at** **(4)** (Required)
 The date and time the block out ends. This must be after the start.
 
-**Walks** **(5)** (Required)
-The [walks](creating-a-walk.md) the block out applies to. You can pick one or several. Only the walks you pick are closed during the block out.
+**Resources** **(5)** (Required)
+The [resources](creating-a-walk.md) the block out applies to. You can pick one or several. Only the resources you pick are closed during the block out — any resources you leave unselected stay open for bookings as normal.
 
 ### Step 3: Check for conflicts
 
@@ -68,11 +68,11 @@ If there are conflicts, you can:
 
 ### Step 4: Save your block out
 
-Click **Create block out** **(6)**.
+Click **Create block out**.
 
 ## What happens after creating a block out
 
-- Customers can't book the blocked time online
+- Customers can't book the blocked time for the resources you chose
 - The block out appears in your block outs list
 - You can edit or delete it later
 
