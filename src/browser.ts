@@ -373,15 +373,13 @@ export async function highlightElement(
 
       if (!el) {
         var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
-        // Take the smallest match. The first one in document order is an outer
-        // wrapper that holds the whole page.
-        var smallestArea = Infinity;
+        // Take the match with the shortest text, which is the closest to the name.
+        // The first one in document order is an outer wrapper that holds the whole
+        // page, and the smallest one is often a help text that only mentions it.
+        var shortestText = Infinity;
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t.includes(nameLower) && isShown(all[i])) {
-            var ar = all[i].getBoundingClientRect();
-            if (ar.width * ar.height < smallestArea) { smallestArea = ar.width * ar.height; el = all[i]; }
-          }
+          if (t.includes(nameLower) && t.length < shortestText && isShown(all[i])) { shortestText = t.length; el = all[i]; }
         }
       }
 
@@ -401,13 +399,10 @@ export async function highlightElement(
       if (topLayer && !topLayer.contains(el)) {
         // Re-search but only within the top-layer element
         var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, legend, span, p, li, div");
-        var smallestDialogArea = Infinity;
+        var shortestDialogText = Infinity;
         for (var i = 0; i < candidates.length; i++) {
           var t = (candidates[i].textContent || "").trim().toLowerCase();
-          if ((t === nameLower || t.includes(nameLower)) && isShown(candidates[i])) {
-            var cr = candidates[i].getBoundingClientRect();
-            if (cr.width * cr.height < smallestDialogArea) { smallestDialogArea = cr.width * cr.height; el = candidates[i]; }
-          }
+          if (t.includes(nameLower) && t.length < shortestDialogText && isShown(candidates[i])) { shortestDialogText = t.length; el = candidates[i]; }
         }
       }
 
@@ -421,7 +416,7 @@ export async function highlightElement(
   );
 
   if (!box) {
-    return `Could not find element: "${description}"`;
+    return `Could not find element: "${description}". Use the exact visible text from the page, then one type word, e.g. "Customer field". Do not highlight a nearby help text instead.`;
   }
 
   // Step 2: Inject the highlight overlay
