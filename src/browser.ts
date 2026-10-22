@@ -1,43 +1,47 @@
-import { Stagehand } from "@browserbasehq/stagehand";
+import {
+  localBrowser,
+  Stagehand,
+  type LocalBrowserLaunchOptions,
+  type Page,
+  type StagehandBrowser,
+} from "@browserbasehq/stagehand";
 import fs from "fs";
 import path from "path";
+
+export type { Page };
 
 const SCREENSHOTS_DIR = path.resolve("screenshots");
 const PAGE_TIMEOUT_MS = 30_000;
 const VIEWPORT = { width: 1440, height: 900 };
+const MODEL_NAME = "openai/gpt-4.1-mini";
 
-export type Page = Awaited<ReturnType<Stagehand["context"]["pages"]>>[0];
+export const NAV_TIMEOUT_MS = PAGE_TIMEOUT_MS;
+
+export function launchOptions(headless: boolean): LocalBrowserLaunchOptions {
+  return {
+    headless,
+    viewport: VIEWPORT,
+    locale: "en-GB",
+    args: ["--lang=en-GB"],
+  };
+}
 
 export interface BrowserSession {
+  browser: StagehandBrowser;
   stagehand: Stagehand;
   page: Page;
 }
 
 /**
- * Apply Playwright-level timeouts to a page so a hung navigation or
- * action throws (and unblocks the queue) instead of stalling forever.
- * Our orchestrator-level Promise.race timeout doesn't cancel the
- * underlying browser op, so without this a wedged page.goto wedges
- * every subsequent call.
- *
- * The Stagehand Page type doesn't expose these methods, but the
- * underlying object is a Playwright Page that does. Cast and check.
+ * Point the session at a page. Stagehand runs act, observe and extract
+ * on the active page, so make the page active as well. Set the viewport
+ * on each page, because the launch viewport leaves out the browser frame.
  */
-export function applyPageTimeouts(page: Page): void {
-  const pw = page as unknown as {
-    setDefaultTimeout?: (ms: number) => void;
-    setDefaultNavigationTimeout?: (ms: number) => void;
-  };
-  const hasSetDefault = typeof pw.setDefaultTimeout === "function";
-  const hasSetNav = typeof pw.setDefaultNavigationTimeout === "function";
-  if (hasSetDefault) pw.setDefaultTimeout!(PAGE_TIMEOUT_MS);
-  if (hasSetNav) pw.setDefaultNavigationTimeout!(PAGE_TIMEOUT_MS);
-  console.log(
-    `  applyPageTimeouts: setDefaultTimeout=${hasSetDefault} setDefaultNavigationTimeout=${hasSetNav} target=${PAGE_TIMEOUT_MS}ms`,
-  );
+export async function switchToPage(session: BrowserSession, page: Page): Promise<void> {
+  await session.browser.context.setActivePage(page);
+  await page.setViewportSize(VIEWPORT.width, VIEWPORT.height);
+  session.page = page;
 }
-
-export const NAV_TIMEOUT_MS = PAGE_TIMEOUT_MS;
 
 export async function initBrowser(): Promise<BrowserSession> {
   fs.mkdirSync(SCREENSHOTS_DIR, { recursive: true });
@@ -45,26 +49,22 @@ export async function initBrowser(): Promise<BrowserSession> {
 
   const headless = process.env.HEADLESS !== "false";
 
-  const stagehand = new Stagehand({
-    env: "LOCAL",
-    model: "openai/gpt-4.1-mini",
-    localBrowserLaunchOptions: {
-      headless,
-      viewport: VIEWPORT,
-      args: ["--lang=en-GB"],
-    },
+  const browser = await localBrowser.launch(launchOptions(headless));
+  const stagehand = await Stagehand.create({
+    browser,
+    model: { modelName: MODEL_NAME, apiKey: process.env.OPENAI_API_KEY },
   });
 
-  await stagehand.init();
-  await stagehand.context.setExtraHTTPHeaders({
+  await browser.context.setExtraHTTPHeaders({
     "Sec-GPC": "1",
     "Accept-Language": "en-GB,en;q=0.9",
   });
-  const page = stagehand.context.pages()[0];
-  applyPageTimeouts(page);
-  console.log(`  Browser ready (page timeout ${PAGE_TIMEOUT_MS}ms, headless=${headless})`);
+  const [page] = await browser.context.pages();
+  const session = { browser, stagehand, page };
+  await switchToPage(session, page);
+  console.log(`  Browser ready (headless=${headless})`);
 
-  return { stagehand, page };
+  return session;
 }
 
 export async function login(session: BrowserSession): Promise<void> {
@@ -77,13 +77,13 @@ export async function login(session: BrowserSession): Promise<void> {
   }
 
   console.log("  Navigating to login page...");
-  await page.goto("https://muddybooking.com/login", { timeoutMs: 30_000, waitUntil: "domcontentloaded" });
+  await page.goto("https://muddybooking.com/login", { timeout: NAV_TIMEOUT_MS, waitUntil: "domcontentloaded" });
   await page.evaluate(() => localStorage.setItem("newsletter-popup-dismissed", "1"));
   await waitForPage(page);
 
   console.log("  Filling login form...");
   await page.evaluate(
-    ({ email, password }) => {
+    ({ email, password }: { email: string; password: string }) => {
       const emailInput =
         document.querySelector<HTMLInputElement>('input[type="email"]') ||
         document.querySelector<HTMLInputElement>('input[name="email"]');
@@ -129,7 +129,7 @@ export async function login(session: BrowserSession): Promise<void> {
   const loginStart = Date.now();
   while (Date.now() - loginStart < 45_000) {
     await sleep(2000);
-    const url = page.url();
+    const url = await page.url();
     if (
       !url.includes("login") &&
       !url.includes("signin") &&
@@ -143,7 +143,7 @@ export async function login(session: BrowserSession): Promise<void> {
   await waitForPage(page);
 
   // Verify login succeeded
-  const url = page.url();
+  const url = await page.url();
   if (url.includes("login") || url.includes("signin")) {
     throw new Error("Login failed - still on login page after 45s");
   }
@@ -203,7 +203,7 @@ export async function getPageState(page: Page): Promise<{
   title: string;
   textContent: string;
 }> {
-  const url = page.url();
+  const url = await page.url();
   const title = await page.title();
   const textContent = await page.evaluate(() => {
     const main =
@@ -234,7 +234,7 @@ export async function scrollPage(
   direction: "up" | "down",
 ): Promise<void> {
   const delta = direction === "down" ? 600 : -600;
-  await page.evaluate((d) => window.scrollBy(0, d), delta);
+  await page.evaluate((d: number) => window.scrollBy(0, d), delta);
   await sleep(500);
 }
 
@@ -494,6 +494,7 @@ export async function closeBrowser(
   session: BrowserSession,
 ): Promise<void> {
   await session.stagehand.close();
+  await session.browser.close();
 }
 
 export function sleep(ms: number): Promise<void> {
