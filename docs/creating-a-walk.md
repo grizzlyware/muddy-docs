@@ -23,23 +23,23 @@ For example, if you run group walks and private hires at two different parks, yo
 
 Go to **Offerings** in the left-hand menu to get started.
 
-![offerings list page](../screenshots/offerings-list-1-1792664853997.png)
+![offerings list page](../screenshots/offerings-list-page-1792668417250.png)
 
 ## Step 1: Create a resource
 
 A resource is the place or person being booked. Click **Offerings** in the left-hand menu, then click the **resources** link in the description text, or go directly to **Resources** from the Offerings area.
 
-![resources list page](../screenshots/resources-list-annotated-1792664865485.png)
+![resources list page](../screenshots/resources-list-annotated-1792668186960.png)
 
 Click **Add resource** **(1)**.
 
-![new resource form](../screenshots/new-resource-form-annotated-1792664880698.png)
+![new resource form](../screenshots/new-resource-form-annotated-1792668215398.png)
 
 Give the resource a **Name** **(1)** and click **Create my resource** **(2)**. If you only have one walk location, the name can match your business name.
 
 Once created, click **Settings** on the resource to fill in the details.
 
-![resource settings page](../screenshots/resource-settings-annotated-1792664893549.png)
+![resource settings page](../screenshots/resource-settings-full-1792668320778.png)
 
 ### Resource settings
 
@@ -58,11 +58,11 @@ Click **Save** when you are done.
 
 A service is the type of booking you offer. Click the **services** link from the Offerings page, or go directly to **Services**.
 
-![services list page](../screenshots/services-list-annotated-1792664904703.png)
+![services list page](../screenshots/services-list-annotated-1792668367156.png)
 
 Click **Create**.
 
-![new service form](../screenshots/new-service-form-annotated-1792664915091.png)
+![new service form](../screenshots/new-service-form-annotated-1792668391235.png)
 
 ### Service settings
 
@@ -78,7 +78,7 @@ Click **Save** when you are done.
 
 An offering links one service to one resource, and is what customers actually book. Go to **Offerings** and click **Add**.
 
-![add offering page](../screenshots/add-offering-annotated-1792664927281.png)
+![add offering page](../screenshots/add-offering-annotated-1792668441594.png)
 
 Choose the **Resource** and **Service** from the menus. You can also choose **A new resource** or **A new service** to create one inline without leaving the page.
 
@@ -90,7 +90,7 @@ Click **Add** to create the offering.
 
 After creating an offering, click **Settings** on its overview page to set the booking rules.
 
-![offering settings page](../screenshots/offering-settings-full-annotated-1792664940487.png)
+![offering settings page](../screenshots/offering-settings-full-annotated-1792668536049.png)
 
 - **Maximum number of dogs**: the most dogs allowed on a single booking.
 - **Start booking slots at**: when bookings can begin. Choose from the top of the hour, quarter past, half past, quarter to, every 15 minutes, or every 30 minutes.
@@ -108,7 +108,7 @@ Click **Save** when you are done.
 
 Click **Pricing** from the offering overview to set your prices. Each offering has its own pricing, so you can charge differently for different services or locations.
 
-![offering pricing page](../screenshots/offering-pricing-new-1792664638755.png)
+![offering pricing page](../screenshots/offering-pricing-new-1792668623643.png)
 
 Pricing is organised by booking duration. You will see a tab for each duration you offer, such as "15 minutes" or "1 hour". Click **Add duration** to add more.
 
@@ -130,7 +130,7 @@ To remove a duration you no longer offer, click **Delete this duration** at the 
 
 Click **Opening times** from the offering overview to set when this offering is available for booking.
 
-![offering opening times page](../screenshots/offering-opening-times-new-1792664649201.png)
+![offering opening times page](../screenshots/offering-opening-times-new-1792668765050.png)
 
 You can apply the same hours to every day at once using **Apply preset to all days**, then click **Apply**. Or set each day individually using the menu next to Monday, Tuesday, and so on. Preset options include common ranges like 09:00 to 17:00, 06:00 to 20:00, 24/7, **Closed**, or **Custom** if you need specific times.
 
@@ -144,4 +144,4 @@ Customers can book an offering once it has prices and opening times. Until then,
 
 The offering overview page shows a summary of your configuration, including prices, opening times, slot intervals, notice periods, and maximum dogs, so you can see everything at a glance.
 
-![offering overview page](../screenshots/offering-overview-new-1792664619115.png)
+![offering overview page](../screenshots/offering-overview-new-1792668488605.png)
