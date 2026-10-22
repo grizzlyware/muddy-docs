@@ -26,7 +26,7 @@ You can get to block outs in two ways:
 1. Click **Settings** in the left-hand menu
 2. Under **Bookings**, click **Block outs** **(1)**
 
-![Settings block outs option](../screenshots/settings-block-outs-option-1792678439414.png)
+![Settings block outs option](../screenshots/settings-block-outs-highlighted-1792679481604.png)
 
 Both take you to the same page.
 
@@ -40,7 +40,7 @@ Click **Create** **(1)**.
 
 ### Step 2: Fill out the block out details
 
-![Create block out form](../screenshots/create-block-out-form-annotated-1792678404378.png)
+![Create block out form](../screenshots/create-block-out-form-annotated-1792679535930.png)
 
 **Name** **(1)** (Required)
 A name to help you recognise the block out, such as "Grass cutting", "Holiday" or "Equipment maintenance". Customers don't see it.
