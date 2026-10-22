@@ -68,7 +68,7 @@ You can start one from:
 
 The form has three steps along the top: **Configure**, **Review & publish** and **Live**. Most of the work is in **Configure**.
 
-![Create recurring booking form top fields: Customer, Service, Resource, Repeat every](../screenshots/create-form-shot1-1792676414047.png)
+![Create recurring booking form top fields: Customer, Service, Resource, Repeat every](../screenshots/create-form-shot1-1792676830174.png)
 
 #### Customer **(1)**
 
@@ -139,7 +139,7 @@ Switch on **Override price** to charge a fixed amount for every booking instead:
 
 ### Payment, animals, and self-service
 
-![Create form bottom: payment method, number of dogs, commercial booking, and customer self-service options](../screenshots/create-form-shot2-1792676431355.png)
+![Create form bottom: payment method, number of dogs, commercial booking, and customer self-service options](../screenshots/create-form-shot2-1792676839199.png)
 
 #### Payment collection method **(1)**
 
