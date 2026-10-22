@@ -55,7 +55,7 @@ The date and time the block out begins, in your business timezone.
 The date and time the block out ends. This must be after the start.
 
 **Resources** **(5)** (Required)
-The [resources](creating-a-walk.md) the block out applies to. You can pick one or several. Only the resources you pick are closed during the block out — any resources you leave unselected stay open for bookings as normal.
+The [resources](creating-a-walk.md) the block out applies to. You can pick one or several. Only the resources you pick are closed during the block out. Any resources you leave out stay open for bookings as normal.
 
 ### Step 3: Check for conflicts
 
