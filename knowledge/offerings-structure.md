@@ -6,7 +6,7 @@ The Offerings page replaces the old "Walks" page in the left-hand menu. The URL 
 ## Three-Part Structure
 Offerings are built from two components:
 1. **Resources** (`/resources`) - what customers book time with (e.g. a field, a location, a groomer)
-2. **Services** (`/services`) - the kinds of booking offered (e.g. private hire, puppy lesson, group walk)
+2. **Services** (`/services`) - the kinds of booking offered (e.g. private hire, puppy lesson)
 3. **Offerings** (`/offerings`) - the combination of one service at one resource; each has its own prices, opening times and booking rules
 
 ## Resources Pages

@@ -15,11 +15,11 @@ pinned: true
 
 Muddy Booking organises what customers can book around three things:
 
-- **Resources**: the places or people customers book time with, like a park, a field, or a groomer.
-- **Services**: the types of booking you offer, like a group walk, a private hire, or a puppy session.
+- **Resources**: the places customers book, like a field, a paddock, or a pool.
+- **Services**: the types of booking you offer, like private hire, a training session, or a hydrotherapy swim.
 - **Offerings**: a specific service at a specific resource. Each offering gets its own prices, opening times and booking rules.
 
-For example, if you run group walks and private hires at two different parks, you would have two resources and two services. That gives you up to four offerings, one for each combination. If you only do one type of walk at one location, you will have one resource, one service, and one offering.
+For example, if you offer private hire and training sessions at two different fields, you would have two resources and two services. That gives you up to four offerings, one for each combination. If you only offer one kind of booking at one place, you will have one resource, one service, and one offering.
 
 Go to **Offerings** in the left-hand menu to get started.
 
@@ -66,7 +66,7 @@ Click **Create**.
 
 ### Service settings
 
-- **Name**: what customers see when they choose a service, and what appears on their booking confirmation and emails. For example "Group walk" or "Private hire".
+- **Name**: what customers see when they choose a service, and what appears on their booking confirmation and emails. For example "Private hire" or "Training session".
 - **Cover photo**: a photo that represents this service, up to 10 MB. Falls back to your business photo if not set.
 - **Description**: up to 400 characters shown to customers on the service selection cards.
 - **Display verb**: the action word used throughout the app and booking flow, for example "Walking". Inherits from your business settings. Untick **Use default instead?** to set a different word for this service.
