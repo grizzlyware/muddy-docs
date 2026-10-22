@@ -285,19 +285,25 @@ export async function highlightElement(
       var name = args[0], isButton = args[1] === "1", isLink = args[2] === "1", isInput = args[3] === "1", isTextarea = args[4] === "1";
       var nameLower = name.toLowerCase();
       var el = null;
+      // Skip hidden copies, such as the closed mobile menu, which sit off the page edge.
+      var isShown = function (e: Element): boolean {
+        var r = e.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && r.left >= 0 && r.right <= document.documentElement.clientWidth
+          && (e as HTMLElement).checkVisibility({ visibilityProperty: true, opacityProperty: true });
+      };
 
       if (isButton) {
         var btns = document.querySelectorAll('button, a, [role="button"]');
         // First pass: exact match
         for (var i = 0; i < btns.length; i++) {
           var t = (btns[i].textContent || "").trim().toLowerCase();
-          if (t === nameLower && btns[i].getBoundingClientRect().width > 0) { el = btns[i]; break; }
+          if (t === nameLower && isShown(btns[i])) { el = btns[i]; break; }
         }
         // Second pass: includes match
         if (!el) {
           for (var i = 0; i < btns.length; i++) {
             var t = (btns[i].textContent || "").trim().toLowerCase();
-            if (t.includes(nameLower) && btns[i].getBoundingClientRect().width > 0) { el = btns[i]; break; }
+            if (t.includes(nameLower) && isShown(btns[i])) { el = btns[i]; break; }
           }
         }
       }
@@ -306,12 +312,12 @@ export async function highlightElement(
         var as = document.querySelectorAll("a");
         for (var i = 0; i < as.length; i++) {
           var t = (as[i].textContent || "").trim().toLowerCase();
-          if (t === nameLower && as[i].getBoundingClientRect().width > 0) { el = as[i]; break; }
+          if (t === nameLower && isShown(as[i])) { el = as[i]; break; }
         }
         if (!el) {
           for (var i = 0; i < as.length; i++) {
             var t = (as[i].textContent || "").trim().toLowerCase();
-            if (t.includes(nameLower) && as[i].getBoundingClientRect().width > 0) { el = as[i]; break; }
+            if (t.includes(nameLower) && isShown(as[i])) { el = as[i]; break; }
           }
         }
       }
@@ -325,8 +331,8 @@ export async function highlightElement(
           var lt = (lbls[i].textContent || "").trim().toLowerCase();
           if (lt === nameLower) {
             var fid = lbls[i].getAttribute("for");
-            if (fid) { var match = document.getElementById(fid); if (match && match.getBoundingClientRect().width > 0) { el = match; } }
-            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && match.getBoundingClientRect().width > 0) { el = match; } nd = nd.parentElement; } }
+            if (fid) { var match = document.getElementById(fid); if (match && isShown(match)) { el = match; } }
+            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && isShown(match)) { el = match; } nd = nd.parentElement; } }
           }
         }
         // Second pass: includes match
@@ -334,8 +340,8 @@ export async function highlightElement(
           var lt = (lbls[i].textContent || "").trim().toLowerCase();
           if (lt.includes(nameLower)) {
             var fid = lbls[i].getAttribute("for");
-            if (fid) { var match = document.getElementById(fid); if (match && match.getBoundingClientRect().width > 0) { el = match; } }
-            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && match.getBoundingClientRect().width > 0) { el = match; } nd = nd.parentElement; } }
+            if (fid) { var match = document.getElementById(fid); if (match && isShown(match)) { el = match; } }
+            if (!el) { var nd = lbls[i].parentElement; for (var d = 0; d < 5 && nd && !el; d++) { var match = nd.querySelector(targetTag) as HTMLElement | null; if (match && isShown(match)) { el = match; } nd = nd.parentElement; } }
           }
         }
         // Fallback: find by text content near input (e.g. span/div label + sibling input)
@@ -347,7 +353,7 @@ export async function highlightElement(
               var nd = allText[i].parentElement;
               for (var d = 0; d < 5 && nd && !el; d++) {
                 var match = nd.querySelector(targetTag) as HTMLElement | null;
-                if (match && match.getBoundingClientRect().width > 0) { el = match; }
+                if (match && isShown(match)) { el = match; }
                 nd = nd.parentElement;
               }
             }
@@ -359,7 +365,7 @@ export async function highlightElement(
         var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t === nameLower && all[i].getBoundingClientRect().width > 0) { el = all[i]; break; }
+          if (t === nameLower && isShown(all[i])) { el = all[i]; break; }
         }
       }
 
@@ -367,7 +373,7 @@ export async function highlightElement(
         var all = document.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
         for (var i = 0; i < all.length; i++) {
           var t = (all[i].textContent || "").trim().toLowerCase();
-          if (t.includes(nameLower) && all[i].getBoundingClientRect().width > 0) { el = all[i]; break; }
+          if (t.includes(nameLower) && isShown(all[i])) { el = all[i]; break; }
         }
       }
 
@@ -376,7 +382,7 @@ export async function highlightElement(
         for (var i = 0; i < aria.length; i++) {
           var al = (aria[i].getAttribute("aria-label") || "").toLowerCase();
           var ti = (aria[i].getAttribute("title") || "").toLowerCase();
-          if ((al.includes(nameLower) || ti.includes(nameLower)) && aria[i].getBoundingClientRect().width > 0) { el = aria[i]; break; }
+          if ((al.includes(nameLower) || ti.includes(nameLower)) && isShown(aria[i])) { el = aria[i]; break; }
         }
       }
 
@@ -389,7 +395,7 @@ export async function highlightElement(
         var candidates = topLayer.querySelectorAll("button, a, input, textarea, select, summary, h1, h2, h3, h4, h5, h6, th, td, label, span, p, li, div");
         for (var i = 0; i < candidates.length; i++) {
           var t = (candidates[i].textContent || "").trim().toLowerCase();
-          if ((t === nameLower || t.includes(nameLower)) && candidates[i].getBoundingClientRect().width > 0) {
+          if ((t === nameLower || t.includes(nameLower)) && isShown(candidates[i])) {
             el = candidates[i];
             break;
           }
