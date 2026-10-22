@@ -59,7 +59,7 @@ Click **Save**.
 
 You can start one from:
 
-- The **Recurring bookings** page (in the left-hand menu under **Bookings**), by clicking **Create recurring booking** **(1)**
+- The **Recurring bookings** page (go to **Bookings** in the left-hand menu, then click **Recurring bookings** at the top), by clicking **Create recurring booking** **(1)**
 - A **customer's page**, by scrolling to **Recurring bookings** and clicking **Create**. The customer is filled in for you
 
 ![Recurring bookings list page with Create recurring booking button](../screenshots/recurring-list-annotated-new-1792675889389.png)
@@ -82,7 +82,7 @@ The type of booking, such as "Private hire" or "Puppy lesson". Services are set 
 
 The location or resource the customer is booking, such as a specific field or groomer. Resources are set up in **Settings**, then **Resources**. See [Setting up your offerings](creating-a-walk.md) for details.
 
-Together, the service and resource determine which offering is used. Each offering has its own prices, opening times and booking rules. If you haven't yet set up an offering that combines the service and resource you want, do that first in **Settings**, then **Offerings**. See [Setting up your offerings](creating-a-walk.md).
+Together, the service and resource determine which offering is used. Each offering has its own prices, opening times and booking rules. If you haven't yet set up an offering that combines the service and resource you want, do that first under **Offerings** in the left-hand menu. See [Setting up your offerings](creating-a-walk.md).
 
 #### Repeat every **(4)**
 
@@ -141,20 +141,20 @@ Switch on **Override price** to charge a fixed amount for every booking instead:
 
 ![Create form bottom: payment method, number of dogs, commercial booking, and customer self-service options](../screenshots/create-form-bottom-annotated-1792675841999.png)
 
-#### Payment collection method **(5)**
+#### Payment collection method **(1)**
 
 Choose how each booking created by this schedule is paid:
 
 - **Invoice**: bookings are confirmed without payment and included in your next invoice run.
-- **Deferred**: bookings are confirmed without payment and the customer is sent a reminder to pay before the booking happens.
+- **Deferred**: bookings are confirmed without payment, and you collect payment yourself after confirmation. You can set unpaid bookings to cancel automatically before they start.
 
 Whichever you choose, make sure your [invoicing settings](invoicing-and-automatic-payments.md) are configured. Recurring bookings are never charged upfront at the time of booking.
 
-#### Number of dogs **(6)**
+#### Number of dogs **(2)**
 
 Used for every booking and to work out the price. With an override price it's only for your records and doesn't change the amount.
 
-#### Commercial booking **(7)**
+#### Commercial booking **(3)**
 
 Switch this on if the booking is for a commercial customer. When enabled, commercial pricing rates from the offering's pricing are applied to each occurrence.
 
@@ -186,7 +186,7 @@ When you're happy:
 
 ### The list
 
-Click **Recurring bookings** in the left-hand menu. You can filter by customer, resource, service, schedule pattern, time, effective date and status.
+Go to **Bookings** in the left-hand menu, then click **Recurring bookings** at the top. You can filter by customer, resource, service, schedule pattern, time, effective date and status.
 
 ### The detail page
 
@@ -208,7 +208,7 @@ Click a recurring booking to open it. Its calendar shows:
 
 ## Payment and invoicing
 
-Recurring bookings are **always paid by invoice or deferred payment**, never charged when the booking is created. Each booking is confirmed and waits to be picked up by your next invoice run.
+Recurring bookings are **never charged when the booking is created**. With **Invoice**, each booking is confirmed and waits to be picked up by your next invoice run. With **Deferred**, you collect payment after confirmation.
 
 **Check your invoicing settings before publishing your first recurring booking.** Go to **Settings**, then **Invoicing**, to set your schedule, payment terms and other options. See [Invoicing and automatic payments](invoicing-and-automatic-payments.md) for details.
 
