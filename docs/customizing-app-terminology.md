@@ -6,7 +6,7 @@ tags:
   - terminology
   - branding
 order: 50
-description: Change the words Muddy uses throughout the app to match your business, such as swapping "walk" for "session" or "dog" for "horse".
+description: Change the words Muddy uses throughout the app to match your business, such as calling your resources "arenas" and your customers "riders".
 pinned: false
 ---
 
@@ -14,7 +14,7 @@ pinned: false
 
 Muddy Booking was built for dog walking, but you might run training classes, grooming appointments or arena hire. Terminology settings change the words Muddy uses so they fit your business.
 
-For example, you could call your resources "arenas" and your bookings "sessions". The new words appear in your booking form, your admin area, customer messages and invoices.
+For example, you could call your resources "arenas" and the people who attend "riders". The new words appear in your booking form, customer messages and invoices.
 
 ## Getting to terminology settings
 
@@ -61,7 +61,7 @@ The example sentence under the fields updates as you type, so you can check how 
 
 ## Saving your terminology
 
-Click **Save** at the bottom of the page. The new words apply straight away across your booking form, emails and admin area.
+Click **Save** at the bottom of the page. The new words apply straight away across your booking form and emails.
 
 ## Per-resource and per-service words
 
@@ -75,7 +75,7 @@ To change it:
 
 1. Go to **Settings** in the left-hand menu, then click **Resources** under Offerings.
 2. Click the resource you want to change.
-3. Click **Settings**, then **Name, details and photo**.
+3. Click **Settings**, then choose **Settings** ("Name, details and photo") from the menu.
 4. Scroll down to **Display noun** **(1)** and type the word for this resource.
 5. Click **Save**.
 
@@ -105,7 +105,7 @@ For a full guide to setting up resources and services, see [Setting up your offe
 
 - Customer booking forms
 - Booking confirmations and reminders
-- Your admin area
+- Your admin area (the service words only: the admin area always says "resource")
 - [Invoice descriptions](invoicing-and-automatic-payments.md)
 - [Email and SMS notifications](setting-up-whatsapp-sms-notifications.md)
 - Calendar entries
