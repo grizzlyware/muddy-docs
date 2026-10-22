@@ -152,15 +152,11 @@ export async function login(session: BrowserSession): Promise<void> {
   await dismissCookieBanner(page);
 }
 
-export async function takeScreenshot(
-  page: Page,
-  label: string,
-  fullPage: boolean = false,
-): Promise<string> {
-  const slug = label.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
-  const filename = `${slug}-${Date.now()}.png`;
-  const filepath = path.join(SCREENSHOTS_DIR, filename);
-  // The test account has no Stripe connection, so every page nags about it.
+/**
+ * The test account has no Stripe connection, so every page nags about it.
+ * Hide the nag before measuring highlights too, or they drift when it goes.
+ */
+async function hideStripeBanner(page: Page): Promise<void> {
   await page.evaluate(() => {
     for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href$="/onboarding"]')) {
       const alert = link.closest<HTMLElement>(".bg-orange-100");
@@ -169,6 +165,17 @@ export async function takeScreenshot(
       }
     }
   });
+}
+
+export async function takeScreenshot(
+  page: Page,
+  label: string,
+  fullPage: boolean = false,
+): Promise<string> {
+  const slug = label.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+  const filename = `${slug}-${Date.now()}.png`;
+  const filepath = path.join(SCREENSHOTS_DIR, filename);
+  await hideStripeBanner(page);
 
   if (fullPage) {
     // Grow the window to the page's height instead of stitching a full-page
@@ -269,6 +276,8 @@ export async function highlightElement(
   const isLink = /link/.test(desc);
   const isInput = /input|field/.test(desc) && !/text\s*area|textarea/.test(desc);
   const isTextarea = /text\s*area|textarea/.test(desc);
+
+  await hideStripeBanner(page);
 
   // Step 1: Find the element's bounding box
   const box = await page.evaluate(
