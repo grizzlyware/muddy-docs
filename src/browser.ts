@@ -286,11 +286,13 @@ export async function highlightElement(
       var nameLower = name.toLowerCase();
       var el = null;
       // Skip hidden copies, such as the closed mobile menu, which sit off the page edge.
-      var isShown = function (e: Element): boolean {
+      // Keep the helper in an array: tsx wraps named function values in a __name()
+      // call, and that helper does not exist in the browser.
+      var isShown = [(e: Element): boolean => {
         var r = e.getBoundingClientRect();
         return r.width > 0 && r.height > 0 && r.left >= 0 && r.right <= document.documentElement.clientWidth
           && (e as HTMLElement).checkVisibility({ visibilityProperty: true, opacityProperty: true });
-      };
+      }][0];
 
       if (isButton) {
         var btns = document.querySelectorAll('button, a, [role="button"]');
