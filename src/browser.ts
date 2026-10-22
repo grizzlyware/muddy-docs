@@ -4,6 +4,7 @@ import path from "path";
 
 const SCREENSHOTS_DIR = path.resolve("screenshots");
 const PAGE_TIMEOUT_MS = 30_000;
+const VIEWPORT = { width: 1440, height: 900 };
 
 export type Page = Awaited<ReturnType<Stagehand["context"]["pages"]>>[0];
 
@@ -49,7 +50,7 @@ export async function initBrowser(): Promise<BrowserSession> {
     model: "openai/gpt-4.1-mini",
     localBrowserLaunchOptions: {
       headless,
-      viewport: { width: 1440, height: 900 },
+      viewport: VIEWPORT,
       args: ["--lang=en-GB"],
     },
   });
@@ -159,7 +160,23 @@ export async function takeScreenshot(
   const slug = label.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
   const filename = `${slug}-${Date.now()}.png`;
   const filepath = path.join(SCREENSHOTS_DIR, filename);
-  await page.screenshot({ path: filepath, fullPage });
+  if (fullPage) {
+    // Grow the window to the page's height instead of stitching a full-page
+    // capture, which paints the fixed sidebar wherever the page was scrolled.
+    const pageHeight = () => page.evaluate(() => document.documentElement.scrollHeight);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.setViewportSize(VIEWPORT.width, await pageHeight());
+    await sleep(300);
+    await page.setViewportSize(VIEWPORT.width, await pageHeight());
+    await sleep(300);
+    try {
+      await page.screenshot({ path: filepath });
+    } finally {
+      await page.setViewportSize(VIEWPORT.width, VIEWPORT.height);
+    }
+  } else {
+    await page.screenshot({ path: filepath });
+  }
   console.log(`  Screenshot: ${filename}`);
   return filename;
 }
