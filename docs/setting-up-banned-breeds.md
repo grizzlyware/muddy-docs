@@ -35,7 +35,7 @@ You don't accept any of the commonly banned breeds.
 You accept some of the commonly banned breeds and choose which ones.
 
 ### Unspecified
-You haven't set a policy. Customers won't see any breed information when they book.
+You don't set a policy in Muddy.
 
 ## Setting up selective breed acceptance
 
