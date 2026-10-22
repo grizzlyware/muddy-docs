@@ -7,26 +7,26 @@ tags:
   - breeds
   - restrictions
 order: 70
-description: Learn how to configure your banned breeds policy to control which dog breeds can book walks.
+description: Control which dog breeds can make bookings by setting your banned breeds policy.
 pinned: false
 ---
 
 ## Accessing banned breeds settings
 
-1. Go to **Settings** in the left-hand menu
-2. Find the **Pricing** section
-3. Click **Banned breeds** **(1)**
+1. Go to **Settings** in the left-hand menu.
+2. Scroll down to the **Bookings** section.
+3. Click **Banned breeds** **(1)**.
 
-![settings-banned-breeds-link](../screenshots/settings-banned-breeds-link-1772554522956.png)
+![settings-banned-breeds-card](../screenshots/settings-banned-breeds-card-1792680091794.png)
 
 ## Understanding the policy options
 
 There are four options:
 
-![banned-breeds-main-page](../screenshots/banned-breeds-main-page-1772554550196.png)
+![banned-breeds-policy-options](../screenshots/banned-breeds-policy-options-1792680040985.png)
 
 ### Allow all
-You accept every breed.
+You accept every breed. No breed restrictions apply to bookings.
 
 ### Allow none
 You don't accept any of the commonly banned breeds.
@@ -35,13 +35,13 @@ You don't accept any of the commonly banned breeds.
 You accept some of the commonly banned breeds and choose which ones.
 
 ### Unspecified
-You don't set a policy in Muddy.
+You haven't set a policy. Customers won't see any breed information when they book.
 
 ## Setting up selective breed acceptance
 
-Select **Allow some** **(1)** to show the list of breeds **(2)**:
+Select **Allow some** **(1)** to reveal the list of breeds you can choose from:
 
-![banned-breeds-allow-some-selected](../screenshots/banned-breeds-allow-some-selected-1772554584757.png)
+![banned-breeds-allow-some](../screenshots/banned-breeds-allow-some-1792680049282.png)
 
 - Pit Bull Terrier
 - Japanese Tosa
@@ -49,31 +49,30 @@ Select **Allow some** **(1)** to show the list of breeds **(2)**:
 - Fila Brasileiro
 - XL Bully
 
-Tick each breed you're happy to accept.
+Tick each breed you're happy to accept bookings for.
 
 ## Adding additional information
 
-You can explain your policy to customers:
+You can add a note to explain your policy to customers:
 
-1. Scroll down to **Additional information** **(1)**
-2. Enter the details
-3. Click **Save** **(2)**
+1. Scroll down to **Additional information** **(1)**.
+2. Enter the details you want customers to see.
 
-![banned-breeds-completed-form](../screenshots/banned-breeds-completed-form-1772554733182.png)
+![banned-breeds-additional-info](../screenshots/banned-breeds-additional-info-1792680059401.png)
 
-Customers see this text, so you might include:
+You might include:
 - Why you have the policy
 - How to contact you with questions
-- Any exceptions
-- Any alternatives you offer
+- Any exceptions you make
+- Alternative services you offer
 
 ## Saving your settings
 
-Click **Save**. You'll return to the settings page and the policy applies straight away.
+Click **Save**. You'll return to the Settings page and your policy applies straight away.
 
 ## Important considerations
 
-- The policy applies to all your bookings
-- Customers see the policy when they book. To make them accept it before booking, see [Setting up legal documents](setting-up-legal-documents.md#requiring-customer-acceptance-5)
-- Check your insurance and local regulations when choosing your policy
-- You can change the policy at any time
+- The policy applies to all your resources and bookings.
+- Customers see the policy when they book. To make them accept it before booking, see [Setting up legal documents](setting-up-legal-documents.md#requiring-customer-acceptance-5).
+- Check your insurance and local regulations when choosing your policy.
+- You can change the policy at any time.
