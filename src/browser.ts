@@ -77,7 +77,7 @@ export async function login(session: BrowserSession): Promise<void> {
   }
 
   console.log("  Navigating to login page...");
-  await page.goto("https://muddybooking.com/login", { timeout: NAV_TIMEOUT_MS, waitUntil: "domcontentloaded" });
+  await page.goto("https://app.muddybooking.com/login", { timeout: NAV_TIMEOUT_MS, waitUntil: "domcontentloaded" });
   await page.evaluate(() => localStorage.setItem("newsletter-popup-dismissed", "1"));
   await waitForPage(page);
 

@@ -418,7 +418,7 @@ Use list_existing_docs to find the filenames of articles you link to.
 
 ## Important Rules
 - You are ALREADY logged in — do NOT navigate to /login
-- The app URL structure is https://muddybooking.com/manage/operators/{id}/... — but NEVER include raw URLs or paths in the documentation output. Always describe navigation in human terms ("click X in the sidebar").
+- The app URL structure is https://app.muddybooking.com/operators/{id}/... — but NEVER include raw URLs or paths in the documentation output. Always describe navigation in human terms ("click X in the sidebar").
 - Take screenshots BEFORE documenting each view
 - Keep screenshot labels short and descriptive
 - Save knowledge about app structure you discover for future runs

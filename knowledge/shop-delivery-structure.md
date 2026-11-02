@@ -1,6 +1,6 @@
 # Shop Delivery Structure
 
-Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Page: `/manage/operators/{id}/shop/delivery`.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Page: `/operators/{id}/shop/delivery`.
 
 ## Page sections
 - Page title: "Collection and delivery" (the Shop and Settings tiles use the same name).

@@ -30,7 +30,7 @@ The filename (without `.md`) is the article's address on the help site, and the 
 - Write for a NON-TECHNICAL audience. The readers are small business owners (dog walkers), not developers.
 - Use simple, friendly language. Avoid jargon, technical terms, URLs, URL paths, API references, or internal identifiers.
 - Keep the tone human and helpful, not robotic or overly formal.
-- Guide users by describing what to CLICK and what they'll SEE, not where things are in the URL structure. For example say "Go to Settings, then click Pricing" NOT "Navigate to /manage/operators/{id}/pricing".
+- Guide users by describing what to CLICK and what they'll SEE, not where things are in the URL structure. For example say "Go to Settings, then click Pricing" NOT "Navigate to /operators/{id}/pricing".
 - Use the EXACT words and labels shown on screen. If a button says "Save", write "click **Save**", and don't paraphrase it as "persist your changes" or "save your configuration".
 - Avoid UI jargon. Don't say "toggle", "dropdown", "modal", or "sidebar". Instead say "switch", "menu", "pop-up", "left-hand menu".
 - Explain the WHY, not just the how. For example: "Set your base price. This is what customers will pay for a standard walk" is better than just "Set your base price".

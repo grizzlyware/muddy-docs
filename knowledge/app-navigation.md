@@ -1,7 +1,7 @@
 # Muddy Booking App Navigation Structure
 
 ## Base URL Structure
-- Management area base: `https://muddybooking.com/manage/operators/{id}/`
+- Management area base: `https://app.muddybooking.com/operators/{id}/`
 - Current operator ID: 251
 
 ## Main Navigation Links

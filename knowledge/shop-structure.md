@@ -10,7 +10,7 @@ Related knowledge files: shop-products-structure, shop-delivery-structure, shop-
 - Left-hand menu: "Shop" (shopping basket icon), in the Payments group, after "Vouchers" and "Loyalty points" ("Loyalty points" shows only when a loyalty programme is on).
 - Settings page also has a "Shop" section with links: "Products", "Options", "Collections", "Collection and delivery", "Shop settings".
 
-## Management URLs (base `/manage/operators/{id}`)
+## Management URLs (base `/operators/{id}`)
 - Shop landing page: `/shop`
 - Orders: `/shop/orders`, single order: `/shop/orders/{sequence number}`
 - Products: `/shop/products`, create: `/shop/products/new`, edit: `/shop/products/{id}`

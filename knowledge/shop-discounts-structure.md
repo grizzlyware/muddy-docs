@@ -1,7 +1,7 @@
 # Shop Discounts Structure
 
 Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026.
-Page: `/manage/operators/{id}/discounts` (Settings > "Discounts"). Create with the "Create" button (`/discounts/new`).
+Page: `/operators/{id}/discounts` (Settings > "Discounts"). Create with the "Create" button (`/discounts/new`).
 
 ## Form fields (in order)
 - "Where can this discount be used?": "Bookings", "Shop orders", or "Bookings and shop orders".

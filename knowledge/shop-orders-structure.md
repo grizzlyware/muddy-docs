@@ -1,6 +1,6 @@
 # Shop Orders Structure
 
-Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Pages: `/manage/operators/{id}/shop/orders` and `/shop/orders/{sequence number}`.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Pages: `/operators/{id}/shop/orders` and `/shop/orders/{sequence number}`.
 
 ## Orders list
 - View switcher: "Awaiting fulfilment" (the default) and "All orders".
