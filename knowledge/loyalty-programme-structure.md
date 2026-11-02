@@ -1,7 +1,7 @@
 # Muddy Booking Loyalty Programme Structure
 
 ## URL and Location
-- Main loyalty programme settings: `/manage/operators/{id}/settings/loyalty`
+- Main loyalty programme settings: `/operators/{id}/settings/loyalty`
 - Accessed via Settings > Loyalty programme (in Pricing section)
 
 ## Setup Process

@@ -1,6 +1,6 @@
 # Shop Products, Options, Collections, Stock and Gift Cards
 
-Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Paths are relative to `/manage/operators/{id}`.
+Written by hand from the shop source code on 23 September 2026, and checked again on 24 September 2026. Paths are relative to `/operators/{id}`.
 
 ## Products list (`/shop/products`)
 - "Create" button. There is also a collection filter ("All collections"), shown only when collections exist.
