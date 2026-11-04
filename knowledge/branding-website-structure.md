@@ -19,7 +19,11 @@
   - Bark Mode
   - Noble Paws
   - Applies to booking forms and admin area
-- **Manage URL**: Text field for customer booking management URL
+
+## Manage URL (/settings/advanced)
+- Lives on the Advanced settings page (Settings > Advanced > Advanced settings), not in Branding
+- **Manage URL**: Text field for the customer booking management URL, the page where the operator embedded the manage component
+- The Embeddable components page links to it
 
 ## Website Settings (/settings/website)
 ### Available Fields

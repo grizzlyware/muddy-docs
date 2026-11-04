@@ -96,7 +96,9 @@ Customers can click through the photos on your website.
 
 ## Managing booking URLs
 
-If you've added Muddy's booking management to your own website, enter its address as the Manage URL in your branding settings. Customers will be sent there to manage their bookings.
+If you've added Muddy's booking management to your own website, enter its address as the **Manage URL** in your advanced settings. Customers will be sent there to manage their bookings.
+
+To find it, click **Settings** in the left-hand menu, scroll down to the **Advanced** section and click **Advanced settings**.
 
 If you don't have your own website, customers manage their bookings on Muddy instead.
 
