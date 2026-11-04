@@ -21,9 +21,11 @@ The colour scheme sets the colours of your booking forms and your admin area. To
 
 ## Selecting your colour scheme
 
-On the [Branding settings page](customizing-branding-and-website.md#customizing-your-branding), the **Colour palette** section shows your palettes as small tiles **(1)**. **Custom** comes first, followed by eight ready-made schemes:
+On the [Branding settings page](customizing-branding-and-website.md#customizing-your-branding), the **Colour palette** section shows your palettes as small tiles. **Custom** comes first, followed by eight ready-made schemes. Click a tile to select it. A sample of your booking page under the palettes shows the new colours straight away, so you can try a few before you save.
 
-![Branding settings page with colour palette tiles](../screenshots/branding-colour-palette-with-custom-highlighted-1793788948324.png)
+![Branding settings page with Frosty Paws selected and booking page preview](../screenshots/frosty-paws-selected-full-1793789944314.png)
+
+The tile labelled **Frosty Paws** **(1)** is selected here. The available schemes are:
 
 - **Muddy**: the original Muddy Booking colours
 - **Frosty Paws**: cool, icy tones
@@ -33,8 +35,6 @@ On the [Branding settings page](customizing-branding-and-website.md#customizing-
 - **Bark Mode**: dark
 - **Noble Paws**: muted and elegant
 - **Splashy Paws**: teal and pink
-
-Click a tile to select it. A sample of your booking page under the palettes shows the new colours straight away, so you can try a few before you save.
 
 ## Building a custom palette
 
