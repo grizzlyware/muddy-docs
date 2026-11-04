@@ -24,6 +24,7 @@ Before you start, make sure:
 - You can sign in to the Stripe account you want to link.
 - The account is a live account, not a test account.
 - The account isn't already linked to another business on Muddy Booking.
+- If you want customers to be able to pay by Direct Debit, Bacs Direct Debit is turned on for the account in Stripe. Without it, customers can only pay by card.
 
 ## Step 1: Link your Stripe account
 
@@ -76,6 +77,7 @@ Muddy Booking checks the account with Stripe before it switches. If Stripe isn't
 ## What changes when you switch
 
 - **New payments**: card and Direct Debit payments from your customers go to the new primary account.
+- **Direct Debit**: customers only see the Direct Debit option if Bacs Direct Debit is active on the new account in Stripe. Turn it on in your Stripe dashboard before you switch. After you turn it on, it can take a few minutes for the option to appear.
 - **Payments you've already taken**: these stay in the account that took them. Muddy Booking doesn't move them.
 - **Refunds**: Muddy Booking refunds a payment through the account that took it. Keep your old account linked so you can still refund older payments.
 - **Saved cards**: saved cards belong to the account they were saved with, so they don't move. Customers will need to add their card again the next time they pay.
