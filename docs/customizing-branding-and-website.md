@@ -46,6 +46,7 @@ This photo is used for any walk that doesn't have its own cover photo.
 Your [colour palette](changing-system-colour-scheme.md) sets the colours of your booking forms and admin area.
 
 1. In the Colour palette section **(3)**, choose one of:
+   - **Custom**: pick your own brand colour and accent colour
    - **Muddy**: earthy tones
    - **Frosty Paws**: cool blues and whites
    - **Pawsh Pink**: warm pinks and corals
@@ -53,6 +54,9 @@ Your [colour palette](changing-system-colour-scheme.md) sets the colours of your
    - **Pumpkin Pup**: autumn oranges and yellows
    - **Bark Mode**: dark browns and tans
    - **Noble Paws**: rich purples and golds
+   - **Splashy Paws**: teal and pink
+
+   A sample of your booking page under the palettes shows the colours before you save. If you've uploaded a logo, the Custom palette suggests colours from it. See [Building a custom palette](changing-system-colour-scheme.md#building-a-custom-palette).
 
 2. Click **Save** **(4)**
 
