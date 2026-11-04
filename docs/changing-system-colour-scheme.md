@@ -6,7 +6,7 @@ tags:
   - settings
   - colours
 order: 40
-description: Choose a preset colour scheme or build a custom palette from your brand colours to style your booking forms and admin area.
+description: Pick a ready-made scheme or build your own palette from your brand colours.
 pinned: false
 ---
 
@@ -21,47 +21,35 @@ The colour scheme sets the colours of your booking forms and your admin area. To
 
 ## Selecting your colour scheme
 
-On the Branding settings page, scroll down to the **Colour palette** section **(1)**. You'll see a row of small tiles to pick from.
+On the [Branding settings page](customizing-branding-and-website.md#customizing-your-branding), the **Colour palette** section shows your palettes as small tiles **(1)**. **Custom** comes first, followed by eight ready-made schemes:
 
 ![Branding settings page with colour palette tiles](../screenshots/branding-colour-palette-with-custom-highlighted-1793788948324.png)
 
-There are eight preset schemes and one **Custom** option. Custom is always shown first:
-
 - **Muddy**: the original Muddy Booking colours
 - **Frosty Paws**: cool, icy tones
-- **Pawsh Pink**: warm pinks
-- **Red Set Go!**: bold reds
-- **Pumpkin Pup**: autumn oranges
-- **Bark Mode**: dark tones
+- **Pawsh Pink**: pink
+- **Red Set Go!**: bold red
+- **Pumpkin Pup**: autumn orange
+- **Bark Mode**: dark
 - **Noble Paws**: muted and elegant
-- **Splashy Paws**: fresh and bright
+- **Splashy Paws**: teal and pink
 
-Click any tile to select it. A live preview of a sample booking page updates on the right so you can see how the colours look straight away.
+Click a tile to select it. A sample of your booking page under the palettes shows the new colours straight away, so you can try a few before you save.
 
 ## Building a custom palette
 
-If none of the preset schemes match your brand, choose **Custom** to pick your own colours.
+If none of the schemes match your brand, click **Custom** and choose two colours:
 
-![Custom palette selected showing brand and accent colour pickers](../screenshots/custom-palette-annotated-1793788977104.png)
+- **Brand colour**: your main colour
+- **Accent colour**: a second colour for highlights
 
-Two colour pickers appear:
+![Custom palette with brand and accent colours](../screenshots/custom-palette-annotated-1793788977104.png)
 
-- **Brand colour** **(1)**: your main brand colour. This sets the primary buttons, headings, and key elements on your booking pages.
-- **Accent colour** **(2)**: a supporting colour used for highlights and secondary elements.
+For each one, click a swatch, or click the rainbow **+** button to choose any colour.
 
-For each colour you can:
-- Click a swatch to open the picker and drag to choose a shade
-- Use the hue slider to shift the colour
-- Click the eyedropper to pick a colour from anywhere on your screen
-- Type a specific hex or RGB value
+If you've uploaded a logo, Muddy picks out its colours and shows them as swatches. A new custom palette starts from your logo's two main colours. If you haven't uploaded one yet, **Get colours from your logo** **(3)** reminds you to [upload your logo](customizing-branding-and-website.md#uploading-your-logo) first.
 
-### Getting colours from your logo **(3)**
-
-If you've uploaded a logo, Muddy analyses it and suggests swatches taken from it. Click any suggested swatch to use it as your brand or accent colour. This is a quick way to match your palette to your existing brand.
-
-If you haven't uploaded a logo yet, you'll see a prompt to upload one first. See [Customizing branding and website](customizing-branding-and-website.md#uploading-your-logo) for how to do that.
-
-> Muddy may fine-tune your chosen colours slightly to make sure text stays readable against buttons and backgrounds.
+Muddy may adjust your colours slightly so that text stays easy to read.
 
 ## Saving your changes
 
@@ -73,4 +61,7 @@ The new colours apply straight away to:
 - Your booking forms
 - Any other Muddy pages your customers visit
 
-The scheme applies across your whole account, not to a single walk. You can change it as often as you like.
+## Important notes
+
+- The scheme applies across your whole account, not to a single walk
+- You can change it as often as you like

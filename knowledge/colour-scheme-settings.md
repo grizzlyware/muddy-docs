@@ -7,7 +7,7 @@
 ## Available Colour Palette Options
 Shown as small tiles. Custom appears first, then the eight preset schemes:
 
-1. **Custom** (first tile) - build your own palette
+1. **Custom** (first tile): build your own palette
 2. Muddy
 3. Frosty Paws
 4. Pawsh Pink
@@ -21,13 +21,13 @@ Total: 1 Custom + 8 preset schemes = 9 tiles
 
 ## Custom Palette
 When Custom is selected, two additional controls appear:
-- **Brand colour**: colour picker (swatch + hue slider + eyedropper + RGB channels)
-- **Accent colour**: colour picker (same interface)
+- **Brand colour** and **Accent colour** rows: each shows swatches (logo colours, plus colours picked this session) and a rainbow + button that opens the browser's own colour picker ("Choose any colour")
 - **Get colours from your logo**: If a logo is uploaded, Muddy suggests swatches extracted from it. If no logo, shows "Upload your logo above and we'll pick out its colours for you."
-- Note: "When you create a custom palette, we may adjust your colours to maintain contrast and readability."
+- A new custom palette starts from the logo's two main colours (brand from the first, accent from the second)
+- Help text: "This colour palette applies to your booking forms and admin area. When you create a custom palette, we may adjust your colours to maintain contrast and readability."
 
 ## Live Preview
-- A sample booking page ("Example Operator", "Book now", date selector, time slots) is shown on the right/below the palette selector.
+- A sample booking page ("Example Operator", "Book now", date selector, time slots) is shown under the palette tiles.
 - Preview updates live as you change palette or colours.
 - Caption: "How your booking pages will look. Try it out."
 - This replaced the old "no preview" behaviour.
@@ -38,6 +38,3 @@ When Custom is selected, two additional controls appear:
 - For Custom: pick brand colour and accent colour
 - Click Save to apply changes
 - Changes take effect immediately after saving
-
-## Update History
-- Issue #83 (Nov 2026): Added Custom palette; added Splashy Paws (was missing); added live preview; tiles now shown for all schemes including Custom first
