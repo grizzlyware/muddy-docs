@@ -73,7 +73,9 @@ function pruneScreenshots() {
   console.log(`  Kept ${referenced.size} screenshots, removed ${removed} unused.`);
 }
 
-main().catch((err) => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error("Fatal error:", err);
+    process.exit(1);
+  });
