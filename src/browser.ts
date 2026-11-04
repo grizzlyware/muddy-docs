@@ -482,6 +482,47 @@ export async function highlightElement(
   return `Highlighted "${description}" with label (${label})`;
 }
 
+/**
+ * Set the value of a form field and fire its input and change events.
+ * Use this for fields that open a native dialog, such as colour inputs.
+ * Find the field by its label text, aria-label, title or placeholder.
+ * Do not declare named functions in the callback: tsx wraps them in a
+ * __name helper that does not exist in the page.
+ */
+export async function setFieldValue(
+  page: Page,
+  field: string,
+  value: string,
+): Promise<string> {
+  return page.evaluate((args: string) => {
+    const [field, value] = JSON.parse(args) as [string, string];
+    const wanted = field.trim().toLowerCase();
+    const fields = Array.from(
+      document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>("input, textarea, select"),
+    );
+    const target = fields.find((el) =>
+      [
+        ...Array.from(el.labels ?? []).map((label) => label.textContent),
+        el.getAttribute("aria-label"),
+        el.getAttribute("title"),
+        el.getAttribute("placeholder"),
+      ].some((text) => (text ?? "").trim().toLowerCase() === wanted),
+    );
+
+    if (!target) {
+      return `No field found for "${field}".`;
+    }
+
+    const prototype = Object.getPrototypeOf(target);
+    const setter = Object.getOwnPropertyDescriptor(prototype, "value")?.set;
+    setter ? setter.call(target, value) : (target.value = value);
+    target.dispatchEvent(new Event("input", { bubbles: true }));
+    target.dispatchEvent(new Event("change", { bubbles: true }));
+
+    return `Set "${field}" to ${target.value}.`;
+  }, JSON.stringify([field, value]));
+}
+
 export async function clearHighlights(page: Page): Promise<void> {
   await page.evaluate(() => {
     document

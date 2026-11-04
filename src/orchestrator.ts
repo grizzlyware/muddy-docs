@@ -9,6 +9,7 @@ import {
   highlightElement,
   NAV_TIMEOUT_MS,
   scrollPage,
+  setFieldValue,
   sleep,
   switchToPage,
   takeScreenshot,
@@ -36,6 +37,7 @@ const BROWSER_TOOLS = new Set([
   "navigate_to_url",
   "click_element",
   "type_into_field",
+  "set_field_value",
   "get_page_state",
   "extract_data",
   "list_page_links",
@@ -133,6 +135,26 @@ const tools: Anthropic.Tool[] = [
         },
       },
       required: ["instruction"],
+    },
+  },
+  {
+    name: "set_field_value",
+    description:
+      "Set the value of a form field directly, without typing or opening a dialog. Use it for fields that open a native browser picker, such as colour (use a hex value like #6B2FA0) or date inputs, where clicking and typing do not work.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        field: {
+          type: "string",
+          description:
+            'The field\'s visible label, aria-label, title or placeholder, exactly as shown, e.g. "Brand colour"',
+        },
+        value: {
+          type: "string",
+          description: "The value to set, e.g. \"#6B2FA0\"",
+        },
+      },
+      required: ["field", "value"],
     },
   },
   {
@@ -479,6 +501,15 @@ async function executeTool(
         await stagehand.act(instruction);
         await sleep(500);
         return `Executed: ${instruction}`;
+      }
+
+      case "set_field_value": {
+        const field = input.field as string;
+        const value = input.value as string;
+        console.log(`  -> Setting ${field} to ${value}`);
+        const result = await setFieldValue(session.page, field, value);
+        await sleep(1_000);
+        return result;
       }
 
       case "get_page_state": {
