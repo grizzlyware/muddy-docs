@@ -6,7 +6,7 @@ tags:
   - settings
   - colours
 order: 40
-description: Learn how to customise your Muddy Booking interface with different colour schemes.
+description: Pick a ready-made scheme or build your own palette from your brand colours.
 pinned: false
 ---
 
@@ -14,16 +14,18 @@ pinned: false
 
 The colour scheme sets the colours of your booking forms and your admin area. To change it:
 
-1. Go to **Settings**
-2. Click **Branding** **(1)** in the Business section
+1. Click **Settings** in the left-hand menu
+2. In the Business section, click **Branding** **(1)**
 
-![Settings page showing branding option](../screenshots/settings-page-branding-highlighted-1772558337265.png)
+![Settings page showing branding option](../screenshots/settings-branding-highlighted-1793788926771.png)
 
 ## Selecting your colour scheme
 
-On the [Branding settings page](customizing-branding-and-website.md#customizing-your-branding), the **Colour palette** section has seven schemes to choose from **(1)**:
+On the [Branding settings page](customizing-branding-and-website.md#customizing-your-branding), the **Colour palette** section shows your palettes as small tiles. **Custom** comes first, followed by eight ready-made schemes. Click a tile to select it. A sample of your booking page under the palettes shows the new colours straight away, so you can try a few before you save.
 
-![Branding settings page with colour palette options](../screenshots/branding-settings-colour-palette-1772558373143.png)
+![Branding settings page with Frosty Paws selected and booking page preview](../screenshots/frosty-paws-selected-full-1793789944314.png)
+
+In this example, **Frosty Paws** **(1)** is selected. The schemes are:
 
 - **Muddy**: the original Muddy Booking colours
 - **Frosty Paws**: cool, icy tones
@@ -32,14 +34,26 @@ On the [Branding settings page](customizing-branding-and-website.md#customizing-
 - **Pumpkin Pup**: autumn orange
 - **Bark Mode**: dark
 - **Noble Paws**: muted and elegant
+- **Splashy Paws**: teal and pink
 
-Click a scheme to select it.
+## Building a custom palette
+
+If none of the schemes match your brand, click **Custom** and choose two colours:
+
+- **Brand colour**: your main colour
+- **Accent colour**: a second colour for highlights
+
+![Custom palette with brand and accent colours](../screenshots/custom-palette-annotated-1793792040121.png)
+
+For each one, click a swatch, or click the rainbow **+** button to choose any colour.
+
+If you've uploaded a logo, Muddy picks out its colours and shows them as swatches. A new custom palette starts from your logo's two main colours. If you haven't uploaded one yet, **Get colours from your logo** **(3)** reminds you to [upload your logo](customizing-branding-and-website.md#uploading-your-logo) first.
+
+Muddy may adjust your colours slightly so that text stays easy to read.
 
 ## Saving your changes
 
-Click **Save** **(1)** at the bottom of the page.
-
-![Save button highlighted on branding settings](../screenshots/branding-settings-save-button-1772558408068.png)
+Click **Save** at the bottom of the page.
 
 The new colours apply straight away to:
 
@@ -49,6 +63,5 @@ The new colours apply straight away to:
 
 ## Important notes
 
-- There's no preview, so you'll only see the new colours after clicking **Save**
 - The scheme applies across your whole account, not to a single walk
 - You can change it as often as you like
