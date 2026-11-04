@@ -25,7 +25,7 @@ On the [Branding settings page](customizing-branding-and-website.md#customizing-
 
 ![Branding settings page with Frosty Paws selected and booking page preview](../screenshots/frosty-paws-selected-full-1793789944314.png)
 
-The tile labelled **Frosty Paws** **(1)** is selected here. The available schemes are:
+In this example, **Frosty Paws** **(1)** is selected. The schemes are:
 
 - **Muddy**: the original Muddy Booking colours
 - **Frosty Paws**: cool, icy tones
