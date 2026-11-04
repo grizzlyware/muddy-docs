@@ -490,11 +490,40 @@ export async function clearHighlights(page: Page): Promise<void> {
   });
 }
 
+const CLOSE_TIMEOUT_MS = 15_000;
+
+/**
+ * Close Stagehand and the browser. A close call can hang, so give each
+ * one a time limit and continue. A hang here must not stop the commit.
+ */
 export async function closeBrowser(
   session: BrowserSession,
+  timeoutMs: number = CLOSE_TIMEOUT_MS,
 ): Promise<void> {
-  await session.stagehand.close();
-  await session.browser.close();
+  await settleWithin(() => session.stagehand.close(), timeoutMs, "stagehand.close");
+  await settleWithin(() => session.browser.close(), timeoutMs, "browser.close");
+}
+
+async function settleWithin(
+  close: () => Promise<unknown>,
+  timeoutMs: number,
+  label: string,
+): Promise<void> {
+  let timer: NodeJS.Timeout | undefined;
+  const timeout = new Promise<"timeout">((resolve) => {
+    timer = setTimeout(() => resolve("timeout"), timeoutMs);
+  });
+
+  try {
+    const result = await Promise.race([close().then(() => "closed" as const), timeout]);
+    if (result === "timeout") {
+      console.warn(`  ${label} did not finish in ${timeoutMs}ms, continuing.`);
+    }
+  } catch (err) {
+    console.warn(`  ${label} failed, continuing:`, err);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export function sleep(ms: number): Promise<void> {
