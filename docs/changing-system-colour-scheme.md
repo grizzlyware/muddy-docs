@@ -43,7 +43,7 @@ If none of the schemes match your brand, click **Custom** and choose two colours
 - **Brand colour**: your main colour
 - **Accent colour**: a second colour for highlights
 
-![Custom palette with brand and accent colours](../screenshots/custom-palette-annotated-1793788977104.png)
+![Custom palette with brand and accent colours](../screenshots/custom-palette-annotated-1793792040121.png)
 
 For each one, click a swatch, or click the rainbow **+** button to choose any colour.
 
