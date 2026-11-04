@@ -20,6 +20,7 @@
 ### Financial/Payment Sections  
 - Stripe setup: `/onboarding`
 - Stripe account: `/account`
+- Payment methods (link an existing Stripe account, make a Stripe account primary): `/payment-methods`
 - Payouts: `/payouts`
 - Invoices: `/invoices`
 - Vouchers: `/vouchers`

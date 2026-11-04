@@ -25,7 +25,7 @@ To get there, click **Shop** **(1)** in the left-hand menu. It sits in the **Pay
 
 Your shop starts closed, so you can set everything up before customers see it. Until you open it for the first time, the **Shop** page is called **Set up your shop** and walks you through three steps. A bar across the top shows which step you're on.
 
-**Tip:** you need a Stripe account connected before customers can pay by card. If you already take card payments for bookings, you're set. If not, click **Stripe setup** in the left-hand menu first.
+**Tip:** you need a Stripe account connected before customers can pay by card. If you already take card payments for bookings, you're set. If not, click **Stripe setup** in the left-hand menu first. To use a Stripe account you already have, see [Linking an existing Stripe account](linking-an-existing-stripe-account.md).
 
 ### Step 1: Add your first product
 
