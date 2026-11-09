@@ -7,84 +7,89 @@ tags:
   - invoicing
   - bookings
 order: 40
-description: Use Record transaction on a customer's voucher to deduct the amount owed, covering a booking or invoice payment.
+description: Use Record payment on a booking or invoice to deduct what a customer owes from their voucher balance.
 pinned: false
 ---
 
-## How paying from a voucher works
+## How it works
 
-When a customer wants to use their voucher to cover a booking or invoice, you record a **Debit** transaction directly on the voucher. This reduces the voucher balance by the amount owed.
+When a customer wants to pay using their voucher, you record the payment directly on the booking or invoice. Muddy deducts the amount from the voucher balance automatically and marks the booking or invoice as paid.
 
-You handle this entirely from the customer's voucher page, not from the booking or invoice itself.
+Before you start, make sure the customer has an active voucher with enough balance to cover the amount owed. You can check this in **Vouchers** in the left-hand menu.
 
-## Step 1: Find the customer's voucher
+## Step 1: Check the voucher balance
 
-Click **Vouchers** in the left-hand menu to open the vouchers list.
+Click **Vouchers** in the left-hand menu. The list shows each voucher's current **Balance** and **Status**.
 
-![Vouchers in the left-hand menu](../screenshots/vouchers-nav-highlighted-1794237635698.png)
+![Vouchers list showing balance and status columns with an active voucher highlighted](../screenshots/vouchers-list-active-voucher-1794239589808.png)
 
-Find the voucher you want to use. Each row shows the current **Balance** and **Status**. Only **ACTIVE** vouchers with enough balance can be used for payment.
+Only vouchers with status **ACTIVE** can be used for payment. Click the voucher code to open the voucher and see the full details.
 
-> **Check the balance first.** Make sure the voucher balance is at least as large as the amount you need to deduct before proceeding. You can see the balance in the vouchers list, or click the voucher to see it on its detail page.
-
-Click the voucher code to open the voucher.
-
-## Step 2: Check the balance on the voucher page
-
-The voucher detail page shows the current **Balance** and **Status** prominently, along with a full history of past transactions.
-
-![Voucher detail page showing balance and Record transaction button](../screenshots/voucher-balance-and-button-1794237648493.png)
-
-Confirm that:
+The voucher detail page shows the **Balance** and **Status** prominently. Confirm:
 
 - The status is **ACTIVE**
-- The balance is enough to cover the booking or invoice amount
+- The balance is at least as large as the amount the customer owes
 
-## Step 3: Record the debit transaction
+![Voucher detail page showing balance and status](../screenshots/voucher-balance-status-highlighted-1794239480613.png)
 
-Click **Record transaction** **(2)** on the voucher page. A small form appears below.
+> If the voucher doesn't have enough balance, you can either top it up by clicking **Record transaction** and adding a Credit, or the customer will need to pay the remaining amount another way.
 
-Fill in the form:
+## Step 2: Open the booking or invoice
 
-- **Type**: select **Debit** (this reduces the voucher balance, recording the payment)
-- **Amount**: enter the amount to deduct, matching what the customer owes for the booking or invoice
+Go to the booking or invoice you want to mark as paid.
 
-![Record transaction form with Type and Amount fields](../screenshots/record-transaction-form-annotated-1794237616562.png)
+- For a booking, click **Bookings** in the left-hand menu and open the relevant booking.
+- For an invoice, click **Invoices** in the left-hand menu and open the relevant invoice.
 
-Click **Record transaction** to save.
+## Step 3: Record payment from the voucher
 
-The voucher balance updates immediately, and the debit appears in the **Transactions** history on the same page, showing the amount and date.
+On the booking or invoice page, click **Record payment**.
 
-## Step 4: Mark the booking or invoice as paid
+A form appears. Fill it in:
 
-Recording a debit on the voucher does not automatically mark the related booking or invoice as paid. After recording the voucher debit, go to the booking or invoice and record the payment there too.
+- **Payment method**: select **Voucher**
+- **Voucher code**: enter the customer's voucher code
+- **Amount**: confirm or adjust the amount to deduct (it defaults to the full amount owed)
 
-For an invoice, open it from the **Invoices** section and click **Record payment**. See [Invoicing and automatic payments](invoicing-and-automatic-payments.md) for details on how to do this.
+Click **Record payment** (or **Save**) to confirm. Muddy deducts the amount from the voucher balance and marks the booking or invoice as paid.
+
+> The voucher's transaction history will show the debit alongside the booking or invoice reference, so you have a full record of what was paid and when.
 
 ---
 
 ## When a customer already paid by card but wants to switch to their voucher
 
-If a customer paid by card and later wants to use their voucher balance instead, you need to:
+If a customer paid by card and later wants to use their voucher balance instead, you need to do three things in order:
 
-1. Check the voucher has enough balance to cover the amount
+1. Check the voucher has enough balance
 2. Refund the card payment
-3. Record a debit from the voucher
+3. Record payment from the voucher
 
-### Check the voucher balance
+### Check the voucher balance first
 
-Before doing anything else, go to **Vouchers** in the left-hand menu and open the customer's voucher. Confirm the **Balance** is enough to cover the amount that was charged to the card. If it isn't, you cannot complete the switch.
+Before doing anything else, go to **Vouchers** in the left-hand menu and open the customer's voucher. Confirm the **Balance** covers the full amount that was charged to card. If it doesn't, you won't be able to complete the switch.
 
 ### Refund the card payment
 
-Go to **Invoices** in the left-hand menu (or find the booking) and open the relevant invoice or booking. Use the refund option to return the card payment to the customer.
+Open the booking or invoice. Find the existing card payment and click to refund it.
 
-> **Important:** A card refund is permanent and cannot be undone. Make sure you have confirmed the customer's intention and that the voucher has enough balance before proceeding.
+> **A card refund is permanent and cannot be undone.** Make sure the voucher has enough balance and that the customer wants to switch before you confirm.
 
-Cancel out of the refund dialog if you are not ready to proceed, or continue if you are sure.
+A confirmation dialog will appear. If you're not ready, click **Cancel** to go back without refunding. When you're sure, confirm the refund. The card payment is reversed and the booking or invoice returns to unpaid.
 
-Once the refund is confirmed, the card payment is reversed and the invoice or booking is marked as unpaid again.
+### Record payment from the voucher
 
-### Pay from the voucher
+Once the refund is processed, the booking or invoice will show as unpaid again. Click **Record payment**, select **Voucher** as the payment method, enter the voucher code, and confirm. The amount is deducted from the voucher and the booking or invoice is marked as paid.
 
-Now go back to the customer's voucher (via **Vouchers** in the left-hand menu), and follow the steps above to record a **Debit** transaction for the same amount. Then go back to the invoice or booking and record the payment there to mark it as paid.
+---
+
+## Voucher refund policy
+
+If a booking paid by voucher is later cancelled and refunded, you can control what happens to the refund. Go to **Settings**, scroll down to **Payments**, and click **Vouchers**.
+
+Under **Voucher refund policy**, choose:
+
+- **Refund to original voucher**: the amount goes back to the voucher the customer used to pay, even if it has since expired. If it has expired, the customer won't be able to use the balance until you manually extend the voucher.
+- **Refund to new voucher**: a fresh voucher is created with the refunded amount.
+
+See [Creating vouchers](creating-vouchers.md) for how to extend or manage existing vouchers, and [Sending vouchers to customers](sending-vouchers-to-customers.md) for how to share a new voucher with a customer.
