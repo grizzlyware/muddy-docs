@@ -13,9 +13,11 @@ pinned: false
 
 ## How it works
 
-If a customer asks to pay with a voucher, you can take the money from the voucher yourself. Muddy takes the amount off the voucher's balance and adds it to the booking or invoice as a payment.
+If a customer asks to pay with a voucher, you can take the money from the voucher yourself. Muddy takes the amount off the voucher's balance and adds it to the booking or invoice as a payment, in one step.
 
-The voucher must be **ACTIVE** and have credit left. An expired voucher, or one that isn't valid yet, can't be used.
+This works on bookings, cancellation fees, invoices and shop orders. A shop order that includes a gift card can't be paid with a voucher.
+
+The voucher must be **Active** and have credit left. A voucher that has expired, or isn't valid yet, can't be used.
 
 ## Paying from a voucher
 
@@ -24,7 +26,7 @@ The voucher must be **ACTIVE** and have credit left. An expired voucher, or one 
 3. In **Payment method**, choose **Voucher**.
 4. In **Voucher**, choose the customer's voucher. The menu lists each of their vouchers with credit left, and how much is left on it.
 5. If the voucher isn't listed (for example, it's a gift voucher someone else bought them), choose **Enter a code**, then type the code into **Voucher code**.
-6. Check the **Amount**. It's filled in with what the customer owes, or the voucher's whole balance if that's less. You can lower it, but it can't be more than the voucher balance or the amount owed.
+6. Check the **Amount**. It's filled in with what the customer owes. If you chose a voucher from the list and its balance is less than that, it's filled in with the whole balance instead. The amount can't be more than the voucher balance or the amount owed.
 7. Click **Record payment**.
 
 The payment shows in the booking or invoice's **Transactions** list straight away. On the voucher's page, the balance goes down and the payment shows under **Transactions** as a **Debit**.
@@ -44,9 +46,10 @@ If a customer has already paid by card and would rather use their voucher, refun
 1. Check the voucher has enough credit to cover the amount. See [Checking a voucher's balance](#checking-a-vouchers-balance).
 2. Open the booking or invoice.
 3. In the **Transactions** section, click **Refund**.
-4. Check the **Refund amount**, then click **Refund**.
-5. Wait for the refund to show in the **Transactions** list. It can take a minute.
-6. Follow the steps in [Paying from a voucher](#paying-from-a-voucher).
+4. If you're asked how to process the refund, choose **Refund card/voucher payments**. You only see this choice when the booking or invoice also has a payment you recorded yourself, such as cash.
+5. Check the **Refund amount**, then click **Refund**.
+6. Wait for the refund to show in the **Transactions** list. It can take a minute.
+7. Follow the steps in [Paying from a voucher](#paying-from-a-voucher).
 
 > **A card refund can't be undone.** The money goes back to the customer's card. Make sure the voucher has enough credit before you refund.
 
