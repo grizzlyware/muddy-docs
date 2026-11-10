@@ -48,7 +48,7 @@ If a customer has already paid by card and would rather use their voucher, refun
 3. In the **Transactions** section, click **Refund**.
 4. If you're asked how to process the refund, choose **Refund card/voucher payments**. You only see this choice when the booking or invoice also has a payment you recorded yourself, such as cash.
 5. Check the **Refund amount**, then click **Refund**.
-6. Wait for the refund to show in the **Transactions** list. It can take a minute.
+6. Wait a minute, then refresh the page. The refund shows in the **Transactions** list once it has gone through. If it isn't there yet, wait a little longer and refresh again.
 7. Follow the steps in [Paying from a voucher](#paying-from-a-voucher).
 
 > **A card refund can't be undone.** The money goes back to the customer's card. Make sure the voucher has enough credit before you refund.
