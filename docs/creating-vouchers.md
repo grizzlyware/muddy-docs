@@ -17,7 +17,7 @@ A voucher is credit a customer can spend on bookings. Use them for gift vouchers
 
 Click **Vouchers** in the left-hand menu.
 
-![vouchers-overview-page](../screenshots/vouchers-overview-page-1772552267281.png)
+![vouchers-overview-page](../screenshots/vouchers-overview-page-1794773396998.png)
 
 The page shows your voucher statistics, such as redemption rates and total amounts, and a list of your vouchers.
 
@@ -25,7 +25,7 @@ The page shows your voucher statistics, such as redemption rates and total amoun
 
 Click **Create voucher** at the top of the page.
 
-![create-voucher-form](../screenshots/create-voucher-form-1772552312513.png)
+![create-voucher-form](../screenshots/create-voucher-form-1794773581542.png)
 
 1. **Code** **(1)**: the code customers enter to use the voucher. Muddy fills in a random code for you. Use letters and numbers only, with no spaces or symbols. You can either:
    - Keep the random code, or click **Generate** **(2)** for a new one
@@ -39,22 +39,22 @@ Click **Create voucher** at the top of the page.
 
 5. **Voucher expires** **(4)**: switch this on if the voucher should expire, then choose the **Expiry date**. If you've set a default voucher expiry under **Settings** then **Vouchers**, this is switched on already with that date filled in.
 
-![voucher-form-with-expiry](../screenshots/voucher-form-with-expiry-1772552363693.png)
+![voucher-form-with-expiry](../screenshots/voucher-form-with-expiry-1794773628398.png)
 
 6. Click **Create voucher** **(5)**.
 
-![completed-voucher-form](../screenshots/completed-voucher-form-1772552385264.png)
+![completed-voucher-form](../screenshots/completed-voucher-form-1794773487796.png)
 
 ## After creating a voucher
 
 You'll be taken to the voucher's page.
 
-![voucher-detail-page](../screenshots/voucher-detail-page-1772552410434.png)
+![voucher-detail-page](../screenshots/voucher-detail-page-1794773526926.png)
 
 It shows:
 - The customer it belongs to, if you chose one
 - The code, partly hidden with asterisks. Click the copy button next to it to copy the full code
-- Where it came from, such as **Manual**, **Gift card order**, **Loyalty reward** or **Refund**
+- Where it came from, such as **Manual**, **Gift card order**, **Loyalty reward** or **Refund**, shown under **Origin**
 - The current balance
 - The status: **Active**, **Not yet valid**, **Expired** or **Spent**
 - When it's valid from, and when it expires
@@ -78,9 +78,9 @@ From the voucher's page you can:
 
 The main vouchers page lists all your vouchers.
 
-![vouchers-list-with-created-voucher](../screenshots/vouchers-list-with-created-voucher-1772552473927.png)
+![vouchers-list-with-created-voucher](../screenshots/vouchers-list-with-created-voucher-1794773541000.png)
 
-Each one shows its code, balance, expiry date, status and creation date. Click a voucher to open it.
+Each one shows its code, customer, balance, expiry date, status and creation date. Click a voucher to open it.
 
 Use the filters above the list to find vouchers by **Code**, **Customer** or **Status**.
 
