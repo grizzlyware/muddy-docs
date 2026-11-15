@@ -36,7 +36,7 @@ Every change is made in a pop-up with its own **Save** button. There's no save b
 
 The base price is what a customer pays for a duration before any extra charges from your questions. Customers can't book an offering until it has at least one duration.
 
-1. Click **Edit base prices**.
+1. Click **Edit base prices** **(1)**.
 2. Enter a price for each duration.
 3. To offer another length, click **Add duration**, enter the **Duration in minutes** (or pick one of the suggestions), then click **Add**.
 4. Under **Prices include tax?**, choose **Yes** if your prices already include tax, or **No** to add tax on top at checkout.
@@ -44,13 +44,13 @@ The base price is what a customer pays for a duration before any extra charges f
 
 To stop offering a duration, click the bin next to it, then click **Save**. You must keep at least one duration. If any recurring bookings use that duration, Muddy won't let you remove it until you change them, and shows you which ones they are.
 
-<!-- screenshot: the Base prices pop-up -->
+![The Base prices section with the Edit base prices button highlighted](../screenshots/screenshot1-base-prices-section-1794775581510.png)
 
 ## Adding a question
 
 Questions let you ask customers something when they book, and charge for the answer. For example, how many dogs they're bringing, or whether their dog's coat is matted.
 
-1. Click **Add a question** (or **Write your own question** if you can see suggestions).
+1. Click **Add a question** **(1)** (or **Write your own question** if you can see suggestions).
 2. Enter the **Question**. This is what customers see when they book.
 3. Enter a **Short name**, up to 40 characters. This is shown next to the answer on booking pages and in emails, for example "Dogs".
 4. Under **How do customers answer?**, choose a type (see below).
@@ -59,7 +59,7 @@ Questions let you ask customers something when they book, and charge for the ans
 
 Each short name can only be used once across your business.
 
-<!-- screenshot: the Add a question pop-up with the three answer types -->
+![The Questions section with the Add a question button highlighted](../screenshots/screenshot2-add-question-button-1794775587340.png)
 
 ### Question types
 
@@ -100,11 +100,13 @@ If you offer more than one duration, switch off **Same price for every duration*
 
 ### Kinds
 
-A number question can have **Kinds**, for example Small, Medium and Large, or Adults and Children. Customers then enter a separate number for each kind, and each kind has its own prices. The **At most** limit counts all kinds added together.
+A number question can have **Kinds**, for example Small and Large, or Adults and Children. Customers then enter a separate number for each kind, and each kind has its own prices. The **At most** limit counts all kinds added together.
 
 Kinds are optional, and usually not needed. Only add them when customers give a separate number for each, and you charge differently for them. A new kind is included free until you give it a price.
 
-<!-- screenshot: a number question with kinds and their prices -->
+When you edit a number question with kinds, each kind has its own **Included in the price**, **Price for each extra one**, and **One-off charge for going over** fields. For example, Small dogs at £2.00 each and Large dogs at £3.00 each.
+
+![The Prices page showing a number question with Small and Large kinds listed in the Questions section](../screenshots/full-pricing-page-with-questions-1794775861877.png)
 
 ## Suggested questions
 
@@ -153,7 +155,9 @@ Answers and kinds can't be deleted once saved, but you can archive them. Click *
 
 To undo it, click **Bring back** next to the archived answer, then click **Save**.
 
-<!-- screenshot: the Change the wording or answers view with an archived answer -->
+The Change the wording or answers view shows all open answers with a **Rename** and **Archive** button next to each, and any archived answers at the bottom with a **Bring back** button. The question text and short name fields sit at the top, and **Back** and **Save** sit at the bottom.
+
+![The Prices page showing the Questions section with a Pick from a list question that has answers to manage](../screenshots/page-after-adding-list-question-1794775720198.png)
 
 ## Separate prices
 
@@ -170,7 +174,9 @@ Every column needs a price for every duration, and you can choose whether each c
 
 On your other questions, switch off **Same charge whatever customers answer to** that question to charge each column differently.
 
-<!-- screenshot: Base prices with two columns, for example No and Yes -->
+When separate prices are on, the Base prices pop-up shows one column per answer, for example **No** and **Yes** for a yes/no question, so you can set a different base price for each group.
+
+![The Separate prices section showing the option to split by a question](../screenshots/page-after-adding-list-question-1794775720198.png)
 
 **Changing or turning off separate prices removes prices.** If you switch to a different question, or choose **No, everyone pays the same prices**, Muddy keeps the prices of the default answer's column and removes the others. You'll see which columns will be removed before you confirm. Existing bookings keep the price they were booked at.
 
