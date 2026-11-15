@@ -19,7 +19,7 @@
 
 ## Text Areas
 - All text areas use placeholder text "Enter your text here"
-- Markdown editor fields (MarkdownInput), multi-line
+- Markdown editor fields, multi-line
 - No character limit in validation (nullable string)
 
 ## Policy Integration
