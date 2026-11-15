@@ -19,7 +19,7 @@ pinned: false
 
 2. Find the booking form you want to add to your site and click the **Copy HTML** button next to it
 
-![Copy HTML button](../screenshots/step-two-CRXxOkZZ.webp)
+![Copy HTML button](../screenshots/step-two-website-embedding-1794773492933.png)
 
 This copies the embed code to your clipboard, ready to paste into WordPress.
 
