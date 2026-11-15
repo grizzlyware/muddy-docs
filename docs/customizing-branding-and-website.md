@@ -14,59 +14,63 @@ pinned: true
 
 You can add your logo, choose a colour palette, and fill your hosted booking website with an introduction, photos and social media links.
 
-![settings-overview](../screenshots/settings-overview-1772552738720.png)
+![settings-overview](../screenshots/settings-overview-annotated-1794773469339.png)
 
 ## Customizing your branding
 
 Branding controls how your business looks in emails and across the booking system.
 
 1. Click **Settings** in the left-hand menu
-2. In the Business section, click **Branding**
+2. In the Business section, click **Branding** **(1)**
 
-![branding-settings-annotated](../screenshots/branding-settings-annotated-1772552704199.png)
+![branding-settings-annotated](../screenshots/branding-settings-annotated-1794773428079.png)
 
 ### Uploading your logo
 
-Your logo appears on every email sent to customers who book with you.
+Your logo appears on the emails sent to customers who book with you, and at the top of your booking pages.
 
 1. In the Logo section **(1)**, click **Upload a file**
 2. Choose your logo file (up to 10MB)
 
 A PNG with a transparent background looks best.
 
-### Setting a default walk cover photo
+Once a logo is uploaded, **Logo size in emails** appears below it. Choose **Small**, **Medium**, **Large** or **Jumbo** to set how wide your logo shows at the top of emails.
 
-This photo is used for any walk that doesn't have its own cover photo.
+### Setting a default cover photo
 
-1. In the Default Walk Cover Photo section **(2)**, click **Upload a file**
+This photo is used for any resource or service that doesn't have its own cover photo, and at the top of your booking website.
+
+1. In the Default cover photo section **(2)**, click **Upload a file**
 2. Choose your image (up to 10MB)
 
-### Choosing your color palette
+**Show header image** **(3)** controls whether the cover photo appears at the top of your website and booking forms, including forms embedded on your own website. Switching it off hides the photo but keeps it uploaded.
+
+### Choosing your colour palette
 
 Your [colour palette](changing-system-colour-scheme.md) sets the colours of your booking forms and admin area.
 
-1. In the Colour palette section **(3)**, choose one of:
+1. In the Colour palette section **(4)**, choose one of:
    - **Custom**: pick your own brand colour and accent colour
-   - **Muddy**: earthy tones
-   - **Frosty Paws**: cool blues and whites
-   - **Pawsh Pink**: warm pinks and corals
-   - **Red Set Go!**: bold reds and oranges
-   - **Pumpkin Pup**: autumn oranges and yellows
-   - **Bark Mode**: dark browns and tans
-   - **Noble Paws**: rich purples and golds
+   - **Muddy**: dark green and mint
+   - **Frosty Paws**: navy and icy blue
+   - **Pawsh Pink**: plum and pink
+   - **Red Set Go!**: deep red and coral
+   - **Bark Mode**: charcoal and mint
+   - **Noble Paws**: charcoal, gold and teal
    - **Splashy Paws**: teal and pink
+   - **Pumpkin Pup**: orange and amber
 
    A sample of your booking page under the palettes shows the colours before you save. If you've uploaded a logo, the Custom palette suggests colours from it. See [Building a custom palette](changing-system-colour-scheme.md#building-a-custom-palette).
 
-2. Click **Save** **(4)**
+2. Click **Save**
 
 ## Customizing your hosted website
 
 Your hosted website is where customers find out about you and book.
 
-1. On the Settings page, click **Website** in the Business section
+1. On the Settings page, click **Website** in the Business section **(2)**
 
-![website-settings-annotated](../screenshots/website-settings-annotated-1772552727117.png)
+![website-settings-annotated](../screenshots/website-settings-annotated-1794773455265.png)
 
 ### Adding introduction text
 
@@ -83,20 +87,23 @@ This is the main introduction on your website.
 
 Photos show customers what to expect and help them trust you.
 
-1. In the Website Gallery section, click **Upload files** **(2)**
+1. In the Website Gallery section **(2)**, click **Upload files**
 2. Choose your images (up to 10MB each), such as:
    - Happy dogs in your care
    - The places you walk
    - Your team at work
    - Before and after photos of muddy dogs
 
-Customers can click through the photos on your website.
+Customers can click through the photos on your website. Click a photo to add a description. Use the arrows on a photo to change the order, or the bin to remove it.
 
-### Adding social media links
+### Adding your website and social media links
 
-1. In the Facebook URL field **(3)**, enter the full address of your Facebook page, for example **https://www.facebook.com/yourbusiness**
-2. In the Instagram handle field **(4)**, enter your username without the @, which is already there. If your Instagram is @happydogwalker, enter **happydogwalker**
-3. Click **Save**
+1. If you have your own website, enter its full address in the **Website URL** field **(3)**, for example **https://www.yourbusiness.com**
+2. Under **Facebook page** **(4)**, click **Connect with Facebook**. Sign in to Facebook, then click **Choose** next to your business's page. You need to be an admin of the page for it to show up.
+3. In the Instagram handle field **(5)**, enter your username without the @, which is already there. If your Instagram is @happydogwalker, enter **happydogwalker**
+4. Click **Save**
+
+To use a different Facebook page later, click **Clear** on the linked page and connect again.
 
 ## Managing booking URLs
 

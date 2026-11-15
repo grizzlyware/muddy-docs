@@ -52,7 +52,7 @@ Click **Save** at the bottom of the page.
 
 ### Anchoring to sunrise or sunset
 
-If your hours follow daylight, for example you always open at sunrise or close before dusk, you can anchor times to sunrise, sunset, first light or last light instead of fixed clock times. This requires a geographic location to be set on the resource. Add the location in the resource's settings, and the option will appear on the opening times page.
+If your hours follow daylight, for example you always open at sunrise or close before dusk, you can anchor times to sunrise, sunset, first light or last light instead of fixed clock times. This requires a geographic location to be set on the resource. Add the location in the resource's settings, and the opening times page will offer **Sunrise to sunset** and **First light to last light** presets. With **Custom**, you can also choose sunrise, sunset, first light or last light for **Opens at** and **Closes at**, with an **Offset** to open or close a little earlier or later.
 
 ## Setting times for multiple offerings
 

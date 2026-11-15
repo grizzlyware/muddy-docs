@@ -28,28 +28,31 @@ Recurring bookings are off by default.
 1. Go to **Settings**.
 2. Under **Bookings**, click **Recurring bookings**.
 
-![Recurring booking settings page](../screenshots/recurring-settings-annotated-new-1792675972942.png)
+![Recurring booking settings page](../screenshots/recurring-settings-annotated-1794773385116.png)
 
 ### Enable recurring bookings **(1)**
 
 The main switch. When it's on, recurring bookings appear across the app and Muddy creates bookings from your schedules. When it's off, they're hidden and no bookings are created, even from schedules you've already set up.
 
-### Materialisation cadence **(2)**
+### Generate bookings **(2)**
 
-How often Muddy creates the next batch of bookings:
+Muddy creates bookings from your schedules a cycle at a time. Choose **Weekly** to create a week of bookings at a time, or **Monthly** for a month at a time.
 
-- **Weekly**: runs about once a week and keeps roughly two weeks of bookings created ahead.
-- **Monthly**: runs about once a month and keeps roughly two months ahead.
+This only controls *when bookings are created*, and applies to your whole account. It has nothing to do with how often a customer's bookings happen. A customer can have a weekly schedule whichever option you pick here.
 
-This only controls *when bookings are created*, and applies to your whole account. It has nothing to do with how often a customer's bookings happen. A customer can have a weekly schedule whichever cadence you pick here.
+### Generate the next cycle in advance
 
-### Day of month (only when cadence is set to Monthly)
+When this is on, Muddy creates the next week or month of bookings before it starts. When it's off, only the current week or month is created, and unpaid recurring bookings aren't cancelled automatically.
 
-For **Monthly**, pick the day the run happens: **1st, 10th, 15th, 25th or 28th**. It stops at the 28th so every month has the day.
+Changing this switch stops automatic cancellation of unpaid bookings for recurring bookings you already have. The bookings themselves are kept. Muddy asks you to confirm before saving.
+
+### Week starts on, or Month starts on
+
+Pick the day each cycle starts. For **Weekly**, choose a day of the week. For **Monthly**, choose the **1st, 10th, 15th, 25th or 28th**. It stops at the 28th so every month has the day. The text underneath tells you which dates the next batch covers and when it will be created.
 
 ### Deferred payment reminder lead time
 
-If you use deferred payment for recurring bookings, Muddy can send a reminder to the customer before their booking is auto-cancelled for non-payment. Set how far ahead (in days or hours) the reminder goes out. To choose which channels the reminder uses, or to turn it off entirely, go to **Notification settings**.
+Shown when **Generate the next cycle in advance** is on. If you use deferred payment for recurring bookings, Muddy can send a reminder to the customer before their booking is auto-cancelled for non-payment. Set how far ahead (in days or hours) the reminder goes out. To choose which channels the reminder uses, or to turn it off entirely, go to **Notification settings**.
 
 Click **Save**.
 
@@ -62,7 +65,7 @@ You can start one from:
 - The **Recurring bookings** page (go to **Bookings** in the left-hand menu, then click **Recurring bookings** at the top), by clicking **Create recurring booking** **(1)**
 - A **customer's page**, by scrolling to **Recurring bookings** and clicking **Create**. The customer is filled in for you
 
-![Recurring bookings list page with Create recurring booking button](../screenshots/recurring-list-annotated-new-1792675889389.png)
+![Recurring bookings list page with Create recurring booking button](../screenshots/recurring-list-annotated-1794773423719.png)
 
 ### The form
 
@@ -126,7 +129,7 @@ On: stop after a set number of cycles. For example, 3 cycles of a weekly Mon/Wed
 
 #### Override price **(4)**
 
-Normally each booking uses your usual pricing, based on the service and resource (the offering), duration, number of dogs and any price adjustments.
+Normally each booking uses your usual pricing, based on the service and resource (the offering), duration, the answers to the offering's questions and any price adjustments.
 
 Switch on **Override price** to charge a fixed amount for every booking instead:
 
@@ -137,26 +140,22 @@ Switch on **Override price** to charge a fixed amount for every booking instead:
 
 **A fixed price switches off customer self-service.** Customers can't reschedule, edit or cancel any of the bookings online, and the switches below are locked. This is deliberate: a fixed price is an agreement between you and the customer, and letting them change bookings partway through could undo it. Remove the override to unlock the switches.
 
-### Payment, animals, and self-service
+### Payment, answers, and self-service
 
-![Create form bottom: payment method, number of dogs, commercial booking, and customer self-service options](../screenshots/create-form-shot2-1792676839199.png)
+![Create form bottom: payment method, booking questions, and customer self-service options](../screenshots/create-form-payment-questions-annotated-1794773477946.png)
 
 #### Payment collection method **(1)**
 
 Choose how each booking created by this schedule is paid:
 
 - **Invoice**: bookings are confirmed without payment and included in your next invoice run.
-- **Deferred**: bookings are confirmed without payment, and you collect payment yourself after confirmation. You can set unpaid bookings to cancel automatically before they start.
+- **Deferred**: bookings are confirmed without payment, and you collect payment yourself after confirmation. Switch on **Auto-cancel unpaid occurrences** to cancel a booking that's still unpaid a set time before it starts, and **Waive cancellation fee on auto-cancel** if you don't want to charge your usual cancellation fee for it. Auto-cancel is only available when **Generate the next cycle in advance** is on in your recurring booking settings.
 
 Whichever you choose, make sure your [invoicing settings](invoicing-and-automatic-payments.md) are configured. Recurring bookings are never charged upfront at the time of booking.
 
-#### Number of dogs **(2)**
+#### Booking questions **(2)**
 
-Used for every booking and to work out the price. With an override price it's only for your records and doesn't change the amount.
-
-#### Commercial booking **(3)**
-
-Switch this on if the booking is for a commercial customer. When enabled, commercial pricing rates from the offering's pricing are applied to each occurrence.
+If the offering asks questions, such as how many dogs are coming, answer them here. The answers apply to every booking and are used to work out the price. With an override price they're only for your records and don't change the amount, but each answer still needs a price for the booking's duration on the offering's **Prices** page. See [Setting up prices and questions](setting-up-prices-and-questions.md).
 
 #### Customer self-service (when there's no override)
 
@@ -178,7 +177,7 @@ Scroll down to **Schedule preview**. It's a 12-month calendar with every planned
 When you're happy:
 
 - Click **Save as draft** to keep it without publishing. You can edit or delete a draft at any time.
-- Or go to **Review & publish** and confirm. **Once published, you can only change the pricing and customer permissions.** The dates, frequency, service and resource are fixed.
+- Or go to **Review & publish** and confirm. **Once published, you can only change the pricing, payment method and customer permissions.** The dates, frequency, service, resource and answers are fixed. Payment changes only apply to bookings created from then on.
 
 ---
 
@@ -199,7 +198,7 @@ Click a recurring booking to open it. Its calendar shows:
 ### What you can do at each stage
 
 - **Draft**: change anything, or delete it.
-- **Published**: change the pricing and customer permissions only.
+- **Published**: change the pricing, payment method and customer permissions only.
 - **Cancelling**: you'll be asked whether to cancel the upcoming bookings it has already created as well.
 
 **Cancelling can't be undone.** To start again, you'll need to set up a new recurring booking.
@@ -240,7 +239,6 @@ For example, because the slot was taken, you were closed or a block out was in t
 ## Tips and things to watch out for
 
 - **Set up your offerings first.** A recurring booking needs an existing offering (a service at a resource) with the right prices and opening times in place before you create the schedule. See [Setting up your offerings](creating-a-walk.md).
-- **Your account might use different words.** Dogs is the default, but your account might say "cats" or another animal. To change them, go to **Settings**, then **Terminology**. See [Customizing app terminology](customizing-app-terminology.md).
 - **Check your price adjustments.** Decide whether each one should apply to recurring bookings.
 - **The materialisation cadence is account-wide.** Every recurring booking is created on the same cadence.
 - **Drafts are safe to leave.** A draft creates no bookings and sends no notifications until you publish it.

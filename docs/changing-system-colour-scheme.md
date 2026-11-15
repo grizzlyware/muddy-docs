@@ -63,5 +63,5 @@ The new colours apply straight away to:
 
 ## Important notes
 
-- The scheme applies across your whole account, not to a single walk
+- The scheme applies across your whole account, not to a single resource or service
 - You can change it as often as you like

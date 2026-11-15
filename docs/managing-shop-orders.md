@@ -66,6 +66,8 @@ On the right, you'll see the **Total**, the **Balance** **(6)**, the customer's 
 
 ![An order before anything has been sent, with its sections on the left and the total, contact details and delivery address on the right](../screenshots/shop-j3-sam-order-page-1790279113228.png)
 
+Under **Notes**, at the bottom on the right, click **Add note** to keep a note about the order, such as a customer's request. Only your team can see notes.
+
 ## Sending an order
 
 When you post an order, record it in Muddy. This keeps your to-do list accurate and lets the customer know it's on its way.
@@ -190,7 +192,7 @@ You can't cancel an order:
 - **While a payment is still pending.** Wait for it to finish or fail first.
 - **If a gift card on the order has already been spent.**
 
-Refunds take a few minutes to show on the order.
+Refunds can take a few minutes to go through. They appear under **Transactions** on their own, so you don't need to refresh the page.
 
 ## Returns
 
@@ -234,7 +236,9 @@ If you recorded a return by mistake, click the bin icon on its row, then **Remov
 
 To refund money that isn't for returned items, such as for items you couldn't send, use the **Refund** button under **Transactions**.
 
-The amount is filled in with the most you can refund. Lower it if you're only refunding part of the order.
+If the order was paid partly in a way you recorded yourself, such as cash, you're asked how to process the refund. Choose **Refund card/voucher payments** to send money back automatically.
+
+The **Refund amount** is filled in with the most you can refund. Lower it if you're only refunding part of the order.
 
 **Warning:** refunds can't be undone.
 
@@ -243,7 +247,7 @@ The amount is filled in with the most you can refund. Lower it if you're only re
 - **Card payments** go back to the customer's card. It can take a few working days to appear on their statement.
 - **Direct Debit payments** go back to the customer's bank account.
 - **Voucher payments** go back onto a voucher. Whether that's the original voucher or a new one depends on your voucher settings.
-- **Cash or bank transfer payments** that you recorded with **Record payment** can't be refunded automatically. You'll need to pay the customer back yourself. If you cancel the order or refund a return, Muddy emails you a **Manual refund required** reminder.
+- **Cash or bank transfer payments** that you recorded with **Record payment** can't be refunded automatically. You'll need to pay the customer back yourself. Then click **Refund** under **Transactions** to record it (choose **Record offline refund** if you're asked), so the order's balance is right. If you cancel the order or refund a return, Muddy emails you a **Manual refund required** reminder.
 
 If an order was paid partly by card and partly by voucher, the refund is shared between them, starting with the most recent payment.
 

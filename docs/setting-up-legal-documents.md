@@ -27,7 +27,7 @@ You can set up three documents here:
 
 ### Terms and conditions **(1)**
 
-The rules customers agree to when they use your services. Enter them in the text box. You might cover:
+The rules customers agree to when they use your services. Enter them in the **Terms & conditions** box. You might cover:
 - What your service includes and doesn't include
 - What you expect from customers
 - Liability and insurance
@@ -65,7 +65,7 @@ Switch off **Automate cancellation policy** to write your own in the text box. C
 
 ### Requiring customer acceptance **(5)**
 
-Switch on **Require acceptance** to make customers agree to the following before they can book:
+Switch on **Require acceptance** to make customers agree to the following before they can book, create an account or check out in your shop:
 - Your terms and conditions
 - Your privacy policy
 - Your cancellation policy

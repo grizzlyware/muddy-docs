@@ -1,52 +1,56 @@
 # Muddy Booking App Navigation Structure
 
+Checked against v0.174.0.
+
 ## Base URL Structure
 - Management area base: `https://app.muddybooking.com/operators/{id}/`
 - Current operator ID: 251
 
-## Main Navigation Links
+## Main Navigation Links (left-hand menu)
 ### Primary Sections
-- Dashboard: `/manage` 
+- Dashboard: `/` (operator base)
 - Bookings: `/bookings`
 - Customers: `/customers`
 - Block outs: `/block-outs`
 - Boards: `/bookings/boards`
 - Calendar: `/calendar`
-- Walks: `/resources`
+- Offerings: `/offerings` (replaced "Walks"; old `/walks/...` URLs redirect)
 - Advisories: `/advisories`
 - Marketing: `/marketing`
-- Settings: `/settings`
 
-### Financial/Payment Sections  
+### Financial/Payment Sections
 - Stripe setup: `/onboarding`
-- Stripe account: `/account`
-- Payment methods (link an existing Stripe account, make a Stripe account primary): `/payment-methods`
 - Payouts: `/payouts`
 - Invoices: `/invoices`
 - Vouchers: `/vouchers`
+- Loyalty points: `/loyalty-transactions`
+- Shop: `/shop`
+
+### Other
+- Settings: `/settings`
+- Gate codes: `/gate-codes`
+- Subscription: `/subscription`
+- Reports: `/reports`
+- Import data: `/imports`
 
 ### Marketing URLs
 - Marketing overview: `/marketing`
 - Ask for reviews: `/marketing/automations/review_request`
 
 ### Pricing-Related URLs
-- Main pricing setup: `/pricing`
-- Price adjustments: `/price-adjustments`
-- Create price adjustment: `/price-adjustments/new`
-
-### Other Settings
-- Gate codes: `/gate-codes`
-- Subscription: `/subscription`
-- Settings/Branding: `/settings/branding`
-- Shop: `/shop`
-- Reports: `/reports`
-- Import data: `/imports`
+- There is no business-level pricing page any more. `/pricing` redirects. Prices are per offering: `/offerings/{id}/pricing` (offering menu item "Prices", "Durations, prices and questions").
+- Discounts: `/discounts` (new: `/discounts/new`)
+- Surcharges: `/surcharges` (new: `/surcharges/new`)
+- `/price-adjustments` only redirects to the above.
 
 ## Settings Page Structure
-The main settings page provides organized sections including:
-- Business (details, branding, website, legal, customer groups, team, terminology)
-- Bookings (booking settings, cancellations, opening times, block outs)
-- Pricing (walk pricing, price adjustments, banned breeds)
-- Payments (payment settings, invoicing, payment methods, domains, vouchers)
-- Notifications (notification settings, SMS/WhatsApp credits)
-- Advanced (website embedding, advanced settings)
+Intro: "You can manage nearly all of your settings from this panel, any others are set on each offering."
+- Business: Business details, Stripe account, Branding, Website, Legal, Customer groups, Team management, Terminology
+- Offerings: Offerings, Resources, Services
+- Bookings: Booking settings, Customer sign-in, Recurring bookings, Cancellations & rescheduling, Block outs, Banned breeds, Loyalty programme
+- Payments: Payment settings, Invoicing, Payment methods, Payment domains, Vouchers, Discounts, Surcharges
+- Shop: Products, Options, Collections, Collection and delivery, Shop settings
+- Notifications: Notification settings, SMS credits, WhatsApp credits
+- Advanced: Website embedding, Advanced settings ("Notification muting and opening date.")
+
+There is no Opening times item in Settings (opening times are per offering) and no Pricing section.

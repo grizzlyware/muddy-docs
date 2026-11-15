@@ -73,7 +73,7 @@ window.addEventListener('muddy.mobile', function (event) {
 
 ### muddy.full_screen
 
-Fires when the embed opens or closes its fullscreen overlay, which happens when a customer taps a launcher on mobile and when they close the embed.
+Fires once with `fullScreen: false` when the embed script loads, then whenever the embed opens or closes its fullscreen overlay. On mobile it opens when a customer taps a launcher or the embed's own **Book now** button, when the embed is set to launch automatically, or when the page is opened from a link into the embed. It closes when the customer closes the embed.
 
 `event.detail`:
 
@@ -112,17 +112,29 @@ Use this event for conversion tracking.
   id: 12345,
   reference: "BK-8F3K2",
   slot: {
-    id: "signed-slot-id",
-    signed_id: "signed-slot-id",
-    start: { iso: "2026-05-10T10:00:00+01:00" /* ... */ },
-    end:   { iso: "2026-05-10T11:00:00+01:00" /* ... */ },
+    id: "resource:42:1778403600:1778407199:0:3",
+    signed_id: "resource:42:1778403600:1778407199:0:3:…",
+    start: {
+      timestamp: 1778403600,
+      utc:       { iso_8601: "2026-05-10T09:00:00+00:00", /* ... */ },
+      localised: { iso_8601: "2026-05-10T10:00:00+01:00", timezone: "Europe/London", /* ... */ }
+      /* ... */
+    },
+    end:        { /* same shape as start */ },
+    vanity_end: { /* same shape as start */ },
+    duration:        { minutes: 60, description: "1 hour" },
+    vanity_duration: { minutes: 60, description: "1 hour" },
     is_past: false,
     is_future: true,
     is_happening_now: false,
+    service: {
+      id: 3,
+      name: "Private hire"
+    },
     has_slots: {
       id: 42,
-      label: "Morning Group Walk",
-      type: "walk",
+      label: "Top Field",
+      type: "resource",
       operator_id: 7
     }
   },
@@ -134,13 +146,19 @@ Use this event for conversion tracking.
 }
 ```
 
+Notes on `slot`:
+
+- `has_slots` is the resource that was booked, and `label` is its name. `service` is the service that was booked there.
+- Each time has a `utc` version and a `localised` version in the resource's time zone. `localised.iso_8601` is the time the customer saw.
+- `vanity_end` is one second before the end time shown to customers. `end` also includes any buffer time after the booking.
+
 Listen for it with `window.addEventListener`:
 
 ```js
 window.addEventListener('muddy.booking:confirmed', function (event) {
   var booking = event.detail;
 
-  console.log('Booking confirmed', booking.reference, booking.price.total.formatted.full);
+  console.log('Booking confirmed', booking.reference, booking.slot.service.name, booking.price.total.formatted.full);
 });
 ```
 
@@ -148,9 +166,11 @@ Every `muddy.*` event works the same way. Only the name and the shape of `event.
 
 ### muddy.booking:rescheduled
 
-Fires when a customer reaches a booking page after rescheduling. It also fires when a booking is edited, in which case the `reference` stays the same. A reschedule generates a new `reference`.
+Fires the first time the customer reaches the new booking's page after rescheduling. A reschedule creates a new booking, so `id` and `reference` are the new booking's, not the original's.
 
 `event.detail` has the same shape as `muddy.booking:confirmed`.
+
+Editing a booking also creates a new booking with a new `reference`, and fires `muddy.booking:confirmed` rather than `muddy.booking:rescheduled`. If you count conversions, an edit will show up as a new one.
 
 ### muddy.booking:cancelled
 
@@ -187,7 +207,7 @@ Most analytics tools expect a number. Use `Number(d.price.total.amount)`, or `am
 
 **My launch button does nothing.** Check the embed snippet is on the same page and the attribute is exactly `data-muddy-action="launch"`. The element must exist when the embed script runs, as elements added later are ignored.
 
-**`muddy.full_screen` never fires on desktop.** That's expected. Fullscreen is only used on mobile. On desktop, a launcher scrolls to the embed instead.
+**`muddy.full_screen` never reports `fullScreen: true` on desktop.** That's expected. Fullscreen is only used on mobile. On desktop, a launcher scrolls to the embed instead.
 
 **The event fires twice.** You may be adding the listener in code that runs on every route change of a single-page app. Add it once, at page load.
 

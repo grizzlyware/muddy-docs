@@ -56,15 +56,17 @@ Go to **Settings** and click **Payment settings** under the Payments section.
 
 ### Step 6: Choose who can book without paying
 
-Under **Upfront payment policy**, select **Exclude specific groups**. Then choose the customer group you created (e.g. "Dog Walkers") from the list below.
+Leave **Default payment collection method** on **Upfront** **(1)**, so most customers still pay when they book.
 
-Customers in that group can now book without paying upfront. Everyone else still pays when they book.
+Under **Customer group overrides** **(2)**, click **Add override**. Choose the customer group you created (e.g. "Dog Walkers") as the **Customer group**, and **Invoice** as the **Payment method**.
 
-If you want all customers to be able to book without paying, select **Not required** instead.
+Customers in that group can now book without paying upfront, and are invoiced after their booking. Everyone else still pays when they book.
+
+If you want all customers to be invoiced, choose **Invoice** as the **Default payment collection method** instead. If you want bookings to be confirmed without any payment and then collect payment manually, choose **Deferred**.
 
 Click **Save** when you're done.
 
-![Payment settings with Exclude specific groups selected](../screenshots/inv-step-six-B3KFt4ie.webp)
+![Payment settings with Default payment collection method and Customer group overrides](../screenshots/inv-step-six-annotated-1794777892357.png)
 
 ## Booking as a customer (impersonation)
 
@@ -120,6 +122,7 @@ Further down the page:
 - **Automatically take payment**: when on, Muddy tries to charge the customer's saved card for an unpaid invoice on its due date.
 - **Retry interval**: how many days to wait before trying again after a failed payment.
 - **Maximum attempts**: how many times Muddy tries to take payment for an invoice before stopping.
+- **Overdue invoice notifications**: sends you a summary notification when invoices are overdue. Choose how often you want to receive it, for example daily or weekly.
 
 Click **Save** when you're done.
 

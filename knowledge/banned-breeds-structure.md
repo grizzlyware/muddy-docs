@@ -2,8 +2,8 @@
 
 ## URL and Location
 - Main URL: `/settings/banned-breeds`
-- Access: Settings > Pricing > Banned breeds
-- Navigation: From main settings page, located under "Pricing" section
+- Access: Settings > Bookings > Banned breeds
+- Navigation: From main settings page, located under "Bookings" section
 
 ## Page Structure
 - Page title: "Banned breed settings - Management area | Muddy Booking"

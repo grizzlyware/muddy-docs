@@ -75,7 +75,7 @@ Setup doesn't check these, but they're worth doing before customers arrive:
 - **Group your products into collections.** This makes your shop front much easier to browse. See [Organising your shop with collections](organising-shop-collections.md).
 - **Check your legal policies.** Your terms and conditions and other policies show at checkout (more on this below). See [Setting up legal documents](setting-up-legal-documents.md).
 
-While you're setting up, you can reach **Products** through **Review products**. **Options**, **Collections** and **Collection and delivery** are also under **Settings** in the left-hand menu. The rest of the shop's pages, including **Stock**, appear on the **Shop** page once your shop is open. If you track stock, set it as soon as you open. See [Tracking stock](tracking-shop-stock.md).
+While you're setting up, you can reach **Products** through **Review products**. **Products**, **Options**, **Collections**, **Collection and delivery** and **Shop settings** are also under **Settings** in the left-hand menu. The rest of the shop's pages, including **Stock**, appear on the **Shop** page once your shop is open. If you track stock, set it as soon as you open. See [Tracking stock](tracking-shop-stock.md).
 
 ### Step 3: Review and open
 

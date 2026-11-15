@@ -14,9 +14,9 @@ pinned: false
 
 ## Accessing loyalty programme settings
 
-Go to **Settings** and click **Loyalty programme** in the Pricing section.
+Go to **Settings** and click **Loyalty programme** in the Bookings section **(1)**.
 
-![Finding the loyalty programme settings](../screenshots/loyalty-programme-in-settings-1776433624375.png)
+![Finding the loyalty programme settings](../screenshots/loyalty-programme-in-settings-annotated-1794773547160.png)
 
 ## Initial setup
 
@@ -42,7 +42,7 @@ How many points a customer needs for a reward. The default is 10. The reward is 
 Then enter the value of the reward.
 
 ### Additional settings
-- **Reward expiry**: whether rewards expire after a set time
+- **Should rewards expire?**: whether rewards expire after a set time
 - **Trigger mode**: **Automatic** awards points once a booking starts. **QR check-in** awards them when you check the customer in
 - **Earning rules**: limit which bookings earn points. With no rules, every booking earns points
 - **Stamp card icon**: an icon shown on customers' loyalty cards
@@ -55,7 +55,7 @@ Click **Set up loyalty programme** to turn it on.
 
 After setup, use the switch at the top of the settings page to turn the programme on or off.
 
-![Loyalty programme enabled state](../screenshots/loyalty-programme-enabled-complete-1776434467217.png)
+![Loyalty programme enabled state](../screenshots/loyalty-programme-enabled-state-1794773519021.png)
 
 **Important:** turning the programme off stops customers earning points, but keeps the points they already have. They're still there if you turn it back on.
 
@@ -76,10 +76,11 @@ You can add points yourself, for example to make up for a problem with a booking
 
 1. Open the customer's profile
 2. Find the loyalty points section
-3. Choose to adjust their points
-4. Enter the number of points to add
-5. Add a note saying why
-6. Save
+3. Click **Adjust points**
+4. Set **Type** to **Credit** to add points (or **Debit** to remove them)
+5. Enter the number of points in the **Points** field
+6. Add a note in the **Reason** field saying why
+7. Click **Add points**
 
 **Tip:** if the extra points take the customer past the reward threshold, their reward is issued automatically.
 
@@ -110,7 +111,7 @@ The customer's profile shows:
 - Rewards issued and used
 - Any points you've added manually
 
-Click **View all history** for the full timeline.
+Click **View all** for the full timeline.
 
 ## Tips for success
 

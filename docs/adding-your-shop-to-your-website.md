@@ -61,7 +61,7 @@ Where customers see the **Open** button, this setting also makes it stretch acro
 
 ### Show header **(4)**
 
-When this is on, the top of the shop shows your logo (or your business name, if you haven't uploaded a logo) and a cover photo. This is your [default cover photo](customizing-branding-and-website.md#setting-a-default-walk-cover-photo), except on a collection's own page, which shows that collection's cover image if it has one. Switch it off if your page already shows your logo and a large picture just above the shop, so customers don't see them twice.
+When this is on, the top of the shop shows your logo (or your business name, if you haven't uploaded a logo) and a cover photo. This is your [default cover photo](customizing-branding-and-website.md#setting-a-default-cover-photo), except on a collection's own page, which shows that collection's cover image if it has one. Switch it off if your page already shows your logo and a large picture just above the shop, so customers don't see them twice.
 
 On a phone, the cover photo always shows once the shop is open full screen, whatever this setting says.
 

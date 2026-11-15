@@ -65,7 +65,7 @@ Use the arrows to move to April 2026. Every date is after the opening date, so t
 ## Important notes
 
 - **Removing the opening date**: to open straight away, delete the date and click **Save**. Customers can then book from today.
-- **Past dates**: the opening date must be in the future.
+- **Past dates**: a date that has already passed has no effect, so customers can book as normal. Clear it to keep things tidy.
 - **Other availability rules still apply**: after you open, customers can only book times allowed by your opening times, existing bookings and block outs.
 - **Existing bookings**: moving the opening date earlier doesn't affect bookings you already have.
 

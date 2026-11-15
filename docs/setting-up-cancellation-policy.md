@@ -14,22 +14,18 @@ pinned: false
 
 A cancellation policy lets you charge a fee when customers cancel or reschedule. You can set one fee for cancellations made with enough notice and a separate, usually higher, fee for late cancellations.
 
-![Settings overview](../screenshots/settings-overview-1772552608666.png)
+![Settings overview](../screenshots/settings-overview-annotated-final-1794773574846.png)
 
 ## Accessing cancellation settings
 
 1. Go to **Settings** in the left-hand menu
 2. Under **Bookings**, click **Cancellations & rescheduling**
 
-![Cancellation policy settings](../screenshots/cancellation-policy-annotated-1772552695400.png)
+![Cancellation policy settings](../screenshots/cancellation-policy-annotated-final-1794773517721.png)
 
 ## Setting the notice period
 
-The notice period **(1)** is how much warning you need for a cancellation or reschedule not to count as late. Set it in:
-
-- **Days**
-- **Hours**
-- **Minutes**
+The notice period is how much warning you need for a cancellation or reschedule not to count as late. It's set on each offering as the **Cancellation notice period**, not on this page. See [Booking rules on each offering](configuring-booking-rules.md#booking-rules-on-each-offering).
 
 For example, 1 day and 2 hours means customers must cancel at least 26 hours before the booking to avoid a late fee.
 

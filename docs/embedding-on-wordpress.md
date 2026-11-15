@@ -17,9 +17,9 @@ pinned: false
 
 ![Website embedding in settings](../screenshots/step-one-BDkEykKR.webp)
 
-2. Find the booking form you want to add to your site and click the green **Copy HTML** button next to it
+2. Find the booking form you want to add to your site and click the **Copy HTML** button next to it
 
-![Copy HTML button](../screenshots/step-two-CRXxOkZZ.webp)
+![Copy HTML button](../screenshots/step-two-website-embedding-1794773492933.png)
 
 This copies the embed code to your clipboard, ready to paste into WordPress.
 
@@ -49,7 +49,7 @@ Paste the HTML you copied from the Muddy admin area into the Custom HTML block.
 
 Click **Save**, **Update**, or **Publish** to save your changes.
 
-Your customers will now see a **Book now** button on your page, which opens your booking form.
+Your booking form now shows on your page. On a phone, customers see a **Book now** button instead, which opens the booking form full screen.
 
 To open the booking form from your own button, or to track bookings in analytics tools, see the [Embed JavaScript API](embed-javascript-api.md).
 

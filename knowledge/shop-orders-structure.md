@@ -12,7 +12,8 @@ Written by hand from the shop source code on 23 September 2026, and checked agai
 
 ## Order page
 - Main column: the items, "Price breakdown" (only when discounts apply), "Fulfilments", "Returns", "Transactions" (with "Record payment" and "Refund").
-- Sidebar: "Total", "Balance", "Placed", "Cancel order", the "Contact" card, the customer, "Assign to customer" / "Assign to another customer", and "Send it to".
+- Sidebar: "Total", "Balance", "Placed", "Cancel order", the "Contact" card, the customer, "Assign to customer" / "Assign to another customer", "Send it to", and a "Notes" card ("Add note"; staff only).
+- The page reloads by itself when a transaction on the order is created or changes, so refunds appear under "Transactions" without a manual refresh.
 
 ## Fulfilment (posted orders)
 - "Record dispatch" opens the "Record a dispatch" pop-up. Fields:
@@ -40,6 +41,7 @@ Written by hand from the shop source code on 23 September 2026, and checked agai
   - "Put these back into stock" (default on).
   - Button: "Record return".
 - Return row: "Refund" (with an editable "Amount", which allows a partial refund) and a bin icon (confirm "Remove it"). Removing a return does not reverse a refund or the stock.
+- "Refund" under "Transactions": when the order has both card/voucher and offline payments, the pop-up asks "Choose how to process the refund." with "Refund card/voucher payments" and "Record offline refund". Card/voucher only: a "Refund amount" field, prefilled with the maximum. Offline only: goes straight to recording an offline refund.
 - Refunds go to card, or back to a voucher. Offline payments trigger the "Manual refund required" email to staff.
 
 ## Customer emails

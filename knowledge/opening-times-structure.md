@@ -1,28 +1,23 @@
 # Muddy Booking Opening Times Structure
 
-## URL and Navigation
-- Direct URL: `/opening-times` 
-- Access: Settings → Bookings section → Opening times
+## URL and Navigation (checked v0.174.0)
+- Opening times are set per offering only: `/offerings/{id}/opening-times`
+- Access: Offerings > [offering] > Settings (header button) > Opening times ("Set your regular availability")
+- Page header: "Opening times: {offering}"
+- The old business-level page (`/opening-times`, Settings > Bookings > Opening times) was removed; the URL redirects. There is no "Inherit from business" option.
 
 ## Key Features
 ### Preset System
-- Apply preset to all days at once
-- Available presets: 24/7, 05:00 to 22:00, 06:00 to 20:00, 06:00 to 22:00, 08:00 to 20:00, 09:00 to 17:00, 09:00 to 21:00, 10:00 to 16:00, Closed, Custom
-- Apply button to set selected preset across all days
+- "Apply preset to all days" menu plus Apply button at the top
+- Presets: 24/7, 05:00 to 22:00, 06:00 to 20:00, 06:00 to 22:00, 08:00 to 20:00, 09:00 to 17:00, 09:00 to 21:00, 10:00 to 16:00, Closed, Custom
+- When the offering's resource has a location: also "Sunrise to sunset" and "First light to last light"
 
 ### Individual Day Settings
-- Each day (Monday-Sunday) has same preset options
-- Can mix and match different times for different days
-- Individual day settings override any preset applied
-
-### Options Available
-- **24/7**: Always available
-- **Time ranges**: Multiple preset time ranges (05:00-22:00, 06:00-20:00, etc.)
-- **Closed**: Day is completely unavailable  
-- **Custom**: Allows custom time entry (fields appear when selected)
+- Each day (Monday-Sunday) has the same preset options
+- Custom shows time rows with "Opens at" / "Closes at"; with a resource location each can be anchored to sunrise, sunset, first light or last light with an "Offset" in minutes (negative = before)
+- Rows can be removed with "Remove"
 
 ### Interface Elements
-- Clear day-by-day breakdown
-- Apply preset to all days section at top
-- Save button at bottom to commit changes
-- Explanatory text: "All of your walks will inherit these opening times. If you want to set different opening times for a specific walk, you can do so on the walk's settings."
+- Tip alert about sunrise/sunset anchoring when the resource has no location, with a "Set a location for {resource}" link
+- Save button at bottom
+- Errors appear if a change conflicts with recurring bookings
