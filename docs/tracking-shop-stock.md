@@ -29,7 +29,7 @@ The **Stock** page lists every variant of every product, with its current stock.
 
 You can click **Set stock** **(2)** or **Change stock** straight from this page. To see the full record for a product, including its history, click the product's name. The same buttons are there too.
 
-![The Stock page before you've set any stock, with the search open](../screenshots/shop-e1-stock-page-1790273417706.png)
+![The Stock page with the search open, showing each variant with its current stock and action buttons](../screenshots/shop-stock-page-main-1794773499448.png)
 
 ## Starting to track a variant
 
