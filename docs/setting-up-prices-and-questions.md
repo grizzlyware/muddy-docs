@@ -18,9 +18,9 @@ Each offering has its own prices and questions, so you can charge differently fo
 1. Click **Offerings** in the left-hand menu.
 2. Click the offering you want to price.
 3. Click **Settings**.
-4. Click **Prices**.
+4. Click **Prices** **(1)**.
 
-<!-- screenshot: the offering's Settings menu open, with Prices highlighted -->
+![The offering's Settings menu open, with Prices highlighted](../screenshots/settings-menu-prices-highlighted-1794774038305.png)
 
 The page has three parts:
 
@@ -30,7 +30,7 @@ The page has three parts:
 
 Every change is made in a pop-up with its own **Save** button. There's no save button for the whole page, and the page always shows what's saved.
 
-<!-- screenshot: the Prices page with base prices and a couple of questions -->
+![The Prices page showing base prices and a question](../screenshots/prices-page-sections-highlighted-1794774068422.png)
 
 ## Base prices
 
@@ -44,8 +44,6 @@ The base price is what a customer pays for a duration before any extra charges f
 
 To stop offering a duration, click the bin next to it, then click **Save**. You must keep at least one duration. If any recurring bookings use that duration, Muddy won't let you remove it until you change them, and shows you which ones they are.
 
-<!-- screenshot: the Base prices pop-up -->
-
 ## Adding a question
 
 Questions let you ask customers something when they book, and charge for the answer. For example, how many dogs they're bringing, or whether their dog's coat is matted.
@@ -58,8 +56,6 @@ Questions let you ask customers something when they book, and charge for the ans
 6. Click **Add question**.
 
 Each short name can only be used once across your business.
-
-<!-- screenshot: the Add a question pop-up with the three answer types -->
 
 ### Question types
 
@@ -103,8 +99,6 @@ If you offer more than one duration, switch off **Same price for every duration*
 A number question can have **Kinds**, for example Small, Medium and Large, or Adults and Children. Customers then enter a separate number for each kind, and each kind has its own prices. The **At most** limit counts all kinds added together.
 
 Kinds are optional, and usually not needed. Only add them when customers give a separate number for each, and you charge differently for them. A new kind is included free until you give it a price.
-
-<!-- screenshot: a number question with kinds and their prices -->
 
 ## Suggested questions
 
@@ -153,8 +147,6 @@ Answers and kinds can't be deleted once saved, but you can archive them. Click *
 
 To undo it, click **Bring back** next to the archived answer, then click **Save**.
 
-<!-- screenshot: the Change the wording or answers view with an archived answer -->
-
 ## Separate prices
 
 Most price differences belong on a question's extra charges. Use separate prices only when some customers pay different base prices for every duration, for example businesses or professional dog walkers. Each answer then gets its own column of base prices.
@@ -169,8 +161,6 @@ This section appears once you ask a **Pick from a list** or **Yes or no** questi
 Every column needs a price for every duration, and you can choose whether each column's prices include tax. The question that splits the prices has no extra charges of its own.
 
 On your other questions, switch off **Same charge whatever customers answer to** that question to charge each column differently.
-
-<!-- screenshot: Base prices with two columns, for example No and Yes -->
 
 **Changing or turning off separate prices removes prices.** If you switch to a different question, or choose **No, everyone pays the same prices**, Muddy keeps the prices of the default answer's column and removes the others. You'll see which columns will be removed before you confirm. Existing bookings keep the price they were booked at.
 
