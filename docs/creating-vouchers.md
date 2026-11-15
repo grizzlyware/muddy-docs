@@ -39,7 +39,7 @@ Click **Create voucher** at the top of the page.
 
 5. **Voucher expires** **(4)**: switch this on if the voucher should expire, then choose the **Expiry date**. If you've set a default voucher expiry under **Settings** then **Vouchers**, this is switched on already with that date filled in.
 
-![voucher-form-with-expiry](../screenshots/voucher-form-with-expiry-1794773628398.png)
+![voucher-form-with-expiry](../screenshots/voucher-form-with-expiry-1794777383880.png)
 
 6. Click **Create voucher** **(5)**.
 
