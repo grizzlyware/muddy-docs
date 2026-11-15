@@ -24,11 +24,13 @@ Each offering has its own prices and questions, so you can charge differently fo
 
 The page has three parts:
 
-- **Base prices**: what each duration costs.
+- **Base prices** **(1)**: what each duration costs.
 - **Separate prices**: whether some customers pay a different set of base prices. This only appears once you ask a question it can use.
-- **Questions**: what customers answer when they book, and any extra charges that come with each answer.
+- **Questions** **(2)**: what customers answer when they book, and any extra charges that come with each answer.
 
-Every change is made in a pop-up with its own **Save** button. There's no save button for the whole page, and the page always shows what's saved.
+Every change saves as soon as you confirm it. There's no save button for the whole page, and the page always shows what's saved.
+
+If you used Muddy before questions were added, your dog prices and commercial prices have been turned into questions here, so you may see questions you didn't add yourself.
 
 ![The Prices page showing base prices and a question](../screenshots/prices-page-sections-highlighted-1794774068422.png)
 
@@ -100,7 +102,7 @@ If you offer more than one duration, switch off **Same price for every duration*
 
 ### Kinds
 
-A number question can have **Kinds**, for example Small, Medium and Large, or Adults and Children. Customers then enter a separate number for each kind, and each kind has its own prices. The **At most** limit counts all kinds added together.
+A number question can have **Kinds**, for example Small, Medium and Large, or Adults and Children. Customers then enter a separate number for each kind, and each kind has its own prices. Each kind's box starts at 0, and **At least** and **At most** count all kinds added together.
 
 Kinds are optional, and usually not needed. Only add them when customers give a separate number for each, and you charge differently for them. A new kind is included free until you give it a price.
 
@@ -135,7 +137,7 @@ Muddy won't let you change **At least** or **At most** in a way that rules out a
 
 ### Changing the wording or answers
 
-Click **Change the wording or answers** (or **Change the wording or kinds**) at the top of the pop-up. This changes the question everywhere you ask it, and past bookings show the new wording too. Their prices don't change.
+Click **Change the wording or answers** (or **Change the wording or kinds**, or **Change the wording** for a **Yes or no** question) at the top of the pop-up. This changes the question everywhere you ask it, and past bookings show the new wording too. Their prices don't change.
 
 Here you can edit the **Question** and **Short name**, rename answers or kinds, and click **Add an answer** or **Add a kind**. A new answer has no extra charge until you set one. Click **Save** to apply.
 
@@ -148,7 +150,7 @@ Answers and kinds can't be deleted once saved, but you can archive them. Click *
 - Customers can't pick an archived answer. Past bookings still show it.
 - You can't archive the last answer or kind.
 - You can't archive an answer that's the default answer on any offering. Pick another default there first.
-- **If recurring bookings use the answer, Muddy shows how many before you archive it.** Those recurring bookings switch to each offering's default answer and its price. For a kind, they stop including it. Bookings already made keep what they had.
+- **If recurring bookings use the answer, Muddy shows how many before you archive it.** Those recurring bookings switch to each offering's default answer and its price. For a kind, they stop including it, unless that would take a recurring booking below the **At least** number. Muddy then shows which ones to change first. Bookings already made keep what they had.
 - If the answer has its own column of base prices (see [Separate prices](#separate-prices)), the column is hidden while the answer is archived.
 
 To undo it, click **Bring back** next to the archived answer, then click **Save**.
@@ -168,7 +170,7 @@ This section appears once you ask a **Pick from a list** or **Yes or no** questi
 
 Every column needs a price for every duration, and you can choose whether each column's prices include tax. The question that splits the prices has no extra charges of its own.
 
-On your other questions, switch off **Same charge whatever customers answer to** that question to charge each column differently.
+On your other questions, switch off **Same charge whatever customers answer to** (or **Same price whatever customers answer to** on a number question) that question to charge each column differently.
 
 <!-- screenshot: Base prices with two columns, for example No and Yes -->
 
@@ -176,17 +178,17 @@ On your other questions, switch off **Same charge whatever customers answer to**
 
 ## Stopping asking a question
 
+**This removes the question's prices on this offering.** If the question splits your prices, everyone pays the default answer's column of prices and the other columns are removed. Existing bookings keep the price they were booked at, and the question is still asked on your other offerings.
+
 1. Click **Edit** next to the question.
 2. Click **Stop asking this question**.
 3. Click **Stop asking** to confirm.
-
-**This removes the question's prices on this offering.** If the question splits your prices, everyone pays the default answer's column of prices and the other columns are removed. Existing bookings keep the price they were booked at, and the question is still asked on your other offerings.
 
 ## What customers see
 
 When customers book, they answer your questions on the booking form:
 
 - A **Pick from a list** or **Yes or no** question shows its answers, with the default already picked.
-- A number question shows a number box that starts at the **At least** number and stops at **At most**. With kinds, there's a box for each kind.
+- A number question shows a number box that starts at the **At least** number and stops at **At most**. With kinds, there's a box for each kind, each starting at 0.
 
 The price they pay is the base price for their duration (from their column, if you use separate prices), plus any extra charges from their answers.

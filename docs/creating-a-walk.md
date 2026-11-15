@@ -69,7 +69,7 @@ Click **Create** **(1)**.
 - **Name**: what customers see when they choose a service, and what appears on their booking confirmation and emails. For example "Private hire" or "Training session".
 - **Cover photo**: a photo that represents this service, up to 10 MB. Falls back to your business photo if not set.
 - **Description**: up to 400 characters shown to customers on the service selection cards.
-- **Display verb**: the action word used throughout the app and booking flow, for example "Walking". Inherits from your business settings. Untick **Use default instead?** to set a different word for this service.
+- **Display verb**: the action word used throughout the app and booking flow, for example "Walking". Inherits from your business settings. Type a different word to override it for this service. Click **Use default instead?** to go back to the business default.
 
 Click **Save** **(2)** when you are done.
 
@@ -94,7 +94,7 @@ After creating an offering, click **Settings** on its overview page, then click 
 ![offering settings page](../screenshots/offering-settings-annotated-1794773517055.png)
 
 - **Start booking slots at**: when bookings can begin. Choose from the top of the hour, quarter past, half past, quarter to, every 15 minutes, or every 30 minutes.
-- **Future booking period**: how far in advance customers can book. Enter a number of days, hours or minutes.
+- **Future booking period** **(1)**: how far in advance customers can book. Enter a number of days, hours or minutes.
 - **Booking notice period**: how much notice you need before a booking. Customers cannot book sooner than this.
 - **Cancellation notice period**: how much notice a customer must give to cancel or reschedule their booking.
 - **Buffer period**: extra time added after each booking as a transition period. Only affects new bookings, not existing ones.
@@ -112,7 +112,7 @@ Click **Settings** on the offering overview, then click **Prices** ("Durations, 
 
 Click **Edit base prices** **(1)** to add the durations customers can book, such as 30 or 60 minutes, and what each one costs. Customers can't book the offering until it has at least one duration.
 
-Under **Questions**, you can add questions customers answer when they book, such as how many dogs they're bringing. Answers can add charges, limit how many can come, or pick a different set of prices. A new business starts with no questions, so customers just pay the base price of the duration they pick.
+Under **Questions**, click **Add a question** **(2)** to add questions customers answer when they book, such as how many dogs they're bringing. Answers can add charges, limit how many can come, or pick a different set of prices. A new business starts with no questions, so customers just pay the base price of the duration they pick.
 
 For the full guide, see [Setting up prices and questions](setting-up-prices-and-questions.md).
 

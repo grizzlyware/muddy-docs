@@ -20,7 +20,7 @@
 ## Text Areas
 - All text areas use placeholder text "Enter your text here"
 - Markdown editor fields, multi-line
-- No character limit in validation (nullable string)
+- No character limit
 
 ## Policy Integration
 - Policies are presented to customers during the booking process

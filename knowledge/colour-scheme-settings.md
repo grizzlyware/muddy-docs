@@ -17,7 +17,7 @@ Shown as small tiles. Custom appears first, then the eight preset schemes:
 8. Noble Paws
 9. Splashy Paws
 
-Preset order comes from the shared palettes in the database (seeded in this order). Main colours: Muddy dark green #1A3629 / mint #68EDB3; Frosty Paws navy #20234B / icy blue #92E4FF; Pawsh Pink plum #54215D / pink #FB87D2; Red Set Go! deep red #6F191A / coral #FF8082; Pumpkin Pup orange #C34200 / amber #FBAA31; Bark Mode charcoal #202020 / mint #68EDB3; Noble Paws charcoal #32373C / gold #B89F5C / teal #44A1A0; Splashy Paws teal #007573 / pink #CC3E8E.
+Presets are shown in this order. Main colours: Muddy dark green #1A3629 / mint #68EDB3; Frosty Paws navy #20234B / icy blue #92E4FF; Pawsh Pink plum #54215D / pink #FB87D2; Red Set Go! deep red #6F191A / coral #FF8082; Pumpkin Pup orange #C34200 / amber #FBAA31; Bark Mode charcoal #202020 / mint #68EDB3; Noble Paws charcoal #32373C / gold #B89F5C / teal #44A1A0; Splashy Paws teal #007573 / pink #CC3E8E.
 
 Total: 1 Custom + 8 preset schemes = 9 tiles
 

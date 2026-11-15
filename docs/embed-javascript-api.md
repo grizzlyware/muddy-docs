@@ -150,7 +150,7 @@ Notes on `slot`:
 
 - `has_slots` is the resource that was booked, and `label` is its name. `service` is the service that was booked there.
 - Each time has a `utc` version and a `localised` version in the resource's time zone. `localised.iso_8601` is the time the customer saw.
-- `end` and `vanity_end` are one second before the end time shown to customers. `vanity_end` leaves out any buffer time after the booking.
+- `vanity_end` is one second before the end time shown to customers. `end` also includes any buffer time after the booking.
 
 Listen for it with `window.addEventListener`:
 

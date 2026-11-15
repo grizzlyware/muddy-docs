@@ -10,7 +10,7 @@
 - The restriction applies across all months - entire months before the opening date are unavailable
 - Dates from the opening date onwards are available for booking
 - Setting accepts date format: YYYY-MM-DD (e.g., 2026-03-20)
-- Validation only requires a date (nullable). A past date is accepted and has no effect, since the restriction only applies while the date is in the future.
+- The date can be left empty. A past date is accepted and has no effect, since the restriction only applies while the date is in the future.
 - Saving redirects to the Settings page with "Advanced settings updated successfully"
 - Same page also has "Mute notifications" and "Manage URL"
 
