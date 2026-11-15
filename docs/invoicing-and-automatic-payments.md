@@ -66,7 +66,7 @@ If you want all customers to be invoiced, choose **Invoice** as the **Default pa
 
 Click **Save** when you're done.
 
-![Payment settings with Default payment collection method and Customer group overrides](../screenshots/inv-step-six-annotated-1794773538581.png)
+![Payment settings with Default payment collection method and Customer group overrides](../screenshots/inv-step-six-annotated-1794777892357.png)
 
 ## Booking as a customer (impersonation)
 
