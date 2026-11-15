@@ -21,7 +21,7 @@ For example, you could call your resources "arenas" and the activity "riding". T
 1. Click **Settings** in the left-hand menu.
 2. Under the Business section, click **Terminology** **(1)**.
 
-![Settings page with Terminology highlighted](../screenshots/settings-terminology-navigation-1792677895699.png)
+![Settings page with Terminology highlighted](../screenshots/settings-terminology-navigation-1794773378252.png)
 
 ## Using preset terminology
 
@@ -45,7 +45,7 @@ The preset also chooses which questions Muddy suggests when you set up prices on
 
 To pick your own words, fill in the two fields:
 
-![Terminology settings page with fields highlighted](../screenshots/terminology-custom-fields-1792677868827.png)
+![Terminology settings page with fields highlighted](../screenshots/terminology-custom-fields-1794773389254.png)
 
 **Resource display noun** **(1)** is the word for your resources. Customers see it when choosing where to book and on their confirmation emails. For example, "field", "arena", "park", "pool" or "suite".
 
@@ -79,7 +79,7 @@ To change it:
 4. Scroll down to **Display noun** **(1)** and type the word for this resource.
 5. Click **Save**.
 
-![Resource settings page with Display noun highlighted](../screenshots/resource-display-noun-highlighted-1792677689272.png)
+![Resource settings page with Display noun highlighted](../screenshots/resource-display-noun-highlighted-1794773461382.png)
 
 The field shows **Inherited from your business, click to edit** when it is using the business default. To go back to the default after changing it, click **Use default instead?**.
 
@@ -95,7 +95,7 @@ To change it:
 4. Scroll down to **Display verb** **(1)** and type the word for this service.
 5. Click **Save**.
 
-![Service settings page with Display verb highlighted](../screenshots/service-display-fields-highlighted-1792677810463.png)
+![Service settings page with Display verb highlighted](../screenshots/service-display-fields-highlighted-1794773522833.png)
 
 The field shows **Inherited from your business, click to edit** when it is using the business default. Click **Use default instead?** to revert it.
 
