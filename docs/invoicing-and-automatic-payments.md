@@ -56,15 +56,17 @@ Go to **Settings** and click **Payment settings** under the Payments section.
 
 ### Step 6: Choose who can book without paying
 
-Under **Upfront payment policy**, select **Exclude specific groups**. Then choose the customer group you created (e.g. "Dog Walkers") from the list below.
+Leave **Default payment collection method** on **Upfront**, so most customers still pay when they book.
 
-Customers in that group can now book without paying upfront. Everyone else still pays when they book.
+Under **Customer group overrides**, click **Add override**. Choose the customer group you created (e.g. "Dog Walkers") as the **Customer group**, and **Invoice** as the **Payment method**.
 
-If you want all customers to be able to book without paying, select **Not required** instead.
+Customers in that group can now book without paying upfront, and are invoiced after their booking. Everyone else still pays when they book.
+
+If you want all customers to be invoiced, choose **Invoice** as the **Default payment collection method** instead.
 
 Click **Save** when you're done.
 
-![Payment settings with Exclude specific groups selected](../screenshots/inv-step-six-B3KFt4ie.webp)
+![Payment settings with a customer group override](../screenshots/inv-step-six-B3KFt4ie.webp)
 
 ## Booking as a customer (impersonation)
 

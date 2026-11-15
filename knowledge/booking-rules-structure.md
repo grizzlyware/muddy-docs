@@ -5,9 +5,8 @@
 Most booking rules are now set **per offering** (not globally).
 
 ### Offering-level booking rules
-Path: Offerings > [offering name] > Settings
+Path: Offerings > [offering name] > Settings (header button) > Settings ("Booking rules, tax and access instructions")
 
-- **Maximum number of dogs** - per booking
 - **Start booking slots at** - options: top of hour, quarter past, half past, quarter to, every 15 mins, every 30 mins
 - **Future booking period** (days/hours/minutes) - how far ahead bookings can be made
 - **Booking notice period** (days/hours/minutes) - minimum notice before a booking
@@ -17,12 +16,14 @@ Path: Offerings > [offering name] > Settings
 
 URL: `/offerings/{id}/settings`
 
+There is no maximum dogs setting (checked v0.174.0). Quantity limits come from a count question's "At most" on the offering's Prices page. Changing the buffer shows a warning if recurring bookings may be affected.
+
 ### Global Booking Settings (Settings > Booking settings)
 
 Now only contains ONE setting:
 
 - **Editing booking notice period** (days/hours/minutes) - how close to start a booking can be edited
-  - Hint: "This can usually just be zero, to always allow edits"
+  - Hint: "Up to what point before the booking can be it edited? For example, changing the answers. This can usually just be zero, to always allow edits."
 
 URL: `/settings/booking`
 

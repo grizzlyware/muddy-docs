@@ -28,7 +28,7 @@ You can get to block outs in two ways:
 
 ![Settings block outs option](../screenshots/settings-block-outs-highlighted-1792679481604.png)
 
-Both take you to the same page.
+Both take you to the same page. You can also open a resource, click **Settings**, then click **Block outs** to see and add block outs for just that resource.
 
 ## Adding a new block out
 
@@ -59,7 +59,7 @@ The [resources](creating-a-walk.md) the block out applies to. You can pick one o
 
 ### Step 3: Check for conflicts
 
-Muddy checks whether the block out overlaps any existing bookings and shows you the result.
+Muddy checks whether the block out overlaps any existing bookings or recurring bookings and shows you the result. If it does, click **View bookings** or **View recurring bookings** to see which ones.
 
 If there are conflicts, you can:
 - Change the block out times

@@ -9,29 +9,41 @@
 ## Voucher Creation Process
 - Accessed via "Create voucher" button on main vouchers page
 - Form fields:
-  - Code: Text input with "Generate" button option
-  - Initial balance: Currency amount (£)
-  - Voucher expires: Toggle option that reveals expiry date field when enabled
-  - Expiry date: Date input field (appears when expiry is enabled)
+  - Code: Text input, pre-filled with a random 8-character code, with a "Generate" button (create only). Letters and numbers only (validated, max 255)
+  - Customer: Optional customer search. If assigned, the voucher is auto-applied when that customer books while logged in (booking flow only, not shop)
+  - Initial balance: Money input in the operator's currency, must be more than 0 (create only, not editable)
+  - Voucher has a start date: Toggle that reveals "Valid from" date field
+  - Voucher expires: Toggle that reveals "Expiry date" field. Pre-enabled with the default expiry date when Settings > Vouchers has "Enable voucher expiry" on. Expiry can't be in the past on create
+- Submit button: "Create voucher" (or "Save changes" when editing)
 
 ## Voucher Management Features
 - Individual voucher pages show:
-  - Code (partially masked with asterisks)
+  - Customer card (if assigned)
+  - Code (masked, with copy to clipboard button)
+  - Origin: Manual, Loyalty reward, Gift card order, Refund, Imported
+  - Order link (gift card vouchers)
   - Balance
-  - Status (ACTIVE, etc.)
-  - Expiry date
-  - Creation date
-  - Transactions history
-  - Deliveries history
+  - Status: Active, Not yet valid, Expired, Spent
+  - Valid from ("Immediately" if none)
+  - Expires ("Never" if none)
+  - Created date
+  - Deliveries and Transactions tables
+  - Notes panel
 - Available actions:
-  - Edit voucher
-  - Send voucher
-  - Expire voucher
-  - Record transaction
+  - Record transaction (Type: Credit or Debit, Amount)
+  - Edit voucher (code, customer, start date, expiry; not balance)
+  - Send voucher (hidden when expired)
+  - Expire voucher (hidden when expired; confirm "Keep it" / "Expire it"; sets expiry to now)
+
+## Voucher Settings (Settings > Vouchers)
+- Voucher refund policy: Refund to original voucher, Refund to new voucher
+- Enable voucher expiry: toggle, reveals "Expiry period" (years and months, defaults to 6 months when switched on)
+- Save button
 
 ## Vouchers Overview Stats
 - Redemption rate
 - Total redeemed
 - Expired unredeemed
 - Average voucher value
-- Filterable list of all vouchers with Code, Balance, Expires, Status, Created columns
+- Filters: Code, Customer, Status
+- List columns: Code, Balance, Expires, Status, Created

@@ -2,7 +2,7 @@
 
 ## URL and Location
 - Main loyalty programme settings: `/operators/{id}/settings/loyalty`
-- Accessed via Settings > Loyalty programme (in Pricing section)
+- Accessed via Settings > Loyalty programme (in Bookings section)
 
 ## Setup Process
 1. Initial state shows "Set up loyalty programme" button

@@ -6,11 +6,8 @@
 
 ## Configuration Options
 
-### Notice Period Settings
-- **Days**: Numeric input for days of notice
-- **Hours**: Numeric input for hours of notice  
-- **Minutes**: Numeric input for minutes of notice
-- Help text: "How much notice do you need before a booking can be cancelled or rescheduled by the customer?"
+### Notice Period
+- Not on this page. The notice period is set per offering: Offering > Settings > "Cancellation notice period" (days/hours/minutes).
 
 ### Standard Cancellation Fees (with sufficient notice)
 - **Cancellation fee**: Fixed amount in currency (£)

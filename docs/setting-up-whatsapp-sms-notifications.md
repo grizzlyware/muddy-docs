@@ -27,24 +27,27 @@ Muddy can send notifications to your customers by email, SMS and WhatsApp. Email
 
 ## Configuring notification types
 
-Click **Notification settings** to choose which notifications are sent and how.
+Click **Notification settings** to see every notification, and whether it's sent by email, SMS and WhatsApp.
 
 ![Notification settings page](../screenshots/notification-settings-annotated-1772549035250.png)
 
 Notifications include:
-- Booking confirmations and cancellations
-- Booking reminders
-- [Invoices](invoicing-and-automatic-payments.md)
-- Payment confirmations
+- Booking confirmations, cancellations and reminders
+- Unpaid booking reminders and auto-cancellations
+- Recurring bookings scheduled and cancelled
+- [Invoices](invoicing-and-automatic-payments.md), invoice payment reminders and payments
+- Refunds
 - Customer login links
 - Waiting list alerts
+- Loyalty rewards
+- Advisories you send to customers
 
 Each can be sent by:
 - **Email**: free
-- **SMS**: uses credits
-- **WhatsApp**: uses credits
+- **SMS**: uses credits. Longer messages can use more than one credit
+- **WhatsApp**: uses credits. Most messages use 1 credit, but WhatsApp counts some, such as loyalty rewards and advisories to all customers, as marketing. These use 3 credits each, and Muddy warns you when you switch WhatsApp on for one
 
-Use the switches to turn each method on or off for each notification.
+Click a notification to change it. Use the **Emails enabled?**, **WhatsApp enabled?** and **SMS enabled?** switches to turn each method on or off. If you switch on SMS, you can also change the **SMS text**. For **Booking reminder**, you also choose when reminders go under **Reminder intervals**. Click **Save changes** when you're done.
 
 ## Setting up SMS notifications
 
@@ -57,7 +60,7 @@ Use the switches to turn each method on or off for each notification.
 2. Choose a package and click **Top up**
 
 **Important notes:**
-- Prices exclude VAT
+- Prices are shown without VAT. Switch on **Include VAT** to see them with VAT
 - Credits expire 12 months after purchase
 - SMS only sends to UK mobile numbers
 
@@ -66,7 +69,11 @@ Use the switches to turn each method on or off for each notification.
 Auto top-up buys more credits when your balance falls below a level you choose, so you don't run out.
 
 1. On the SMS credits page, click **Auto top-up**
-2. Choose your settings
+2. Switch on **Enable auto top-up**
+3. Choose the **Credit package** to buy each time
+4. Enter a **Renewal threshold**. When your balance drops to this number of credits or below, Muddy buys the package
+5. If you want to limit how much is bought, switch on **Enable spend cap** and enter a **Spend cap**. This is the most credits auto top-up will buy in a month
+6. Click **Save**
 
 ![SMS auto top-up](../screenshots/sms-auto-topup-1772548984732.png)
 
@@ -96,9 +103,9 @@ For each message you'll see:
 WhatsApp credits cost less than SMS credits.
 
 **Important notes:**
-- Prices exclude VAT
+- Prices are shown without VAT. Switch on **Include VAT** to see them with VAT
 - Credits expire 12 months after purchase
-- WhatsApp only sends to UK mobile numbers
+- WhatsApp only sends to UK mobile numbers, and only to people who have WhatsApp
 
 ### Setting up automatic top-up for WhatsApp
 
@@ -117,7 +124,7 @@ On the WhatsApp credits page, click **View usage**. It shows the same details as
 
 ## Best practices
 
-- **Turn on both WhatsApp and SMS, with credits for each.** Messages go by WhatsApp first and fall back to SMS if the customer doesn't have WhatsApp. As WhatsApp is cheaper, this reaches the most customers for the least money.
+- **Turn on both WhatsApp and SMS, with credits for each.** Messages go by WhatsApp first and fall back to SMS if the WhatsApp message can't be sent, for example because the customer doesn't have WhatsApp. A customer gets one or the other, not both. As WhatsApp is cheaper, this reaches the most customers for the least money.
 - **Start with booking confirmations and reminders.** They're the most useful to customers.
 - **Emails are sent as well** as SMS and WhatsApp, at no extra cost.
 - **Turn on auto top-up** so notifications don't stop when your credits run out.

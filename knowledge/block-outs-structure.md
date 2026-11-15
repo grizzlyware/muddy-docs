@@ -5,7 +5,8 @@ Block outs are used to prevent bookings at specific times. Example use case: res
 
 ## Navigation Access Points
 1. **Main Navigation**: Direct link to `Block outs` in left sidebar
-2. **Settings Page**: Under "Bookings" section - "Block outs" option (redirects to main block outs page)
+2. **Settings Page**: Under "Bookings" section - "Block outs" option (links to main block outs page)
+3. **Resource menu**: Resource > Settings (header button) > Block outs ("Close specific dates and times"). Page "Block outs for {resource}" with a "Create block out" button that pre-selects that resource
 
 ## Main Block Outs Page
 - Shows explanation: "Block outs are a way for you to prevent bookings at a particular time. For example, you might want to reserve some time to cut the grass!"
@@ -34,10 +35,10 @@ Form fields include:
    - Help text: "Select the resources this block out applies to"
 
 ## Additional Features
-- Conflict checking: Shows message "This block out doesn't conflict with any bookings"
-- Submit button: "Create block out"
+- Conflict checking: "This block out doesn't conflict with any bookings or recurring bookings" when clear; otherwise "Be careful, this block out conflicts with N booking(s)." with a "View bookings" link, and/or "This block out conflicts with N recurring booking(s)." with a "View recurring bookings" link
+- Submit button: "Create block out" ("Save changes" when editing)
 
 ## Notes
 - All times are shown in business timezone
-- Resource selection appears to be multi-select based on help text
+- Resource selection is multi-select
 - The field was renamed from "Walks" to "Resources" (as of October 2026)

@@ -14,7 +14,7 @@ pinned: false
 
 ## Accessing loyalty programme settings
 
-Go to **Settings** and click **Loyalty programme** in the Pricing section.
+Go to **Settings** and click **Loyalty programme** in the Bookings section.
 
 ![Finding the loyalty programme settings](../screenshots/loyalty-programme-in-settings-1776433624375.png)
 

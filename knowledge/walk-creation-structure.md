@@ -1,54 +1,15 @@
-# Walk Creation Process Structure
+# Walk Creation Process Structure (legacy)
 
-## Initial Walk Creation
-- Access via Walks in main navigation
-- Empty state shows "Setup my first walk" button
-- Initial form only requires walk name
-- Creates walk and redirects to styling page
+"Walks" no longer exist as a page in the app (checked against v0.174.0). Old `/walks/...` URLs redirect.
+What used to be a walk is now built from a resource, a service and an offering. See offerings-structure.md.
 
-## Walk Styling Page (/walks/{id}/booking-flow)
-- Style booking calendar
-- Cover image upload (up to 10MB)
-- Color palette selection (affects all walks)
-- Preview option available
-
-## Walk Settings Menu Structure
-After creation, walk has settings menu with:
-- Settings (basic walk configuration)
-- Style calendar (cover image and colors)  
-- Opening times (walk-specific hours)
-- Block outs (redirects to main block-outs)
-- Pricing (walk-specific pricing setup)
-- Advanced (walk dependencies/blocking)
-- Delete walk
-
-## Main Walk Settings Fields (/walks/{id}/settings)
-1. Basic Information:
-   - Name (walk display name)
-   - Address (with search/map functionality)
-   - what3words location
-   
-2. Access Information:
-   - Access instructions (rich text)
-   - Short access instructions (40 chars, single sentence)
-   
-3. Booking Configuration:
-   - Maximum number of dogs
-   - Start booking slots at (time intervals)
-   - Buffer period (days/hours/minutes)
-   
-4. Display Settings:
-   - Cover photo upload
-   - Display noun (terminology)
-   - Display verb (terminology) 
-   - Display subject (terminology)
-
-## Walk Overview Page
-Shows walk statistics, bookings, revenue, and basic configuration summary including:
-- Address status
-- what3words status  
-- Maximum dogs
-- Booking slot intervals
-- Notice periods
-- Future booking period
-- Buffer period
+Where the old walk settings went:
+- Name, address, what3words, description, timezone, cover photo, display noun: resource settings (`/resources/{id}/settings`)
+- Display verb: service settings (`/services/{id}/settings`)
+- Display subject: removed entirely (v0.174.0). There is no subject word any more.
+- Start booking slots at, future/notice/cancellation periods, buffer, tax classification, access instructions: offering settings (`/offerings/{id}/settings`)
+- Maximum number of dogs: removed as a setting. Limits now come from a count question's "At most" on the offering's Prices page.
+- Pricing: offering Prices page (`/offerings/{id}/pricing`), see pricing-structure.md
+- Opening times: offering opening times (`/offerings/{id}/opening-times`)
+- Block outs: resource menu > Block outs, or the main Block outs page
+- Advanced (resources that block slots here): resource menu > Advanced

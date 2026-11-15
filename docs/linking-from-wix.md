@@ -16,13 +16,10 @@ Due to how Wix handles iframes, we don't recommend embedding your booking form d
 
 ## Finding your booking form link
 
-1. In the Muddy admin area, click **Settings** in the left-hand menu, then click **Website embedding**
+1. In the Muddy admin area, click **My booking website** at the bottom of the left-hand menu. Your booking website opens in a new tab.
+2. Copy the address from your browser's address bar.
 
-![Website embedding in settings](../screenshots/step-one-BDkEykKR.webp)
-
-2. Find the booking form you want to link to and copy the **hosted booking form URL**
-
-![Copying the hosted booking form URL](../screenshots/wix-step-two-BE7-HdsI.webp)
+To link straight to one resource's booking form instead, click it on your booking website first, then copy the address.
 
 ## Adding a booking button to your Wix page
 

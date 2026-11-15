@@ -20,8 +20,10 @@ If the [Muddy embed snippet](embedding-on-wordpress.md#finding-your-embed-code) 
 Add listeners to `window`, not the iframe or the `message` event. The full payloads are in the [Embed JavaScript API](embed-javascript-api.md) reference.
 
 - **`muddy.booking:confirmed`** fires once, on the confirmation page after a booking. Use this for conversion tracking.
-- **`muddy.booking:rescheduled`** fires when a booking is rescheduled or edited.
+- **`muddy.booking:rescheduled`** fires once, on the new booking's page after a booking is rescheduled.
 - **`muddy.booking:cancelled`** fires as soon as a customer cancels a booking.
+
+When a customer edits a booking, Muddy creates a new booking with a new reference and fires `muddy.booking:confirmed` for it, so edits are counted as conversions too.
 
 ## Minimal example
 
@@ -48,9 +50,9 @@ window.addEventListener('muddy.booking:confirmed', function (event) {
     value: Number(d.price.total.amount),
     currency: d.price.total.currency,
     items: [{
-      item_id: String(d.slot.has_slots.id),
-      item_name: d.slot.has_slots.label,
-      item_category: d.slot.has_slots.type,
+      item_id: String(d.slot.service.id),
+      item_name: d.slot.service.name,
+      item_category: d.slot.has_slots.label,
       price: Number(d.price.total.amount),
       quantity: 1
     }]
@@ -72,8 +74,8 @@ window.addEventListener('muddy.booking:rescheduled', function (event) {
 
   gtag('event', 'booking_rescheduled', {
     transaction_id: d.reference,
-    item_name: d.slot.has_slots.label,
-    new_start: d.slot.start.iso
+    item_name: d.slot.service.name,
+    new_start: d.slot.start.localised.iso_8601
   });
 });
 ```
@@ -96,9 +98,11 @@ window.dataLayer = window.dataLayer || [];
         booking_reference: d.reference,
         value: Number(d.price.total.amount),
         currency: d.price.total.currency,
-        walk_id: d.slot.has_slots.id,
-        walk_name: d.slot.has_slots.label,
-        slot_start: d.slot.start.iso
+        service_id: d.slot.service.id,
+        service_name: d.slot.service.name,
+        resource_id: d.slot.has_slots.id,
+        resource_name: d.slot.has_slots.label,
+        slot_start: d.slot.start.localised.iso_8601
       }
     });
   });
@@ -108,7 +112,7 @@ window.dataLayer = window.dataLayer || [];
 ### Setting up the GTM triggers
 
 1. In GTM, create a **Custom Event** trigger. Set the event name to `muddy_booking_confirmed`. Repeat for `muddy_booking_rescheduled` and `muddy_booking_cancelled`.
-2. Create **Data Layer Variables** for the fields you need, for example `muddy.booking_reference`, `muddy.value`, `muddy.currency` and `muddy.walk_name`.
+2. Create **Data Layer Variables** for the fields you need, for example `muddy.booking_reference`, `muddy.value`, `muddy.currency` and `muddy.service_name`.
 3. Use those variables in a GA4 Event tag, or any other tag, and set its trigger to the Custom Event from step 1.
 
 ## Meta / Facebook Pixel
@@ -120,8 +124,8 @@ window.addEventListener('muddy.booking:confirmed', function (event) {
   fbq('track', 'Purchase', {
     value: Number(d.price.total.amount),
     currency: d.price.total.currency,
-    content_ids: [String(d.slot.has_slots.id)],
-    content_name: d.slot.has_slots.label,
+    content_ids: [String(d.slot.service.id)],
+    content_name: d.slot.service.name,
     content_type: 'product'
   });
 });
@@ -139,8 +143,9 @@ window.addEventListener('muddy.booking:confirmed', function (event) {
     booking_reference: d.reference,
     value: Number(d.price.total.amount),
     currency: d.price.total.currency,
-    walk_name: d.slot.has_slots.label,
-    slot_start: d.slot.start.iso
+    service_name: d.slot.service.name,
+    resource_name: d.slot.has_slots.label,
+    slot_start: d.slot.start.localised.iso_8601
   });
 });
 ```

@@ -75,7 +75,7 @@ Once **Ask customers for a review** is on (1), choose how the request is sent (2
 - **WhatsApp**: a WhatsApp message is sent to customers with a UK mobile number who use WhatsApp. The message includes a "Leave a review" button and an Unsubscribe button.
 - **SMS**: a text message with a link, sent to customers with a UK mobile number. When both WhatsApp and SMS are on, SMS is only used for customers who can't get the WhatsApp message.
 
-WhatsApp and SMS messages use notification credits. The page will tell you if a message costs more than one credit. You can find out more about credits in [Setting up WhatsApp and SMS notifications](setting-up-whatsapp-sms-notifications.md).
+WhatsApp and SMS messages use notification credits. WhatsApp counts review requests as marketing, so each WhatsApp request uses 3 credits instead of 1. The page warns you about this when you switch WhatsApp on. You can find out more about credits in [Setting up WhatsApp and SMS notifications](setting-up-whatsapp-sms-notifications.md).
 
 When SMS is on, you can edit the text message that is sent.
 

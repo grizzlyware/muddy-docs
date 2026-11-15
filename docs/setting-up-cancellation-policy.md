@@ -25,11 +25,7 @@ A cancellation policy lets you charge a fee when customers cancel or reschedule.
 
 ## Setting the notice period
 
-The notice period **(1)** is how much warning you need for a cancellation or reschedule not to count as late. Set it in:
-
-- **Days**
-- **Hours**
-- **Minutes**
+The notice period is how much warning you need for a cancellation or reschedule not to count as late. It's set on each offering as the **Cancellation notice period**, not on this page. See [Booking rules on each offering](configuring-booking-rules.md#booking-rules-on-each-offering).
 
 For example, 1 day and 2 hours means customers must cancel at least 26 hours before the booking to avoid a late fee.
 
