@@ -28,7 +28,7 @@ Recurring bookings are off by default.
 1. Go to **Settings**.
 2. Under **Bookings**, click **Recurring bookings**.
 
-![Recurring booking settings page](../screenshots/recurring-settings-annotated-new-1792675972942.png)
+![Recurring booking settings page](../screenshots/recurring-settings-annotated-1794773385116.png)
 
 ### Enable recurring bookings **(1)**
 
@@ -65,7 +65,7 @@ You can start one from:
 - The **Recurring bookings** page (go to **Bookings** in the left-hand menu, then click **Recurring bookings** at the top), by clicking **Create recurring booking** **(1)**
 - A **customer's page**, by scrolling to **Recurring bookings** and clicking **Create**. The customer is filled in for you
 
-![Recurring bookings list page with Create recurring booking button](../screenshots/recurring-list-annotated-new-1792675889389.png)
+![Recurring bookings list page with Create recurring booking button](../screenshots/recurring-list-annotated-1794773423719.png)
 
 ### The form
 
@@ -142,7 +142,7 @@ Switch on **Override price** to charge a fixed amount for every booking instead:
 
 ### Payment, answers, and self-service
 
-![Create form bottom: payment method, booking questions, and customer self-service options](../screenshots/create-form-shot2-1792676839199.png)
+![Create form bottom: payment method, booking questions, and customer self-service options](../screenshots/create-form-payment-questions-annotated-1794773477946.png)
 
 #### Payment collection method **(1)**
 
