@@ -13,9 +13,9 @@ pinned: false
 
 ## Where booking rules live
 
-Most booking rules are set on each offering individually, so you can give different services or locations their own rules. Go to **Offerings** in the left-hand menu, click the offering you want to configure, then click **Settings**.
+Most booking rules are set on each offering individually, so you can give different services or locations their own rules. Go to **Offerings** in the left-hand menu, click the offering you want to configure, then click **Settings** **(1)**.
 
-![offering-settings-menu](../screenshots/offering-settings-menu-1792673513284.png)
+![offering-settings-menu](../screenshots/offering-settings-menu-1794773501617.png)
 
 A small menu appears. Click **Settings** (described as "Booking rules, tax and access instructions").
 
@@ -25,7 +25,7 @@ If you haven't set up your offerings yet, see [Setting up your offerings](creati
 
 The settings page for an offering contains the booking rules for that offering.
 
-![offering-settings-annotated](../screenshots/offering-settings-annotated-1792675413527.png)
+![offering-settings-annotated](../screenshots/offering-settings-annotated-1794773459557.png)
 
 ### Start booking slots at
 
@@ -72,10 +72,10 @@ Click **Save** at the bottom of the page. The new rules apply straight away to f
 
 There is one booking rule that applies across all your offerings rather than per offering. Go to **Settings** in the left-hand menu, then click **Booking settings** in the Bookings section.
 
-![booking-settings-edit-notice](../screenshots/booking-settings-edit-notice-1792675485094.png)
+![booking-settings-edit-notice](../screenshots/booking-settings-edit-notice-1794773471620.png)
 
 ### Editing booking notice period **(1)**
 
-How close to the start of a booking a customer can still edit their booking, for example to change their answers to your booking questions. As the page note says, this can usually be left at zero, which allows edits right up to the start. Set it higher if you need more preparation time before changes take effect.
+How close to the start of a booking a customer can still edit their booking, for example to change their answers to your booking questions. As the page note says, this can usually just be zero, to always allow edits. Set it higher if you need more preparation time before changes take effect.
 
 Click **Save** to apply the change.
