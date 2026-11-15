@@ -29,18 +29,20 @@ Muddy can send notifications to your customers by email, SMS and WhatsApp. Email
 
 Click **Notification settings** to see every notification, and whether it's sent by email, SMS and WhatsApp.
 
-![Notification settings page](../screenshots/notification-settings-annotated-1772549035250.png)
+![Notification settings page](../screenshots/notification-settings-annotated-new-1794773483080.png)
 
 Notifications include:
 - Booking confirmations, cancellations and reminders
+- Booking advisories (messages sent to a specific customer about their booking)
 - Unpaid booking reminders and auto-cancellations
 - Recurring bookings scheduled and cancelled
 - [Invoices](invoicing-and-automatic-payments.md), invoice payment reminders and payments
+- Manual invoice sends
 - Refunds
 - Customer login links
 - Waiting list alerts
 - Loyalty rewards
-- Advisories you send to customers
+- Advisories you send to all customers
 
 Each can be sent by:
 - **Email**: free
@@ -55,12 +57,12 @@ Click a notification to change it. Use the **Emails enabled?**, **WhatsApp enabl
 
 1. On the Settings page, click **SMS credits** **(1)**. You'll see your balance and the packages available
 
-![SMS credits page](../screenshots/sms-credits-page-1772548958925.png)
+![SMS credits page](../screenshots/sms-credits-page-annotated-1794773499032.png)
 
 2. Choose a package and click **Top up**
 
 **Important notes:**
-- Prices are shown without VAT. Switch on **Include VAT** to see them with VAT
+- Prices are shown without VAT. Switch on **Include VAT** **(1)** to see them with VAT
 - Credits expire 12 months after purchase
 - SMS only sends to UK mobile numbers
 
@@ -96,14 +98,14 @@ For each message you'll see:
 
 1. On the Settings page, click **WhatsApp credits** **(2)**. You'll see your balance and the packages available
 
-![WhatsApp credits page](../screenshots/whatsapp-credits-page-1772548994796.png)
+![WhatsApp credits page](../screenshots/whatsapp-credits-page-annotated-1794773509252.png)
 
 2. Choose a package and click **Top up**
 
 WhatsApp credits cost less than SMS credits.
 
 **Important notes:**
-- Prices are shown without VAT. Switch on **Include VAT** to see them with VAT
+- Prices are shown without VAT. Switch on **Include VAT** **(1)** to see them with VAT
 - Credits expire 12 months after purchase
 - WhatsApp only sends to UK mobile numbers, and only to people who have WhatsApp
 
