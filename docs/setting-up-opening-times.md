@@ -37,7 +37,7 @@ To set every day at once:
 1. Choose a preset from the **Apply preset to all days** menu near the top of the page, such as **24/7**, **09:00 to 17:00**, **08:00 to 20:00** or **Closed**
 2. Click **Apply**
 
-![Offering opening times page with Apply preset menu highlighted](../screenshots/offering-opening-times-annotated-1792671951851.png)
+![Offering opening times page with Apply preset menu highlighted](../screenshots/offering-opening-times-annotated-1795196040517.png)
 
 ### Setting individual days
 
