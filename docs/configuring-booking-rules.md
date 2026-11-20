@@ -15,7 +15,7 @@ pinned: false
 
 Most booking rules are set on each offering individually, so you can give different services or locations their own rules. Go to **Offerings** in the left-hand menu, click the offering you want to configure, then click **Settings** **(1)**.
 
-![offering-settings-menu](../screenshots/offering-settings-menu-1794773501617.png)
+![offering-settings-menu](../screenshots/offering-settings-menu-1795195700923.png)
 
 A small menu appears. Click **Settings** (described as "Booking rules, tax and access instructions").
 
@@ -27,7 +27,7 @@ The settings page for an offering contains the booking rules for that offering.
 
 > The times bookings can start, such as on the hour or every fifteen minutes, aren't on this page. They're set on the offering's **Opening times** page, so different days and times can start differently. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
 
-![offering-settings-annotated](../screenshots/offering-settings-annotated-1794773459557.png)
+![offering-settings-annotated](../screenshots/offering-settings-annotated-1795195731813.png)
 
 ### Future booking period **(1)**
 
