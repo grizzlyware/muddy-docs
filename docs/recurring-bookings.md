@@ -105,7 +105,7 @@ How often bookings repeat:
 
 #### Start time
 
-When each booking starts.
+When each booking starts. It must be a time bookings can start on every day the schedule runs, as set in the offering's [opening times](setting-up-opening-times.md#choosing-when-bookings-start). For example, if Mondays start on the hour and Wednesdays every thirty minutes, a Monday and Wednesday schedule can start at 10:00am but not 10:30am. A schedule on a day of the month can fall on any day of the week, so its start time must work on every day.
 
 #### Duration
 

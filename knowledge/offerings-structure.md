@@ -44,15 +44,14 @@ Note: "Prices, opening times, booking rules and access instructions belong to ea
 ## Offerings Pages
 - Offerings list: `/offerings`
 - New offering: `/offerings/new` - select resource and service (can create new ones inline)
-- Offering overview: `/offerings/{id}` - status dot (Live/Upcoming/Inactive), stats, latest bookings, "New booking" button when bookable, Prices summary, Opening times summary, rules card (Slots start, Notice to book, Notice to cancel, Bookable up to, Buffer period, Tax classification). No maximum dogs.
+- Offering overview: `/offerings/{id}` - status dot (Live/Upcoming/Inactive), stats, latest bookings, "New booking" button when bookable, Prices summary, Opening times summary, rules card (Slots start, shown as "{default}, varies by opening time" when a day or time range sets its own, Notice to book, Notice to cancel, Bookable up to, Buffer period, Tax classification). No maximum dogs.
 - Warning when missing prices or opening times, with "Add prices" / "Set opening times" buttons; another when opening times use sunrise/sunset but the resource has no location ("Set a location")
 - Offering menu (header "Settings" button): Settings ("Booking rules, tax and access instructions"), Opening times ("Set your regular availability"), Prices ("Durations, prices and questions"), Edit {resource} ("Name, details and photo"), Edit {service} ("Name, description and photo"), Remove offering
 - Offering settings: `/offerings/{id}/settings`
 - Offering Prices page: `/offerings/{id}/pricing` (menu item "Prices")
-- Offering opening times: `/offerings/{id}/opening-times`
+- Offering opening times: `/offerings/{id}/opening-times` (also holds "Start booking slots at")
 
 ### Offering Settings Fields (at /offerings/{id}/settings)
-- **Start booking slots at** - options: top of hour, quarter past, half past, quarter to, every 15 mins, every 30 mins
 - **Future booking period** (days/hours/minutes) - how far ahead bookings can be made
 - **Booking notice period** (days/hours/minutes) - minimum notice before a booking
 - **Cancellation notice period** (days/hours/minutes) - minimum notice to cancel/reschedule

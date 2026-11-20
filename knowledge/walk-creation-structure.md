@@ -7,9 +7,9 @@ Where the old walk settings went:
 - Name, address, what3words, description, timezone, cover photo, display noun: resource settings (`/resources/{id}/settings`)
 - Display verb: service settings (`/services/{id}/settings`)
 - Display subject: removed entirely (v0.174.0). There is no subject word any more.
-- Start booking slots at, future/notice/cancellation periods, buffer, tax classification, access instructions: offering settings (`/offerings/{id}/settings`)
+- Future/notice/cancellation periods, buffer, tax classification, access instructions: offering settings (`/offerings/{id}/settings`)
 - Maximum number of dogs: removed as a setting. Limits now come from a count question's "At most" on the offering's Prices page.
 - Pricing: offering Prices page (`/offerings/{id}/pricing`), see pricing-structure.md
-- Opening times: offering opening times (`/offerings/{id}/opening-times`)
+- Opening times and "Start booking slots at": offering opening times (`/offerings/{id}/opening-times`)
 - Block outs: resource menu > Block outs, or the main Block outs page
 - Advanced (resources that block slots here): resource menu > Advanced

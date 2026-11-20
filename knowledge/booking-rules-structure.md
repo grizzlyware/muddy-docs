@@ -7,7 +7,6 @@ Most booking rules are now set **per offering** (not globally).
 ### Offering-level booking rules
 Path: Offerings > [offering name] > Settings (header button) > Settings ("Booking rules, tax and access instructions")
 
-- **Start booking slots at** - options: top of hour, quarter past, half past, quarter to, every 15 mins, every 30 mins
 - **Future booking period** (days/hours/minutes) - how far ahead bookings can be made
 - **Booking notice period** (days/hours/minutes) - minimum notice before a booking
 - **Cancellation notice period** (days/hours/minutes) - minimum notice to cancel/reschedule
@@ -15,6 +14,8 @@ Path: Offerings > [offering name] > Settings (header button) > Settings ("Bookin
 - (Also: Tax classification, Access instructions, Short access instructions - not booking rules)
 
 URL: `/offerings/{id}/settings`
+
+"Start booking slots at" is no longer on this page. It moved to the offering's Opening times page (see opening-times-structure.md).
 
 There is no maximum dogs setting (checked v0.174.0). Quantity limits come from a count question's "At most" on the offering's Prices page. Changing the buffer shows a warning if recurring bookings may be affected.
 

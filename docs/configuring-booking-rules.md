@@ -7,7 +7,7 @@ tags:
   - scheduling
   - availability
 order: 40
-description: Set notice periods, advance booking limits, buffer times, and slot starting intervals for each of your offerings.
+description: Set notice periods, advance booking limits and buffer times for each of your offerings.
 pinned: false
 ---
 
@@ -15,7 +15,7 @@ pinned: false
 
 Most booking rules are set on each offering individually, so you can give different services or locations their own rules. Go to **Offerings** in the left-hand menu, click the offering you want to configure, then click **Settings** **(1)**.
 
-![offering-settings-menu](../screenshots/offering-settings-menu-1794773501617.png)
+![offering-settings-menu](../screenshots/offering-settings-menu-1795195700923.png)
 
 A small menu appears. Click **Settings** (described as "Booking rules, tax and access instructions").
 
@@ -25,18 +25,9 @@ If you haven't set up your offerings yet, see [Setting up your offerings](creati
 
 The settings page for an offering contains the booking rules for that offering.
 
-![offering-settings-annotated](../screenshots/offering-settings-annotated-1794773459557.png)
+> The times bookings can start, such as on the hour or every fifteen minutes, aren't on this page. They're set on the offering's **Opening times** page, so different days and times can start differently. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
 
-### Start booking slots at
-
-The times at which a booking can start. Choose from:
-
-- **Top of the hour**: 9:00am, 10:00am, 11:00am and so on
-- **Quarter past the hour**: 9:15am, 10:15am, 11:15am and so on
-- **Half past the hour**: 9:30am, 10:30am, 11:30am and so on
-- **Quarter to the hour**: 8:45am, 9:45am, 10:45am and so on
-- **Every fifteen minutes**: 9:00am, 9:15am, 9:30am, 9:45am and so on
-- **Every thirty minutes**: 9:00am, 9:30am, 10:00am and so on
+![offering-settings-annotated](../screenshots/offering-settings-annotated-1795197000000.png)
 
 ### Future booking period **(1)**
 
