@@ -91,7 +91,7 @@ Click **Add** **(3)** to create the offering.
 
 After creating an offering, click **Settings** on its overview page, then click **Settings** ("Booking rules, tax and access instructions") in the menu that appears.
 
-![offering settings page](../screenshots/offering-settings-annotated-1794773517055.png)
+![offering settings page](../screenshots/offering-settings-annotated-1795196151265.png)
 
 - **Future booking period** **(1)**: how far in advance customers can book. Enter a number of days, hours or minutes.
 - **Booking notice period**: how much notice you need before a booking. Customers cannot book sooner than this.
@@ -119,7 +119,7 @@ For the full guide, see [Setting up prices and questions](setting-up-prices-and-
 
 Click **Settings** on the offering overview, then click **Opening times** to set when this offering is available for booking.
 
-![offering opening times page](../screenshots/offering-opening-times-annotated-1794773547211.png)
+![offering opening times page](../screenshots/offering-opening-times-annotated-1795196164263.png)
 
 You can apply the same hours to every day at once using **Apply preset to all days** **(1)**, then click **Apply** **(2)**. Or set each day individually using the menu next to Monday, Tuesday, and so on. Preset options include common ranges like 09:00 to 17:00, 06:00 to 20:00, 24/7, **Closed**, or **Custom** if you need specific times.
 
