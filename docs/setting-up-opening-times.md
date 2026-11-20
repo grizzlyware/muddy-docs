@@ -50,6 +50,21 @@ For each day, choose one of:
 
 Click **Save** at the bottom of the page.
 
+### Choosing when bookings start
+
+**Start booking slots at**, at the top of the page, sets the times a booking can start. Choose from:
+
+- **Top of the hour**: 9:00am, 10:00am, 11:00am and so on
+- **Quarter past the hour**: 9:15am, 10:15am, 11:15am and so on
+- **Half past the hour**: 9:30am, 10:30am, 11:30am and so on
+- **Quarter to the hour**: 8:45am, 9:45am, 10:45am and so on
+- **Every fifteen minutes**: 9:00am, 9:15am, 9:30am, 9:45am and so on
+- **Every thirty minutes**: 9:00am, 9:30am, 10:00am and so on
+
+This is the default for every day. Each open day also has its own **Start booking slots at** menu, so one day can start differently from the rest. On a **Custom** day, each time range has one, so mornings can start every fifteen minutes and afternoons on the hour, for example. Leave it on **Default** to use the setting at the top of the page.
+
+A booking starts in the time range that its start time falls in, and it can run on into a range that follows straight after. It can't run through a time when you're closed.
+
 ### Anchoring to sunrise or sunset
 
 If your hours follow daylight, for example you always open at sunrise or close before dusk, you can anchor times to sunrise, sunset, first light or last light instead of fixed clock times. This requires a geographic location to be set on the resource. Add the location in the resource's settings, and the opening times page will offer **Sunrise to sunset** and **First light to last light** presets. With **Custom**, you can also choose sunrise, sunset, first light or last light for **Opens at** and **Closes at**, with an **Offset** to open or close a little earlier or later.

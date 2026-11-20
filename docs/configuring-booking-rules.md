@@ -7,7 +7,7 @@ tags:
   - scheduling
   - availability
 order: 40
-description: Set notice periods, advance booking limits, buffer times, and slot starting intervals for each of your offerings.
+description: Set notice periods, advance booking limits and buffer times for each of your offerings.
 pinned: false
 ---
 
@@ -29,14 +29,7 @@ The settings page for an offering contains the booking rules for that offering.
 
 ### Start booking slots at
 
-The times at which a booking can start. Choose from:
-
-- **Top of the hour**: 9:00am, 10:00am, 11:00am and so on
-- **Quarter past the hour**: 9:15am, 10:15am, 11:15am and so on
-- **Half past the hour**: 9:30am, 10:30am, 11:30am and so on
-- **Quarter to the hour**: 8:45am, 9:45am, 10:45am and so on
-- **Every fifteen minutes**: 9:00am, 9:15am, 9:30am, 9:45am and so on
-- **Every thirty minutes**: 9:00am, 9:30am, 10:00am and so on
+The times bookings can start, such as on the hour or every fifteen minutes, are set on the offering's **Opening times** page, so different days and times can start differently. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
 
 ### Future booking period **(1)**
 
