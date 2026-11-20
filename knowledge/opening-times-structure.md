@@ -12,6 +12,7 @@
 - Help text: "The times bookings can start at, for example 9:00, 9:15 or 9:30. A time range can set its own."
 - Each open day (any preset except Closed and Custom) has its own "Start booking slots at" menu; on a Custom day each time row has one. First option "Default ({default})" uses the card's setting
 - A slot starts in the range that holds its start time and can run on into a range that follows straight after, but never through closed time
+- "Apply preset to all days" puts every day back on Default; changing one day's preset keeps that day's choice
 - Moved here from offering Settings
 - Recurring bookings: the start time must be allowed on every day the schedule runs (every day for a day-of-month schedule). Error: "{time} isn't a start time for {offering} on {days}."
 

@@ -123,7 +123,7 @@ Click **Settings** on the offering overview, then click **Opening times** to set
 
 You can apply the same hours to every day at once using **Apply preset to all days** **(1)**, then click **Apply** **(2)**. Or set each day individually using the menu next to Monday, Tuesday, and so on. Preset options include common ranges like 09:00 to 17:00, 06:00 to 20:00, 24/7, **Closed**, or **Custom** if you need specific times.
 
-At the top of the page, **Start booking slots at** sets when bookings can begin, such as on the hour or every fifteen minutes. Each day can change it. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
+At the top of the page, **Start booking slots at** sets when bookings can begin, such as on the hour or every fifteen minutes. Each day, or each time range on a **Custom** day, can change it. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
 
 > If your hours follow daylight (for example, you always walk at sunrise or before dusk), set a location on your resource first. The offering's opening times page will then let you anchor times to sunrise, sunset, first light, or last light rather than fixed clock times.
 

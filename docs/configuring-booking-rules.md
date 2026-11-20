@@ -25,11 +25,9 @@ If you haven't set up your offerings yet, see [Setting up your offerings](creati
 
 The settings page for an offering contains the booking rules for that offering.
 
+> The times bookings can start, such as on the hour or every fifteen minutes, aren't on this page. They're set on the offering's **Opening times** page, so different days and times can start differently. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
+
 ![offering-settings-annotated](../screenshots/offering-settings-annotated-1794773459557.png)
-
-### Start booking slots at
-
-The times bookings can start, such as on the hour or every fifteen minutes, are set on the offering's **Opening times** page, so different days and times can start differently. See [Choosing when bookings start](setting-up-opening-times.md#choosing-when-bookings-start).
 
 ### Future booking period **(1)**
 
